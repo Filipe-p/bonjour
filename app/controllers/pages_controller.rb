@@ -5,10 +5,11 @@ class PagesController < ApplicationController
   end
 
   def about
-
   end
 
   def contacts
+  end
 
+  def home2
   end
 end
