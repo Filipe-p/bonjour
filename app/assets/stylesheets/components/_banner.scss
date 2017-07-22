@@ -3,15 +3,18 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-// background: -moz-linear-gradient(45deg, rgba(170,223,220,1) 0%, rgba(235,232,229,1) 100%); /* ff3.6+ */
-// background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(170,223,220,1)), color-stop(100%, rgba(235,232,229,1))); /* safari4+,chrome */
-// background: -webkit-linear-gradient(45deg, rgba(170,223,220,1) 0%, rgba(235,232,229,1) 100%); /* safari5.1+,chrome10+ */
-// background: -o-linear-gradient(45deg, rgba(170,223,220,1) 0%, rgba(235,232,229,1) 100%); /* opera 11.10+ */
-// background: -ms-linear-gradient(45deg, rgba(170,223,220,1) 0%, rgba(235,232,229,1) 100%); /* ie10+ */
-// background: linear-gradient(45deg, rgba(170,223,220,1) 0%, rgba(235,232,229,1) 100%); /* w3c */
-// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBE8E5', endColorstr='#AADFDC',GradientType=1 ); /* ie6-9 */
-background-image: linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%), url("yellow-cupcake.jpg");
-    background-size: cover
+  background-color: $yellow;
+//background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%);
+//     background-size: cover
+}
+
+.banner2 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%), url("yellow-cupcake.jpg");
+  background-size: cover
 }
 
 .banner-content h1{
