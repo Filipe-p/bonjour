@@ -1,9 +1,13 @@
 <div class = "banner flexbox">
   <div class = "banner-content text-center">
-    <h1 >Pastelaria Bonjour</h1>
-    <h2 >Brevemente</h2>
-    <p>21 483 5095</p>
-    <%= link_to t(".top_call_to_action", default: "Criar Bolo"), "#", class: "navbar-wagon-item cta-btn-big" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 col-md-6 col-md-offset-3 circle">
+    <%= image_tag "circle.png" %>
+    <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn-big" %>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
 

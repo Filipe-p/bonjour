@@ -8,6 +8,7 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  color: white;
 }
 
 /* Optional class to fix the navbar on top */
@@ -40,11 +41,11 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: white;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: white;
   text-decoration: none;
 }
 
@@ -54,10 +55,10 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: $purple;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid $purple;
 }
 .navbar-wagon-button:hover {
   color: white;

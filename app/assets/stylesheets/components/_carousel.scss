@@ -1,6 +1,7 @@
 .carousel{
-    background: #2f4357;
+    background: $lightpurple;
     margin-top: 20px;
+    border-radius: 4px;
 }
 .carousel .item{
     min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */

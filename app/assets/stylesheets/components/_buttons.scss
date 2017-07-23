@@ -21,12 +21,12 @@
  line-height: 70px;
  margin-top: 50px;
   border-radius: 20em;
-  background-color: #D23333;
-  border: 2px solid #D23333;
+  background-color: $purple;
+  border: 2px solid $purple;
 }
 
 .cta-btn-big:hover {
- background-color: #D23333;
+ background-color: $purple;
  color: white;
  text-decoration: none;
 }

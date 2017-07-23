@@ -1,0 +1,54 @@
+<!-- <div class="container">
+  <div class="row card">
+    <div class="col-md-6">
+      <h2>Massa</h2>
+      <ul class = "list">
+        <li>Chocolate</li>
+        <li>Cenoura</li>
+        <li>Red Velvet</li>
+        <li>Pão de Ló</li>
+        <li>Noz</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h2>Recheio</h2>
+      <ul class = "list">
+        <li>Creme de Suspiro</li>
+        <li>Avelã</li>
+        <li>Chocolate</li>
+        <li>Chantily</li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<ul id="nav">
+  <li><a href="page_1.html">Page 1</a></li>
+  <li><a href="page_2.html">Page 2</a></li>
+  <li><a href="page_3.html">Page 3</a></li>
+</ul>
+ 
+<div id="ajax-content">This is default text, which will be replaced</div>
+
+
+<% content_for(:after_js) do %>
+
+<script>
+  $(document).ready(function() {
+    $("#nav li a").click(function() {
+
+        $("#ajax-content").empty().append("<div id='loading'><img src='images/loading.gif' alt='Loading' /></div>");
+        $("#nav li a").removeClass('current');
+        $(this).addClass('current');
+
+        $.ajax({ url: this.href, success: function(html) {
+            $("#ajax-content").empty().append(html);
+            }
+    });
+    return false;
+    });
+});
+
+</script>
+
+<% end %>
