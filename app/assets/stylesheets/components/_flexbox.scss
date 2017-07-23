@@ -1,0 +1,13 @@
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-item {
+  flex: 1 0 auto;
+}
+
+.flex-item-small {
+  flex: 0 0 20%;
+}

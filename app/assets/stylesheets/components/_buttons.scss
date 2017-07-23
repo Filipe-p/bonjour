@@ -1,0 +1,32 @@
+.my-btn {
+  background-color: black;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: white;
+  font-weight: bold;
+}
+
+// .my-btn:hover {
+//   background-color: black;
+//   border-color: $lightblue;
+//   color: white;
+
+// }
+
+.cta-btn-big {
+ padding: 15px 50px;
+ color: white;
+ font-weight: bold;
+ font-size: 25px;
+ line-height: 70px;
+ margin-top: 50px;
+  border-radius: 20em;
+  background-color: $purple;
+  border: 2px solid $purple;
+}
+
+.cta-btn-big:hover {
+ background-color: $purple;
+ color: white;
+ text-decoration: none;
+}
