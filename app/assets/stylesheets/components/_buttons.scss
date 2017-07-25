@@ -30,3 +30,19 @@
  color: white;
  text-decoration: none;
 }
+
+.btn-facebook,
+.btn-facebook:link,
+.btn-facebook:visited {
+  font-weight: bold;
+  padding: 11px 15px;
+  border-radius: 4px;
+  background-color: $faceblue;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+
+.btn-facebook:hover {
+  background-color: #5e8eed;
+}
