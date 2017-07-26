@@ -19,11 +19,11 @@
 //background-size: cover
 }
 .banner2 {
-  height: 50vh;
+  height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%), url("tartes.jpg");
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%), url("http://res.cloudinary.com/cloudnary-filipe/image/upload/c_scale,w_1162/v1501077930/amy-treasure-69666_rqooli.jpg");
   background-size: cover;
 }
 
