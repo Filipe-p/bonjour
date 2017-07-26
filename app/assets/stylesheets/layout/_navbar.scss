@@ -4,7 +4,7 @@
   background: black;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: 100px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
@@ -27,6 +27,12 @@
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-wagon-center {
   display: flex;
   align-items: center;
   justify-content: space-between;
