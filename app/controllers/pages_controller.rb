@@ -12,4 +12,7 @@ class PagesController < ApplicationController
 
   def home2
   end
+
+  def gallery
+  end
 end
