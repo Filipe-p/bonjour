@@ -1,6 +1,6 @@
-class CreateExtras < ActiveRecord::Migration[5.1]
+class CreateOthers < ActiveRecord::Migration[5.1]
   def change
-    create_table :extras do |t|
+    create_table :others do |t|
       t.string :name
       t.float :price
       t.string :description
