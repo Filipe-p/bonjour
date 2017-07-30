@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.bigint "filling_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "size"
     t.index ["decoration_id"], name: "index_cakes_on_decoration_id"
     t.index ["dough_id"], name: "index_cakes_on_dough_id"
     t.index ["filling_id"], name: "index_cakes_on_filling_id"
