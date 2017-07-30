@@ -1,15 +1,86 @@
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-color: rgba(255,255,255,0.1);
+  background-color: white;
   transition: all 0.3s ease;
-  display: flex;
-  height: 100px;
+  height: 306px;
   padding: 0px 30px;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
+  color: black;
+  position: relative;
 }
+
+.navbar-wagon .row-xs-center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+}
+
+.navbar-wagon .header-logo {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.navbar-wagon .header-center {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  min-width: 70px;
+}
+
+.navbar-wagon .header-right {
+display: flex;
+align-items: left;
+}
+
+
+.header-right img {
+    flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+    padding: 40px 0;
+}
+
+.navbar-wagon .header-nav {
+  position: relative;
+  text-align: center;
+  border-top: 1px solid #f4f4f4;
+  min-height: 1px;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.header-nav .menu {
+  display: inline-block;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-wagon li {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 22px;
+}
+
+.navbar-wagon ul {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  position: static;
+  z-index: 2;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: .11em;
+}
+
 
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
@@ -22,7 +93,10 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 70px;
+  max-width: 150px;
+  height: auto;
+  vertical-align: top;
+  line-height: 1.8;
 }
 
 /* Navbar right section (with form, links, button) */

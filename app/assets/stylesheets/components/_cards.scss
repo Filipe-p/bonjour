@@ -1,3 +1,17 @@
 .card {
 border: 2px solid black;
 }
+
+.card-cake {
+height: 540px;
+background-color: #FEEB8F;
+z-index: 2;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.card-cake img {
+  max-width: 100px;
+  flex: 0 1 auto;
+}

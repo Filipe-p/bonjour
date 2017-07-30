@@ -20,15 +20,15 @@
  font-size: 25px;
  line-height: 70px;
  margin-top: 50px;
-  border-radius: 20em;
-  background-color: $purple;
-  border: 2px solid $purple;
+ background-color: #ef5352;
+ border: 2px solid white;
+ position: relative;
+    box-shadow: 0 0 0 4px #ef5352, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
 }
 
 .cta-btn-big:hover {
- background-color: $purple;
- color: white;
- text-decoration: none;
+color: white;
+text-decoration: none;
 }
 
 .btn-facebook,
