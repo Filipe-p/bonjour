@@ -1,2 +1,3 @@
 class Dough < ApplicationRecord
+
 end
