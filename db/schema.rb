@@ -32,11 +32,6 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.index ["filling_id"], name: "index_cakes_on_filling_id"
   end
 
-  create_table "cakes_orders", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "cake_id", null: false
-  end
-
   create_table "custom_cakes", force: :cascade do |t|
     t.string "email"
     t.string "name"
@@ -65,19 +60,6 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "extras", force: :cascade do |t|
-    t.string "name"
-    t.float "price"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "extras_orders", id: false, force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "extra_id", null: false
-  end
-
   create_table "fillings", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -94,15 +76,6 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.datetime "updated_at", null: false
     t.index ["cake_id"], name: "index_order_cakes_on_cake_id"
     t.index ["order_id"], name: "index_order_cakes_on_order_id"
-  end
-
-  create_table "order_extras", force: :cascade do |t|
-    t.bigint "extra_id"
-    t.bigint "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["extra_id"], name: "index_order_extras_on_extra_id"
-    t.index ["order_id"], name: "index_order_extras_on_order_id"
   end
 
   create_table "order_others", force: :cascade do |t|
@@ -162,8 +135,6 @@ ActiveRecord::Schema.define(version: 20170730171758) do
   add_foreign_key "custom_cakes", "fillings"
   add_foreign_key "order_cakes", "cakes"
   add_foreign_key "order_cakes", "orders"
-  add_foreign_key "order_extras", "extras"
-  add_foreign_key "order_extras", "orders"
   add_foreign_key "order_others", "orders"
   add_foreign_key "order_others", "others"
   add_foreign_key "orders", "users"
