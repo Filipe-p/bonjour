@@ -4,7 +4,7 @@ class CreateOthers < ActiveRecord::Migration[5.1]
       t.string :name
       t.float :price
       t.string :description
-
+      t.references :order, foreign_key: true
       t.timestamps
     end
   end

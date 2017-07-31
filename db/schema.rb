@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730171758) do
+ActiveRecord::Schema.define(version: 20170731193837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,17 +19,19 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.string "name"
     t.float "price"
     t.string "description"
+    t.string "size"
     t.string "shape"
     t.string "message"
     t.bigint "decoration_id"
     t.bigint "dough_id"
     t.bigint "filling_id"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "size"
     t.index ["decoration_id"], name: "index_cakes_on_decoration_id"
     t.index ["dough_id"], name: "index_cakes_on_dough_id"
     t.index ["filling_id"], name: "index_cakes_on_filling_id"
+    t.index ["order_id"], name: "index_cakes_on_order_id"
   end
 
   create_table "custom_cakes", force: :cascade do |t|
@@ -52,6 +54,15 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dough_fillings", force: :cascade do |t|
+    t.bigint "dough_id"
+    t.bigint "filling_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dough_id"], name: "index_dough_fillings_on_dough_id"
+    t.index ["filling_id"], name: "index_dough_fillings_on_filling_id"
+  end
+
   create_table "doughs", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -66,25 +77,6 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "order_cakes", force: :cascade do |t|
-    t.bigint "cake_id"
-    t.bigint "order_id"
-    t.string "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cake_id"], name: "index_order_cakes_on_cake_id"
-    t.index ["order_id"], name: "index_order_cakes_on_order_id"
-  end
-
-  create_table "order_others", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "other_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_others_on_order_id"
-    t.index ["other_id"], name: "index_order_others_on_other_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -104,8 +96,10 @@ ActiveRecord::Schema.define(version: 20170730171758) do
     t.string "name"
     t.float "price"
     t.string "description"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_others_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -131,11 +125,11 @@ ActiveRecord::Schema.define(version: 20170730171758) do
   add_foreign_key "cakes", "decorations"
   add_foreign_key "cakes", "doughs"
   add_foreign_key "cakes", "fillings"
+  add_foreign_key "cakes", "orders"
   add_foreign_key "custom_cakes", "doughs"
   add_foreign_key "custom_cakes", "fillings"
-  add_foreign_key "order_cakes", "cakes"
-  add_foreign_key "order_cakes", "orders"
-  add_foreign_key "order_others", "orders"
-  add_foreign_key "order_others", "others"
+  add_foreign_key "dough_fillings", "doughs"
+  add_foreign_key "dough_fillings", "fillings"
   add_foreign_key "orders", "users"
+  add_foreign_key "others", "orders"
 end
