@@ -1,25 +1,23 @@
-<div class = "banner flexbox">
-  <div class = "banner-content text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-4 col-md-6 col-md-offset-3 circle">
-    <%= image_tag "circle.png" %>
-    <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn-big" %>
-      </div>
+<div class = "banner2">
+  <%= render 'shared/navbardev' %>
+  <div class="banner-wrapper">
+    <div class = "banner-content text-center flexbox">
+<%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn-big btn flex-item" %>
     </div>
-  </div>
   </div>
 </div>
 
-<div style = "height: 100vh;">
+<div style = "min-height: 100vh; padding: 100px 100px;">
   <div class="container">
     <div class="row">
-      <div class = "text-center" style = "margin-top: 80px; margin-bottom: 100px;">
+      <div class = "text-center" style = "margin-bottom: 100px;">
         <h1> Como Funciona</h1>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
       <div class="col-md-6 side">
-        <%= image_tag "cake_1.jpg" %>
+        <div class="card-cake">
+          <%= image_tag "cartao-bonjour.jpg" %>
+        </div>
       </div>
       <div class="col-md-6">
         <div>
@@ -40,7 +38,12 @@
   </div>
 </div>
 
-<div style = "height: 60vh;">
+<div class = "parallax">
+<div class="parallax-inner">
+</div>
+</div>
+
+<div style = "min-height: 60vh; padding: 100px 100px;">
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -49,8 +52,8 @@
     <div class="col-md-6 text-center">
       <div>
         <h3>História da Bonjour</h3>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</h4>
-        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), "#", class: "navbar-wagon-item cta-btn-big" %>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
+        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn-big btn" %>
 
       </div>
     </div>
@@ -58,8 +61,12 @@
 </div>
 </div>
 
+<div class = "parallax2">
+<div class="parallax-inner2">
+</div>
+</div>
 
-<div style = "height: 70vh;" class = "text-center">
+<div style = "padding: 100px 100px;" class = "text-center">
 <div class="container">
 <h2>Exposição de Bolos</h2>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -92,7 +99,4 @@
 </div>
 </div>
 
-<div class = "wrapper" style = "height: 40vh; background-color: #9D6375;">
 
-
-</div>

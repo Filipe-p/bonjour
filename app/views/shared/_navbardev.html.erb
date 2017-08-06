@@ -1,7 +1,80 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "circle.png" %>
-  <% end %>
+
+  <div  class = "row row-xs-center">
+    <div class="row col-md-12 header-logo">
+      <div class="col-xs-4 header-left">
+        <div class = "navbar-wagon-left hidden-xs hidden-sm">
+          <% if user_signed_in? %>
+
+          <!-- Profile picture and dropdown -->
+          <div class="navbar-wagon-item">
+            <div class="dropdown header-left">
+            <% avatar_url = "http://placehold.it/30x30" %>
+              <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li>
+                  <%= link_to orders_path do %>
+                  <%= image_tag "muffin.png" %> <%= t(".profile", default: "My orders") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <% else %>
+
+          <!-- Login text link -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+          <% end %>
+        </div>
+        <!-- Dropdown list appearing on mobile only -->
+        <div class="navbar-wagon-item hidden-md hidden-lg" style = "padding: 40px 0px;">
+          <div class="dropdown header-left">
+            <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><a href="#">Some mobile link</a></li>
+              <li><a href="#">Other one</a></li>
+              <li><a href="#">Other one</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 header-center">
+        <%= link_to root_path, class: "navbar-wagon-brand hidden-xs hidden-sm" do %>
+        <%= image_tag "circle.png" %>
+        <% end %>
+        <%= link_to root_path, class: "navbar-wagon-brand-small hidden-md hidden-lg" do %>
+        <%= image_tag "circle.png" %>
+        <% end %>
+      </div>
+      <div class="col-xs-4 header-right"><%= image_tag "cart-simple.svg" %></div>
+    </div>
+    <div class="col-md-12 header-nav hidden-xs hidden-sm">
+      <div class="menu">
+        <ul>
+          <li>
+            <%= link_to root_path do %>
+            Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to about_path do %>
+            About
+            <% end %>
+          </li>
+          <li>Order</li>
+          <li>Cake Design</li>
+          <li>Galeria</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
