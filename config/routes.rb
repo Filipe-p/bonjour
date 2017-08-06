@@ -9,15 +9,15 @@ Rails.application.routes.draw do
   get 'home2',     to: 'pages#home2'
   get 'gallery', to: 'pages#gallery'
 
-  resources :orders
-  get 'confirmation', to: 'orders#confirmation'
 
-  resources :cake_dough do
-    resources :cake_filling do
-      resources :cake_decoration
+  resources :cakes do
+    resources :doughs do
+      resources :fillings do
+        resources :decorations
+      end
     end
   end
 
-
-
+  resources :orders
+  get 'confirmation', to: 'orders#confirmation'
 end

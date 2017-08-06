@@ -1,0 +1,4 @@
+<%= simple_form_for @cake do |f| %>
+  <%= f.input :dough, collection: @doughs, as: :radio_buttons, input_html: {placeholder: "Choose a delicious dough"} %>
+  <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
+<% end %>
