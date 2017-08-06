@@ -9,6 +9,26 @@
   position: relative;
 }
 
+.navbar-wagon2 {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background-color: white;
+  transition: all 0.3s ease;
+  height: 70px;
+  padding: 5px 30px;
+  color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar logo */
+.navbar-wagon-brand-2 img {
+  max-width: 50px;
+  height: auto;
+  vertical-align: top;
+  line-height: 1.8;
+}
+
 .navbar-wagon .row-xs-center {
   display: flex;
   align-items: center;

@@ -1,9 +1,8 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
-  layout "brevemente", only: :home
-  layout "teste", only: :home2
 
   def home
+    render layout: "brevemente"
   end
 
   def about
@@ -13,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def home2
+    render layout: "teste"
   end
 
   def gallery
