@@ -23,7 +23,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
 gem "letter_opener", group: :development
-
+gem 'postmark-rails'
 
 
 group :development, :test do
