@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'about',       to: 'pages#about'
   get 'contacts',     to: 'pages#contacts'
   get 'home2',     to: 'pages#home2'
-  resources :orders
   get 'gallery', to: 'pages#gallery'
+
 
   resources :cakes do
     resources :doughs do
@@ -17,4 +17,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :orders
+  get 'confirmation', to: 'orders#confirmation'
 end

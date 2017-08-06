@@ -8,11 +8,12 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= favicon_link_tag 'circle.png' %>
+
   </head>
   <body>
   <div class = "page-wrap">
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbardev' %>
     <%= yield %>
   </div>
     <%= render 'shared/footer' %>
