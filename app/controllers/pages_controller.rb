@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def contacts
+
   end
 
   def home2
@@ -16,5 +17,11 @@ class PagesController < ApplicationController
   end
 
   def gallery
+  end
+
+  private
+
+  def contact_param
+    params.require(:contacts).permit(:email, :textarea, :phone_number, :dough, :filling)
   end
 end
