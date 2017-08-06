@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
-  layout "brevemente", only: [:home2, :home]
+  layout "brevemente", only: :home
+  layout "teste", only: :home2
 
   def home
   end
