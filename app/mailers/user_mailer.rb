@@ -5,10 +5,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome
+  def welcome(user)
+    @user = user
     @greeting = "Hi welcome email!    "
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'Benvindo á Pastelaria Bonjour')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -16,9 +17,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.purchase_confirmation.subject
   #
-  def purchase_confirmation
+  def purchase_confirmation(user)
+    @user = user
     @greeting = "Hi, this is a confirmation email"
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'Confirmação de Encomenda - Pastelaria Bonjour')
   end
 end

@@ -7,13 +7,17 @@ Rails.application.routes.draw do
   get 'about',       to: 'pages#about'
   get 'contacts',     to: 'pages#contacts'
   get 'home2',     to: 'pages#home2'
-  resources :orders
   get 'gallery', to: 'pages#gallery'
+
+  resources :orders
+  get 'confirmation', to: 'orders#confirmation'
 
   resources :cake_dough do
     resources :cake_filling do
       resources :cake_decoration
     end
   end
+
+
 
 end
