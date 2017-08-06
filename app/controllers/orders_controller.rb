@@ -19,4 +19,8 @@ class OrdersController < ApplicationController
 
   def destroy
   end
+
+  def confirmation
+    UserMailer.purchase_confirmation(current_user).deliver_now
+  end
 end
