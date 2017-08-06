@@ -10,15 +10,10 @@ Rails.application.routes.draw do
   resources :orders
   get 'gallery', to: 'pages#gallery'
 
-  resources :cake_dough do
-    resources :cake_filling do
-      resources :cake_decoration
-    end
-  end
-  resources :cake do
-    resources :cake_dough do
-      resources :cake_filling do
-        resources :cake_decoration
+  resources :cakes do
+    resources :doughs do
+      resources :fillings do
+        resources :decorations
       end
     end
   end

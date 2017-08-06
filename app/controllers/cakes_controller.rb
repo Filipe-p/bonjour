@@ -1,5 +1,7 @@
-class CakeDoughController < ApplicationController
+class CakesController < ApplicationController
   before_action :set_cake, only: [:edit, :update]
+  def index
+  end
 
   def new
     @cake = Cake.new
@@ -7,15 +9,22 @@ class CakeDoughController < ApplicationController
   end
 
   def create
-    @order = Order.new
-    @order.user = current_user
+    if session[:order_id].blank? || !Order.exists?(session[:order_id])
+      @order = Order.new
+    else
+      @order = Order.find(session[:order_id])
+    end
+
+    @order.user = current_user unless current_user.blank?
+
     if @order.save
+      session[:order_id] = @order.id
 
       @cake = Cake.new(cake_params)
       @cake.order = @order
 
       if @cake.save
-        redirect_to new_cake_dough_cake_filling_path(@cake.dough.id)
+        redirect_to new_cake_dough_filling_path(@cake, @cake.dough)
       else
         render :new
       end
@@ -26,14 +35,17 @@ class CakeDoughController < ApplicationController
   end
 
   def edit
-  end
-
-  def update
     if @cake.update(cake_params)
-      redirect_to new_cake_dough_cake_filling_path(@cake.dough.id)
+      redirect_to cake_dough_filling_path(@cake, @cake.dough)
     else
       render :edit
     end
+  end
+
+  def update
+  end
+
+  def delete
   end
 
   private
