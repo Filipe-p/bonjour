@@ -15,5 +15,11 @@ Rails.application.routes.draw do
       resources :cake_decoration
     end
   end
-
+  resources :cake do
+    resources :cake_dough do
+      resources :cake_filling do
+        resources :cake_decoration
+      end
+    end
+  end
 end

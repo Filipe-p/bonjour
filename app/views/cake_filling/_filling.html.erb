@@ -1,0 +1,4 @@
+<%= simple_form_for :cake, url: new_cake_dough_cake_filling_path(params[:cake_dough_id]), method: "post" do |f| %>
+  <%= f.input :filling, collection: @fillings, as: :radio_buttons, input_html: {placeholder: "Choose a delicious dough"} %>
+  <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
+<% end %>

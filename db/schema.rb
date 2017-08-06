@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20170731193837) do
     t.string "contact_name"
     t.integer "contact_telephone"
     t.string "contact_email"
+    t.string "state", default: "Awaiting Payment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"

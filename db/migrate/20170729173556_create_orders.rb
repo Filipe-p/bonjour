@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.string :contact_name
       t.integer :contact_telephone
       t.string :contact_email
+      t.string :state, default: "Awaiting Payment", null: false
 
       t.timestamps
     end
