@@ -2,16 +2,40 @@
 border: 2px solid black;
 }
 
+// .card-cake {
+// max-height: 100%;
+// background-color: #FEEB8F;
+// z-index: 2;
+// display: flex;
+// align-items: center;
+// justify-content: space-around;
+// }
+
+// .card-cake img {
+//   max-width: 100px;
+//   flex: 0 1 auto;
+// }
+
+
 .card-cake {
-height: 540px;
-background-color: #FEEB8F;
-z-index: 2;
-display: flex;
-align-items: center;
-justify-content: space-around;
+   position: relative;
+  display: inline-block;
 }
 
-.card-cake img {
-  max-width: 100px;
-  flex: 0 1 auto;
+.card-cake img{
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+.card-cake:before {
+    display: block;
+    content: '';
+    border: 3px solid #333333;
+    position: absolute;
+    z-index: 0;
+    top: 40px;
+    right: -30px;
+    bottom: -40px;
+    left: 30px;
 }

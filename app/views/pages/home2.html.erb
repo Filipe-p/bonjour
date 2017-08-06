@@ -1,27 +1,22 @@
 <div class = "banner2">
   <%= render 'shared/navbardev' %>
   <div class="banner-wrapper">
-    <div class = "banner-content text-center">
-      <h1 >Pastelaria Bonjour</h1>
-      <h2 >Brevemente</h2>
-      <p>968 244 660</p>
-      <p style = "font-size: 30px">21 483 5095</p>
-      <%= link_to "Facebook", "https://www.facebook.com/Pastelaria-Bonjour-Cascais-1424510534502618/", class: "btn btn-facebook btn-lg" %>
+    <div class = "banner-content text-center flexbox">
+<%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn-big btn flex-item" %>
     </div>
   </div>
 </div>
 
-<div style = "height: 100vh;">
+<div style = "min-height: 100vh; padding: 100px 100px;">
   <div class="container">
     <div class="row">
-      <div class = "text-center" style = "margin-top: 80px; margin-bottom: 100px;">
+      <div class = "text-center" style = "margin-bottom: 100px;">
         <h1> Como Funciona</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
       <div class="col-md-6 side">
         <div class="card-cake">
-          <h2>Crie o seu bolo em 3 simples passos</h2>
-          <%= image_tag "cake.png" %>
+          <%= image_tag "cartao-bonjour.jpg" %>
         </div>
       </div>
       <div class="col-md-6">
@@ -48,7 +43,7 @@
 </div>
 </div>
 
-<div style = "height: 60vh;">
+<div style = "min-height: 60vh; padding: 100px 100px;">
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -57,8 +52,8 @@
     <div class="col-md-6 text-center">
       <div>
         <h3>História da Bonjour</h3>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</h4>
-        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), "#", class: "navbar-wagon-item cta-btn-big" %>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
+        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn-big btn" %>
 
       </div>
     </div>
@@ -71,7 +66,7 @@
 </div>
 </div>
 
-<div style = "height: 70vh;" class = "text-center">
+<div style = "padding: 100px 100px;" class = "text-center">
 <div class="container">
 <h2>Exposição de Bolos</h2>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -104,7 +99,4 @@
 </div>
 </div>
 
-<div class = "wrapper" style = "height: 40vh; background-color: #9D6375;">
 
-
-</div>
