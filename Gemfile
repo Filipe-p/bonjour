@@ -19,6 +19,14 @@ gem 'uglifier'
 
 gem 'cloudinary'
 
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
+gem "letter_opener", group: :development
+gem 'postmark-rails'
+
+gem 'rails-assets-swipebox', source: 'https://rails-assets.org'
+
 
 
 group :development, :test do
