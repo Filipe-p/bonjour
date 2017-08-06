@@ -4,6 +4,6 @@ class Cake < ApplicationRecord
   belongs_to :filling, optional: true
   belongs_to :order
 
-  SIZE = ["Medium", "Large", "Extra Large"]
+  SIZES = ["Medium", "Large", "Extra Large"]
   SHAPES = ['Square', 'Round']
 end
