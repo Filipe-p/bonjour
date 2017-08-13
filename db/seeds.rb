@@ -77,6 +77,6 @@ fillings[:noz] = [doce_de_ovo, chantili, leite_creme]
         end
     end
 
-Other.create(name: "cupcake other Ex1", price: 1, description: "This is an amazing cupcake other EX1")
-Other.create(name: "cupcake other Ex2", price: 1, description: "This is an amazing cupcake other EX2")
-Other.create(name: "cupcake other Ex3", price: 1, description: "This is an amazing cupcake other EX3")
+Other.create(name: "Cupcake 1", price: 1, description: "This is an amazing cupcake other EX1")
+Other.create(name: "Cupcake 2", price: 1, description: "This is an amazing cupcake other EX2")
+Other.create(name: "Cupcake 3", price: 1, description: "This is an amazing cupcake other EX3")

@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def new
@@ -23,4 +24,5 @@ class OrdersController < ApplicationController
   def confirmation
     UserMailer.purchase_confirmation(current_user).deliver_now
   end
+
 end
