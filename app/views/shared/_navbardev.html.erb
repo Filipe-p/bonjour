@@ -69,7 +69,12 @@
             About
             <% end %>
           </li>
-          <li>Order</li>
+          <li>
+          <%= link_to new_cake_path do %>
+            Order
+            <% end %>
+
+            </li>
           <li>Cake Design</li>
           <li><%= link_to gallery_path do %>
             Galeria

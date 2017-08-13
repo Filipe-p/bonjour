@@ -1,4 +1,11 @@
 <%= simple_form_for @cake do |f| %>
-  <%= f.input :dough, collection: @doughs, as: :radio_buttons, input_html: {placeholder: "Choose a delicious dough"} %>
+  <% @doughs.each do |dough| %>
+  <div class="row">
+    <%= image_tag("#{dough.name}.svg") %>
+    <%= f.radio_button :dough, dough.id %>
+    <%= dough.name %>
+    </div>
+  <% end %>
+
   <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
 <% end %>
