@@ -22,16 +22,17 @@
 //background-size: cover
 }
 .banner2 {
-  height: 100vh;
-  background-image: url("16.jpg");
+  height: calc(100vh - 306px);
+  background-image: url("SC-slider-celebrationcake2.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .banner-wrapper {
   display: flex;
-  align-items: center;
+  align-items: right;
   justify-content: space-around;
+
 }
 
 .banner-content {

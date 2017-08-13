@@ -13,7 +13,6 @@ class PagesController < ApplicationController
   end
 
   def home2
-    render layout: "teste"
   end
 
   def gallery
