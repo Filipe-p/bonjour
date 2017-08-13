@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
 
   private
 
-    def set_space
+    def set_order
       @order = Order.find(params[:order_id])
     end
 end
