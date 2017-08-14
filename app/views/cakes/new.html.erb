@@ -1,8 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
+<div class="doughs" style = "padding-bottom: 100px; padding-top: 100px;">
+  <div class="container">
+    <div class="row">
+      <p class = "text-center" style = "font-size: 30px;">Escolha a massa do bolo</p>
+      <div class="col-md-6" style = "background-color: #FFE8A7;">
         <%= render 'dough' %>
+      </div>
     </div>
   </div>
 </div>
 
+<%= javascript_include_tag 'application.js' %>
+<%= javascript_include_tag "create.js" %>

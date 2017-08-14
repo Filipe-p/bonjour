@@ -1,11 +1,10 @@
-<%= simple_form_for @cake do |f| %>
-  <% @doughs.each do |dough| %>
-  <div class="row">
-    <%= image_tag("#{dough.name}.svg") %>
-    <%= f.radio_button :dough, dough.id %>
-    <%= dough.name %>
-    </div>
-  <% end %>
-
-  <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
+<%= simple_form_for @cake, remote: true do |f| %>
+<% @doughs.each do |dough| %>
+<div class="row dough-form">
+  <div class="col-md-4 flexbox" style = "height: 100px;"><%= image_tag("#{dough.name}.svg") %></div>
+  <div class="col-md-4 text-center flexbox" style = "height: 100px;"><%= dough.name %></div>
+  <div class="col-md-4 flexbox" style = "height: 100px;"><%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%></div>
+</div>
+<% end %>
+<div class="flexbox"><%= f.submit "Próximo passo", class: "btn cta-btn cta-btn-blue cta-btn-small"%></div>
 <% end %>

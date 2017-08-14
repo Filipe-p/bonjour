@@ -1,5 +1,5 @@
 /* Main class */
-.navbar-wagon {
+.my-navbar {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: white;
   transition: all 0.3s ease;
@@ -29,7 +29,7 @@
   line-height: 1.8;
 }
 
-.navbar-wagon .row-xs-center {
+.my-navbar .row-xs-center {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -37,25 +37,25 @@
   margin-right: -0.9375rem;
 }
 
-.navbar-wagon .header-logo {
+.my-navbar .header-logo {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
   padding: 40px 0;
 }
 
-.navbar-wagon .header-center {
+.my-navbar .header-center {
   flex: 0 0 33.33333%;
   max-width: 33.33333%;
   min-width: 70px;
 }
 
-.navbar-wagon .header-right {
+.my-navbar .header-right {
 display: flex;
 align-items: left;
 }
 
-.navbar-wagon .header-left {
+.my-navbar .header-left {
 display: flex;
 align-items: right;
 }
@@ -76,7 +76,7 @@ align-items: right;
     padding: 40px 0;
 }
 
-.navbar-wagon .header-nav {
+.my-navbar .header-nav {
   position: relative;
   text-align: center;
   border-top: 1px solid #f4f4f4;
@@ -94,7 +94,7 @@ align-items: right;
   padding-bottom: 20px;
 }
 
-.navbar-wagon li {
+.my-navbar li {
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -103,7 +103,7 @@ align-items: right;
   font-size: 22px;
 }
 
-.navbar-wagon ul {
+.my-navbar ul {
   margin: 0;
   padding: 0;
   white-space: nowrap;
