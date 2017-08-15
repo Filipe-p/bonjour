@@ -15,10 +15,6 @@ class CakesController < ApplicationController
   def fillings
     @normal_params = params
     @cake_params = cake_params
-
-    # if dough is blank?
-    # @fillings = Filling.all
-
     @dough = Dough.find(cake_params[:dough])
     @fillings = @dough.fillings
     respond_to do |format|
@@ -32,6 +28,10 @@ class CakesController < ApplicationController
     @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
     @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
     @decorations = Decoration.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -58,7 +58,7 @@ class CakesController < ApplicationController
         if @cake.save
           respond_to do |format|
             format.html { redirect_to order_path(@cake.order) }
-            format.js  # <-- will render `app/views/cakes/create.js.erb`
+ # <-- will render `app/views/cakes/create.js.erb`
           end
         else
           respond_to do |format|

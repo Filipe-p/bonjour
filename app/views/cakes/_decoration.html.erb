@@ -1,4 +1,4 @@
-<%= simple_form_for :cake, url: cakes_path(@cake_params), remote: true, method: :post do |f| %>
+<%= simple_form_for :cake, url: cakes_path(@cake_params), method: :post do |f| %>
   <%= f.input :decoration, collection: @decorations, as: :radio_buttons, input_html: {placeholder: "Choose a fantastic decoration"} %>
   <%= f.input :size, collection: Cake::SIZES, as: :radio_buttons, input_html: {placeholder: "Choose your favourite size"} %>
   <%= f.input :shape, collection: Cake::SHAPES, as: :radio_buttons, input_html: {placeholder: "Choose a fantastic shape"} %>

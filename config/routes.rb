@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   resources :cakes do
     collection do
-      get 'filling_preview'
       get 'doughs'
       get 'fillings'
       get 'decorations'
