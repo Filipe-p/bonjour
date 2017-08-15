@@ -15,7 +15,7 @@ class CakesController < ApplicationController
   def fillings
     @normal_params = params
     @cake_params = cake_params
-    @dough = cake_params[:dough] unless cake_params[:dough].blank?
+    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
     cake_params[:dough].blank? ? @fillings = Filling.all : @fillings = @dough.fillings
     respond_to do |format|
       format.html
@@ -25,12 +25,13 @@ class CakesController < ApplicationController
 
   def decorations
     @cake_params = cake_params
+    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
+    @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
     @decorations = Decoration.all
   end
 
   def create
 # Get all the params, create or find the order and create the cake
-
   # Possible bug here
     if session[:order_id].blank? || !Order.exists?(session[:order_id])
       @order = Order.new
@@ -48,15 +49,14 @@ class CakesController < ApplicationController
         @doughs = Dough.all
         render :doughs
       else
-        @cake = Cake.new(cake_params)
+        @cake = Cake.new(convert_params(cake_params))
         @cake.order = @order
         if @cake.save
           respond_to do |format|
-            format.html { redirect_to order_path(@cake) }
+            format.html { redirect_to order_path(@cake.order) }
             format.js  # <-- will render `app/views/cakes/create.js.erb`
           end
         else
-          raise
           respond_to do |format|
             format.html { render :doughs }
             format.js
@@ -94,11 +94,17 @@ class CakesController < ApplicationController
   private
 
   def cake_params
-    cake_params = params.require(:cake).permit(:dough, :filling, :decoration, :size, :shape)
-    cake_params[:dough] = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
-    cake_params[:filling] = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
-    cake_params[:decoration] = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
-    cake_params
+    params.require(:cake).permit(:dough, :filling, :decoration, :size, :shape)
+  end
+
+  def convert_params(cake_params)
+    result = {}
+    result[:dough] = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
+    result[:filling] = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
+    result[:decoration] = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
+    result[:size] = cake_params[:size] unless cake_params[:size].blank?
+    result[:shape] = cake_params[:shape] unless cake_params[:shape].blank?
+    result
   end
 
   def set_cake

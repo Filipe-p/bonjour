@@ -1,9 +1,10 @@
-<%= simple_form_for :cake, url: decorations_cakes_path, method: :get do |f| %>
+<%= simple_form_for :cake, url: decorations_cakes_path(@cake_params), method: :get do |f| %>
 <% @fillings.each do |filling| %>
   <div class="row filling-form">
     <div class="col-md-4" style = "height: 100px;"><%= image_tag("#{filling.name}.jpg") %></div>
     <div class="col-md-4 flexbox" style="height: 100px;"><%= filling.name %></div>
     <div class="col-md-4 flexbox" style="height: 100px;"><%= f.radio_button :filling, filling.id %></div>
+    <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
   </div>
 <% end %>
   <div class="flexbox">
