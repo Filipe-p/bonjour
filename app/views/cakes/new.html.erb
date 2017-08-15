@@ -5,9 +5,35 @@
       <div class="col-md-6" style = "background-color: #FFE8A7;">
         <%= render 'dough' %>
       </div>
+      <div class="col-md-6" id = "filling" style = "background-color: #FFE8A7;"></div>
     </div>
   </div>
 </div>
 
-<%= javascript_include_tag 'application.js' %>
-<%= javascript_include_tag "create.js" %>
+<% content_for(:after_js) do %>
+  <script>
+  $(document).ready(function(){
+    $("input").change(function(){
+    for (var i = 1; i < 6; i ++) {
+     var radioButton = $('#cake_dough_'+ i);
+     if (radioButton.prop("checked") == true){
+      var id = i;
+      }
+    }
+      $.ajax({
+        url: '<%= filling_preview_cakes_path %>',
+        type: 'GET',
+        data: {'cake' : {'dough' : id}},
+        dataType: "html",
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(error) {
+          console.log("AJAX Error: #{error}");
+        }
+
+      })
+    })
+  })
+  </script>
+<% end %>

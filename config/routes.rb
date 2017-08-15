@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get 'home2',     to: 'pages#home2'
   get 'gallery', to: 'pages#gallery'
 
-
   resources :cakes do
+    collection do
+      get 'filling_preview'
+    end
     resources :doughs do
       resources :fillings do
         resources :decorations

@@ -3,10 +3,14 @@ class CakesController < ApplicationController
   def index
   end
 
-  def new
+  def new # dough
     @cake = Cake.new
     @doughs = Dough.all
   end
+
+  # filling
+
+  # decorations
 
   def create
     if session[:order_id].blank? || !Order.exists?(session[:order_id])
@@ -56,6 +60,16 @@ def update
 end
 
 def delete
+end
+
+def filling_preview
+  @cake = Cake.new
+  @dough = cake_params[:dough]
+  @fillings = @dough.fillings
+  respond_to do |format|
+    format.js  # <-- will render `app/views/cakes/filling_preview.js.erb`
+  end
+
 end
 
 private
