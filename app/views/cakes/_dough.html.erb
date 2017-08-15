@@ -1,4 +1,4 @@
-<%= simple_form_for :cake, url: fillings_cakes_path, method: :get do |f| %>
+<%= simple_form_for :cake, url: fillings_cakes_path, remote: true, method: :get do |f| %>
 <% @doughs.each do |dough| %>
 <div class="row dough-form">
   <div class="col-md-4 flexbox" style = "height: 100px;"><%= image_tag("#{dough.name}.svg") %></div>

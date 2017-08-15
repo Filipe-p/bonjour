@@ -15,8 +15,12 @@ class CakesController < ApplicationController
   def fillings
     @normal_params = params
     @cake_params = cake_params
-    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
-    cake_params[:dough].blank? ? @fillings = Filling.all : @fillings = @dough.fillings
+
+    # if dough is blank?
+    # @fillings = Filling.all
+
+    @dough = Dough.find(cake_params[:dough])
+    @fillings = @dough.fillings
     respond_to do |format|
       format.html
       format.js
@@ -83,9 +87,8 @@ class CakesController < ApplicationController
   end
 
   def filling_preview
-    @cake = Cake.new
-    @dough = cake_params[:dough]
-    @fillings = @dough.fillings
+    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
+    @filling = @dough.fillings unless cake_params[:dough].blank?
     respond_to do |format|
       format.js  # <-- will render `app/views/cakes/filling_preview.js.erb`
     end
