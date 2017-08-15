@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   resources :cakes do
     collection do
       get 'filling_preview'
-    end
-    resources :doughs do
-      resources :fillings do
-        resources :decorations
-      end
+      get 'doughs'
+      get 'fillings'
+      get 'decorations'
     end
   end
 

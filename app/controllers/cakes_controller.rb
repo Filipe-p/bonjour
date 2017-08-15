@@ -8,11 +8,30 @@ class CakesController < ApplicationController
     @doughs = Dough.all
   end
 
-  # filling
+  def doughs
+    @doughs = Dough.all
+  end
 
-  # decorations
+  def fillings
+    @normal_params = params
+    @cake_params = cake_params
+    @dough = cake_params[:dough] unless cake_params[:dough].blank?
+    cake_params[:dough].blank? ? @fillings = Filling.all : @fillings = @dough.fillings
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def decorations
+    @cake_params = cake_params
+    @decorations = Decoration.all
+  end
 
   def create
+# Get all the params, create or find the order and create the cake
+
+  # Possible bug here
     if session[:order_id].blank? || !Order.exists?(session[:order_id])
       @order = Order.new
     else
@@ -27,18 +46,19 @@ class CakesController < ApplicationController
         flash[:alert] = "Seleccione uma opção"
         @cake = Cake.new
         @doughs = Dough.all
-        render "cakes/new"
+        render :doughs
       else
         @cake = Cake.new(cake_params)
         @cake.order = @order
         if @cake.save
           respond_to do |format|
-            format.html { redirect_to new_cake_dough_filling_path(@cake, @cake.dough) }
+            format.html { redirect_to order_path(@cake) }
             format.js  # <-- will render `app/views/cakes/create.js.erb`
           end
         else
+          raise
           respond_to do |format|
-            format.html { render :new }
+            format.html { render :doughs }
             format.js
           end
         end
@@ -48,40 +68,40 @@ class CakesController < ApplicationController
     end
   end
 
-def edit
-  if @cake.update(cake_params)
-    redirect_to cake_dough_filling_path(@cake, @cake.dough)
-  else
-    render :edit
-  end
-end
-
-def update
-end
-
-def delete
-end
-
-def filling_preview
-  @cake = Cake.new
-  @dough = cake_params[:dough]
-  @fillings = @dough.fillings
-  respond_to do |format|
-    format.js  # <-- will render `app/views/cakes/filling_preview.js.erb`
+  def edit
+    if @cake.update(cake_params)
+      redirect_to cake_dough_filling_path(@cake, @cake.dough)
+    else
+      render :edit
+    end
   end
 
-end
+  def update
+  end
 
-private
+  def delete
+  end
 
-def cake_params
+  def filling_preview
+    @cake = Cake.new
+    @dough = cake_params[:dough]
+    @fillings = @dough.fillings
+    respond_to do |format|
+      format.js  # <-- will render `app/views/cakes/filling_preview.js.erb`
+    end
+  end
 
-  cake_params = params.require(:cake).permit(:dough)
-  cake_params[:dough] = Dough.find(cake_params[:dough])
-  cake_params
-end
+  private
 
-def set_cake
-  @cake = Cake.find(params[:id])
-end
+  def cake_params
+    cake_params = params.require(:cake).permit(:dough, :filling, :decoration, :size, :shape)
+    cake_params[:dough] = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
+    cake_params[:filling] = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
+    cake_params[:decoration] = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
+    cake_params
+  end
+
+  def set_cake
+    @cake = Cake.find(params[:id])
+  end
 end
