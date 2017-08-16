@@ -1,0 +1,8 @@
+<%= simple_form_for :cake, url: cakes_path(@cake_params), method: :post do |f| %>
+  <%= f.input :decoration, collection: @decorations, as: :radio_buttons, input_html: {placeholder: "Choose a fantastic decoration"} %>
+  <%= f.input :size, collection: Cake::SIZES, as: :radio_buttons, input_html: {placeholder: "Choose your favourite size"} %>
+  <%= f.input :shape, collection: Cake::SHAPES, as: :radio_buttons, input_html: {placeholder: "Choose a fantastic shape"} %>
+  <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
+  <%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
+  <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
+<% end %>

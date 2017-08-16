@@ -1,0 +1,41 @@
+<div class="doughs" style = "padding-bottom: 100px; padding-top: 100px;">
+  <div class="container">
+    <div class="row" id = "steps">
+      <p class = "text-center" style = "font-size: 30px;">Escolha a massa do bolo</p>
+      <div class="col-md-6" id = "doughs" style = "background-color: #FFE8A7;">
+        <%= render 'dough' %>
+      </div>
+      <div class="col-md-6" id = "fillings" style = "background-color: #FFE8A7;"></div>
+    </div>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+  $(document).ready(function(){
+    $("#step1").attr('class', 'hidden');
+    $("input").change(function(){
+    for (var i = 1; i < 6; i ++) {
+     var radioButton = $('#cake_dough_'+ i);
+     if (radioButton.prop("checked") == true){
+      var id = i;
+      }
+    }
+      $.ajax({
+        url: '<%= fillings_cakes_path %>',
+        type: 'GET',
+        data: {'cake' : {'dough' : id}},
+        dataType: "script",
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(error) {
+          console.log("AJAX Error: #{error}");
+        }
+
+      })
+      $("#fillings").empty();
+    })
+  })
+  </script>
+<% end %>

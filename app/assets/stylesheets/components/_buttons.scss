@@ -1,38 +1,41 @@
-.my-btn {
-  background-color: black;
-  border-radius: 4px;
-  padding: 11px 15px;
+.cta-btn {
+  padding-right: 40px;
+  padding-left: 40px;
   color: white;
   font-weight: bold;
+  font-size: 25px;
+  line-height: 70px;
+  margin-top: 50px;
+  border: 2px solid white;
+  position: relative;
+  border-radius: 0px;
+  white-space: normal;
 }
 
-// .my-btn:hover {
-//   background-color: black;
-//   border-color: $lightblue;
-//   color: white;
+.cta-btn:hover {
+  color: white;
+  text-decoration: none;
+}
 
-// }
+.cta-btn-red {
+ background-color: $red;
+ box-shadow: 0 0 0 4px $red, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+}
+.cta-btn-blue {
+ background-color: $blue;
+ box-shadow: 0 0 0 4px $blue, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+}
+
+.cta-btn-small {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
 .cta-btn-big {
   padding-right: 40px;
   padding-left: 40px;
- color: white;
- font-weight: bold;
- font-size: 25px;
- line-height: 70px;
- margin-top: 50px;
- background-color: #ef5352;
- border: 2px solid white;
- position: relative;
- box-shadow: 0 0 0 4px #ef5352, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
- border-radius: 0px;
- white-space: normal;
 }
 
-.cta-btn-big:hover {
-color: white;
-text-decoration: none;
-}
 
 .btn-facebook,
 .btn-facebook:link,

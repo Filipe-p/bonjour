@@ -1,0 +1,30 @@
+<%= render "filling" %>
+
+<% content_for(:after_js) do %>
+  <script>
+  $(document).ready(function(){
+    $("input").change(function(){
+    for (var i = 1; i < 6; i ++) {
+     var radioButton = $('#cake_filling_'+ i);
+     if (radioButton.prop("checked") == true){
+      var id = i;
+      }
+    }
+      $.ajax({
+        url: '<%= decorations_cakes_path %>',
+        type: 'GET',
+        data: {'cake' : {'fillings' : id}},
+        dataType: "script",
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(error) {
+          console.log("AJAX Error: #{error}");
+        }
+
+      })
+      $("#fillings").empty();
+    })
+  })
+  </script>
+<% end %>

@@ -1,0 +1,4 @@
+var decorations = $("<%= j render 'decoration', dough: @dough, fillings: @fillings, decorations: @decorations %>");
+$("#doughs").empty();
+$("#fillings").empty();
+$("#steps").append(decorations);
