@@ -1,2 +1,11 @@
 <h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<% unless @order.cakes.blank? %>
+  <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
+    <p> <%= cake.size %> <%= cake.shape %> <%= cake.dough.name %> with <%= cake.filling.name %></p>
+  <% end %>
+  <%= link_to 'Still hungry!', new_cake_path %>
+  <%= link_to 'Pay now', new_order_payment_path(@order) %>
+
+<% else %>
+  <%= link_to 'Order a wonderfull cake!', new_cake_path %>
+<% end %>
