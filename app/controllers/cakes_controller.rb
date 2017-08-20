@@ -1,6 +1,7 @@
 class CakesController < ApplicationController
+  include ApplicationHelper
+
   before_action :set_cake, only: [:edit, :update, :destroy]
-  before_action :current_order, only: [:create, :destroy]
   def index
   end
 
@@ -52,6 +53,7 @@ class CakesController < ApplicationController
   def create
 # Get all the params, create or find the order and create the cake
   # Possible bug here
+    @order = current_order
     @order.user = current_user unless current_user.blank?
 
     if @order.save
@@ -93,6 +95,7 @@ class CakesController < ApplicationController
   end
 
   def destroy
+    @order = current_order
     @cake.destroy
     respond_to do |format|
       format.html {redirect_to order_path(@order)}
@@ -118,13 +121,5 @@ class CakesController < ApplicationController
 
   def set_cake
     @cake = Cake.find(params[:id])
-  end
-
-  def current_order
-    if session[:order_id].blank? || !Order.exists?(session[:order_id])
-      @order = Order.new
-    else
-      @order = Order.find(session[:order_id])
-    end
   end
 end

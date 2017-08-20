@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :orders do
     resources :payments, only: [:new, :create]
+    member do
+      get 'confirmation'
+    end
   end
-  get 'orders/confirmation', to: 'orders#confirmation'
 end
