@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'doughs'
       get 'fillings'
       get 'decorations'
+      get 'features'
     end
   end
 

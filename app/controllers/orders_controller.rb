@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    @orders = Order.where(user: current_user)
   end
 
   def show
@@ -7,6 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @order = Order.new
   end
 
   def create
