@@ -1,11 +1,16 @@
 class CakesController < ApplicationController
-  before_action :set_cake, only: [:edit, :update]
+  before_action :set_cake, only: [:edit, :update, :destroy]
+  before_action :current_order, only: [:create, :destroy]
   def index
   end
 
   def new # dough
     @cake = Cake.new
     @doughs = Dough.all
+    render :doughs
+  end
+
+  def show
   end
 
   def doughs
@@ -13,7 +18,6 @@ class CakesController < ApplicationController
   end
 
   def fillings
-    @normal_params = params
     @cake_params = cake_params
     @dough = Dough.find(cake_params[:dough])
     @fillings = @dough.fillings
@@ -34,15 +38,20 @@ class CakesController < ApplicationController
     end
   end
 
+  def features
+    @cake_params = cake_params
+    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
+    @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
+    @decoration = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def create
 # Get all the params, create or find the order and create the cake
   # Possible bug here
-    if session[:order_id].blank? || !Order.exists?(session[:order_id])
-      @order = Order.new
-    else
-      @order = Order.find(session[:order_id])
-    end
-
     @order.user = current_user unless current_user.blank?
 
     if @order.save
@@ -83,14 +92,11 @@ class CakesController < ApplicationController
   def update
   end
 
-  def delete
-  end
-
-  def filling_preview
-    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
-    @filling = @dough.fillings unless cake_params[:dough].blank?
+  def destroy
+    @cake.destroy
     respond_to do |format|
-      format.js  # <-- will render `app/views/cakes/filling_preview.js.erb`
+      format.html {redirect_to order_path(@order)}
+      format.js
     end
   end
 
@@ -112,5 +118,13 @@ class CakesController < ApplicationController
 
   def set_cake
     @cake = Cake.find(params[:id])
+  end
+
+  def current_order
+    if session[:order_id].blank? || !Order.exists?(session[:order_id])
+      @order = Order.new
+    else
+      @order = Order.find(session[:order_id])
+    end
   end
 end

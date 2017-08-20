@@ -1,0 +1,4 @@
+var features = $("<%= j render 'feature', dough: @dough, filling: @filling, decoration: @decoration %>");
+$("#doughs").empty();
+$("#fillings").empty();
+$("#steps").append(features);
