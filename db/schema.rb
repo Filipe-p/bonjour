@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813170115) do
+ActiveRecord::Schema.define(version: 20170820183725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cakes", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.string "description"
     t.string "size"
     t.string "shape"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170813170115) do
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["decoration_id"], name: "index_cakes_on_decoration_id"
     t.index ["dough_id"], name: "index_cakes_on_dough_id"
     t.index ["filling_id"], name: "index_cakes_on_filling_id"
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20170813170115) do
 
   create_table "decorations", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "dough_fillings", force: :cascade do |t|
@@ -65,18 +65,18 @@ ActiveRecord::Schema.define(version: 20170813170115) do
 
   create_table "doughs", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "fillings", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "order_others", force: :cascade do |t|
@@ -90,24 +90,26 @@ ActiveRecord::Schema.define(version: 20170813170115) do
 
   create_table "orders", force: :cascade do |t|
     t.string "address"
-    t.float "cost"
     t.bigint "user_id"
     t.datetime "delivery_datetime"
     t.string "contact_name"
     t.integer "contact_telephone"
     t.string "contact_email"
+    t.string "state", default: "Awaiting Payment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cost_cents", default: 0, null: false
+    t.json "payment"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "others", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.string "description"
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["order_id"], name: "index_others_on_order_id"
   end
 
@@ -127,6 +129,11 @@ ActiveRecord::Schema.define(version: 20170813170115) do
     t.boolean "admin", default: false, null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

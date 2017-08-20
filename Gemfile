@@ -17,6 +17,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+gem 'omniauth-facebook'
+
 gem 'cloudinary'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
@@ -27,7 +29,8 @@ gem 'postmark-rails'
 
 gem 'rails-assets-swipebox', source: 'https://rails-assets.org'
 
-
+gem 'money-rails'
+gem 'stripe'
 
 group :development, :test do
   gem 'better_errors'

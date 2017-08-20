@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
 
   get 'about',       to: 'pages#about'
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :orders do
     resources :payments, only: [:new, :create]
+    member do
+      get 'confirmation'
+    end
   end
-  get 'orders/confirmation', to: 'orders#confirmation'
 end

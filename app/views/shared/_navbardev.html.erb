@@ -54,7 +54,12 @@
         <%= image_tag "circle.png" %>
         <% end %>
       </div>
-      <div class="col-xs-4 header-right"><%= image_tag "cart-simple.svg" %></div>
+      <div class="col-xs-4 header-right">
+      <!-- order_path(current_order) -->
+        <%= link_to new_order_path do %>
+          <%= image_tag "cart-simple.svg" %>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-12 header-nav hidden-xs hidden-sm">
       <div class="menu">
