@@ -55,7 +55,8 @@
         <% end %>
       </div>
       <div class="col-xs-4 header-right">
-        <%= link_to order_path(current_order) do %>
+      <!-- order_path(current_order) -->
+        <%= link_to new_order_path do %>
           <%= image_tag "cart-simple.svg" %>
         <% end %>
       </div>
