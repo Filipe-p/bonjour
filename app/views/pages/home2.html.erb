@@ -1,13 +1,15 @@
 <div class = "banner2">
-  <div class="banner-wrapper" style = "height: 100%">
-    <div class = "banner-content" style = "height: 100%">
-    <div class="container" style = "height: 100%">
-      <div class="row" style = "height: 100%;">
-        <div class="col-md-4 col-md-offset-8 text-right flexbox" style = "height: 100%">
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn flex-item-small" %>
+    <div class="custom-container" style = "height: 100%">
+      <div class=" banner-wrapper row" style = "height: 100%;">
+          <div class = "banner-content" style = "height: 100%">
+        <div class="col-md-6 col-md-offset-6 text-left flexbox" style = "height: 100%">
+        <div>
+        <h1>Pastelaria Bonjour</h1>
+        <h3>Crie o seu bolo online!</h3>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-size cta-btn-red btn flex-item-small" %>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
@@ -16,8 +18,8 @@
   <div class="container">
     <div class="row row-height">
       <div class = "text-left text-normal" style = "margin-bottom: 100px;">
-        <h3> Como Funciona</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
+        <h3 class = "padding-bottom-20"> Como Funciona</h3>
+        <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
       <div class="col-md-6 side">
         <div class="card-cake">
@@ -25,17 +27,19 @@
         </div>
       </div>
       <div class="col-md-6 cake-steps">
+      <div class="cake-steps-content padding-bottom-20">
         <div>
-          <p> <span><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>
+          <p class = "padding-bottom-20"> <span class = "padding-right-20"><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>
           Escolha a massa e recheio</p>
         </div>
         <div>
-          <p><span><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Escolha a decoração</p>
+          <p class = "padding-bottom-20"> <span class = "padding-right-20"><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Escolha a decoraçãoe o tamanho</p>
         </div>
         <div>
-          <p> <span><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Escolha a forma e o tamanho</p>
+          <p class = "padding-bottom-20"> <span class = "padding-right-20"><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Receba a sua encomenda em casa</p>
         </div>
-
+        </div>
+<%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %>
       </div>
     </div>
   </div>
@@ -46,7 +50,7 @@
 </div>
 </div>
 
-<div class = "historia" style = "min-height: 60vh; padding: 100px 100px;">
+<div class = "historia padding-top-bottom-100" style = "min-height: 60vh;">
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -57,10 +61,10 @@
     </div>
     <div class="col-md-6 text-left text-normal">
       <div>
-        <h3>História da Bonjour</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
+        <h3 class = "padding-bottom-20">História da Bonjour</h3>
+        <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
 
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn" %>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn cta-btn-size" %>
 
       </div>
     </div>
@@ -89,15 +93,17 @@
                 <div class="item active">
 
                     <!-- Slide Background -->
-                    <img src="https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+              <%= image_tag "toa-heftiba-84799 copy4.jpg" %>
                     <div class="bs-slider-overlay"></div>
 
                     <div class="container">
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
-                                <p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
+                                <h1 data-animation="animated zoomInRight">Veja os nossos bolos</h1>
+                                <p data-animation="animated fadeInLeft">Ou faça já o seu online.</p>
+                                <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-wagon-item cta-btn cta-btn-white margin-right-20" %>
+                                 <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red" %>
                             </div>
                         </div>
                     </div>
@@ -106,14 +112,16 @@
 
                 <!-- Second Slide -->
                 <div class="item">
-
+<%= image_tag "toa-heftiba-84799 copy.jpg" %>
                     <!-- Slide Background -->
-                    <img src="https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <!-- <img src="toa-heftiba-84799.jpg" alt="Bootstrap Touch Slider" class="slide-image"/> -->
                     <div class="bs-slider-overlay"></div>
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">Bootstrap touch slider</h1>
-                        <p data-animation="animated lightSpeedIn">Make Bootstrap Better together.</p>
+                        <h1 data-animation="animated flipInX">Veja os nossos bolos</h1>
+                        <p data-animation="animated lightSpeedIn">Ou faça já o seu online.</p>
+                        <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-wagon-item cta-btn cta-btn-white margin-right-20" %>
+                     <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red" %>
                     </div>
                 </div>
                 <!-- End of Slide -->
@@ -122,12 +130,14 @@
                 <div class="item">
 
                     <!-- Slide Background -->
-                    <img src="https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <%= image_tag "rachael-gorjestani-197369.jpg" %>
                     <div class="bs-slider-overlay"></div>
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_right">
-                        <h1 data-animation="animated zoomInLeft">Beautiful Animations</h1>
-                        <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
+                        <h1 data-animation="animated zoomInLeft">Veja os nossos bolos</h1>
+                        <p data-animation="animated fadeInRight">Ou faça já o seu online.</p>
+                        <%= link_to t(".top_call_to_action margin-right-20", default: "Galeria"), gallery_path, class: "navbar-wagon-item cta-btn cta-btn-white" %>
+                         <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red" %>
                     </div>
                 </div>
                 <!-- End of Slide -->

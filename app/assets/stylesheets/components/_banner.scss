@@ -22,39 +22,81 @@
 //background-size: cover
 }
 .banner2 {
-  height: calc(100vh - 306px);
-  background-image: url("SC-slider-celebrationcake2.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.banner-wrapper {
-  display: flex;
-  align-items: right;
-  justify-content: space-around;
-
+.banner2 h1 {
+  padding-bottom: 20px;
 }
 
-.banner-content {
-    padding: 100px 100px;
+.banner2 h3 {
+  padding-bottom: 20px;
+  color: white;
 }
+
+// MEDIA QUERIES FOR BANNER2
+//**************************
+@include media("<=phoneSmall") {
+  .banner2 {
+    height: calc(100vh - 100px);
+    background-image: url("SC-slider-celebrationcake-mobile2.jpg");
+  }
+  .banner-content h3 {
+  font-size: 15px;
+  }
+  .banner-content h1 {
+  font-size: 30px;
+}
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@include media(">phoneSmall") {
+  .banner-content h1 {
+    font-size: 80px;
+  }
+    .banner-content h3 {
+  font-size: 50px;
+  }
+  .banner2 {
+    height: calc(100vh - 306px);
+    background-image: url("SC-slider-celebrationcake2.jpg");
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@include media(">=1150px") {
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+//*************************
+
+
 .banner-content h1{
-  font-size: 80px;
   color: white;
   font-weight: bold;
   text-shadow: 0.5px 0.5px #d1d0cc;
 }
 
 .banner-content h2{
-  font-size: 50px;
+
   color: white;
   font-weight: bold;
   text-shadow: 0.5px 0.5px #d1d0cc;
 }
 
 .banner-content p {
-  font-size: 40px;
   color: white;
+  font-size: 40px;
 
 }
 
@@ -91,18 +133,11 @@ line-height: 1.85714286em;
 }
 
 .how-it-works h3 {
-  padding-bottom: 20px;
   font-size: 30px;
 }
 
-.how-it-works p {
-  padding-bottom: 20px;
-}
 
 .how-it-works .cake-steps {
   font-size: 20px;
 }
 
-.how-it-works span {
-  padding-right: 20px;
-}
