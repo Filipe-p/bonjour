@@ -1,5 +1,14 @@
 <%= simple_form_for :cake, url: features_cakes_path(@cake_params), remote: true, method: :get do |f| %>
-  <%= f.input :decoration, collection: @decorations, as: :radio_buttons, input_html: {placeholder: "Choose a fantastic decoration"} %>
+<div class="row dough-form">
+<% @decorations.each do |decoration| %>
+
+  <div class="col-md-4">
+      <%= image_tag("cake.png") %>
+      <%= f.radio_button :decoration, decoration.id %>
+  </div>
+
+    <% end %>
+  </div>
   <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
   <%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
   <%= f.submit "Go", class: "btn btn-lg btn-primary"%>

@@ -1,16 +1,22 @@
 <div class = "banner2">
-  <div class="banner-wrapper">
-    <div class = "banner-content text-center flexbox">
-<%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red cta-btn-big btn flex-item" %>
+  <div class="banner-wrapper" style = "height: 100%">
+    <div class = "banner-content" style = "height: 100%">
+    <div class="container" style = "height: 100%">
+      <div class="row" style = "height: 100%;">
+        <div class="col-md-4 col-md-offset-8 text-right flexbox" style = "height: 100%">
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn flex-item-small" %>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
 
-<div style = "min-height: 100vh; padding: 100px 100px;">
+<div class = "how-it-works">
   <div class="container">
-    <div class="row">
-      <div class = "text-left" style = "margin-bottom: 100px;">
-        <h1> Como Funciona</h1>
+    <div class="row row-height">
+      <div class = "text-left text-normal" style = "margin-bottom: 100px;">
+        <h3> Como Funciona</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
       <div class="col-md-6 side">
@@ -18,18 +24,16 @@
           <%= image_tag "cartao-bonjour.jpg" %>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 cake-steps">
         <div>
-          <i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i>
-          <h3>Escolha a massa e recheio</h3>
+          <p> <span><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>
+          Escolha a massa e recheio</p>
         </div>
         <div>
-          <i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i>
-          <h3>Escolha a decoração</h3>
+          <p><span><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Escolha a decoração</p>
         </div>
         <div>
-          <i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i>
-          <h3>Escolha a forma e o tamanho</h3>
+          <p> <span><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Escolha a forma e o tamanho</p>
         </div>
 
       </div>
@@ -42,17 +46,21 @@
 </div>
 </div>
 
-<div style = "min-height: 60vh; padding: 100px 100px;">
+<div class = "historia" style = "min-height: 60vh; padding: 100px 100px;">
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <img src="http://unsplash.it/200/200" alt="">
+    <div class="polaroids">
+    <%= image_tag "pastelaria.jpg" %>
+
+      </div>
     </div>
-    <div class="col-md-6 text-left">
+    <div class="col-md-6 text-left text-normal">
       <div>
         <h3>História da Bonjour</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
-        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red cta-btn-big btn" %>
+
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn" %>
 
       </div>
     </div>
@@ -90,8 +98,6 @@
                             <div class="slide-text slide_style_left">
                                 <h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
                                 <p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
-                                <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
-                                <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
                             </div>
                         </div>
                     </div>
@@ -108,8 +114,6 @@
                     <div class="slide-text slide_style_center">
                         <h1 data-animation="animated flipInX">Bootstrap touch slider</h1>
                         <p data-animation="animated lightSpeedIn">Make Bootstrap Better together.</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
-                        <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a>
                     </div>
                 </div>
                 <!-- End of Slide -->
@@ -124,8 +128,6 @@
                     <div class="slide-text slide_style_right">
                         <h1 data-animation="animated zoomInLeft">Beautiful Animations</h1>
                         <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
                     </div>
                 </div>
                 <!-- End of Slide -->
