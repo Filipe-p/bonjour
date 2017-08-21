@@ -35,52 +35,6 @@
   color: white;
 }
 
-// MEDIA QUERIES FOR BANNER2
-//**************************
-@include media("<=phoneSmall") {
-  .banner2 {
-    height: calc(100vh - 100px);
-    background-image: url("SC-slider-celebrationcake-mobile2.jpg");
-  }
-  .banner-content h3 {
-  font-size: 15px;
-  }
-  .banner-content h1 {
-  font-size: 30px;
-}
-  .banner2 .custom-container {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
-
-@include media(">phoneSmall") {
-  .banner-content h1 {
-    font-size: 80px;
-  }
-    .banner-content h3 {
-  font-size: 50px;
-  }
-  .banner2 {
-    height: calc(100vh - 306px);
-    background-image: url("SC-slider-celebrationcake2.jpg");
-  }
-
-  .banner2 .custom-container {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
-
-@include media(">=1150px") {
-  .banner2 .custom-container {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
-//*************************
-
-
 .banner-content h1{
   color: white;
   font-weight: bold;
@@ -107,7 +61,6 @@
 }
 
 .parallax {
-  background: url("13.jpg") repeat fixed 100%;
   height: 70vh;
   background-size: cover;
   background-position: center;
@@ -140,4 +93,93 @@ line-height: 1.85714286em;
 .how-it-works .cake-steps {
   font-size: 20px;
 }
+
+// MEDIA QUERIES
+//**************************
+@include media("<=phoneSmall") {
+  .banner2 {
+    height: calc(100vh - 100px);
+    background-image: url("SC-slider-celebrationcake-mobile2.jpg");
+  }
+  .banner-content h3 {
+  font-size: 20px;
+  }
+  .banner-content h1 {
+  font-size: 40px;
+}
+  .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .parallax {
+    background: url("13-mobile.jpg") repeat fixed 100%;
+    background-size: cover;
+  }
+}
+
+@include media(">phoneSmall", "<=tablet") {
+  .banner-content {
+    text-align: right;
+  }
+
+  .banner-content h1 {
+    font-size: 80px;
+  }
+    .banner-content h3 {
+  font-size: 50px;
+  }
+  .banner2 {
+    height: calc(100vh - 306px);
+    background-image: url("SC-slider-celebrationcake2.jpg");
+  }
+
+  .banner2 .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .parallax {
+    background: url("13-tablet.jpg") repeat fixed 100%;
+    background-size: cover;
+  }
+}
+
+
+@include media(">tablet") {
+  .banner-content h1 {
+    font-size: 80px;
+  }
+  .banner-content h3 {
+    font-size: 50px;
+  }
+  .banner2 {
+    height: calc(100vh - 306px);
+    background-image: url("SC-slider-celebrationcake2.jpg");
+  }
+
+  .custom-container {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+   .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .parallax {
+    background: url("13.jpg") repeat fixed 100%;
+    background-size: cover;
+  }
+}
+
+// @include media(">=1024px") {
+//   .banner2 .custom-container {
+//     margin-left: 50px;
+//     margin-right: 50px;
+//   }
+// }
+//*************************
+
 

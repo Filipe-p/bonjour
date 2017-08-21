@@ -2,7 +2,7 @@
     <div class="custom-container" style = "height: 100%">
       <div class=" banner-wrapper row" style = "height: 100%;">
           <div class = "banner-content" style = "height: 100%">
-        <div class="col-md-6 col-md-offset-6 text-left flexbox" style = "height: 100%">
+        <div class="col-md-6 col-md-offset-6 col-sm-12 flexbox" style = "height: 100%">
         <div>
         <h1>Pastelaria Bonjour</h1>
         <h3>Crie o seu bolo online!</h3>
@@ -15,13 +15,13 @@
 </div>
 
 <div class = "how-it-works">
-  <div class="container">
+  <div class="custom-container">
     <div class="row row-height">
       <div class = "text-left text-normal" style = "margin-bottom: 100px;">
         <h3 class = "padding-bottom-20"> Como Funciona</h3>
         <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
-      <div class="col-md-6 side">
+      <div class="col-md-6 card-cake-wrapper">
         <div class="card-cake">
           <%= image_tag "cartao-bonjour.jpg" %>
         </div>
@@ -29,14 +29,14 @@
       <div class="col-md-6 cake-steps">
       <div class="cake-steps-content padding-bottom-20">
         <div>
-          <p class = "padding-bottom-20"> <span class = "padding-right-20"><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>
+          <p class = "padding-bottom-20"> <span class = "padding-right-20"><%= image_tag "muffin.svg" %></span>
           Escolha a massa e recheio</p>
         </div>
         <div>
-          <p class = "padding-bottom-20"> <span class = "padding-right-20"><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Escolha a decoraçãoe o tamanho</p>
+          <p class = "padding-bottom-20"> <span class = "padding-right-20"><%= image_tag "muffin.svg" %></span>Escolha a decoraçãoe o tamanho</p>
         </div>
         <div>
-          <p class = "padding-bottom-20"> <span class = "padding-right-20"><i class="fa fa-check-circle-o" aria-hidden="true" style = "font-size: 50px"></i></span>Receba a sua encomenda em casa</p>
+          <p class = "padding-bottom-20"> <span class = "padding-right-20"><%= image_tag "muffin.svg" %></span>Receba a sua encomenda em casa</p>
         </div>
         </div>
 <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %>
@@ -51,7 +51,7 @@
 </div>
 
 <div class = "historia padding-top-bottom-100" style = "min-height: 60vh;">
-<div class="container">
+<div class="custom-container">
   <div class="row">
     <div class="col-md-6">
     <div class="polaroids">
@@ -136,7 +136,7 @@
                     <div class="slide-text slide_style_right">
                         <h1 data-animation="animated zoomInLeft">Veja os nossos bolos</h1>
                         <p data-animation="animated fadeInRight">Ou faça já o seu online.</p>
-                        <%= link_to t(".top_call_to_action margin-right-20", default: "Galeria"), gallery_path, class: "navbar-wagon-item cta-btn cta-btn-white" %>
+                        <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-wagon-item cta-btn cta-btn-white margin-right-20" %>
                          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red" %>
                     </div>
                 </div>
