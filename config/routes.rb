@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'contacts',     to: 'pages#contacts'
   get 'home2',     to: 'pages#home2'
   get 'gallery', to: 'pages#gallery'
+  get 'design', to: 'pages#design'
 
   resources :cakes do
     collection do

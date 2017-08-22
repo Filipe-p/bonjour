@@ -94,8 +94,35 @@
   font-size: 20px;
 }
 
+.banner-contacts {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("10473367_1424513991168939_5482884653258251894_n.jpg");
+  background-size: cover;
+  height: calc(100vh - 306px);
+}
+
+.banner-contacts .custom-container {
+  padding: 50px 50px;
+  height: 100%
+}
+
+.contacts-wrapper {
+  padding: 100px 100px;
+}
+
+.contact-col {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.banner-design {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("7.jpg");
+  background-size: cover;
+  height: calc(100vh - 306px);
+  padding: 100px 100px;
+}
+
 // MEDIA QUERIES
-//**************************
+/*---------- iphone4 and iphone5 ----------*/
 @include media("<=phoneSmall") {
   .banner2 {
     height: calc(100vh - 100px);
@@ -116,6 +143,7 @@
   }
 }
 
+/*---------- iphone6 6plus, tablets ----------*/
 @include media(">phoneSmall", "<=tablet") {
   .banner-content {
     text-align: right;
@@ -154,6 +182,7 @@
   }
 }
 
+/*---------- Small desktop screens ----------*/
 @include media(">tablet", "<desktop") {
   .banner-content h1 {
     font-size: 80px;
@@ -177,6 +206,7 @@
   }
 }
 
+/*---------- Medium desktop screens ----------*/
 @include media(">=desktop", "<1500px") {
   .banner-content h1 {
     font-size: 80px;
@@ -205,6 +235,7 @@
   }
 }
 
+/*---------- Big desktop screens ----------*/
 @include media(">=1500px") {
   .banner-content h1 {
     font-size: 80px;

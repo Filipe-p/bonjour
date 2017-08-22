@@ -54,28 +54,33 @@
         <ul>
           <li>
             <%= link_to root_path do %>
-             Home
+              Home
             <% end %>
           </li>
           <li>
             <%= link_to about_path do %>
-            About
+              About
             <% end %>
           </li>
           <li>
-          <%= link_to new_cake_path do %>
-            Order
+            <%= link_to new_cake_path do %>
+              Order
             <% end %>
-
-            </li>
-          <li>Cake Design</li>
-          <li><%= link_to gallery_path do %>
-            Galeria
-            <% end %></li>
+          </li>
           <li>
-          <%= link_to contacts_path do %>
-            Contactos
-          <% end %>
+            <%= link_to design_path do %>
+              Cake Design
+            <% end %>
+          </li>
+          <li>
+            <%= link_to gallery_path do %>
+              Galeria
+            <% end %>
+          </li>
+          <li>
+            <%= link_to contacts_path do %>
+              Contactos
+            <% end %>
           </li>
         </ul>
       </div>

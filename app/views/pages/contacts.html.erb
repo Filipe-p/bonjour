@@ -1,18 +1,36 @@
-<div class = "container">
-  <h1>Contacts</h1>
-</div>
+<!-- <div class = "container">
+  <h1>Contactos</h1>
+</div> -->
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <%= image_tag "cake_1.jpg"%>
-    <div class="col-md-6">
-      <%= render "contactform"%>
+<div class="banner-contacts">
+<div class="custom-container">
+  <div class="row" style="height: 100%">
+    <div class="col-md-3 card-contacts" style="height: 100%">
+      <h1>Contactos</h1>
+      <h4>Morada</h4>
+      <p>Estrada da Ribeira 32, 2775-290 Cascais</p>
+      <h4>Telefone</h4>
+      <p>968 244 660</p>
+      <h4>Horario</h4>
+      <p>2ª: fechado</p>
+      <p>3ª a Sabado 7:00 - 20:00</p>
+      <p>Domingo 8:00 - 20:00</p>
     </div>
   </div>
 </div>
+</div>
 
-<div id="map" style="width: 100%; height: 50vh;"></div>
+<div class="contacts-wrapper">
+  <div class="container">
+    <div class="row row-height">
+      <div class="col-md-6 contact-col">
+        <%= render "contactform"%>
+      </div>
+      <div class="col-md-6 contact-col" id="map">
+      </div>
+    </div>
+  </div>
+</div>
 
 <% content_for(:after_js) do %>
 

@@ -93,6 +93,15 @@ border: 2px solid black;
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
 }
 
+.card-contacts {
+  height: 100%;
+  background-color: white;
+  padding: 50px 50px;
+  display: flex;
+  align-items: left;
+  justify-content: space-around;
+  flex-direction: column;
+}
 
 //MEDIA QUERIES
 
