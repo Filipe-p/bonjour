@@ -3,22 +3,16 @@
 * {
   margin: 0;
 }
+
 html, body {
   height: 100%;
 }
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -70px;
-}
+
 .page-wrap:after {
   content: "";
   display: block;
 }
-.footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-  height: 70px;
-}
+
 .footer {
   background: black;
   padding: 13px 30px;
@@ -28,9 +22,11 @@ html, body {
 .footer p {
   margin-top: 17px;
 }
+
 .footer ul {
   margin-top: 10px;
 }
+
 .footer a {
   color: #CCCCCC;
   font-size: 10px;
@@ -38,6 +34,31 @@ html, body {
   transition: color 0.5s ease;
   text-decoration: none;
 }
+
 .footer a:hover{
   color: #D23333;
+}
+
+// @include media("<tablet") {
+//   .page-wrap {
+//     min-height: 100%;
+//     /* equal to footer height */
+//     margin-bottom: -70px;
+//   }
+//   .footer, .page-wrap:after {
+//     /* .push must be the same height as footer */
+//     height: 70px;
+//   }
+// }
+
+@include media(">=tablet") {
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -70px;
+  }
+  .footer, .page-wrap:after {
+    /* .push must be the same height as footer */
+    height: 70px;
+  }
 }

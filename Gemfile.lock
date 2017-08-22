@@ -94,8 +94,10 @@ GEM
       railties (>= 3.2, < 5.2)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     haml (5.0.1)
       temple (>= 0.8.0)
       tilt
@@ -188,6 +190,7 @@ GEM
       railties (= 5.1.2)
       sprockets-rails (>= 2.0.0)
     rails-assets-swipebox (1.4.4)
+    rails-assets-underscore (1.8.3)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -278,9 +281,12 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   cloudinary
+  coffee-rails
   devise
   figaro
   font-awesome-sass
+  geocoder
+  gmaps4rails
   include_media_rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -293,6 +299,7 @@ DEPENDENCIES
   puma
   rails (= 5.1.2)
   rails-assets-swipebox!
+  rails-assets-underscore!
   rails_admin (>= 1.0.0.rc)
   redis
   remotipart!
