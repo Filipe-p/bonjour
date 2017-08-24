@@ -7,51 +7,25 @@
   padding: 0px 30px;
   color: black;
   position: relative;
+  z-index: 500;
 }
 
-@include media("<tablet") {
-  .my-navbar {
-    height: 100px;
-  }
-
-  .my-navbar .header-logo {
-    padding: 20px 0;
-  }
-
-  .navbar-wagon-brand img {
-    max-width: 50px;
-  }
-
-  .header-center img {
-    flex: 0 0 33.33333%;
-    padding: 40px 0;
-  }
-
-  .my-navbar .header-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.navbar-size-big {
+  height: 306px;
 }
 
-
-@include media(">=tablet") {
-  .my-navbar {
-    height: 306px;
-  }
-
-  .my-navbar .header-logo {
-    padding: 40px 0;
-  }
-
-  .navbar-wagon-brand img {
-    max-width: 150px;
-    height: auto;
-    vertical-align: top;
-    line-height: 1.8;
-  }
+.navbar-size-small {
+  height: 100px;
 }
 
+.navbar-fixed  {
+  position: fixed;
+  top: 0px;
+}
+
+.header-nav img {
+  max-width: 50px;
+}
 
 .navbar-wagon2 {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -88,38 +62,39 @@
 }
 
 .my-navbar .header-right {
-display: flex;
-align-items: center;
-justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .my-navbar .header-left {
-display: flex;
-align-items: center;
-justify-content: flex-end;
-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: gray;
 }
 
 .header-right img {
-    flex: 0 0 33.33333%;
-  max-width: 33.33333%;
-    padding: 40px 0;
+  flex: 0 0 33.33333%;
+  padding: 40px 0;
 }
 
 .header-left img {
-    flex: 0 0 33.33333%;
-    padding: 40px 0;
+  flex: 0 0 33.33333%;
+  padding: 40px 0;
 }
 
 .my-navbar .header-nav {
   position: relative;
   text-align: center;
-  border-top: 1px solid #f4f4f4;
   min-height: 1px;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  flex: 0 0 100%;
   max-width: 100%;
+}
+
+.header-nav-border {
+  border-top: 1px solid #f4f4f4;
 }
 
 .header-nav .menu {
@@ -135,7 +110,7 @@ color: gray;
   white-space: nowrap;
   padding-right: 20px;
   padding-left: 20px;
-  font-size: 22px;
+  //font-size: 22px;
 }
 
 .my-navbar ul {
@@ -144,11 +119,11 @@ color: gray;
   white-space: nowrap;
   position: static;
   z-index: 2;
-  font-weight: 700;
+  font-weight: 400;
   font-style: "normal";
   line-height: 1.5;
   letter-spacing: .11em;
-  font-family: "Pacifico";
+  //font-family: "Pacifico";
 }
 
 
@@ -284,7 +259,8 @@ color: gray;
 }
 
 .menu a {
-  color: black;
+  //color: black;
+    color: #696969;
 }
 
 .menu a:hover {
@@ -295,4 +271,50 @@ color: gray;
 
 .row-xs-center {
   height: 100%
+}
+
+
+//-------MEDIA QUERIES-------
+
+@include media("<tablet") {
+  .my-navbar {
+  height: 100px;
+  }
+
+  .my-navbar .header-logo {
+    padding: 20px 0;
+  }
+
+  .navbar-wagon-brand img {
+    max-width: 50px;
+  }
+
+  .header-center img {
+    flex: 0 0 33.33333%;
+    padding: 40px 0;
+  }
+
+  .my-navbar .header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+@include media(">=tablet") {
+  .navbar-size-big{
+    height: 306px;
+  }
+
+  .my-navbar .header-logo {
+    padding: 40px 0;
+  }
+
+  .navbar-wagon-brand img {
+    max-width: 150px;
+    height: auto;
+    vertical-align: top;
+    line-height: 1.8;
+  }
 }

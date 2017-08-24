@@ -8,47 +8,21 @@
   white-space: wrap;
 }
 
-.cta-btn:hover {
+.cta-btn-red:hover {
   color: white;
   text-decoration: none;
     opacity: 0.8;
-
 }
 
-
-@include media("<=phoneSmall") {
-  .cta-btn-size {
-    padding: 10px 15px;
-  }
+.cta-btn-white:hover {
+  color: $red;
+  text-decoration: none;
+  opacity: 0.8;
 }
-
-@include media(">phoneSmall", "<=tablet") {
-  .cta-btn-size {
-  padding: 0.8em 2.8em;
-  }
-}
-
-@include media(">tablet") {
-  .banner2 .custom-container {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-
-  .cta-btn-size {
-    padding: 1.3em 3.2em;
-  }
-}
-
 
 .cta-btn-red {
  background-color: $red;
  box-shadow: 0 0 0 4px $red, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
- border: 2px solid white;
- color: white;
-}
-.cta-btn-blue {
- background-color: $blue;
- box-shadow: 0 0 0 4px $blue, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
  border: 2px solid white;
  color: white;
 }
@@ -74,4 +48,33 @@
 
 .btn-facebook:hover {
   background-color: #5e8eed;
+}
+
+
+.historia .btn {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@include media("<=phoneSmall") {
+  .cta-btn-size {
+    padding: 10px 15px;
+  }
+}
+
+@include media(">phoneSmall", "<=tablet") {
+  .cta-btn-size {
+  padding: 0.8em 2.8em;
+  }
+}
+
+@include media(">tablet") {
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .cta-btn-size {
+    padding: 1.3em 3.2em;
+  }
 }

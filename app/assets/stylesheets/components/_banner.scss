@@ -78,6 +78,7 @@
 
 .historia p {
   padding-bottom: 20px;
+
 }
 
 .how-it-works {
@@ -119,6 +120,15 @@
   background-size: cover;
   height: calc(100vh - 306px);
   padding: 100px 100px;
+}
+
+.banner-about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.banner-about h1 {
+  padding-bottom: 50px;
 }
 
 // MEDIA QUERIES
@@ -180,6 +190,11 @@
   .polaroids-wrapper {
     padding-bottom: 20px;
   }
+}
+
+.banner-gallery {
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 /*---------- Small desktop screens ----------*/

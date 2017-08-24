@@ -54,7 +54,7 @@
 <div class="custom-container">
   <div class="row">
     <div class="col-md-6 polaroids-wrapper">
-    <div class="polaroids">
+    <div class="polaroids polaroids-right">
     <%= image_tag "pastelaria.jpg" %>
 
       </div>
@@ -64,7 +64,8 @@
         <h3 class = "padding-bottom-20">História da Bonjour</h3>
         <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
 
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn cta-btn-size" %>
+         <span> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-wagon-item cta-btn cta-btn-red btn cta-btn-size" %>
+          <%= link_to t(".top_call_to_action", default: "Ler mais"), about_path, class: "navbar-wagon-item cta-btn cta-btn-white btn cta-btn-size" %></span>
 
       </div>
     </div>

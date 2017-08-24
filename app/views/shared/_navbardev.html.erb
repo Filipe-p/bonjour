@@ -1,7 +1,7 @@
-<div class="my-navbar">
+<div class="my-navbar transition-smooth">
   <!-- Logo -->
   <div  class = "row row-xs-center">
-    <div class="row row-height col-md-12 header-logo">
+    <div class="row row-height col-md-12 header-logo" id = "row-header-logo">
       <div class="col-xs-4 header-left">
         <div class = "navbar-wagon-left hidden-xs hidden-sm">
           <% if user_signed_in? %>
@@ -54,7 +54,10 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-12 header-nav hidden-xs">
+    <div class="col-md-12 header-nav hidden-xs header-nav-border flexbox" id = "row-header-nav">
+    <div class = "hidden" id = "hidden-logo">
+    <%= image_tag "circle.png" %>
+    </div>
       <div class="menu">
         <ul>
           <li>
