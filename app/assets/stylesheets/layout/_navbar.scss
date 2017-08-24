@@ -9,6 +9,50 @@
   position: relative;
 }
 
+@include media("<tablet") {
+  .my-navbar {
+    height: 100px;
+  }
+
+  .my-navbar .header-logo {
+    padding: 20px 0;
+  }
+
+  .navbar-wagon-brand img {
+    max-width: 50px;
+  }
+
+  .header-center img {
+    flex: 0 0 33.33333%;
+    padding: 40px 0;
+  }
+
+  .my-navbar .header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+@include media(">=tablet") {
+  .my-navbar {
+    height: 306px;
+  }
+
+  .my-navbar .header-logo {
+    padding: 40px 0;
+  }
+
+  .navbar-wagon-brand img {
+    max-width: 150px;
+    height: auto;
+    vertical-align: top;
+    line-height: 1.8;
+  }
+}
+
+
 .navbar-wagon2 {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: white;
@@ -41,28 +85,19 @@
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
-  padding: 40px 0;
-}
-
-.my-navbar .header-center {
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
-  min-width: 70px;
 }
 
 .my-navbar .header-right {
 display: flex;
-align-items: left;
+align-items: center;
+justify-content: flex-start;
 }
 
 .my-navbar .header-left {
 display: flex;
-align-items: right;
-}
-
-.header-left {
-display: flex;
-align-items: right;
+align-items: center;
+justify-content: flex-end;
+color: gray;
 }
 
 .header-right img {
@@ -110,9 +145,10 @@ align-items: right;
   position: static;
   z-index: 2;
   font-weight: 700;
-  font-style: normal;
+  font-style: "normal";
   line-height: 1.5;
   letter-spacing: .11em;
+  font-family: "Pacifico";
 }
 
 
@@ -127,19 +163,11 @@ align-items: right;
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  max-width: 150px;
   height: auto;
   vertical-align: top;
   line-height: 1.8;
 }
 
-/* Navbar logo */
-.navbar-wagon-brand-small img {
-  max-width: 100px;
-  height: auto;
-  vertical-align: top;
-  line-height: 1.8;
-}
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-left {
@@ -253,4 +281,18 @@ align-items: right;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.menu a {
+  color: black;
+}
+
+.menu a:hover {
+  color: black;
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.row-xs-center {
+  height: 100%
 }

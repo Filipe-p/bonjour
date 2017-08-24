@@ -1,8 +1,7 @@
 <div class="my-navbar">
   <!-- Logo -->
-
   <div  class = "row row-xs-center">
-    <div class="row col-md-12 header-logo">
+    <div class="row row-height col-md-12 header-logo">
       <div class="col-xs-4 header-left">
         <div class = "navbar-wagon-left hidden-xs hidden-sm">
           <% if user_signed_in? %>
@@ -10,7 +9,7 @@
           <!-- Profile picture and dropdown -->
           <div class="navbar-wagon-item">
             <div class="dropdown header-left">
-            <% avatar_url = "http://placehold.it/30x30" %>
+              <% avatar_url = "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
               <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                 <li>
@@ -26,12 +25,9 @@
               </ul>
             </div>
           </div>
-
           <% else %>
-
           <!-- Login text link -->
           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
           <% end %>
         </div>
         <!-- Dropdown list appearing on mobile only -->
@@ -47,10 +43,7 @@
         </div>
       </div>
       <div class="col-xs-4 header-center">
-        <%= link_to root_path, class: "navbar-wagon-brand hidden-xs hidden-sm" do %>
-        <%= image_tag "circle.png" %>
-        <% end %>
-        <%= link_to root_path, class: "navbar-wagon-brand-small hidden-md hidden-lg" do %>
+        <%= link_to root_path, class: "navbar-wagon-brand" do %>
         <%= image_tag "circle.png" %>
         <% end %>
       </div>
@@ -61,29 +54,39 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-12 header-nav hidden-xs hidden-sm">
+    <div class="col-md-12 header-nav hidden-xs">
       <div class="menu">
         <ul>
           <li>
             <%= link_to root_path do %>
-            Home
+              Home
             <% end %>
           </li>
           <li>
             <%= link_to about_path do %>
-            About
+              About
             <% end %>
           </li>
           <li>
-          <%= link_to new_cake_path do %>
-            Order
+            <%= link_to new_cake_path do %>
+              Order
             <% end %>
-
-            </li>
-          <li>Cake Design</li>
-          <li><%= link_to gallery_path do %>
-            Galeria
-            <% end %></li>
+          </li>
+          <li>
+            <%= link_to design_path do %>
+              Cake Design
+            <% end %>
+          </li>
+          <li>
+            <%= link_to gallery_path do %>
+              Galeria
+            <% end %>
+          </li>
+          <li>
+            <%= link_to contacts_path do %>
+              Contactos
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
