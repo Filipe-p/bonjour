@@ -1,15 +1,21 @@
-<%= simple_form_for :cake, url: features_cakes_path(@cake_params), remote: true, method: :get do |f| %>
+<%= simple_form_for :cake, url: cakes_path(@cake_params), method: :post do |f| %>
 <div class="row dough-form">
+<div class="col-md-8">
 <% @decorations.each do |decoration| %>
 
   <div class="col-md-4">
-      <%= image_tag("cake.png") %>
+      <%= image_tag("hummingbird-bakery-UK-DF4CA8.jpg") %>
       <%= f.radio_button :decoration, decoration.id %>
   </div>
 
     <% end %>
+    </div>
+    <div class="col-md-4">
+     <%= f.input :size, collection: Cake::SIZES, as: :radio_buttons, input_html: {placeholder: "Choose your favourite size"} %>
+  <%= f.input :message, as: :text, input_html: {placeholder: "Leave a message"} %>
+  </div>
   </div>
   <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
   <%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
-  <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
+  <%= f.submit "Proximo passo", class: "btn btn-lg btn-default"%>
 <% end %>

@@ -39,16 +39,6 @@ class CakesController < ApplicationController
     end
   end
 
-  def features
-    @cake_params = cake_params
-    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
-    @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
-    @decoration = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
 
   def create
 # Get all the params, create or find the order and create the cake

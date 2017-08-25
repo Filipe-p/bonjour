@@ -1,35 +1,11 @@
-<div class="doughs" style = "padding-bottom: 100px; padding-top: 100px;">
+<div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
   <div class="container">
-<!--   <ul class="steps">
-  <li class="step completed">
-    <div class="step-info">
-      <span class="step-name">Massa e Recheio</span>
-    </div>
-  </li>
-
-  <li class="step active">
-    <div class="step-info">
-      <span class="step-name">Decoração</span>
-    </div>
-  </li>
-  <li class="step">
-    <div class="step-info">
-      <span class="step-name">Caracteristicas</span>
-    </div>
-  </li>
-  <li class="step">
-    <div class="step-info">
-      <span class="step-name">Pagamento</span>
-    </div>
-  </li>
-</ul> -->
-
-    <div class="row">
-      <p class = "text-center" id = "step-title" style = "font-size: 30px;">Escolha a massa do bolo</p>
-      <div class="col-md-8" id = "dynamic-content">
+   <div class="row" id = "dynamic-row" >
+      <h1 id = "step-title" style = "font-size: 30px;">Escolha a massa do bolo</h1>
+      <div class="col-md-8" id = "dynamic-content1">
         <%= render 'dough' %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" id = "dynamic-content2">
 
       </div>
     </div>
@@ -40,17 +16,6 @@
   <script>
   $(document).ready(function(){
     $("#step1").attr('class', 'hidden');
-
-//Scroll and fix cart
-    $(window).scroll(function(){
-      var wrap = $(".cart-wrapper");
-      if ($(window).scrollTop() > 500) {
-        wrap.addClass("fix-cart");
-      } else {
-        wrap.removeClass("fix-cart");
-      }
-    });
-
     $("input").change(function(){
     for (var i = 1; i < 6; i ++) {
      var radioButton = $('#cake_dough_'+ i);
@@ -71,7 +36,7 @@
         }
 
       })
-      $("#fillings").empty();
+      $("#dynamic-content2").empty();
     })
   })
   </script>

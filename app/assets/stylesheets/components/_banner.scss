@@ -131,6 +131,12 @@
   padding-bottom: 50px;
 }
 
+.banner-doughs {
+  background-image: url("637633634.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
 // MEDIA QUERIES
 /*---------- iphone4 and iphone5 ----------*/
 @include media("<=phoneSmall") {
@@ -231,7 +237,7 @@
   }
   .banner2 {
     height: calc(100vh - 306px);
-    background-image: url("SC-slider-celebrationcake2.jpg");
+    background-image: url("5.jpg");
   }
 
   .how-it-works .custom-container {
@@ -260,7 +266,7 @@
   }
   .banner2 {
     height: calc(100vh - 306px);
-    background-image: url("SC-slider-celebrationcake2.jpg");
+    background-image: url("5.jpg");
   }
 
   .how-it-works .custom-container {
