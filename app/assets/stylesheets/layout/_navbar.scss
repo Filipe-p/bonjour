@@ -1,9 +1,9 @@
 /* Main class */
-.my-navbar {
+.navbar-ac {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: white;
   transition: all 0.3s ease;
-  height: 306px;
+  height: 150px;
   padding: 0px 30px;
   color: black;
   position: relative;
@@ -11,7 +11,7 @@
 }
 
 .navbar-size-big {
-  height: 306px;
+  height: 150px;
 }
 
 .navbar-size-small {
@@ -27,7 +27,7 @@
   max-width: 50px;
 }
 
-.navbar-wagon2 {
+.navbar-ac2 {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: white;
   transition: all 0.3s ease;
@@ -40,14 +40,14 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand-2 img {
+.navbar-ac-brand-2 img {
   max-width: 50px;
   height: auto;
   vertical-align: top;
   line-height: 1.8;
 }
 
-.my-navbar .row-xs-center {
+.navbar-ac .row-xs-center {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -55,19 +55,19 @@
   margin-right: -0.9375rem;
 }
 
-.my-navbar .header-logo {
+.navbar-ac .header-logo {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
 }
 
-.my-navbar .header-right {
+.navbar-ac .header-right {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.my-navbar .header-left {
+.navbar-ac .header-left {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -76,15 +76,15 @@
 
 .header-right img {
   flex: 0 0 33.33333%;
-  padding: 40px 0;
+  //padding: 40px 0;
 }
 
 .header-left img {
   flex: 0 0 33.33333%;
-  padding: 40px 0;
+  //padding: 40px 0;
 }
 
-.my-navbar .header-nav {
+.navbar-ac .header-nav {
   position: relative;
   text-align: center;
   min-height: 1px;
@@ -104,7 +104,7 @@
   padding-bottom: 20px;
 }
 
-.my-navbar li {
+.navbar-ac li {
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -113,7 +113,7 @@
   //font-size: 22px;
 }
 
-.my-navbar ul {
+.navbar-ac ul {
   margin: 0;
   padding: 0;
   white-space: nowrap;
@@ -128,7 +128,7 @@
 
 
 /* Optional class to fix the navbar on top */
-.navbar-wagon-fixed {
+.navbar-ac-fixed {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -137,7 +137,7 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
+.navbar-ac-brand img {
   height: auto;
   vertical-align: top;
   line-height: 1.8;
@@ -145,36 +145,36 @@
 
 
 /* Navbar right section (with form, links, button) */
-.navbar-wagon-left {
+.navbar-ac-left {
   display: flex;
   align-items: right;
 }
 
-.navbar-wagon-center {
+.navbar-ac-center {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Navbar item */
-.navbar-wagon-item {
+.navbar-ac-item {
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar standard link */
-.navbar-wagon-link {
+.navbar-ac-link {
   color: white;
   font-size: 14px;
 }
-.navbar-wagon-link:hover {
+.navbar-ac-link:hover {
   color: white;
   text-decoration: none;
 }
 
 /* Navbar right button */
-.navbar-wagon-button {
+.navbar-ac-button {
   margin-left: 10px;
   padding: 0 20px;
   border-radius: 20em;
@@ -184,21 +184,21 @@
   font-size: 14px;
   border: 2px solid $purple;
 }
-.navbar-wagon-button:hover {
+.navbar-ac-button:hover {
   color: white;
   background: #D23333;
   border-color: #ac2626;
 }
 
 /* Navbar search form */
-.navbar-wagon-search {
+.navbar-ac-search {
   flex: 0 1 300px;
   display: flex;
   justify-content: flex-end;
   padding: 0 10px;
   position: relative;
 }
-.navbar-wagon-search-btn {
+.navbar-ac-search-btn {
   line-height: 40px;
   color: #E6E6E6;
   border: none;
@@ -208,7 +208,7 @@
   top: -2px;
   z-index: 1;
 }
-.navbar-wagon-search-input {
+.navbar-ac-search-input {
   flex: 0 1 300px;
   transition: all 0.15s ease;
   line-height: 40px;
@@ -220,17 +220,17 @@
   font-size: 14px;
   outline: none;
 }
-.navbar-wagon-search-input:focus  {
+.navbar-ac-search-input:focus  {
   border: 1px solid #CCCCCC;
 }
 
 /* Navbar dropdown menu */
-.navbar-wagon-dropdown-menu {
+.navbar-ac-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
-.navbar-wagon-dropdown-menu li > a {
+.navbar-ac-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
@@ -240,12 +240,12 @@
 }
 
 
-.navbar-wagon-dropdown-menu li > a:hover {
+.navbar-ac-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;
 }
 
-.navbar-wagon-dropdown-menu:before {
+.navbar-ac-dropdown-menu:before {
   content: ' ';
   height: 10px;
   width: 10px;
@@ -277,24 +277,24 @@
 //-------MEDIA QUERIES-------
 
 @include media("<tablet") {
-  .my-navbar {
+  .navbar-ac {
   height: 100px;
   }
 
-  .my-navbar .header-logo {
+  .navbar-ac .header-logo {
     padding: 20px 0;
   }
 
-  .navbar-wagon-brand img {
+  .navbar-ac-brand img {
     max-width: 50px;
   }
 
   .header-center img {
     flex: 0 0 33.33333%;
-    padding: 40px 0;
+    //padding: 40px 0;
   }
 
-  .my-navbar .header-center {
+  .navbar-ac .header-center {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,15 +304,15 @@
 
 @include media(">=tablet") {
   .navbar-size-big{
-    height: 306px;
+    height: 150px;
   }
 
-  .my-navbar .header-logo {
-    padding: 40px 0;
+  .navbar-ac .header-logo {
+    padding: 10px 0;
   }
 
-  .navbar-wagon-brand img {
-    max-width: 150px;
+  .navbar-ac-brand img {
+    max-width: 50px;
     height: auto;
     vertical-align: top;
     line-height: 1.8;

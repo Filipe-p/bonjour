@@ -54,7 +54,7 @@
 }
 
 .banner-section{
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   background: gray;
   vertical-align: middle;
 }
@@ -98,7 +98,7 @@
 .banner-contacts {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("10473367_1424513991168939_5482884653258251894_n.jpg");
   background-size: cover;
-  height: calc(100vh - 306px);
+  height: calc(70vh - 100px);
 }
 
 .banner-contacts .custom-container {
@@ -118,7 +118,7 @@
 .banner-design {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("7.jpg");
   background-size: cover;
-  height: calc(100vh - 306px);
+  height: calc(100vh - 100px);
   padding: 100px 100px;
 }
 
@@ -132,8 +132,8 @@
 }
 
 .banner-doughs {
-  background-image: url("637633634.jpg");
-  background-size: cover;
+  // background-image: url("637633634.jpg");
+  // background-size: cover;
   height: 100vh;
 }
 
@@ -174,7 +174,7 @@
   }
 
   .banner2 {
-    height: calc(100vh - 306px);
+    height: calc(100vh - 100px);
     background-image: url("SC-slider-celebrationcake2.jpg");
   }
 
@@ -212,7 +212,7 @@
     font-size: 50px;
   }
   .banner2 {
-    height: calc(100vh - 306px);
+    height: calc(100vh - 100px);
     background-image: url("SC-slider-celebrationcake2.jpg");
   }
 
@@ -236,8 +236,8 @@
     font-size: 50px;
   }
   .banner2 {
-    height: calc(100vh - 306px);
-    background-image: url("5.jpg");
+    height: calc(100vh - 100px);
+    background-image: url("SC-slider-celebrationcake2.jpg");
   }
 
   .how-it-works .custom-container {
@@ -265,8 +265,8 @@
     font-size: 50px;
   }
   .banner2 {
-    height: calc(100vh - 306px);
-    background-image: url("5.jpg");
+    height: calc(100vh - 100px);
+    background-image: url("SC-slider-celebrationcake2.jpg");
   }
 
   .how-it-works .custom-container {

@@ -1,3 +1,5 @@
+<div class="container form-wrapper" >
+<div class="row">
 <h1>Order</h1>
 <% unless @order.cakes.blank? %>
   <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
@@ -10,3 +12,5 @@
 <% else %>
   <%= link_to 'Order a wonderfull cake!', new_cake_path %>
 <% end %>
+</div>
+</div>

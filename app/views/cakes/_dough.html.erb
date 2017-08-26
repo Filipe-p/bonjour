@@ -1,15 +1,12 @@
 <%= simple_form_for :cake, url: fillings_cakes_path, remote: true, method: :get do |f| %>
-<% @doughs.each do |dough| %>
-<div class="row dough-form">
-
-  <div class="col-md-4">
-      <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
+<div class="col-md-1"></div>
+  <% @doughs.each do |dough| %>
+  <div class="col-md-2">
+     <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
+    <%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%>
   </div>
-
-  <div class="col-md-4 flexbox" style = "height: 100px;"><%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%></div>
-</div>
+  <% end %>
+  <div class="col-md-1"></div>
+  <div class="flexbox"><%= f.submit "Próximo passo", class: "btn cta-btn cta-btn-blue cta-btn-small", id: "step1" %></div>
 <% end %>
-<div class="flexbox"><%= f.submit "Próximo passo", class: "btn cta-btn cta-btn-blue cta-btn-small", id: "step1" %></div>
-<% end %>
-
 <div id = "fillings"></div>
