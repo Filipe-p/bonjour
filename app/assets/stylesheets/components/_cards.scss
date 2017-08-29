@@ -87,6 +87,13 @@
   position: relative;
   z-index: 5;
 }
+
+.banner-about .polaroids img:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  position: relative;
+  z-index: 5;
+}
 /* Add drop shadows and smooth out the transition (Safari only) */
 .polaroids img {
   -webkit-transition: -webkit-transform .15s linear;
