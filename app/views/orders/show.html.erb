@@ -1,16 +1,21 @@
-<div class="container form-wrapper" >
-<div class="row">
-<h1>Order</h1>
-<% unless @order.cakes.blank? %>
-  <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
-    <p> <%= cake.size %> <%= cake.shape %> <%= cake.dough.name %> with <%= cake.filling.name %></p>
-    <p><%= link_to "Delete cake #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
-  <% end %>
-  <%= link_to 'Still hungry!', new_cake_path %>
-  <%= link_to 'Pay now', new_order_payment_path(@order) %>
+<div class="banner-orders">
+  <div class="container" >
+    <div class="form-wrapper">
+      <div class="row">
+        <h1>Encomenda</h1>
+        <% unless @order.cakes.blank? %>
+        <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
+        <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
+        <p><%= link_to "Apagar bolo #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
+        <% end %>
+        <%= link_to 'Encomendar outro bolo', new_cake_path %>
+        <%= link_to 'Pagar', new_order_payment_path(@order) %>
+        <% else %>
+        <%= link_to 'Encomendar outro bolo', new_cake_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% else %>
-  <%= link_to 'Order a wonderfull cake!', new_cake_path %>
-<% end %>
-</div>
-</div>
+

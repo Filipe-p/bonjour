@@ -1,9 +1,37 @@
 <div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
-  <div class="container form-wrapper">
-   <div class="row row-height" id = "dynamic-content">
-      <h1 id = "step-title" style = "font-size: 30px;">Escolha a decoração do bolo</h1>
+  <div class="container">
+  <div class="form-wrapper">
+   <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
         <%= render "decoration" %>
 
       </div>
+      <div class = "hidden" id="submit-btn">Próximo passo</div>
   </div>
 </div>
+</div>
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $("#step2").attr('class', 'hidden'); //hide submit button
+    $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
+    $("#submit-btn").removeClass("hidden");
+    $('.dough-label').click(function(){
+      //Get decoration id
+      var decorId =  $(this).attr('id');
+      var split = decorId.split("decor_i_");
+      var decorIdNum = Number(split[1]);
+      //Select corresponding input
+      $("#cake_decoration_" + decorIdNum).prop("checked", true);
+      //When choosing decoration, remove color and selection from all the other decorations
+      $(this).addClass("label-color");
+      $('.dough-label').not(this).removeClass("label-color");
+    })
+     $("#submit-btn").click(function(e){
+    //   if (($("*[id*=cake_decoration_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
+       $("#step2").click();
+    // }
+     })
+  })
+</script>
+<% end %>

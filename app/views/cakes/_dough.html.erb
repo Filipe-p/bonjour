@@ -3,8 +3,12 @@
     <div class="col-md-1"></div>
     <% @doughs.each do |dough| %>
     <div class="col-md-2 doughs" id = "div_<%= dough.id %>">
-      <i class="fa fa-circle-o i-dough" id = "dough_i_<%= dough.id %>" aria-hidden="true"></i>
-      <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
+      <div class = "img-dough-wrapper" >
+        <div class="row">
+        <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
+        </div>
+        <div class="row dough-label" id = "dough_i_<%= dough.id %>"><p>Seleccionar</p></div>
+      </div>
       <div class="dough-radio radio-hide">
         <%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%>
       </div>
