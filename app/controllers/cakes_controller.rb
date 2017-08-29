@@ -16,13 +16,7 @@ class CakesController < ApplicationController
 
   def doughs
     @doughs = Dough.all
-  end
-
-  def fillings
-    @cake_params = cake_params
-    @dough = Dough.find(cake_params[:dough])
-    @fillings = @dough.fillings
-    respond_to do |format|
+      respond_to do |format|
       format.html
       format.js
     end
@@ -38,7 +32,6 @@ class CakesController < ApplicationController
       format.js
     end
   end
-
 
   def create
 # Get all the params, create or find the order and create the cake

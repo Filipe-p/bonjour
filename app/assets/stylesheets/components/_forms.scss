@@ -4,11 +4,44 @@
   height: 500px;
   padding-right: 20px;
   padding-left: 20px;
+  position: relative;
 }
 
 .simple_form {
   width: 100%;
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+#submit-btn {
+  font-weight: bold;
+  position: relative;
+  border-radius: 4px;
+  white-space: normal;
+  font-size: 14px;
+  letter-spacing: .091em;
+  white-space: wrap;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: $red;
+  padding: 10px 15px;
+  color: white;
+}
+
+.radio-circle {
+  height: 20px;
+  width: 20px;
+  border: 2px solid gray;
+  border-radius: 50%
+}
+
+.radio-circle-color {
+  color: $red;
+}
+
+.radio-circle-full {
+  border-radius: 50%;
+  background-color: $red;
 }

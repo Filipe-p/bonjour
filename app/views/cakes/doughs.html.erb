@@ -1,45 +1,62 @@
 <div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
   <div class="container form-wrapper">
-   <div class="row" id = "dynamic-row">
-      <h1 id = "step-title" style = "font-size: 30px;">Escolha a massa do bolo</h1>
-      <div class="col-md-12 flexbox" id = "dynamic-content1">
-        <%= render 'dough' %>
-      </div>
-      </div>
-      <div class="row">
-      <div class="col-md-12" id = "dynamic-content2">
+   <div class="row row-height" id = "dynamic-content">
+    <h1 id = "step-title" style = "font-size: 30px;">Escolha a massa do bolo</h1>
+    <%= render 'dough' %>
 
-      </div>
-      </div>
   </div>
+  <div id="submit-btn">Próximo passo</div>
+</div>
 </div>
 
-<% content_for(:after_js) do %>
-  <script>
-  $(document).ready(function(){
-    $("#step1").attr('class', 'hidden');
-    $("input").change(function(){
-    for (var i = 1; i < 6; i ++) {
-     var radioButton = $('#cake_dough_'+ i);
-     if (radioButton.prop("checked") == true){
-      var id = i;
-      }
-    }
-      $.ajax({
-        url: '<%= fillings_cakes_path %>',
-        type: 'GET',
-        data: {'cake' : {'dough' : id}},
-        dataType: "script",
-        success: function(data) {
-          console.log(data);
-        },
-        error: function(error) {
-          console.log("AJAX Error: #{error}");
-        }
+<div class="ui-widget">
+    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+        <p>
+            <span class="ui-icon ui-icon-alert"
+                style="float: left; margin-right: .3em;"></span>
+            <strong>Alert:</strong> Sample ui-state-error style.
+        </p>
+    </div>
+</div>
 
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $("#step1").attr('class', 'hidden'); //hide submit button
+    $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
+    $('.i-dough').click(function(){
+      //Get dough id
+      var doughId =  $(this).attr('id');
+      var split = doughId.split("dough_i_");
+      var doughIdNum = Number(split[1]);
+      //Select corresponding input
+      $("#cake_dough_" + doughIdNum).prop("checked", true);
+      //When choosing dough, remove color and selection from all the other doughs
+      $(this).addClass("radio-circle-color radio-circle-full");
+      $('.i-dough').not(this).removeClass("radio-circle-color radio-circle-full");
+      //When choosing dough, remove color and selection from all fillings belonging to other doughs
+      $("#div_" + doughIdNum + " i").removeClass("radio-circle");
+      $("#div_" + doughIdNum + " i").addClass("radio-circle-color");
+      $(".fillings i").not("#div_" + doughIdNum + " i").removeClass("radio-circle-color radio-circle-full");
+      $(".fillings input").not("#div_" + doughIdNum + " i").prop('checked', false);
+      //When choosing a filling, remove selection of other fillings and select corresponding radio button
+      $("#div_" + doughIdNum + " i").click(function(e){
+        if ($("#cake_dough_" + doughIdNum).prop('checked') == true) {
+          var fillingId = $(this).attr('id');
+          var splitFill = fillingId.split("i_");
+          var fillingIdNum = Number(splitFill[1]);
+          $(".i-filling").not(this).removeClass('radio-circle-full');
+          $(this).addClass("radio-circle-full");
+          $("#cake_filling_" + fillingIdNum).prop('checked', true);
+        }
       })
-      $("#dynamic-content2").empty();
+    })
+    $("#submit-btn").click(function(e){
+      if (($("*[id*=cake_dough_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
+      $("#step1").click();
+    }
     })
   })
-  </script>
+</script>
 <% end %>
