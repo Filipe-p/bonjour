@@ -1,9 +1,17 @@
 .form-wrapper {
-  border: 2px solid gray;
+  border: 2px solid $purple;
   border-radius: 4px;
   height: 700px;
   padding: 20px 20px;
   position: relative;
+}
+
+.form-wrapper h1 {
+  font-weight: 300;
+}
+
+.form-wrapper .row{
+  margin: 0 0;
 }
 
 .simple_form {
@@ -15,7 +23,7 @@
 }
 
 #submit-btn {
-  font-weight: bold;
+  font-weight: 300;
   position: relative;
   border-radius: 4px;
   white-space: normal;
@@ -25,7 +33,7 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: $red;
+  background-color: $purple;
   padding: 10px 15px;
   color: white;
 }
@@ -42,12 +50,12 @@
 }
 
 .radio-circle-color {
-  color: $red;
+  color: $purple;
 }
 
 .radio-circle-full {
   border-radius: 50%;
-  background-color: $red;
+  background-color: $purple;
 }
 #dynamic-content {
   margin: 0px 0px;
@@ -64,10 +72,10 @@ margin-top: 0px;
 .dough-label {
   width: 100%;
   height: 30px;
-  border: 2px solid gray;
+  border: 2px solid $lightpurple;
   padding: 2px 2px;
   border-radius: 4px;
-  background-color: gray;
+  background-color: $lightpurple;
 }
 
 .dough-label p{
@@ -81,8 +89,8 @@ opacity: 1;
 }
 
 .label-color {
-  background-color: $red;
-  border-color: $red;
+  background-color: $purple;
+  border-color: $purple;
 }
 
 .label-color p{

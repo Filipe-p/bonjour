@@ -35,6 +35,10 @@
   padding-right: 0px;
 }
 
+.step-wrapper img{
+max-width:30px;
+}
+
 .dough-card {
   position: relative;
   cursor: pointer;
@@ -127,10 +131,6 @@
     width: 230px;
   }
 
-  .card-cake-wrapper {
-    margin-bottom: 100px;
-  }
-
   .polaroids {
     width: 200px;
   }
@@ -150,10 +150,6 @@
     width: 250px;
   }
 
-  .card-cake-wrapper {
-    margin-bottom: 100px;
-  }
-
   .polaroids {
     width: 300px;
   }
@@ -164,10 +160,6 @@
     position: relative;
     display: inline-block;
     width: 250px;
-  }
-
-  .card-cake-wrapper {
-    margin-bottom: 100px;
   }
 
   .polaroids {
@@ -182,10 +174,6 @@
     width: 320px;
   }
 
-  .card-cake-wrapper {
-    margin-bottom: 100px;
-  }
-
   .polaroids {
     width: 300px;
   }
@@ -196,10 +184,6 @@
     position: relative;
     display: inline-block;
     width: 320px;
-  }
-
-  .card-cake-wrapper {
-    margin-bottom: 100px;
   }
 
   .polaroids {

@@ -1,12 +1,22 @@
 <div class="banner-orders">
+<div class="container">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
+      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
+      <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
+      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
+    </ul>
+  </div>
+</div>
   <div class="container" >
-    <div class="form-wrapper">
+    <div class="form-wrapper" style = "overflow: scroll;">
       <div class="row">
         <h1>Encomenda</h1>
         <% unless @order.cakes.blank? %>
         <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
-        <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
-        <p><%= link_to "Apagar bolo #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
+        <p id = "cake_<%=cake.id%>">Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
+        <p id = "delete_btn_<%=cake.id%>"><%= link_to "Apagar bolo #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
         <% end %>
         <%= link_to 'Encomendar outro bolo', new_cake_path %>
         <%= link_to 'Pagar', new_order_payment_path(@order) %>
@@ -17,5 +27,27 @@
     </div>
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $("#wiz-1").addClass("completed");
+    $("#wiz-2").addClass("completed");
+    $("#wiz-3").addClass("active");
+    $("*[id*=delete_btn_]").click(function(){
+     var btnId = $(this).attr("id");
+     var split = btnId.split("delete_btn_");
+     var cakeId = "#cake_" + split[1];
+     console.log(cakeId);
+     $(cakeId).remove();
+     $(this).remove();
+
+    })
+
+  })
+</script>
+<% end %>
+
 
 

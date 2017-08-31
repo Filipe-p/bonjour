@@ -1,84 +1,3 @@
-// /* Boilerplate */
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Helvetica Neue", Helvetica, sans-serif;
-// }
-
-// body {
-//   padding-top: 50px;
-//   --primary-color: hsl(200, 100%, 80%);
-//   --active-color: hsl(200, 100%, 50%);
-// }
-
-// /* Steps Component */
-// .steps {
-//   counter-reset: step;
-//   max-width: 80%;
-//   margin: auto;
-//   display: flex;
-//   position: relative;
-//   list-style: none;
-// }
-
-// .step {
-//   color: var(--primary-color);
-//   flex: 1;
-//   counter-increment: step;
-//   padding-top: calc(40px + 1rem); /*40px is for the circle*/
-//   text-align: center;
-//   position: relative;
-//   background-image: linear-gradient(to bottom, transparent calc(20px - 2px), currentColor 0, currentColor calc(20px + 2px), transparent 0);
-//   font-weight: 100;
-// }
-
-// .step::before {
-//   display: flex;
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: var(--primary-color);
-//   content: counter(step);
-//   position: absolute;
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-//   font-size: 1.5rem;
-//   top: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-// }
-
-// .step:last-child,
-// .step:first-child {
-//   background-size: 50% 100%;
-//   background-repeat: no-repeat;
-// }
-
-// .step:first-child {
-//   background-position: 100% 0;
-// }
-
-// .step-info::before {
-//   font-weight: bold;
-//   display: block;
-//   content: "STEP " counter(step);
-// }
-
-// /* States */
-// .step.active {
-//   color: var(--active-color);
-// }
-
-// .step.active::before {
-//   background: var(--active-color);
-// }
-
-// .step.completed::before {
-//   content: '✓';
-// }
-
 .breadcrumb {
     padding: 0px;
     background: transparent;
@@ -112,20 +31,20 @@
 }
 
 .breadcrumb li.completed a {
-    background: #e89b9b;
+    background: $lightpurple;
 }
 
 .breadcrumb li.completed a:after {
-    border-left: 30px solid #e89b9b;
+    border-left: 30px solid $lightpurple;
 
 }
 
 .breadcrumb li.active a {
-    background: $red;
+    background: $purple;
 }
 
 .breadcrumb li.active a:after {
-    border-left: 30px solid $red;
+    border-left: 30px solid $purple;
 }
 
 .breadcrumb li:first-child a {

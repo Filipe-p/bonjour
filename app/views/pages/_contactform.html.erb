@@ -1,7 +1,5 @@
       <%= simple_form_for :contact, url: contacts_path, method: :post do |f| %>
-      <%= f.input :email, input_html: { placeholder: "jacinta@fatima.pt" } %>
-      <%= f.input :dough, collection: ["Chocolate", "pão de lo", "cenoura", "Red Velvet", "noz"]%>
-      <%= f.input :fillings, collection: ["Doce de ovo", "Chantili e Frutos Silvestres", "Leite de creme e doce alperce", "Chocolate e Frutos Silvestres", "Roche", "Mousse", "Creme de Coco e Ananas", "Doce Laranja" "Creme Queijo", "Chocolate Branco e Crocante"]%>
+      <%= f.input :email, input_html: { placeholder: "nome@email.pt" } %>
 
       <%= f.input :phone_number, as: :integer, input_html: { placeholder: "9126....."} %>
 

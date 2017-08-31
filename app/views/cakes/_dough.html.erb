@@ -1,34 +1,45 @@
 <%= simple_form_for :cake, url: decorations_cakes_path, method: :get do |f| %>
-  <div class="row row-height" style = "width: 100%">
-    <div class="col-md-1"></div>
-    <% @doughs.each do |dough| %>
-    <div class="col-md-2 doughs" id = "div_<%= dough.id %>">
-      <div class = "img-dough-wrapper" >
-        <div class="row">
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h1 id = "step-title" style = "font-size: 30px;">Escolha a massa e o recheio do bolo</h1>
+  </div>
+</div>
+<div class="row row-height" style = "width: 100%">
+  <div class="col-md-1"></div>
+  <% @doughs.each do |dough| %>
+  <div class="col-md-2 doughs" id = "div_<%= dough.id %>">
+    <div class = "img-dough-wrapper" >
+      <div class="row">
         <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
-        </div>
-        <div class="row dough-label" id = "dough_i_<%= dough.id %>"><p>Seleccionar</p></div>
       </div>
-      <div class="dough-radio radio-hide">
-        <%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%>
+      <div class="row text-center" style = "max-width: 100%">
+        <p><%= dough.name %></p>
       </div>
-      <div class="row fillings" style = "padding-top: 40px">
-        <% dough.fillings.each do |filling| %>
-        <div class="row" style = "padding-bottom: 20px;">
-          <div class="col-md-2">
-            <i class="fa fa-circle-o i-filling" id = "i_<%= filling.id %>" aria-hidden="true"></i>
-          </div>
-          <div class="col-md-10">
-            <%= filling.name %>
-          </div>
-          <div class = "filling-radio radio-hide">
-            <%= f.radio_button :filling, filling.id, input_html: {class: "radio-button"}%>
-          </div>
-        </div>
-        <% end %>
+      <div class="row dough-label" id = "dough_i_<%= dough.id %>" style = "max-width: 100%">
+        <p>Seleccionar</p>
       </div>
     </div>
-    <% end %>
+    <div class="dough-radio radio-hide">
+      <%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%>
+    </div>
+    <div class="row fillings" style = "padding-top: 40px">
+      <% dough.fillings.each do |filling| %>
+      <div class="row" style = "padding-bottom: 20px;">
+        <div class="col-md-2">
+          <i class="fa fa-circle-o i-filling" id = "i_<%= filling.id %>" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-10">
+          <%= filling.name %>
+        </div>
+        <div class = "filling-radio radio-hide">
+          <%= f.radio_button :filling, filling.id, input_html: {class: "radio-button"}%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
   <div class="col-md-1"></div>
 </div>
 
