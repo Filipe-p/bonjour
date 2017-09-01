@@ -5,5 +5,5 @@ class Cake < ApplicationRecord
   belongs_to :order
   monetize :price_cents
 
-  SIZES = ["Medium", "Large", "Extra Large"]
+  SIZES = ["Médio", "Grande", "Extra Grande"]
 end

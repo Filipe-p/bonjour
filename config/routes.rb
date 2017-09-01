@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   resources :orders do
     resources :payments, only: [:new, :create]
     member do
+      get 'others'
+      post 'assign_others'
+    end
+    member do
       get 'confirmation'
     end
   end

@@ -19,11 +19,11 @@
         <p id = "delete_btn_<%=cake.id%>"><%= link_to "Apagar bolo #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
         <% end %>
         <%= link_to 'Encomendar outro bolo', new_cake_path %>
-        <%= link_to 'Pagar', new_order_payment_path(@order) %>
         <% else %>
         <%= link_to 'Encomendar outro bolo', new_cake_path %>
         <% end %>
       </div>
+      <%= link_to 'Pagar', new_order_payment_path(@order), id: "submit-btn" %>
     </div>
   </div>
 </div>
