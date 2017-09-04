@@ -6,6 +6,11 @@
   position: relative;
 }
 
+.form-scroll {
+  overflow: scroll;
+  height: 100%;
+}
+
 .form-wrapper h1 {
   font-weight: 300;
 }
@@ -24,7 +29,6 @@
 
 #submit-btn {
   font-weight: 300;
-  position: relative;
   border-radius: 4px;
   white-space: normal;
   font-size: 14px;
@@ -36,6 +40,7 @@
   background-color: $purple;
   padding: 10px 15px;
   color: white;
+  width: 150px;
 }
 
 #submit-btn:hover {
@@ -66,7 +71,7 @@
 }
 
 .dough-form h1{
-margin-top: 0px;
+  margin-top: 0px;
 }
 
 .dough-label {
@@ -81,8 +86,8 @@ margin-top: 0px;
 }
 
 .dough-label:hover{
-background-color: $purple;
-border: 2px solid $purple;
+  background-color: $purple;
+  border: 2px solid $purple;
 }
 
 
@@ -95,3 +100,29 @@ border: 2px solid $purple;
   opacity: 1;
 }
 
+.label-gray {
+  background-color: $lightgray;
+  border-color: $lightgray;
+}
+
+// // MEDIA QUERIES
+// /*---------- iphone4 and iphone5 ----------*/
+// @include media("<=phoneSmall") {
+//   #submit-btn {
+//     width: 100%;
+//   }
+// }
+
+// /*---------- iphone6 6plus, tablets ----------*/
+// @include media(">phoneSmall", "<=tablet") {
+//   #submit-btn {
+//     width: 100%;
+//   }
+// }
+
+// /*---------- > tablets ----------*/
+// @include media(">tablet") {
+//   #submit-btn {
+//     width: 150px;
+//   }
+// }
