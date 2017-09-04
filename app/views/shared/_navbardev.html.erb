@@ -11,7 +11,7 @@
             <div class="dropdown header-left">
               <% avatar_url = "http://placehold.it/30x30" %>
               <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-ac-menu", "data-toggle" => "dropdown" %>
-              <ul class="dropdown-menu dropdown-menu-right navbar-ac-dropdown-menu">
+              <ul class="dropdown-menu navbar-ac-dropdown-menu">
                 <li>
                   <%= link_to orders_path do %>
                   <%= image_tag "muffin.png" %> <%= t(".profile", default: "My orders") %>
@@ -32,12 +32,34 @@
         </div>
         <!-- Dropdown list appearing on mobile only -->
         <div class="navbar-ac-item hidden-md hidden-lg" style = "padding: 40px 0px;">
-          <div class="dropdown header-left">
-            <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-            <ul class="dropdown-menu dropdown-menu-right navbar-ac-dropdown-menu">
-              <li><a href="#">Some mobile link</a></li>
-              <li><a href="#">Other one</a></li>
-              <li><a href="#">Other one</a></li>
+          <div class="dropdown">
+            <i class="fa fa-bars dropdown-toggle header-left" data-toggle="dropdown"></i>
+            <ul class="dropdown-menu navbar-ac-dropdown-menu">
+              <li>
+              <%= link_to about_path do %>
+              Sobre
+            <% end %>
+            </li>
+              <li>
+              <%= link_to new_cake_path do %>
+              Encomendar
+            <% end %>
+            </li>
+              <li>
+              <%= link_to design_path do %>
+              Bolo personalizado
+            <% end %>
+            </li>
+            <li>
+            <%= link_to gallery_path do %>
+              Galeria
+            <% end %>
+            </li>
+            <li>
+            <%= link_to contacts_path do %>
+              Contactos
+            <% end %>
+            </li>
             </ul>
           </div>
         </div>
@@ -54,7 +76,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-12 header-nav hidden-xs header-nav-border flexbox" id = "row-header-nav">
+    <div class="col-md-12 header-nav hidden-xs hidden-sm header-nav-border flexbox" id = "row-header-nav">
     <div class = "hidden" id = "hidden-logo">
     <%= image_tag "circle.png" %>
     </div>
