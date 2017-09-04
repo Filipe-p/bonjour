@@ -16,13 +16,7 @@ class CakesController < ApplicationController
 
   def doughs
     @doughs = Dough.all
-  end
-
-  def fillings
-    @cake_params = cake_params
-    @dough = Dough.find(cake_params[:dough])
-    @fillings = @dough.fillings
-    respond_to do |format|
+      respond_to do |format|
       format.html
       format.js
     end
@@ -32,18 +26,8 @@ class CakesController < ApplicationController
     @cake_params = cake_params
     @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
     @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
+    @sizes = Cake::SIZES
     @decorations = Decoration.all
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-
-  def features
-    @cake_params = cake_params
-    @dough = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
-    @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
-    @decoration = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
     respond_to do |format|
       format.html
       format.js

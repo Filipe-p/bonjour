@@ -1,17 +1,17 @@
-<div class="my-navbar">
+<div class="navbar-ac transition-smooth">
   <!-- Logo -->
   <div  class = "row row-xs-center">
-    <div class="row row-height col-md-12 header-logo">
+    <div class="row row-height col-md-12 header-logo" id = "row-header-logo">
       <div class="col-xs-4 header-left">
-        <div class = "navbar-wagon-left hidden-xs hidden-sm">
+        <div class = "navbar-ac-left hidden-xs hidden-sm">
           <% if user_signed_in? %>
 
           <!-- Profile picture and dropdown -->
-          <div class="navbar-wagon-item">
+          <div class="navbar-ac-item">
             <div class="dropdown header-left">
               <% avatar_url = "http://placehold.it/30x30" %>
-              <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-ac-menu", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-ac-dropdown-menu">
                 <li>
                   <%= link_to orders_path do %>
                   <%= image_tag "muffin.png" %> <%= t(".profile", default: "My orders") %>
@@ -27,14 +27,14 @@
           </div>
           <% else %>
           <!-- Login text link -->
-          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-ac-item navbar-ac-link" %>
           <% end %>
         </div>
         <!-- Dropdown list appearing on mobile only -->
-        <div class="navbar-wagon-item hidden-md hidden-lg" style = "padding: 40px 0px;">
+        <div class="navbar-ac-item hidden-md hidden-lg" style = "padding: 40px 0px;">
           <div class="dropdown header-left">
             <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-right navbar-ac-dropdown-menu">
               <li><a href="#">Some mobile link</a></li>
               <li><a href="#">Other one</a></li>
               <li><a href="#">Other one</a></li>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="col-xs-4 header-center">
-        <%= link_to root_path, class: "navbar-wagon-brand" do %>
+        <%= link_to root_path, class: "navbar-ac-brand" do %>
         <%= image_tag "circle.png" %>
         <% end %>
       </div>
@@ -54,27 +54,30 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-12 header-nav hidden-xs">
+    <div class="col-md-12 header-nav hidden-xs header-nav-border flexbox" id = "row-header-nav">
+    <div class = "hidden" id = "hidden-logo">
+    <%= image_tag "circle.png" %>
+    </div>
       <div class="menu">
         <ul>
           <li>
-            <%= link_to root_path do %>
-              Home
+            <%= link_to home2_path do %>
+              Início
             <% end %>
           </li>
           <li>
             <%= link_to about_path do %>
-              About
+              Sobre
             <% end %>
           </li>
           <li>
             <%= link_to new_cake_path do %>
-              Order
+              Encomendar
             <% end %>
           </li>
           <li>
             <%= link_to design_path do %>
-              Cake Design
+              Bolo personalizado
             <% end %>
           </li>
           <li>

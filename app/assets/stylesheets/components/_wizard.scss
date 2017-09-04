@@ -1,80 +1,88 @@
-// /* Boilerplate */
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Helvetica Neue", Helvetica, sans-serif;
-// }
+.breadcrumb {
+    padding: 0px;
+    background: transparent;
+    list-style: none;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
 
-// body {
-//   padding-top: 50px;
-//   --primary-color: hsl(200, 100%, 80%);
-//   --active-color: hsl(200, 100%, 50%);
-// }
+.breadcrumb>li {
+    display: table-cell;
+    vertical-align: top;
+    width: 1%;
+}
 
-// /* Steps Component */
-// .steps {
-//   counter-reset: step;
-//   max-width: 80%;
-//   margin: auto;
-//   display: flex;
-//   position: relative;
-//   list-style: none;
-// }
+.breadcrumb>li+li:before {
+    padding: 0;
+}
 
-// .step {
-//   color: var(--primary-color);
-//   flex: 1;
-//   counter-increment: step;
-//   padding-top: calc(40px + 1rem); /*40px is for the circle*/
-//   text-align: center;
-//   position: relative;
-//   background-image: linear-gradient(to bottom, transparent calc(20px - 2px), currentColor 0, currentColor calc(20px + 2px), transparent 0);
-//   font-weight: 100;
-// }
+.breadcrumb li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0 10px 45px;
+    position: relative;
+    display: inline-block;
+    width: calc( 100% - 10px );
+    background-color: hsla(0, 0%, 83%, 1);
+    text-align: center;
+    text-transform: capitalize;
+}
 
-// .step::before {
-//   display: flex;
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: var(--primary-color);
-//   content: counter(step);
-//   position: absolute;
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-//   font-size: 1.5rem;
-//   top: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-// }
+.breadcrumb li.completed a {
+    background: $lightpurple;
+}
 
-// .step:last-child,
-// .step:first-child {
-//   background-size: 50% 100%;
-//   background-repeat: no-repeat;
-// }
+.breadcrumb li.completed a:after {
+    border-left: 30px solid $lightpurple;
 
-// .step:first-child {
-//   background-position: 100% 0;
-// }
+}
 
-// .step-info::before {
-//   font-weight: bold;
-//   display: block;
-//   content: "STEP " counter(step);
-// }
+.breadcrumb li.active a {
+    background: $purple;
+}
 
-// /* States */
-// .step.active {
-//   color: var(--active-color);
-// }
+.breadcrumb li.active a:after {
+    border-left: 30px solid $purple;
+}
 
-// .step.active::before {
-//   background: var(--active-color);
-// }
+.breadcrumb li:first-child a {
+    padding-left: 15px;
+}
 
-// .step.completed::before {
-//   content: '✓';
-// }
+.breadcrumb li:last-of-type a {
+    width: calc( 100% - 38px );
+}
+
+.breadcrumb li a:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+
+.breadcrumb li a:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid hsla(0, 0%, 83%, 1);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+}
+

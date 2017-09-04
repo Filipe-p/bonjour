@@ -34,17 +34,18 @@
 .banner2 h3 {
   padding-bottom: 20px;
   color: white;
+  font-weight: 200;
 }
 
 .banner-content h1{
   color: white;
-  font-weight: bold;
+  font-weight: 300;
   text-shadow: 0.5px 0.5px #d1d0cc;
 }
 
 .banner-content h2{
   color: white;
-  font-weight: bold;
+  font-weight: 300;
   text-shadow: 0.5px 0.5px #d1d0cc;
 }
 
@@ -54,7 +55,7 @@
 }
 
 .banner-section{
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   background: gray;
   vertical-align: middle;
 }
@@ -74,30 +75,47 @@
 .historia h3 {
   padding-bottom: 20px;
   font-size: 30px;
+  font-weight: 300;
 }
 
 .historia p {
   padding-bottom: 20px;
+
 }
 
 .how-it-works {
   padding-top: 100px;
-  padding-bottom: 140px;
+  padding-bottom: 100px;
 }
 
 .how-it-works h3 {
   font-size: 30px;
+  font-weight: 300;
 }
 
 
 .how-it-works .cake-steps {
+  font-size: 18px;
+  line-height: 1.85714286em;
+  letter-spacing: 0.1em;
+}
+
+.how-it-works .cake-steps h4{
   font-size: 20px;
+  line-height: 1.85714286em;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.step-wrapper {
+  margin-bottom: 20px;
 }
 
 .banner-contacts {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("10473367_1424513991168939_5482884653258251894_n.jpg");
   background-size: cover;
-  height: calc(100vh - 306px);
+  height: calc(70vh - 100px);
+  font-weight: 300;
 }
 
 .banner-contacts .custom-container {
@@ -117,8 +135,33 @@
 .banner-design {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("7.jpg");
   background-size: cover;
-  height: calc(100vh - 306px);
+  height: calc(100vh - 100px);
   padding: 100px 100px;
+}
+
+.banner-about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.banner-about h1 {
+  padding-bottom: 50px;
+  font-weight: 300;
+}
+
+.banner-about p {
+line-height: 1.85714286em;
+}
+
+.banner-doughs {
+  // background-image: url("637633634.jpg");
+  // background-size: cover;
+  height: 100vh;
+}
+
+.banner-orders {
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 // MEDIA QUERIES
@@ -158,7 +201,7 @@
   }
 
   .banner2 {
-    height: calc(100vh - 306px);
+    height: calc(100vh - 100px);
     background-image: url("SC-slider-celebrationcake2.jpg");
   }
 
@@ -182,6 +225,11 @@
   }
 }
 
+.banner-gallery {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
 /*---------- Small desktop screens ----------*/
 @include media(">tablet", "<desktop") {
   .banner-content h1 {
@@ -191,7 +239,7 @@
     font-size: 50px;
   }
   .banner2 {
-    height: calc(100vh - 306px);
+    height: calc(100vh - 100px);
     background-image: url("SC-slider-celebrationcake2.jpg");
   }
 
@@ -215,8 +263,8 @@
     font-size: 50px;
   }
   .banner2 {
-    height: calc(100vh - 306px);
-    background-image: url("SC-slider-celebrationcake2.jpg");
+    height: calc(100vh - 100px);
+    background-image: url("10.jpg");
   }
 
   .how-it-works .custom-container {
@@ -244,8 +292,8 @@
     font-size: 50px;
   }
   .banner2 {
-    height: calc(100vh - 306px);
-    background-image: url("SC-slider-celebrationcake2.jpg");
+    height: calc(80vh - 100px);
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,-2.6)), url("20992526_2004800283140304_8874562591505217334_n.jpg");
   }
 
   .how-it-works .custom-container {

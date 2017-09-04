@@ -1,78 +1,75 @@
-<div class="doughs" style = "padding-bottom: 100px; padding-top: 100px;">
-  <div class="container">
-<!--   <ul class="steps">
-  <li class="step completed">
-    <div class="step-info">
-      <span class="step-name">Massa e Recheio</span>
-    </div>
-  </li>
-
-  <li class="step active">
-    <div class="step-info">
-      <span class="step-name">Decoração</span>
-    </div>
-  </li>
-  <li class="step">
-    <div class="step-info">
-      <span class="step-name">Caracteristicas</span>
-    </div>
-  </li>
-  <li class="step">
-    <div class="step-info">
-      <span class="step-name">Pagamento</span>
-    </div>
-  </li>
-</ul> -->
-
-    <div class="row">
-      <p class = "text-center" id = "step-title" style = "font-size: 30px;">Escolha a massa do bolo</p>
-      <div class="col-md-8" id = "dynamic-content">
-        <%= render 'dough' %>
-      </div>
-      <div class="col-md-4">
-
-      </div>
-    </div>
+<div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
+<div class="container">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
+      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
+      <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
+      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
+    </ul>
   </div>
 </div>
+  <div class="container">
+  <div class="form-wrapper" style = "box-sizing: border-box;">
+   <div class="row row-height" id = "dynamic-content" style = "max-height: 100%;">
+    <%= render 'dough' %>
+
+  </div>
+  <div id="submit-btn">Próximo passo</div>
+</div>
+</div>
+</div>
+
+<!-- <div class="ui-widget">
+    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+        <p>
+            <span class="ui-icon ui-icon-alert"
+                style="float: left; margin-right: .3em;"></span>
+            <strong>Alert:</strong> Sample ui-state-error style.
+        </p>
+    </div>
+</div> -->
+
+
 
 <% content_for(:after_js) do %>
-  <script>
+<script>
   $(document).ready(function(){
-    $("#step1").attr('class', 'hidden');
-
-//Scroll and fix cart
-    $(window).scroll(function(){
-      var wrap = $(".cart-wrapper");
-      if ($(window).scrollTop() > 500) {
-        wrap.addClass("fix-cart");
-      } else {
-        wrap.removeClass("fix-cart");
-      }
-    });
-
-    $("input").change(function(){
-    for (var i = 1; i < 6; i ++) {
-     var radioButton = $('#cake_dough_'+ i);
-     if (radioButton.prop("checked") == true){
-      var id = i;
-      }
-    }
-      $.ajax({
-        url: '<%= fillings_cakes_path %>',
-        type: 'GET',
-        data: {'cake' : {'dough' : id}},
-        dataType: "script",
-        success: function(data) {
-          console.log(data);
-        },
-        error: function(error) {
-          console.log("AJAX Error: #{error}");
+    $("#step1").attr('class', 'hidden'); //hide submit button
+    $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
+    $("#wiz-1").addClass("active")
+    $('.dough-label').click(function(){
+      //Get dough id
+      var doughId =  $(this).attr('id');
+      var split = doughId.split("dough_i_");
+      var doughIdNum = Number(split[1]);
+      //Select corresponding input
+      $("#cake_dough_" + doughIdNum).prop("checked", true);
+      //When choosing dough, remove color and selection from all the other doughs
+      $(this).addClass("label-color");
+      $('.dough-label').not(this).removeClass("label-color");
+      //When choosing dough, remove color and selection from all fillings belonging to other doughs
+      $("#div_" + doughIdNum + " i").removeClass("radio-circle");
+      $("#div_" + doughIdNum + " i").addClass("radio-circle-color");
+      $(".fillings i").not("#div_" + doughIdNum + " i").removeClass("radio-circle-color radio-circle-full");
+      $(".fillings input").not("#div_" + doughIdNum + " i").prop('checked', false);
+      //When choosing a filling, remove selection of other fillings and select corresponding radio button
+      $("#div_" + doughIdNum + " i").click(function(e){
+        if ($("#cake_dough_" + doughIdNum).prop('checked') == true) {
+          var fillingId = $(this).attr('id');
+          var splitFill = fillingId.split("i_");
+          var fillingIdNum = Number(splitFill[1]);
+          $(".i-filling").not(this).removeClass('radio-circle-full');
+          $(this).addClass("radio-circle-full");
+          $("#cake_filling_" + fillingIdNum).prop('checked', true);
         }
-
       })
-      $("#fillings").empty();
+    })
+    $("#submit-btn").click(function(e){
+      if (($("*[id*=cake_dough_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
+      $("#step1").click();
+    }
     })
   })
-  </script>
+</script>
 <% end %>

@@ -1,4 +1,3 @@
 var decorations = $("<%= j render 'decoration', dough: @dough, fillings: @fillings, decorations: @decorations %>");
-$("#dynamic-content").empty();
-$("#fillings").empty();
-$("#dynamic-content").append(decorations);
+$("#dynamic-row").empty();
+$("#dynamic-row").append(decorations);

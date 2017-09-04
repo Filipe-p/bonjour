@@ -8,14 +8,34 @@
   flex: 1 0 auto;
 }
 
-.flex-item-small {
-  flex: 0 0 60%;
-}
+// .flex-item-100 {
+//   flex: 0 0 100%;
+// }
 
 .body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
+
+
+.flexbox-col {
+  display: flex;
+  align-items: left;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+.transition-smooth{
+    -webkit-transition: height 2s ease; /* Safari */
+    transition: height 2s ease;
+  }
+
+  .flex-right {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+  }

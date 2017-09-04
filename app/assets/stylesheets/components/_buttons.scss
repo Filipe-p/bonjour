@@ -1,21 +1,80 @@
 .cta-btn {
-  font-weight: bold;
+  font-weight: 300;
   position: relative;
-  border-radius: 4px;
   white-space: normal;
   font-size: 14px;
   letter-spacing: .091em;
   white-space: wrap;
 }
 
-.cta-btn:hover {
-  color: white;
+.cta-btn-red:hover {
+  color: white
+  ;
   text-decoration: none;
-    opacity: 0.8;
+  box-shadow: 2px 1px 2px 2px rgba(10, 10, 0, 0.5);
+}
 
+.cta-btn-white:hover {
+  color: $purple;
+  background-color: white;
+  text-decoration: none;
+  box-shadow: 2px 1px 2px 2px rgba(10, 10, 0, 0.5);
+}
+
+.cta-btn-red {
+ background-color: $purple;
+ border: 2px solid $purple;
+ color: white;
+}
+
+.cta-btn-white {
+ background-color: transparent;
+ border: 2px solid white;
+ color: white;
+}
+
+.cta-btn-white-purple {
+ background-color: white;
+ border: 2px solid $purple;
+ color: $purple;
+}
+
+.cta-btn-white-purple:hover {
+  color: $purple;
+  text-decoration: none;
+  opacity: 0.8;
+  box-shadow: 2px 1px 2px 2px rgba(10, 10, 0, 0.5);
+}
+
+.btn-fillings {
+  background-color: $purple;
+  padding: 10px 15px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.btn-facebook,
+.btn-facebook:link,
+.btn-facebook:visited {
+  font-weight: bold;
+  padding: 11px 15px;
+  border-radius: 4px;
+  background-color: $faceblue;
+  color: white;
+  transition: all 0.2s ease;
 }
 
 
+.btn-facebook:hover {
+  background-color: #5e8eed;
+}
+
+
+.historia .cta-btn-white-purple {
+  margin-left: 10px;
+}
+
+//--------------------------//
 @include media("<=phoneSmall") {
   .cta-btn-size {
     padding: 10px 15px;
@@ -40,38 +99,8 @@
 }
 
 
-.cta-btn-red {
- background-color: $red;
- box-shadow: 0 0 0 4px $red, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
- border: 2px solid white;
- color: white;
-}
-.cta-btn-blue {
- background-color: $blue;
- box-shadow: 0 0 0 4px $blue, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
- border: 2px solid white;
- color: white;
-}
-
-.cta-btn-white {
- background-color: white;
- box-shadow: 0 0 0 4px white, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
- border: 2px solid $red;
- color: $red;
-}
-
-.btn-facebook,
-.btn-facebook:link,
-.btn-facebook:visited {
-  font-weight: bold;
-  padding: 11px 15px;
-  border-radius: 4px;
-  background-color: $faceblue;
-  color: white;
-  transition: all 0.2s ease;
-}
+//_________FUNKY__________
 
 
-.btn-facebook:hover {
-  background-color: #5e8eed;
-}
+
+

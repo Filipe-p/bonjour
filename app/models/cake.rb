@@ -6,5 +6,4 @@ class Cake < ApplicationRecord
   monetize :price_cents
 
   SIZES = ["Medium", "Large", "Extra Large"]
-  SHAPES = ['Square', 'Round']
 end

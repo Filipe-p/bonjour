@@ -1,15 +1,40 @@
-<%= simple_form_for :cake, url: features_cakes_path(@cake_params), remote: true, method: :get do |f| %>
-<div class="row dough-form">
-<% @decorations.each do |decoration| %>
+<%= simple_form_for :cake, url: cakes_path(@cake_params), method: :post do |f| %>
+<div class="row dough-form" style = "max-height: 100%;">
+  <div class="col-md-8" style = "max-height: 100%;">
+    <h1 id = "step-title" style = "font-size: 30px;">Escolha a decoração do bolo</h1>
+    <div id = "decoration-wrapper" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
+      <% @decorations.each do |decoration| %>
 
+      <div class="col-md-4">
+        <div class = "img-decoration-wrapper" >
+          <div class="row">
+            <%= image_tag("cake_5.jpg") %>
+          </div>
+          <div class="row dough-label" id = "decor_i_<%= decoration.id %>"><p>Seleccionar</p></div>
+        </div>
+        <div class="radio-hide">
+          <%= f.radio_button :decoration, decoration.id %>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
   <div class="col-md-4">
-      <%= image_tag("cake.png") %>
-      <%= f.radio_button :decoration, decoration.id %>
+  <h1 id = "step-title" style = "font-size: 30px;">Tamanho</h1>
+  <% @sizes.each do |size| %>
+  <div class="row">
+  <%= size %>
   </div>
-
-    <% end %>
-  </div>
-  <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
-  <%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
-  <%= f.submit "Go", class: "btn btn-lg btn-primary"%>
+   <%= f.radio_button :size, size %>
+  <% end %>
+  <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
+   <%= f.input :message, as: :text, input_html: {placeholder: "Leave a message"} %>
+ </div>
+</div>
+<%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
+<%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
+<%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step2"%>
 <% end %>
+
+
