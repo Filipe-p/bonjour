@@ -52,7 +52,7 @@ class CakesController < ApplicationController
         @cake.order = @order
         if @cake.save
           respond_to do |format|
-            format.html { redirect_to others_orders_path }
+            format.html { redirect_to others_order_path(@order)}
  # <-- will render `app/views/cakes/create.js.erb`
           end
         else
