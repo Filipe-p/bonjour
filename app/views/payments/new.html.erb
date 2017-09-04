@@ -13,16 +13,7 @@
     <div class="form-wrapper">
       <div class="row">
         <h1>Pagar encomenda <%= @order.id %></h1>
-        <% unless @order.cakes.blank? %>
-        <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
-        <p id = "cake_<%=cake.id%>">Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
-        <p id = "delete_btn_<%=cake.id%>"><%= link_to "Apagar bolo #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
-        <% end %>
-        <%= link_to 'Encomendar outro bolo', new_cake_path %>
-        <%= link_to 'Pagar', new_order_payment_path(@order) %>
-        <% else %>
-        <%= link_to 'Encomendar outro bolo', new_cake_path %>
-        <% end %>
+
         <%= render 'form' %>
       </div>
     </div>

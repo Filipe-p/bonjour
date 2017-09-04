@@ -1,0 +1,49 @@
+<div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
+<div class="container">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
+      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
+      <li id = "wiz-3"><a href="javascript:void(0);">Extras</a></li>
+      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
+    </ul>
+  </div>
+</div>
+  <div class="container">
+  <div class="form-wrapper">
+   <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
+        <%= render "other" %>
+
+      </div>
+      <div class = "hidden" id="submit-btn">Próximo passo</div>
+  </div>
+</div>
+</div>
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $("#step3").attr('class', 'hidden'); //hide submit button
+    //$(".radio-hide").attr('class', 'hidden'); //hide radio buttons
+    $("#submit-btn").removeClass("hidden");
+    $("#wiz-1").addClass("completed");
+    $("#wiz-2").addClass("completed");
+    $("#wiz-3").addClass("active");
+    $('.dough-label').click(function(){
+      //Get extras id
+      var otherId =  $(this).attr('id');
+      var split = otherId.split("other_i_");
+      var otherIdNum = Number(split[1]);
+      //Select corresponding input
+      $("#order_other_" + otherIdNum).prop("checked", true);
+      //When choosing extra, remove color and selection from all the other extras
+      $(this).addClass("label-color");
+      $('.dough-label').not(this).removeClass("label-color");
+    })
+     $("#submit-btn").click(function(e){
+       $("#step3").click();
+    // }
+     })
+  })
+</script>
+<% end %>

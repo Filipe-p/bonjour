@@ -8,6 +8,7 @@ Filling.delete_all
 Decoration.delete_all
 Other.delete_all
 
+
 pao_de_lo = Dough.create(name: "Pão de Lô", price: 1 , description: "Pão de Lô é uma base amarela, fofa e húmida.")
 chocolate = Dough.create(name: "Chocolate", price: 1 , description: "A base bolo é de Chocolate")
 cenoura = Dough.create(name: "Cenoura", price: 1 , description: "A base bolo é de Cenoura")
@@ -28,6 +29,12 @@ queijo = Filling.create(name: "Creme de Queijo", price: 1, description: "")
 Decoration.create(name: "Decoration Ex1", price: 1, description: "This is an amazing Decoration EX1")
 Decoration.create(name: "Decoration Ex2", price: 1, description: "This is an amazing Decoration EX2")
 Decoration.create(name: "Decoration Ex3", price: 1, description: "This is an amazing Decoration EX3")
+Decoration.create(name: "Decoration Ex4", price: 1, description: "This is an amazing Decoration EX4")
+Decoration.create(name: "Decoration Ex5", price: 1, description: "This is an amazing Decoration EX5")
+Decoration.create(name: "Decoration Ex6", price: 1, description: "This is an amazing Decoration EX6")
+Decoration.create(name: "Decoration Ex7", price: 1, description: "This is an amazing Decoration EX7")
+Decoration.create(name: "Decoration Ex8", price: 1, description: "This is an amazing Decoration EX8")
+Decoration.create(name: "Decoration Ex9", price: 1, description: "This is an amazing Decoration EX9")
 
 doughs = {}
 doughs[:pao_de_lo] = pao_de_lo
@@ -80,3 +87,9 @@ fillings[:noz] = [doce_de_ovo, chantili, leite_creme]
 Other.create(name: "Cupcake 1", price: 1, description: "This is an amazing cupcake other EX1")
 Other.create(name: "Cupcake 2", price: 1, description: "This is an amazing cupcake other EX2")
 Other.create(name: "Cupcake 3", price: 1, description: "This is an amazing cupcake other EX3")
+Other.create(name: "Cupcake 4", price: 1, description: "This is an amazing cupcake other EX4")
+Other.create(name: "Cupcake 5", price: 1, description: "This is an amazing cupcake other EX5")
+Other.create(name: "Cupcake 6", price: 1, description: "This is an amazing cupcake other EX6")
+Other.create(name: "Cupcake 7", price: 1, description: "This is an amazing cupcake other EX7")
+Other.create(name: "Cupcake 8", price: 1, description: "This is an amazing cupcake other EX8")
+Other.create(name: "Cupcake 9", price: 1, description: "This is an amazing cupcake other EX9")
