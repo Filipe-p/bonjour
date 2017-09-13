@@ -1,26 +1,60 @@
+
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Instruções</h4>
+      </div>
+      <div class="modal-body">
+        <div class = "modal-content-wrapper flexbox">
+          <%= image_tag("time-3.svg") %>
+          <p>Qualquer encomenda deve ser feita com pelo menos 48h de antecedência.</p>
+        </div>
+        <div class = "modal-content-wrapper flexbox">
+        <%= image_tag("round-euro.svg") %>
+        <p>O pagamento é feito no acto da entrega. Pode pagar em numerário ou multibanco.</p>
+        </div>
+        <div class = "modal-content-wrapper flexbox">
+        <%= image_tag("delivery.svg") %>
+        <p>Pode escolher receber a encomenda numa morada específica ou levanta-la na loja.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
-<div class="container">
-  <div class="row">
-    <ul class="breadcrumb">
-      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
-      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
-      <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
-      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
-    </ul>
-  </div>
-</div>
   <div class="container">
-  <div class="form-wrapper">
-  <div class="form-scroll">
-   <div class="row row-height" id = "dynamic-content">
-    <%= render 'dough' %>
-
+    <div class="row">
+      <ul class="breadcrumb">
+        <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
+        <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
+        <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
+        <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
+      </ul>
+    </div>
   </div>
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-scroll">
+       <div class="row row-height" id = "dynamic-content">
+        <%= render 'dough' %>
+
+      </div>
 
 
-</div>
-  <div id="submit-btn">Próximo passo</div>
-</div>
+    </div>
+    <div id="submit-btn">Próximo passo</div>
+  </div>
 </div>
 </div>
 
@@ -32,13 +66,14 @@
             <strong>Alert:</strong> Sample ui-state-error style.
         </p>
     </div>
-</div> -->
+  </div> -->
 
 
 
-<% content_for(:after_js) do %>
-<script>
-  $(document).ready(function(){
+  <% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function(){
+      $('#myModal').modal('toggle');
     $("#step1").attr('class', 'hidden'); //hide submit button
     $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#wiz-1").addClass("active")
@@ -71,8 +106,8 @@
     })
     $("#submit-btn").click(function(e){
       if (($("*[id*=cake_dough_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
-      $("#step1").click();
-    }
+        $("#step1").click();
+      }
     })
   })
 </script>
