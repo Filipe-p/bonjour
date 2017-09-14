@@ -8,7 +8,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-ac-right hidden-xs hidden-sm">
 
-      <ul class="nav navbar-nav">
+      <ul class="menu">
         <li>
           <%= link_to about_path, class: "navbar-ac-link" do %>
           Sobre
@@ -41,4 +41,37 @@
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
+            <!-- Dropdown list appearing on mobile only -->
+        <div class="navbar-ac-item hidden-md hidden-lg" style = "padding: 40px 0px;">
+          <div class="dropdown">
+            <i class="fa fa-bars dropdown-toggle header-left" data-toggle="dropdown"></i>
+            <ul class="dropdown-menu dropdown-menu-right navbar-ac-dropdown-menu">
+              <li>
+              <%= link_to about_path do %>
+              Sobre
+            <% end %>
+            </li>
+              <li>
+              <%= link_to new_cake_path do %>
+              Encomendar
+            <% end %>
+            </li>
+              <li>
+              <%= link_to design_path do %>
+              Bolo personalizado
+            <% end %>
+            </li>
+            <li>
+            <%= link_to gallery_path do %>
+              Galeria
+            <% end %>
+            </li>
+            <li>
+            <%= link_to contacts_path do %>
+              Contactos
+            <% end %>
+            </li>
+            </ul>
+          </div>
+        </div>
 </nav>
