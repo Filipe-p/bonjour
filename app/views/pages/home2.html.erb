@@ -1,15 +1,13 @@
 <div class = "banner2">
   <div class="custom-container" style = "height: 100%">
     <div class=" banner-wrapper row" style = "height: 100%;">
-      <div class = "banner-content" style = "height: 100%">
-        <div class="col-md-6 col-md-offset-6 col-sm-12 flexbox" style = "height: 100%">
-          <div>
+        <div class="col-md-6 col-md-offset-6 col-sm-12" style = "height: 100%">
+          <div class = "banner-content text-center">
             <h1>Pastelaria Bonjour</h1>
             <h3>Crie o seu bolo online!</h3>
-            <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-size cta-btn-white btn flex-item-small" %>
+            <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-size cta-btn-white" %>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -62,7 +60,7 @@
 
 <div class = "historia padding-top-bottom-100">
   <div class="custom-container">
-    <div class="row">
+    <div class="row row-height">
       <div class="col-md-6 polaroids-wrapper">
         <div class="polaroids polaroids-right">
           <%= image_tag "pastelaria.jpg" %>
@@ -70,12 +68,12 @@
         </div>
       </div>
       <div class="col-md-6 text-left text-normal">
-        <div>
+        <div class = "flexbox-col">
           <h3 class = "padding-bottom-20">História da Bonjour</h3>
           <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
 
-          <span> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size" %>
-            <%= link_to t(".top_call_to_action", default: "Ler mais"), about_path, class: "navbar-ac-item cta-btn cta-btn-white-purple btn cta-btn-size" %></span>
+          <span style = "margin-top: 20px;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+            <%= link_to t(".top_call_to_action", default: "Ler mais"), about_path, class: "navbar-ac-item cta-btn cta-btn-black cta-btn-size" %></span>
 
           </div>
         </div>
