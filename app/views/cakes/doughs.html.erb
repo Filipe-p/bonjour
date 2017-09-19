@@ -55,12 +55,12 @@
 
       </div>
       <div id = "down-bar">
-
         <div class = "down-nav-btn">Voltar</div>
-        <div class = "down-nav-cart" id = "cart"></div>
+        <div class = "down-nav-cart">
+        <p>Total</p>
+        <p id = "cart"></p>
+        </div>
         <div class = "down-nav-btn" id="submit-btn">Próximo passo</div>
-
-
       </div>
     </div>
   </div>
@@ -105,11 +105,14 @@
       //Select corresponding dough
       $("#cake_dough_" + doughIdNum).prop("checked", true);
       $("#dough_i_" + doughIdNum).addClass("label-color");
-      //When choosing dough, remove color and selection from all the other doughs
+      //Remove color and selection from all the other doughs
       $('.dough-label').not("#dough_i_" + doughIdNum).removeClass("label-color");
       //When choosing dough, remove color and selection from all fillings belonging to other doughs
       $("#div_" + doughIdNum + " i").removeClass("radio-circle");
       $("#div_" + doughIdNum + " i").addClass("radio-circle-color");
+      //Add price to cart
+      $("#cart").empty();
+      $("#cart").append("<%= @doughs.first.price_cents%>€");
     });
     $("#submit-btn").click(function(e){
       if (($("*[id*=cake_dough_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
