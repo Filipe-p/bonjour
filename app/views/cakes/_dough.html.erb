@@ -1,23 +1,18 @@
 <%= simple_form_for :cake, url: decorations_cakes_path, method: :get do |f| %>
 <div class="row">
   <div class="col-md-1"></div>
-  <div class="col-md-10">
     <h1 id = "step-title" style = "font-size: 30px;">Escolha a massa e o recheio do bolo</h1>
-  </div>
+
 </div>
 <div class="row row-height" style = "width: 100%">
-  <div class="col-md-1"></div>
   <% @doughs.each do |dough| %>
-  <div class="col-md-2 doughs" id = "div_<%= dough.id %>">
+  <div class="col-md-4 doughs" id = "div_<%= dough.id %>">
     <div class = "img-dough-wrapper" >
       <div class="row">
         <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
       </div>
-      <div class="row text-center" style = "max-width: 100%">
-        <p><%= dough.name %></p>
-      </div>
       <div class="row dough-label" id = "dough_i_<%= dough.id %>" style = "max-width: 100%">
-        <p>Seleccionar</p>
+        <p><%= dough.name %></p>
       </div>
     </div>
     <div class="dough-radio radio-hide">
@@ -26,7 +21,7 @@
     <div class="row fillings" style = "padding-top: 40px">
       <% dough.fillings.each do |filling| %>
       <div class="row" style = "padding-bottom: 20px;">
-        <div class="col-md-2">
+        <div class="col-md-2" id = "fil_dough_<%= dough.id %>">
           <i class="fa fa-circle-o i-filling" id = "i_<%= filling.id %>" aria-hidden="true"></i>
         </div>
         <div class="col-md-10">
@@ -40,7 +35,6 @@
     </div>
   </div>
   <% end %>
-  <div class="col-md-1"></div>
 </div>
 
 <div class="row">

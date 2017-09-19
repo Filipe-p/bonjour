@@ -16,12 +16,12 @@
           <p>Qualquer encomenda deve ser feita com pelo menos 48h de antecedência.</p>
         </div>
         <div class = "modal-content-wrapper flexbox">
-        <%= image_tag("round-euro.svg") %>
-        <p>O pagamento é feito no acto da entrega. Pode pagar em numerário ou multibanco.</p>
+          <%= image_tag("round-euro.svg") %>
+          <p>O pagamento é feito no acto da entrega. Pode pagar em numerário ou multibanco.</p>
         </div>
         <div class = "modal-content-wrapper flexbox">
-        <%= image_tag("delivery.svg") %>
-        <p>Pode escolher receber a encomenda numa morada específica ou levanta-la na loja.</p>
+          <%= image_tag("delivery.svg") %>
+          <p>Pode escolher receber a encomenda numa morada específica ou levanta-la na loja.</p>
         </div>
       </div>
       <div class="modal-footer">
@@ -45,15 +45,24 @@
   </div>
   <div class="container">
     <div class="form-wrapper">
-      <div class="form-scroll">
-       <div class="row row-height" id = "dynamic-content">
-        <%= render 'dough' %>
+      <div class="form-inner-wrapper">
+        <div class="form-scroll">
+         <div class="row row-height" id = "dynamic-content">
+          <%= render 'dough' %>
+
+        </div>
+
 
       </div>
+      <div id = "down-bar">
+
+        <div class = "down-nav-btn">Voltar</div>
+        <div class = "down-nav-cart" id = "cart"></div>
+        <div class = "down-nav-btn" id="submit-btn">Próximo passo</div>
 
 
+      </div>
     </div>
-    <div id="submit-btn">Próximo passo</div>
   </div>
 </div>
 </div>
@@ -77,33 +86,31 @@
     $("#step1").attr('class', 'hidden'); //hide submit button
     $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#wiz-1").addClass("active")
-    $('.dough-label').click(function(){
+    $('.i-filling').click(function(){
       //Get dough id
-      var doughId =  $(this).attr('id');
-      var split = doughId.split("dough_i_");
+      var doughId =  $(this).parent().attr('id');
+      var split = doughId.split("fil_dough_");
       var doughIdNum = Number(split[1]);
-      //Select corresponding input
+      //Get filling id
+      var fillingId = $(this).attr('id');
+      var splitFill = fillingId.split("i_");
+      var fillingIdNum = Number(splitFill[1]);
+      //Select filling
+      $(this).addClass("radio-circle-full");
+      //Remove selection of all other fillings
+      $(".i-filling").not(this).removeClass("radio-circle-full");
+      //Select corresponding radio button and remove others
+      $("#cake_filling_" + fillingIdNum).prop('checked', true);
+      $(".filling-radio").not(this).prop('checked', false);
+      //Select corresponding dough
       $("#cake_dough_" + doughIdNum).prop("checked", true);
+      $("#dough_i_" + doughIdNum).addClass("label-color");
       //When choosing dough, remove color and selection from all the other doughs
-      $(this).addClass("label-color");
-      $('.dough-label').not(this).removeClass("label-color");
+      $('.dough-label').not("#dough_i_" + doughIdNum).removeClass("label-color");
       //When choosing dough, remove color and selection from all fillings belonging to other doughs
       $("#div_" + doughIdNum + " i").removeClass("radio-circle");
       $("#div_" + doughIdNum + " i").addClass("radio-circle-color");
-      $(".fillings i").not("#div_" + doughIdNum + " i").removeClass("radio-circle-color radio-circle-full");
-      $(".fillings input").not("#div_" + doughIdNum + " i").prop('checked', false);
-      //When choosing a filling, remove selection of other fillings and select corresponding radio button
-      $("#div_" + doughIdNum + " i").click(function(e){
-        if ($("#cake_dough_" + doughIdNum).prop('checked') == true) {
-          var fillingId = $(this).attr('id');
-          var splitFill = fillingId.split("i_");
-          var fillingIdNum = Number(splitFill[1]);
-          $(".i-filling").not(this).removeClass('radio-circle-full');
-          $(this).addClass("radio-circle-full");
-          $("#cake_filling_" + fillingIdNum).prop('checked', true);
-        }
-      })
-    })
+    });
     $("#submit-btn").click(function(e){
       if (($("*[id*=cake_dough_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
         $("#step1").click();
