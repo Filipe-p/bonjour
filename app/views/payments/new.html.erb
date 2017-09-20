@@ -1,21 +1,21 @@
 <div class="banner-orders">
-<div class="container">
-  <div class="row">
-    <ul class="breadcrumb">
-      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
-      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
-      <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
-      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
-    </ul>
-  </div>
-  </div>
   <div class="container">
+    <div id="progresstracker">
+      <ul>
+        <li id = "wiz-1" ><span>1</span></li>
+        <li id = "wiz-2" ><span>2</span></li>
+        <li id = "wiz-3" ><span>3</span></li>
+        <li id = "wiz-4"><span>4</span></li>
+      </ul>
+    </div>
     <div class="form-wrapper">
+    <div class="form-inner-wrapper">
       <div class="row">
         <h1>Pagar encomenda <%= @order.id %></h1>
 
         <%= render 'form' %>
       </div>
+</div>
     </div>
   </div>
   </div>

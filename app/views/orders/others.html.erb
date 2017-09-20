@@ -1,28 +1,36 @@
 <div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
-<div class="container">
-  <div class="row">
-    <ul class="breadcrumb">
-      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
-      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
-      <li id = "wiz-3"><a href="javascript:void(0);">Extras</a></li>
-      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
-    </ul>
-  </div>
-</div>
   <div class="container">
+
+  <div id="progresstracker">
+  <ul>
+    <li class="complete"><span>1</span></li>
+    <li class="complete"><span>2</span></li>
+    <li class="active complete"><span>3</span></li>
+    <li><span>4</span></li>
+  </ul>
+</div>
+
   <div class="form-wrapper">
+      <div class="form-inner-wrapper">
    <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
         <%= render "other" %>
 
       </div>
-         <div id = "down-bar">
-      <div class = "down-nav-btn">Voltar</div>
-      <div class = "down-nav-cart">
-        <p>Total</p>
-        <p id = "cart"></p>
       </div>
-      <div class = "down-nav-btn" id="submit-btn">Próximo passo</div>
-    </div>
+      <div id="pre-down-nav">
+        <div class = "pre-down-nav-btn"></div>
+        <div class = "pre-down-nav-btn"></div>
+        <div class = "pre-down-nav-btn" id = "cart-total">
+          <p>Total</p>
+        </div>
+      </div>
+      <div id = "down-nav">
+        <div class = "down-nav-btn"><%= image_tag("tail-left.svg") %></div>
+        <div class = "down-nav-btn" id="submit-btn"><%= image_tag("tail-right.svg") %></div>
+        <div class = "down-nav-cart">
+          <p id = "cart"></p>
+        </div>
+      </div>
   </div>
 </div>
 </div>
@@ -33,9 +41,6 @@
     $("#step3").attr('class', 'hidden'); //hide submit button
     //$(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#submit-btn").removeClass("hidden");
-    $("#wiz-1").addClass("completed");
-    $("#wiz-2").addClass("completed");
-    $("#wiz-3").addClass("active");
     $('.dough-label').click(function(){
       //Get extras id
       var otherId =  $(this).attr('id');

@@ -1,35 +1,51 @@
 <div class="banner-orders">
-<div class="container">
-  <div class="row">
-    <ul class="breadcrumb">
-      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
-      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
-      <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
-      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
-    </ul>
-  </div>
-</div>
   <div class="container" >
+    <div id="progresstracker">
+      <ul>
+        <li id = "wiz-1" class = "complete" ><span>1</span></li>
+        <li id = "wiz-2" class = "complete"><span>2</span></li>
+        <li id = "wiz-3" class = "complete"><span>3</span></li>
+        <li id = "wiz-4"><span>4</span></li>
+      </ul>
+    </div>
+
     <div class="form-wrapper" style = "overflow: scroll;">
-      <div class="row">
-        <h1>Encomenda</h1>
-        <% unless @order.cakes.blank? %>
+      <div class="form-inner-wrapper">
+      <div class="form-scroll">
+        <div class="row">
+          <h1>Encomenda</h1>
+          <% unless @order.cakes.blank? %>
           <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
           <p id = "cake_<%=cake.id%>">Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
           <p id = "delete_btn_<%=cake.id%>"><%= link_to "Apagar bolo #{cake.id}", cake_path(cake), method: :delete, remote: :true %></p>
           <% end %>
           <%= link_to 'Encomendar outro bolo', new_cake_path %>
-        <% else %>
+          <% else %>
           <%= link_to 'Encomendar bolo', new_cake_path %>
-        <% end %>
+          <% end %>
 
-        <% unless @order.others.blank? %>
+          <% unless @order.others.blank? %>
           <% @order.others.each do |other| %>
-           <p><%= other.name %> </p>
-           <% end %>
-         <% end %>
+          <p><%= other.name %> </p>
+          <% end %>
+          <% end %>
+        </div>
+        </div>
       </div>
-      <%= link_to 'Pagar', new_order_payment_path(@order), id: "submit-btn" %>
+      <div id="pre-down-nav">
+        <div class = "pre-down-nav-btn"></div>
+        <div class = "pre-down-nav-btn"></div>
+        <div class = "pre-down-nav-btn" id = "cart-total">
+          <p>Total</p>
+        </div>
+      </div>
+      <div id = "down-nav">
+        <div class = "down-nav-btn"><%= image_tag("tail-left.svg") %></div>
+        <div class = "down-nav-btn"><%= link_to 'Pagar', new_order_payment_path(@order), id: "submit-btn" %></div>
+        <div class = "down-nav-cart">
+          <p id = "cart"></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -48,7 +64,7 @@
      $(cakeId).remove();
      $(this).remove();
 
-    })
+   })
 
   })
 </script>

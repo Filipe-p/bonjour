@@ -1,88 +1,98 @@
-.breadcrumb {
-    padding: 0px;
-    background: transparent;
-    list-style: none;
-    overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
+
+#progresstracker {
+  margin-top: 3rem;
+  display: block;
+  font-size: 1em;
 }
 
-.breadcrumb>li {
-    display: table-cell;
-    vertical-align: top;
-    width: 1%;
+#progresstracker * {
+  white-space: nowrap;
 }
 
-.breadcrumb>li+li:before {
-    padding: 0;
+#progresstracker ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: table;
+  width: 100%;
 }
 
-.breadcrumb li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 0 10px 45px;
-    position: relative;
-    display: inline-block;
-    width: calc( 100% - 10px );
-    background-color: hsla(0, 0%, 83%, 1);
-    text-align: center;
-    text-transform: capitalize;
+#progresstracker ul li {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  height: 0.75em;
+  background: #f1f1f1;
 }
 
-.breadcrumb li.completed a {
-    background: $lightpurple;
+#progresstracker span {
+  background: #ededed;
+  color: #444;
+  padding: 1rem;
+  margin: 0;
+  border-radius: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  line-height: 0;
 }
 
-.breadcrumb li.completed a:after {
-    border-left: 30px solid $lightpurple;
-
+#progresstracker ul li:first-of-type, #progresstracker ul li:last-of-type {
+  background: transparent;
 }
 
-.breadcrumb li.active a {
-    background: $purple;
+#progresstracker ul li:first-of-type:before {
+  position: absolute;
+  right: 0;
+  background: #f1f1f1;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-.breadcrumb li.active a:after {
-    border-left: 30px solid $purple;
+#progresstracker ul li:last-of-type:before,
+#progresstracker ul li:not(:first-of-type).active:before {
+  position: absolute;
+  left: 0;
+  background: #f1f1f1;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-.breadcrumb li:first-child a {
-    padding-left: 15px;
+#progresstracker ul .complete:first-of-type:before,
+#progresstracker ul li:not(:first-of-type).active:before {
+  background: black;
 }
 
-.breadcrumb li:last-of-type a {
-    width: calc( 100% - 38px );
+#progresstracker ul .complete:last-of-type:before {
+  background: #a7c862;
 }
 
-.breadcrumb li a:before {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 30px solid white;
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
-    margin-left: 1px;
-    left: 100%;
-    z-index: 1;
+#progresstracker ul .complete:not(:first-of-type):not(:last-of-type):before {
+  background: black;
+  position: absolute;
+  left: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
-.breadcrumb li a:after {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 30px solid hsla(0, 0%, 83%, 1);
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
-    left: 100%;
-    z-index: 2;
+#progresstracker .complete span {
+  background-color: black;
+  color: white;
 }
 
+#progresstracker .active span {
+  background-color: #4c0446;
+  color: white;
+}

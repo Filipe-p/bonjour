@@ -1,19 +1,20 @@
 <div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
   <div class="container">
-    <div class="row">
-      <ul class="breadcrumb">
-        <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
-        <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
-        <li id = "wiz-3"><a href="javascript:void(0);">Extras</a></li>
-        <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
+    <div id="progresstracker">
+      <ul>
+        <li id = "wiz-1" class = "complete" ><span>1</span></li>
+        <li id = "wiz-2" class = "active complete" ><span>2</span></li>
+        <li id = "wiz-3" ><span>3</span></li>
+        <li id = "wiz-4"><span>4</span></li>
       </ul>
     </div>
-  </div>
-  <div class="container">
     <div class="form-wrapper">
-     <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
-      <%= render "decoration" %>
-
+      <div class="form-inner-wrapper">
+        <div class="form-scroll">
+         <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
+          <%= render "decoration" %>
+        </div>
+      </div>
     </div>
 
     <div id="pre-down-nav">
@@ -24,13 +25,17 @@
       </div>
     </div>
     <div id = "down-nav">
-      <div class = "down-nav-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-      <div class = "down-nav-btn" id="submit-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+         <div class = "down-nav-btn"><%= image_tag("tail-left.svg") %></div>
+        <div class = "down-nav-btn" id="submit-btn"><%= image_tag("tail-right.svg") %></div>
       <div class = "down-nav-cart">
         <p id = "cart"></p>
       </div>
     </div>
   </div>
+  <%= link_to design_path, class: "navbar-ac-link" do %>
+  Não encontra o que quer?
+  <% end %>
+</div>
 </div>
 </div>
 
@@ -54,9 +59,6 @@
     $("#step2").attr('class', 'hidden'); //hide submit button
     $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#submit-btn").removeClass("hidden");
-    $("#wiz-1").removeClass("active");
-    $("#wiz-1").addClass("completed");
-    $("#wiz-2").addClass("active");
     //Add dough price to cart
     $("#cart").append("<%= @dough.price_cents%>€/Kg");
     //Enlarge images

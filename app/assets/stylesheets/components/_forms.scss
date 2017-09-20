@@ -1,12 +1,13 @@
 .form-wrapper {
-  border: 2px solid $purple;
+  border: 1px solid $lightgray;
   border-radius: 4px;
   height: 700px;
   position: relative;
 }
 
 .form-inner-wrapper {
-  height: calc(700px - 70px);
+  height: calc(700px - 70px - 30px);
+  padding: 2em 2em;
 }
 .form-scroll {
   overflow: scroll;
@@ -42,13 +43,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid $purple;
+  border-top: 1px solid $lightgray;
 }
 
 .down-nav-btn:hover {
   background-color: $purple;
   color: white;
-  border-top: 2px solid $purple;
+  border-top: 1px solid $lightgray;
 }
 
 .down-nav-cart {
@@ -61,7 +62,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  border-left: 2px solid $purple;
+  border-left: 1px solid $lightgray;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +72,7 @@
   position: absolute;
   bottom: 70px;
   height: 30px;
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   display: flex;
   justify-content: stretch;
@@ -83,8 +84,9 @@
 }
 
 #cart-total {
-  border-top: 2px solid $purple;
-  border-left: 2px solid $purple;
+  border-top: 1px solid $lightgray;
+  border-left: 1px solid $lightgray;
+  background-color: white;
 }
 
 #down-nav {
@@ -128,17 +130,15 @@
 .dough-label {
   width: 100%;
   height: 30px;
-  border: 2px solid $lightpurple;
   padding: 2px 2px;
   border-radius: 4px;
-  background-color: $lightpurple;
   text-align: center;
-  color: white;
+  color: black;
+  opacity: 0.5;
 }
 
 .dough-label:hover{
-  background-color: $purple;
-  border: 2px solid $purple;
+  box-shadow: 1px 1px 1px 1px;
 }
 
 
@@ -170,10 +170,12 @@
   left: 0;
   bottom: 0px;
   width: 100%;
-  background-color: black;
   color: white;
   padding: 0.5em 1em;
   opacity: 0.5;
+  background-image: linear-gradient(0deg,rgba(0,0,0,.9) 15%,transparent 50%);
+  height: 30px;
+  transition: height 1s;
 }
 
 .decoration-price-tag:hover {
@@ -185,7 +187,9 @@
   color: white;
   padding: 0.5em 1em;
   opacity: 1;
+  height: 60px;
 }
+
 // // MEDIA QUERIES
 // /*---------- iphone4 and iphone5 ----------*/
 // @include media("<=phoneSmall") {

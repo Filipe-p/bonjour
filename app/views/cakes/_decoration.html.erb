@@ -8,8 +8,8 @@
       <div class="col-md-4">
         <div class = "img-decoration-wrapper" >
           <div class="row img-decoration-inner-wrapper">
-          <div class = "decoration-price-tag">+<%= decoration.price_cents %>€/Kg</div>
             <%= image_tag("cake_5.jpg") %>
+            <div class = "decoration-price-tag">+<%= decoration.price_cents %>€/Kg</div>
           </div>
 
         </div>
@@ -30,7 +30,7 @@
    <%= f.radio_button :size, size %>
   <% end %>
   <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
-   <%= f.input :message, as: :text, input_html: {placeholder: "Leave a message"} %>
+   <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"} %>
  </div>
 </div>
 <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
