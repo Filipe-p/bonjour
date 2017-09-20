@@ -1,30 +1,51 @@
 <div class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
-<div class="container">
-  <div class="row">
-    <ul class="breadcrumb">
-      <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
-      <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
-      <li id = "wiz-3"><a href="javascript:void(0);">Rever encomenda</a></li>
-      <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
-    </ul>
-  </div>
-</div>
   <div class="container">
-  <div class="form-wrapper">
-   <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
-        <%= render "decoration" %>
+    <div class="row">
+      <ul class="breadcrumb">
+        <li id = "wiz-1"><a href="javascript:void(0);">Massa e Recheio</a></li>
+        <li id = "wiz-2"><a href="javascript:void(0);">Decoração e tamanho</a></li>
+        <li id = "wiz-3"><a href="javascript:void(0);">Extras</a></li>
+        <li id = "wiz-4"><a href="javascript:void(0);">Pagar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-wrapper">
+     <div class="row row-height" id = "dynamic-content" style = "max-height: 100%">
+      <%= render "decoration" %>
 
-      </div>
-            <div id = "down-bar">
-        <div class = "down-nav-btn">Voltar</div>
-        <div class = "down-nav-cart">
+    </div>
+
+    <div id="pre-down-nav">
+      <div class = "pre-down-nav-btn"></div>
+      <div class = "pre-down-nav-btn"></div>
+      <div class = "pre-down-nav-btn" id = "cart-total">
         <p>Total</p>
-        <p id = "cart"></p>
-        </div>
-        <div class = "down-nav-btn" id="submit-btn">Próximo passo</div>
       </div>
+    </div>
+    <div id = "down-nav">
+      <div class = "down-nav-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+      <div class = "down-nav-btn" id="submit-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+      <div class = "down-nav-cart">
+        <p id = "cart"></p>
+      </div>
+    </div>
   </div>
 </div>
+</div>
+
+
+<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <img src="" class="enlargeImageModalSource" style="width: 100%;">
+      </div>
+    </div>
+  </div>
 </div>
 
 <% content_for(:after_js) do %>
@@ -36,6 +57,17 @@
     $("#wiz-1").removeClass("active");
     $("#wiz-1").addClass("completed");
     $("#wiz-2").addClass("active");
+    //Add dough price to cart
+    $("#cart").append("<%= @dough.price_cents%>€/Kg");
+    //Enlarge images
+    $(function() {
+      $('img').on('click', function() {
+        $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+        $('#enlargeImageModal').modal('show');
+      });
+    });
+
+
     $('.dough-label').click(function(){
       //Get decoration id
       var decorId =  $(this).attr('id');
@@ -47,11 +79,11 @@
       $(this).addClass("label-color");
       $('.dough-label').not(this).removeClass("label-color");
     })
-     $("#submit-btn").click(function(e){
+    $("#submit-btn").click(function(e){
     //   if (($("*[id*=cake_decoration_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
-       $("#step2").click();
+     $("#step2").click();
     // }
-     })
+  })
   })
 </script>
 <% end %>

@@ -7,12 +7,13 @@
 
       <div class="col-md-4">
         <div class = "img-decoration-wrapper" >
-          <div class="row">
+          <div class="row img-decoration-inner-wrapper">
+          <div class = "decoration-price-tag">+<%= decoration.price_cents %>€/Kg</div>
             <%= image_tag("cake_5.jpg") %>
           </div>
-          <div class="row dough-label" id = "decor_i_<%= decoration.id %>"><p>Seleccionar</p></div>
+
         </div>
-        <div class="radio-hide">
+        <div class="">
           <%= f.radio_button :decoration, decoration.id %>
         </div>
       </div>

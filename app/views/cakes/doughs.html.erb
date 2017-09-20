@@ -49,40 +49,33 @@
         <div class="form-scroll">
          <div class="row row-height" id = "dynamic-content">
           <%= render 'dough' %>
-
         </div>
-
-
       </div>
-      <div id = "down-bar">
-        <div class = "down-nav-btn">Voltar</div>
-        <div class = "down-nav-cart">
-        <p>Total</p>
-        <p id = "cart"></p>
+
+      <div id="pre-down-nav">
+        <div class = "pre-down-nav-btn"></div>
+        <div class = "pre-down-nav-btn"></div>
+        <div class = "pre-down-nav-btn" id = "cart-total">
+          <p>Total</p>
         </div>
-        <div class = "down-nav-btn" id="submit-btn">Próximo passo</div>
+      </div>
+      <div id = "down-nav">
+        <div class = "down-nav-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+        <div class = "down-nav-btn" id="submit-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        <div class = "down-nav-cart">
+          <p id = "cart"></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 </div>
 
-<!-- <div class="ui-widget">
-    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-        <p>
-            <span class="ui-icon ui-icon-alert"
-                style="float: left; margin-right: .3em;"></span>
-            <strong>Alert:</strong> Sample ui-state-error style.
-        </p>
-    </div>
-  </div> -->
 
-
-
-  <% content_for(:after_js) do %>
-  <script>
-    $(document).ready(function(){
-      $('#myModal').modal('toggle');
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $('#myModal').modal('toggle');
     $("#step1").attr('class', 'hidden'); //hide submit button
     $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#wiz-1").addClass("active")
@@ -112,7 +105,7 @@
       $("#div_" + doughIdNum + " i").addClass("radio-circle-color");
       //Add price to cart
       $("#cart").empty();
-      $("#cart").append("<%= @doughs.first.price_cents%>€");
+      $("#cart").append("<%= @doughs.first.price_cents%>€/Kg");
     });
     $("#submit-btn").click(function(e){
       if (($("*[id*=cake_dough_]").is(":checked") == true) && ($("*[id*=cake_filling_]").is(":checked") == true)) {
