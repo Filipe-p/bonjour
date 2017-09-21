@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20170903100624) do
     t.bigint "other_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity", default: 0, null: false
+    t.integer "quantity", default: 1, null: false
     t.index ["order_id"], name: "index_order_others_on_order_id"
     t.index ["other_id"], name: "index_order_others_on_other_id"
   end

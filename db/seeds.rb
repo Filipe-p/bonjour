@@ -9,11 +9,11 @@ Decoration.delete_all
 Other.delete_all
 
 
-pao_de_lo = Dough.create(name: "Pão de Lô", price: 1 , description: "Pão de Lô é uma base amarela, fofa e húmida.")
-chocolate = Dough.create(name: "Chocolate", price: 1 , description: "A base bolo é de Chocolate")
-cenoura = Dough.create(name: "Cenoura", price: 1 , description: "A base bolo é de Cenoura")
-red_velvet = Dough.create(name: "Redvelvet", price: 1 , description: "A base bolo é de Red Velvet")
-noz = Dough.create(name: "Noz", price: 1 , description: "A base bolo é de Noz")
+pao_de_lo = Dough.create(name: "Pão de Lô", price: 0.15 , description: "Pão de Lô é uma base amarela, fofa e húmida.")
+chocolate = Dough.create(name: "Chocolate", price: 0.15 , description: "A base bolo é de Chocolate")
+cenoura = Dough.create(name: "Cenoura", price: 0.15 , description: "A base bolo é de Cenoura")
+red_velvet = Dough.create(name: "Redvelvet", price: 0.15 , description: "A base bolo é de Red Velvet")
+noz = Dough.create(name: "Noz", price: 0.15 , description: "A base bolo é de Noz")
 
 doce_de_ovo = Filling.create(name: "Doce de ôvo", price: 1, description: "")
 chantili = Filling.create(name: "Chantili e Frutos Silvestre", price: 1, description: "")
@@ -26,15 +26,15 @@ doce_de_laranja = Filling.create(name: "Doce Laranja", price: 1, description: ""
 branco = Filling.create(name: "Chocolate Branco e Crocante", price: 1, description: "")
 queijo = Filling.create(name: "Creme de Queijo", price: 1, description: "")
 
-Decoration.create(name: "Decoration Ex1", price: 1, description: "This is an amazing Decoration EX1")
-Decoration.create(name: "Decoration Ex2", price: 1, description: "This is an amazing Decoration EX2")
-Decoration.create(name: "Decoration Ex3", price: 1, description: "This is an amazing Decoration EX3")
-Decoration.create(name: "Decoration Ex4", price: 1, description: "This is an amazing Decoration EX4")
-Decoration.create(name: "Decoration Ex5", price: 1, description: "This is an amazing Decoration EX5")
-Decoration.create(name: "Decoration Ex6", price: 1, description: "This is an amazing Decoration EX6")
-Decoration.create(name: "Decoration Ex7", price: 1, description: "This is an amazing Decoration EX7")
-Decoration.create(name: "Decoration Ex8", price: 1, description: "This is an amazing Decoration EX8")
-Decoration.create(name: "Decoration Ex9", price: 1, description: "This is an amazing Decoration EX9")
+Decoration.create(name: "Decoration Ex1", price: 0, description: "This is an amazing Decoration EX1")
+Decoration.create(name: "Decoration Ex2", price: 0, description: "This is an amazing Decoration EX2")
+Decoration.create(name: "Decoration Ex3", price: 0, description: "This is an amazing Decoration EX3")
+Decoration.create(name: "Decoration Ex4", price: 0.02, description: "This is an amazing Decoration EX4")
+Decoration.create(name: "Decoration Ex5", price: 0.03, description: "This is an amazing Decoration EX5")
+Decoration.create(name: "Decoration Ex6", price: 0.05, description: "This is an amazing Decoration EX6")
+Decoration.create(name: "Decoration Ex7", price: 0.01, description: "This is an amazing Decoration EX7")
+Decoration.create(name: "Decoration Ex8", price: 0.06, description: "This is an amazing Decoration EX8")
+Decoration.create(name: "Decoration Ex9", price: 0.04, description: "This is an amazing Decoration EX9")
 
 doughs = {}
 doughs[:pao_de_lo] = pao_de_lo
