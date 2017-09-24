@@ -54,6 +54,8 @@
 </div>
 </div>
 
+<%= @order.cakes.last.price_cents %>
+
 <% content_for(:after_js) do %>
 <script>
   $(document).ready(function(){

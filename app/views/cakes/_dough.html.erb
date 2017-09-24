@@ -3,7 +3,7 @@
  <h1 id = "step-title" style = "font-size: 30px; padding-left: 15px;">Escolha a massa e o recheio do bolo</h1>
  <div id = "decoration-wrapper" class = "row-height" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
   <% @doughs.each do |dough| %>
-  <div class="col-md-4 doughs" id = "div_<%= dough.id %>" style = "border: 1px solid black; margin: 10px 10px;">
+  <div class="col-md-4 doughs card" id = "div_<%= dough.id %>">
     <div class = "img-dough-wrapper" >
       <div class="row">
         <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
