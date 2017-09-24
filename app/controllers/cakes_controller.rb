@@ -2,6 +2,7 @@ class CakesController < ApplicationController
   include ApplicationHelper
 
   before_action :set_cake, only: [:edit, :update, :destroy]
+
   def index
   end
 

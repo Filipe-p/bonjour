@@ -23,12 +23,8 @@
   </div>
   <div class="col-md-4">
   <h1 id = "step-title" style = "font-size: 30px;">Tamanho</h1>
-  <% @sizes.each do |size| %>
-  <div class="row">
-  <%= size %>
-  </div>
-   <%= f.radio_button :size, size %>
-  <% end %>
+  <%= f.input :size, collection: Cake::SIZES %>
+
   <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
    <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"} %>
  </div>
