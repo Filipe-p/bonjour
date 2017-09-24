@@ -5,11 +5,12 @@
     <div id = "decoration-wrapper" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
       <% @decorations.each do |decoration| %>
 
-      <div class="col-md-4">
+      <div class="col-md-4" style = "border: 1px solid black; margin: 10px 10px;">
         <div class = "img-decoration-wrapper" >
           <div class="row img-decoration-inner-wrapper">
             <%= image_tag("cake_5.jpg") %>
-            <div class = "decoration-price-tag">+<%= decoration.price_cents %>€/Kg</div>
+            <p >+<%= decoration.price_cents %>€/Kg</p>
+            <p>A partir de 2kg</p>
           </div>
 
         </div>

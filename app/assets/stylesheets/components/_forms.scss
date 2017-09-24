@@ -1,13 +1,16 @@
 .form-wrapper {
-  border: 1px solid $lightgray;
-  border-radius: 4px;
+  border: 2px solid $purple;
   height: 700px;
   position: relative;
+  max-height: 70vh;
 }
 
 .form-inner-wrapper {
+  max-height: calc(70vh - 70px - 30px);
   height: calc(700px - 70px - 30px);
-  padding: 2em 2em;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 .form-scroll {
   overflow: scroll;
@@ -47,9 +50,7 @@
 }
 
 .down-nav-btn:hover {
-  background-color: $purple;
-  color: white;
-  border-top: 1px solid $lightgray;
+ box-shadow: 1px 1px 1px 1px;
 }
 
 .down-nav-cart {
@@ -137,18 +138,8 @@
   opacity: 0.5;
 }
 
-.dough-label:hover{
+.selected-card{
   box-shadow: 1px 1px 1px 1px;
-}
-
-
-.label-color {
-  background-color: $purple;
-  border-color: $purple;
-}
-
-.label-color p{
-  opacity: 1;
 }
 
 .label-gray {
@@ -190,6 +181,10 @@
   height: 60px;
 }
 
+.green-btn {
+  background-color: green;
+}
+
 // // MEDIA QUERIES
 // /*---------- iphone4 and iphone5 ----------*/
 // @include media("<=phoneSmall") {
@@ -211,3 +206,76 @@
 //     width: 150px;
 //   }
 // }
+
+*{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input-checked {
+  background-color: $green;
+}
+.option-input-checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: $green;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+
