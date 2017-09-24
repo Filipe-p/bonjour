@@ -5,11 +5,20 @@
     <div id = "decoration-wrapper" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
       <% @decorations.each do |decoration| %>
 
-      <div class="col-md-4">
+      <div class="col-md-4 card">
         <div class = "img-decoration-wrapper" >
           <div class="row img-decoration-inner-wrapper">
             <%= image_tag("cake_5.jpg") %>
-            <div class = "decoration-price-tag">+<%= decoration.price_cents %>€/Kg</div>
+            <div class="row">
+            <div class="col-md-3">
+                <div class="radio option-input i-filling" id = "i_<%= decoration.id %>"></div>
+              </div>
+              <div class="col-md-9" style = "display: flex; align-items: center;">
+                <%= decoration.name %>
+              </div>
+            </div>
+            <p >+<%= decoration.price_cents %>€/Kg</p>
+            <p>A partir de 2kg</p>
           </div>
 
         </div>
@@ -22,6 +31,7 @@
     </div>
   </div>
   <div class="col-md-4">
+
   <h1 id = "step-title" style = "font-size: 30px;">Tamanho</h1>
   <%= f.input :size, collection: Cake::SIZES %>
 

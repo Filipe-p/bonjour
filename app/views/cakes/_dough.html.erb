@@ -1,11 +1,9 @@
 <%= simple_form_for :cake, url: decorations_cakes_path, method: :get do |f| %>
-<div class="row">
-    <h1 id = "step-title" style = "font-size: 30px; padding-left: 15px;">Escolha a massa e o recheio do bolo</h1>
-
-</div>
-<div class="row row-height" style = "width: 100%">
+<div class="row dough-form" style = "width: 100%">
+ <h1 id = "step-title" style = "font-size: 30px; padding-left: 15px;">Escolha a massa e o recheio do bolo</h1>
+ <div id = "decoration-wrapper" class = "row-height" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
   <% @doughs.each do |dough| %>
-  <div class="col-md-4 doughs" id = "div_<%= dough.id %>">
+  <div class="col-md-4 doughs card" id = "div_<%= dough.id %>">
     <div class = "img-dough-wrapper" >
       <div class="row">
         <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
@@ -15,25 +13,26 @@
       </div>
     </div>
     <div class="dough-radio radio-hide">
-      <%= f.radio_button :dough, dough.id, input_html: {class: "radio-button"}%>
+      <%= f.radio_button :dough, dough.id, input_html: { class: "radio-button"}%>
     </div>
     <div class="row fillings" style = "padding-top: 40px">
       <% dough.fillings.each do |filling| %>
-      <div class="row" style = "padding-bottom: 20px;">
-        <div class="col-md-2" id = "fil_dough_<%= dough.id %>">
-          <i class="fa fa-circle-o i-filling" id = "i_<%= filling.id %>" aria-hidden="true"></i>
+      <div class="row row-height" style = "padding-bottom: 20px;">
+        <div class="col-md-3" id = "fil_dough_<%= dough.id %>">
+          <div class="radio option-input i-filling" id = "i_<%= filling.id %>"></div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9" style = "display: flex; align-items: center;">
           <%= filling.name %>
         </div>
-        <div class = "filling-radio radio-hide">
-          <%= f.radio_button :filling, filling.id, input_html: {class: "radio-button"}%>
+        <div class="radio-hide">
+          <%= f.radio_button :filling, filling.id, id: "cake_filling_#{filling.id}", class: 'radio-button'%>
         </div>
       </div>
       <% end %>
     </div>
   </div>
   <% end %>
+</div>
 </div>
 
 <div class="row">
