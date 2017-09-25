@@ -7,7 +7,6 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = user
-    @greeting = "Hi welcome email!    "
 
     mail(to: @user.email, subject: 'Benvindo á Pastelaria Bonjour')
   end
@@ -17,9 +16,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.purchase_confirmation.subject
   #
-  def purchase_confirmation(user)
+  def confirmacao_pedido(user)
     @user = user
-    @greeting = "Hi, this is a confirmation email"
+    @order = user.orders.last
 
     mail(to: @user.email, subject: 'Confirmação de Encomenda - Pastelaria Bonjour')
   end
