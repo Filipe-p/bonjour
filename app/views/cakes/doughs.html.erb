@@ -61,6 +61,7 @@
     </div>
     <div id = "down-nav">
       <div class = "down-nav-btn">
+        <%= link_to session[:back_link], class: "navbar-ac-link" do %>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
           <g class="nc-icon-wrapper">
             <path id = "path1-l" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
@@ -69,6 +70,7 @@
             </path>
           </g>
         </svg>
+        <% end %>
       </div>
       <div class = "down-nav-btn" id="submit-btn">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
