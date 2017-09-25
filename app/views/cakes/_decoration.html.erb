@@ -11,19 +11,15 @@
             <%= image_tag("cake_5.jpg") %>
             <div class="row">
               <div class="col-md-3">
-                <div class="radio option-input i-decoration" id = "i_<%= decoration.id %>"></div>
+                <%= f.radio_button :decoration, decoration.id, id: "cake_decoration_#{decoration.id}", class: 'radio-button option-input radio'%>
               </div>
               <div class="col-md-9" style = "display: flex; align-items: center;">
                 <%= decoration.name %>
               </div>
             </div>
-            <p> + <span id= "decoration_price_<%= decoration.id %>"><%= decoration.price_cents %></span> €/Kg</p>
+            <p> + <span id= "decoration_price_<%= decoration.id %>" class = "price"><%= decoration.price_cents %></span> €/Kg</p>
             <p>A partir de <span id= "decoration_quant_<%= decoration.id %>"><%= decoration.minimum_size %></span> kg</p>
           </div>
-
-        </div>
-        <div class="radio-">
-          <%= f.radio_button :decoration, decoration.id, id: "cake_decoration_#{decoration.id}", class: 'radio-button'%>
         </div>
       </div>
 

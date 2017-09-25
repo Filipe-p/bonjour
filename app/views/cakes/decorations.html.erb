@@ -88,34 +88,51 @@
     });
 
     //When the user selects a decoration
-    $('.i-decoration').click(function(){
+    $("*[id*=cake_decoration_]").on('click', function(event){
       //Get decoration id
       var decorationId = $(this).attr('id');
-      var splitDec = decorationId.split("i_");
+      var splitDec = decorationId.split("cake_decoration_");
       var decorationIdNum = Number(splitDec[1]);
-      //Select decoration
-      $(this).addClass("option-input-checked option-input-checked::before");
-      //Remove selection of all other decorations
-      $(".i-decoration").not(this).removeClass("option-input-checked option-input-checked::before");
-      //Select corresponding radio button and remove others
-      $("#cake_decoration_" + decorationIdNum).prop('checked', true);
-      $(".decoration-radio").not(this).prop('checked', false);
-      //Get decoration price
-      var price = Number($("#decoration_price_" + decorationIdNum).html());
-      //Get decoration minimum quantity
       var quantity = Number($("#decoration_quant_" + decorationIdNum).html());
-      //Add price to cart
-      $("#cart").empty();
-      //$("#cart").html("<%= @dough.price_cents%>€/Kg");
-      $("#cart").html(price + Number($("#dough_price").html()) + "€");
-      //Make some sizes unvailable
-      $('option').filter(function() {
-        return $(this).val() < quantity;
-      }).prop('disabled', true);
-      //Make the other available
+      //Get decoration price
+      var decorationPrice = Number($("#decoration_price_" + decorationIdNum).text());
+      //Check if the size is already selected
+      if ($("#cake_size").val() != "" && $("#cake_size").val() != null) {
+        //If yes
+        //Check if the selected quantity is compatible with current decoration
+        if ($("#cake_size").val() < quantity) {
+          event.preventDefault();
+          $("#pre-down-nav").notify("Esta decoração não está disponível para a quantidade seleccionada");
+        } else {
+           //Multiply dough's price and decoration's price by quantity
+        $("#cart").empty();
+        $("#cart").html((Number($("#dough_price").html()) + decorationPrice) * $("#cake_size").val() + "€");
+        }
+      } else {
+        //Make some sizes unvailable
+        $('option').filter(function() {
+          return $(this).val() < quantity;
+        }).prop('disabled', true);
+      //Make the others available
       $('option').filter(function() {
         return $(this).val() >= quantity;
       }).prop('disabled', false);
+
+      //Add price to cart
+      $("#cart").empty();
+      $("#cart").html(decorationPrice + Number($("#dough_price").html()) + "€");
+    }
+    $("#cake_size").change(function(e) {
+      var minQuant = $(this).val();
+      //Multiply dough's price by quantity
+      $("#cart").html(Number($("#dough_price").html()) * minQuant + "€");
+      $("*[id*=decoration_quant_]").filter(function(){
+        return $(this).html() >= minQuant
+      }).each(function(index) {
+        $(this).closest(".card").find("input").prop("disabled");
+      });
+    })
+
       //Change button color
       $('#path1-r').css({ fill: "#72C472" });
     });
@@ -126,23 +143,33 @@
       if (($("*[id*=cake_decoration_]").is(":checked") == true))
       {
         //If yes, make some sizes unvailable
-        $("input[name='cake[decoration]']:checked")
-       //$(this).notify("Seleccione uma decoração");
+        $("input[name='cake[decoration]']:checked");
+        //Get the selected decoration id
+        var decorationId = $("*[id*=cake_decoration_]:checked").attr("id");
+        var splitDec = decorationId.split("cake_decoration_");
+        var decorationIdNum = Number(splitDec[1]);
+        var decorationPrice = Number($("#decoration_price_" + decorationIdNum).text());
+
+        $("#cake_size").change(function(e) {
+          var minQuant = $(this).val();
+      //Multiply dough's price and decoration's price by quantity
+      $("#cart").empty();
+      $("#cart").html((Number($("#dough_price").html()) + decorationPrice) * minQuant + "€");
+    });
      } else {
      //All sizes are available
      $("#cake_size").change(function(e) {
       var minQuant = $(this).val();
+      //Multiply dough's price by quantity
+      $("#cart").html(Number($("#dough_price").html()) * minQuant + "€");
       $("*[id*=decoration_quant_]").filter(function(){
-        return $(this).html() < minQuant
-      }).each(function( index ) {
-        return $(this).closest(".card").find(".i-decoration");
-      }).click(function() {
-        alert("hhh");
+        return $(this).html() >= minQuant
+      }).each(function(index) {
+        $(this).closest(".card").find("input").prop("disabled");
       });
     })
-      // $("#cart").html(Number($("#decoration_price_" + decorationIdNum).html()) + Number($("#dough_price").html()) + "€");
-    }
-  })
+   }
+ })
 
 
     $("#submit-btn").click(function(e){
