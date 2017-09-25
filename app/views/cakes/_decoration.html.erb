@@ -6,24 +6,20 @@
       <% @decorations.each do |decoration| %>
 
       <div class="col-md-4 card">
-        <div class = "img-decoration-wrapper" >
+        <div class= "img-decoration-wrapper" >
           <div class="row img-decoration-inner-wrapper">
             <%= image_tag("cake_5.jpg") %>
             <div class="row">
-            <div class="col-md-3">
-                <div class="radio option-input i-filling" id = "i_<%= decoration.id %>"></div>
+              <div class="col-md-3">
+                <%= f.radio_button :decoration, decoration.id, id: "cake_decoration_#{decoration.id}", class: 'radio-button option-input radio'%>
               </div>
               <div class="col-md-9" style = "display: flex; align-items: center;">
                 <%= decoration.name %>
               </div>
             </div>
-            <p >+<%= decoration.price_cents %>€/Kg</p>
-            <p>A partir de 2kg</p>
+            <p> + <span id= "decoration_price_<%= decoration.id %>" class = "price"><%= decoration.price_cents %></span> €/Kg</p>
+            <p>A partir de <span id= "decoration_quant_<%= decoration.id %>"><%= decoration.minimum_size %></span> kg</p>
           </div>
-
-        </div>
-        <div class="">
-          <%= f.radio_button :decoration, decoration.id %>
         </div>
       </div>
 
@@ -32,14 +28,15 @@
   </div>
   <div class="col-md-4">
 
-  <h1 id = "step-title" style = "font-size: 30px;">Tamanho</h1>
-  <%= f.input :size, collection: Cake::SIZES %>
+    <h1 id = "step-title" style = "font-size: 30px;">Tamanho</h1>
+    <%= f.input :size, collection: Cake::SIZES %>
 
-  <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
-   <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"} %>
- </div>
+    <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
+    <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"} %>
+  </div>
 </div>
 <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
+<span id = "dough_price" class = "hidden"><%= @dough.price_cents %></span>
 <%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
 <%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step2"%>
 <% end %>
