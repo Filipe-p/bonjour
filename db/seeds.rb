@@ -26,15 +26,15 @@ doce_de_laranja = Filling.create(name: "Doce Laranja", price: 1, description: ""
 branco = Filling.create(name: "Chocolate Branco e Crocante", price: 1, description: "")
 queijo = Filling.create(name: "Creme de Queijo", price: 1, description: "")
 
-Decoration.create(name: "Decoration Ex1", price: 0, description: "This is an amazing Decoration EX1")
-Decoration.create(name: "Decoration Ex2", price: 0, description: "This is an amazing Decoration EX2")
-Decoration.create(name: "Decoration Ex3", price: 0, description: "This is an amazing Decoration EX3")
-Decoration.create(name: "Decoration Ex4", price: 0.02, description: "This is an amazing Decoration EX4")
-Decoration.create(name: "Decoration Ex5", price: 0.03, description: "This is an amazing Decoration EX5")
-Decoration.create(name: "Decoration Ex6", price: 0.05, description: "This is an amazing Decoration EX6")
-Decoration.create(name: "Decoration Ex7", price: 0.01, description: "This is an amazing Decoration EX7")
-Decoration.create(name: "Decoration Ex8", price: 0.06, description: "This is an amazing Decoration EX8")
-Decoration.create(name: "Decoration Ex9", price: 0.04, description: "This is an amazing Decoration EX9")
+Decoration.create(name: "Decoration Ex1", price: 0, minimum_size: 0.0, description: "This is an amazing Decoration EX1")
+Decoration.create(name: "Decoration Ex2", price: 0, minimum_size: 1.0, description: "This is an amazing Decoration EX2")
+Decoration.create(name: "Decoration Ex3", price: 0, minimum_size: 2.0, description: "This is an amazing Decoration EX3")
+Decoration.create(name: "Decoration Ex4", price: 0.02, minimum_size: 1.0, description: "This is an amazing Decoration EX4")
+Decoration.create(name: "Decoration Ex5", price: 0.03, minimum_size: 1.0, description: "This is an amazing Decoration EX5")
+Decoration.create(name: "Decoration Ex6", price: 0.05, minimum_size: 3.0, description: "This is an amazing Decoration EX6")
+Decoration.create(name: "Decoration Ex7", price: 0.01, minimum_size: 1.0, description: "This is an amazing Decoration EX7")
+Decoration.create(name: "Decoration Ex8", price: 0.06, minimum_size: 1.0, description: "This is an amazing Decoration EX8")
+Decoration.create(name: "Decoration Ex9", price: 0.04, minimum_size: 1.0, description: "This is an amazing Decoration EX9")
 
 doughs = {}
 doughs[:pao_de_lo] = pao_de_lo

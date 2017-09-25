@@ -1,8 +1,10 @@
 .form-wrapper {
-  border: 2px solid $purple;
+  //border: 2px solid $purple;
   height: 700px;
   position: relative;
   max-height: 70vh;
+  box-shadow: 2px 2px 2px 2px $lightgray;
+  background-color: white;
 }
 
 .form-inner-wrapper {
@@ -46,7 +48,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid black;
+  //border-top: 2px solid black;
+  box-shadow: 0px -2px 2px 0px $lightgray;
 }
 
 .down-nav-btn:hover {
@@ -63,7 +66,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  border-left: 2px solid black;
+  //border-left: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,9 +88,10 @@
 }
 
 #cart-total {
-  border-top: 2px solid black;
-  border-left: 2px solid black;
+  // border-top: 2px solid black;
+  // border-left: 2px solid black;
   background-color: white;
+  box-shadow: -2px -2px 2px 0px $lightgray;
 }
 
 #down-nav {
@@ -245,9 +249,9 @@
   position: relative;
   z-index: 1;
 }
-.option-input:hover {
-  background: #9faab7;
-}
+// .option-input:hover {
+//   background: #9faab7;
+// }
 .option-input-checked {
   background-color: $green;
 }

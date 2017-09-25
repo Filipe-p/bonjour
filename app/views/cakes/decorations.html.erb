@@ -49,10 +49,10 @@
         <p id = "cart"></p>
       </div>
     </div>
-</div>
-<%= link_to design_path, class: "navbar-ac-link" do %>
-Não encontra o que quer?
-<% end %>
+  </div>
+  <%= link_to design_path, class: "navbar-ac-link" do %>
+  Não encontra o que quer?
+  <% end %>
 </div>
 </div>
 </div>
@@ -87,30 +87,73 @@ Não encontra o que quer?
       });
     });
 
-
-    $('.dough-label').click(function(){
+    //When the user selects a decoration
+    $('.i-decoration').click(function(){
       //Get decoration id
-      var decorId =  $(this).attr('id');
-      var split = decorId.split("decor_i_");
-      var decorIdNum = Number(split[1]);
-      //Select corresponding input
-      $("#cake_decoration_" + decorIdNum).prop("checked", true);
-      //When choosing decoration, remove color and selection from all the other decorations
-      $(this).addClass("label-color");
-      $('.dough-label').not(this).removeClass("label-color");
-      if (($("*[id*=cake_decoration_]").is(":checked") == true) && ($("*[id*=cake_size_]").is(":checked") == true)) {
-       $("#submit-btn").addClass("green-btn");
-     }
-   })
+      var decorationId = $(this).attr('id');
+      var splitDec = decorationId.split("i_");
+      var decorationIdNum = Number(splitDec[1]);
+      //Select decoration
+      $(this).addClass("option-input-checked option-input-checked::before");
+      //Remove selection of all other decorations
+      $(".i-decoration").not(this).removeClass("option-input-checked option-input-checked::before");
+      //Select corresponding radio button and remove others
+      $("#cake_decoration_" + decorationIdNum).prop('checked', true);
+      $(".decoration-radio").not(this).prop('checked', false);
+      //Get decoration price
+      var price = Number($("#decoration_price_" + decorationIdNum).html());
+      //Get decoration minimum quantity
+      var quantity = Number($("#decoration_quant_" + decorationIdNum).html());
+      //Add price to cart
+      $("#cart").empty();
+      //$("#cart").html("<%= @dough.price_cents%>€/Kg");
+      $("#cart").html(price + Number($("#dough_price").html()) + "€");
+      //Make some sizes unvailable
+      $('option').filter(function() {
+        return $(this).val() < quantity;
+      }).prop('disabled', true);
+      //Make the other available
+      $('option').filter(function() {
+        return $(this).val() >= quantity;
+      }).prop('disabled', false);
+      //Change button color
+      $('#path1-r').css({ fill: "#72C472" });
+    });
+
+    //When the user selects a size
+    $("#cake_size").click(function(e) {
+      //Verify if the decoration is already selected
+      if (($("*[id*=cake_decoration_]").is(":checked") == true))
+      {
+        //If yes, make some sizes unvailable
+        $("input[name='cake[decoration]']:checked")
+       //$(this).notify("Seleccione uma decoração");
+     } else {
+     //All sizes are available
+     $("#cake_size").change(function(e) {
+      var minQuant = $(this).val();
+      $("*[id*=decoration_quant_]").filter(function(){
+        return $(this).html() < minQuant
+      }).each(function( index ) {
+        return $(this).closest(".card").find(".i-decoration");
+      }).click(function() {
+        alert("hhh");
+      });
+    })
+      // $("#cart").html(Number($("#decoration_price_" + decorationIdNum).html()) + Number($("#dough_price").html()) + "€");
+    }
+  })
 
 
     $("#submit-btn").click(function(e){
-      if (($("*[id*=cake_decoration_]").is(":checked") == true) && ($("*[id*=cake_size_]").is(":checked") == true)) {
+      if (($("*[id*=cake_decoration_]").is(":checked") == true))
+        // && ($("*[id*=cake_size_]").is(":checked") == true))
+      {
        $("#step2").click();
      } else {
       $(this).notify("Seleccione uma decoração e um tamanho");
-     }
-   })
+    }
+  })
   })
 </script>
 <% end %>
