@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:assign_others, :others]
+
   def index
     @orders = Order.where(user: current_user)
   end
@@ -19,7 +21,10 @@ class OrdersController < ApplicationController
   def assign_others
     @order = Order.find(params[:id])
     @others = params[:other][:id]
-    @others.select{|id| !id.blank? }.map{|other| OrderOther.create(order: @order, other: Other.find(other))}
+    @others.select{|id| !id.blank? }.map do |other_id|
+      other = Other.find(other_id)
+      OrderOther.create(order: @order, other: other)
+    end
     # redirect to order show if all ok, if not, render others again
     redirect_to order_path(@order)
   end

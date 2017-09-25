@@ -1,6 +1,6 @@
 class CakesController < ApplicationController
   include ApplicationHelper
-
+  skip_before_action :authenticate_user!, only: [:new, :doughs, :decorations, :create]
   before_action :set_cake, only: [:edit, :update, :destroy]
 
   def index
@@ -38,7 +38,8 @@ class CakesController < ApplicationController
   def create
 # Get all the params, create or find the order and create the cake
   # Possible bug here
-    @order = current_order
+    session[:order_id].blank? ? @order = Order.new : @order = Order.find(session[:order_id])
+
     @order.user = current_user unless current_user.blank?
 
     if @order.save
@@ -50,6 +51,7 @@ class CakesController < ApplicationController
         render :doughs
       else
         @cake = Cake.new(convert_params(cake_params))
+        @cake.price_cents = (@cake.dough.price_cents + @cake.decoration.price_cents) * @cake.size
         @cake.order = @order
         if @cake.save
           respond_to do |format|
@@ -64,7 +66,9 @@ class CakesController < ApplicationController
         end
       end
     else
-      render :new
+      @cake = Cake.new
+      @doughs = Dough.all
+      render :doughs
     end
   end
 
@@ -91,7 +95,7 @@ class CakesController < ApplicationController
   private
 
   def cake_params
-    params.require(:cake).permit(:dough, :filling, :decoration, :size, :shape)
+    params.require(:cake).permit(:dough, :filling, :decoration, :size)
   end
 
   def convert_params(cake_params)
@@ -99,8 +103,7 @@ class CakesController < ApplicationController
     result[:dough] = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
     result[:filling] = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
     result[:decoration] = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
-    result[:size] = cake_params[:size] unless cake_params[:size].blank?
-    result[:shape] = cake_params[:shape] unless cake_params[:shape].blank?
+    result[:size] = cake_params[:size].to_f unless cake_params[:size].blank?
     result
   end
 
