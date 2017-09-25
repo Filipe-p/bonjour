@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   before_action :set_order
 
   def new
+    @order = Order.find(params[:order_id])
   end
 
   def create

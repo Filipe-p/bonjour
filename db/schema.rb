@@ -18,8 +18,7 @@ ActiveRecord::Schema.define(version: 20170924164250) do
   create_table "cakes", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "size"
-    t.string "shape"
+    t.float "size"
     t.string "message"
     t.bigint "decoration_id"
     t.bigint "dough_id"
