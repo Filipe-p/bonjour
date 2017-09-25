@@ -1,5 +1,22 @@
-User#welcome
+Benvindo a Pastelaria Bonjour
 
-<%= @greeting %>, find me in app/views/user_mailer/welcome.text.erb
+Olá <%= @user.first_name %>, 
+Woohoo! Benvido ao site da Pastelaria Bonjour, nos estamos muito contentes de te ter a bordo!
 
-This is a welcome email! :)
+
+	O que podes fazer?
+	Lembramos-te que o site foi feito a pensar em ti em em bolos :) 
+	No site da Bonjour podes:
+	Personalizar e encomendar bolos <%=link_to "Pedir aqui", encomendar_path%>	
+	Pedir orçamentos de bolos de casamento e outro não listados no site <%=link_to "Pede aqui", design_path%>
+	Ver informações como direções e horas de funcionamento <%=link_to "Vê aqui", contacts_path%>
+
+
+	Detalhes da tua conta
+	Nome: <%=@user.first_name%>
+	Email: <%=@user.email%>
+
+PS: Se algo estiver errado ou tiverem alguma dúvida basta responder ao email. Nós normalmente respondemos dentro de 24h.
+
+Desde já obrigado,
+Eqipa Bonjour
