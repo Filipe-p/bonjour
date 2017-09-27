@@ -1,28 +1,28 @@
 <%= simple_form_for :other, url: assign_others_order_path(@order), method: :post do |f| %>
-<div class="row dough-form" style = "max-height: 100%;">
-  <h1 id = "step-title" style = "font-size: 30px;">Adicione extras</h1>
-  <div id = "decoration-wrapper" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
+<div class="form-inner-wrapper container">
+  <div class="form-scroll row row-height">
     <% @others.each do |other| %>
     <div class="col-md-4 card">
       <div class = "img-decoration-wrapper" >
         <div class="row">
           <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
-          <div class="row">
-            <div class="col-md-3">
-              <%= f.check_box :id, collection: [other.id], id: "other_#{other.id}", class: 'option-input checkbox' %>
+          <div class="row row-height">
+            <div class="col-md-3" style = "padding: 0 0; display: flex; align-items: center; justify-content: flex-start;">
+             <%= f.input :id, label: false, as: :check_boxes, collection: [other.id], input_html: { class: 'option-input radio' }  %>
             </div>
-            <div class="col-md-9" style = "display: flex; align-items: center;">
+            <div class="col-md-9 flexbox" style = "display: flex; align-items: center;">
               <%= other.name %>
             </div>
           </div>
+          <p><span id= "other_price_<%= other.id %>" class = "price"><%= other.price %></span> €</p>
         </div>
       </div>
     </div>
 
     <% end %>
-  </div>
-</div>
 <%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step3"%>
+</div>
+</div>
 <% end %>
 
 

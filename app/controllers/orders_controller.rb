@@ -7,6 +7,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @cakes = Order.find(params[:id]).cakes
+    @total = Order.find(1).cakes.map(&:price).reduce(:+) + Order.find(1).others.map(&:price).reduce(:+)
   end
 
   def new
@@ -16,6 +18,7 @@ class OrdersController < ApplicationController
   def others
     @order = Order.find(params[:id])
     @others = Other.all
+    @total = Order.find(1).cakes.map(&:price).reduce(:+)
   end
 
   def assign_others
