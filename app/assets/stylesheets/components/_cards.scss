@@ -40,6 +40,16 @@
   line-height: 1.8;
 }
 
+.quantity-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity-btn img:hover{
+transform: scale(1.1);
+cursor: pointer;
+}
+
 
 // POLAROID
 

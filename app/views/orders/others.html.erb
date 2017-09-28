@@ -47,6 +47,7 @@
   $(document).ready(function(){
     $("#step3").attr('class', 'hidden'); //hide submit button
     //$(".radio-hide").attr('class', 'hidden'); //hide radio buttons
+    $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#submit-btn").removeClass("hidden");
     $("#cart").append("<%= @total %>")
     //In mobile, fix navbar to the bottom of the screen
@@ -66,22 +67,89 @@
         }
       });
     };
-    $('input').click(function(){
-      //Get extras id
+    $('.i-other').click(function(){
+      //Get other id
       var otherId =  $(this).attr('id');
-      var split = otherId.split("other_id_");
+      var split = otherId.split("i_");
       var otherIdNum = Number(split[1]);
+      //Get current quantity
+      var otherQuantity = Number($("#other_quantity_" + otherIdNum).text());
       //Get other price
       var otherPrice = Number($("#other_price_" + otherIdNum).text());
       //Get cart's current price
       var cartPrice = Number($("#cart").text());
-      // Add or remove other's price
-      if ($(this).is(":checked") == true) {
-        $("#cart").html((cartPrice + otherPrice).toFixed(2));
+      if ($(this).hasClass("option-input-checked")) { //If it is already selected
+        //Unselect radio
+        $(this).removeClass("option-input-checked option-input-checked::before");
+        //Unselect input
+        $("#other_id_" + otherIdNum).prop('checked', false);
+        //Remove price from cart
+        $("#cart").html((cartPrice - otherPrice * otherQuantity).toFixed(2));
+        //Reset quantity
+        $("#other_quantity_" + otherIdNum).html("0")
       } else {
-        $("#cart").html((cartPrice - otherPrice).toFixed(2));
+        //Select other
+        $(this).addClass("option-input-checked option-input-checked::before");
+        //Select corresponding checkbox
+        $("#other_id_" + otherIdNum).prop('checked', true);
+        // Add other's price
+        $("#cart").html((cartPrice + otherPrice).toFixed(2));
+        //Add 1 unit
+        $("#other_quantity_" + otherIdNum).html("1")
+        }
+    });
+
+    $(".plus").click(function(){
+      //Get other id
+      var otherId =  $(this).attr('id');
+      var split = otherId.split("plus_");
+      var otherIdNum = Number(split[1]);
+      //Get current quantity
+      var otherQuantity = Number($("#other_quantity_" + otherIdNum).text());
+      //Get other price
+      var otherPrice = Number($("#other_price_" + otherIdNum).text());
+      //Get cart's current price
+      var cartPrice = Number($("#cart").text());
+      //Select radio
+      $("#i_" + otherIdNum).addClass("option-input-checked option-input-checked::before");
+      //Select corresponding checkbox
+      $("#other_id_" + otherIdNum).prop('checked', true);
+      //Increase quantity
+      $("#other_quantity_" + otherIdNum).html(otherQuantity + 1);
+      // Add other's price
+      $("#cart").html((cartPrice + otherPrice).toFixed(2));
+    });
+
+      $(".minus").click(function(){
+      //Get other id
+      var otherId =  $(this).attr('id');
+      var split = otherId.split("minus_");
+      var otherIdNum = Number(split[1]);
+      //Get current quantity
+      var otherQuantity = Number($("#other_quantity_" + otherIdNum).text());
+      //Get other price
+      var otherPrice = Number($("#other_price_" + otherIdNum).text());
+      //Get cart's current price
+      var cartPrice = Number($("#cart").text());
+      if (otherQuantity > 1) {
+      //Decrease quantity
+      $("#other_quantity_" + otherIdNum).html(otherQuantity - 1);
+      // Remove other's price
+      $("#cart").html((cartPrice - otherPrice).toFixed(2));
+      } else if (otherQuantity === 1) {
+      //Decrease quantity
+      $("#other_quantity_" + otherIdNum).html(otherQuantity - 1);
+      //Unselect radio
+      $("#i_" + otherIdNum).removeClass("option-input-checked option-input-checked::before");
+      //Unselect corresponding checkbox
+      $("#other_id_" + otherIdNum).prop('checked', false);
+      // Remove other's price
+      $("#cart").html((cartPrice - otherPrice).toFixed(2));
+      } else {
+
       }
     })
+
     $("#submit-btn").click(function(e){
      $("#step3").click();
     // }

@@ -1,3 +1,5 @@
+//-------CTA BUttons-------
+
 .cta-btn {
   font-weight: 300;
   position: relative;
@@ -62,6 +64,10 @@
   box-shadow: 2px 1px 2px 2px rgba(10, 10, 0, 0.5);
 }
 
+.historia .cta-btn-black {
+  margin-left: 10px;
+}
+
 .btn-width-100 {
   width: 100%;
 }
@@ -76,7 +82,7 @@
   color: white;
   margin-bottom: 10px;
 }
-
+//--------Social Buttons------
 .btn-facebook,
 .btn-facebook:link,
 .btn-facebook:visited {
@@ -94,8 +100,65 @@
 }
 
 
-.historia .cta-btn-black {
-  margin-left: 10px;
+//------Radio Buttons-------
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+// .option-input:hover {
+//   background: #9faab7;
+// }
+.option-input-checked {
+  background-color: $green;
+}
+
+.option-input:checked {
+  background-color: $green;
+}
+.option-input-checked::before {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.option-input:checked::before {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
 }
 
 
