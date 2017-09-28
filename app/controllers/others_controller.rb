@@ -14,6 +14,15 @@ class OthersController < ApplicationController
     # redirect to order show
   end
 
+    def destroy
+    @order = current_order
+    @other.destroy
+    respond_to do |format|
+      format.html {redirect_to order_path(@order)}
+      format.js
+    end
+  end
+
   private
 
   def set_order

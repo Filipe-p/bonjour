@@ -1,28 +1,12 @@
 .card {
-  border: 2px solid black;
+  margin: 10px 10px;
+  padding: 1.5em 1.5em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-
-.card-cake {
-  position: relative;
-  display: inline-block;
-}
-
-.card-cake img{
-  position: relative;
-  display: inline-block;
-}
-
-.card-cake:before {
-  display: block;
-  content: '';
-  border: 3px solid #333333;
-  position: absolute;
-  z-index: 0;
-  top: 40px;
-  right: -30px;
-  bottom: -40px;
-  left: 30px;
+.card img {
+  max-width: 100%;
+  margin-bottom: 1.1em;
 }
 
 .card-cake-wrapper {
@@ -36,26 +20,26 @@
 }
 
 .step-wrapper img{
-max-width:30px;
+  max-width:50px;
 }
 
-.dough-card {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  min-height: 100px;
-  font-size: 0;
-  padding-left: 0px;
-  padding-right: 0px;
+.card-image-wrapper img{
+  max-width: 100px;
 }
-.dough-card-img {
-  min-width: 100%;
-  min-height: 100%;
-  transition: transform 1.2s ease,opacity .4s ease;
-  z-index: 0;
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 1.1em;
 }
+
+.card-text {
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.8;
+}
+
 
 // POLAROID
 
@@ -143,12 +127,6 @@ max-width:30px;
 }
 
 @include media(">=phoneBig", "<tablet") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-    width: 250px;
-  }
 
   .polaroids {
     width: 300px;
@@ -156,11 +134,6 @@ max-width:30px;
 }
 
 @include media(">=tablet", "<desktop") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    width: 250px;
-  }
 
   .polaroids {
     width: 400px;
@@ -168,23 +141,12 @@ max-width:30px;
 }
 
 @include media(">=desktop", "<1500px") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    width: 320px;
-  }
-
   .polaroids {
     width: 300px;
   }
 }
 
 @include media(">1500px") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    width: 320px;
-  }
 
   .polaroids {
     width: 400px;

@@ -1,0 +1,13 @@
+      <%= simple_form_for :contact, url: contacts_path, method: :post do |f| %>
+      <%= f.input :name, input_html: { placeholder: "Nome" }, label: "Nome" %>
+
+      <%= f.input :phone_number, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
+
+      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada" %>
+
+      <%= f.input :textarea, as: :text ,input_html: { placeholder: "Pesquisa Alguma Coisa Especifica? Por favor especifique" } %>
+
+
+      <%= f.submit "Enviar", class: "btn cta-btn cta-btn-red cta-btn-size btn-width-100 btn-slim" %>
+      <% end %>
+

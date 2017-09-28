@@ -1,55 +1,55 @@
 <div class = "banner2">
   <div class="custom-container" style = "height: 100%">
     <div class=" banner-wrapper row" style = "height: 100%;">
-        <div class="col-md-6 col-md-offset-6 col-sm-12" style = "height: 100%">
-          <div class = "banner-content text-center">
-            <h1>Pastelaria Bonjour</h1>
-            <h3>Crie o seu bolo online!</h3>
-            <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-size cta-btn-white" %>
-          </div>
+      <div class="col-md-6 col-md-offset-6 col-sm-12" style = "height: 100%">
+        <div class = "banner-content text-center">
+          <h1>Pastelaria Bonjour</h1>
+          <h3>Crie o seu bolo online!</h3>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-size cta-btn-white" %>
         </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class = "how-it-works">
   <div class="custom-container">
+    <div class="row">      <div class = "text-left text-normal" style = "margin-bottom: 50px;">
+      <h3 class = "padding-bottom-20"> Como fazer o seu bolo online</h3>
+      <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
+    </div></div>
     <div class="row row-height">
-      <div class = "text-left text-normal" style = "margin-bottom: 50px;">
-        <h3 class = "padding-bottom-20"> Como fazer o seu bolo online</h3>
-        <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
-      </div>
-      <div class="col-md-6 cake-steps">
-        <div class="cake-steps-content padding-bottom-20">
-        <h4>4 simples passos</h4>
-          <div class = "step-wrapper">
-            <%= image_tag "number-one-in-a-circle.svg" %>
 
-            Escolha a massa e recheio
-          </div>
-
-          <div class = "step-wrapper">
-
-            <%= image_tag "number-two-in-a-circle.svg" %>
-
-            Escolha a decoração e o tamanho
-          </div>
-
-          <div class = "step-wrapper">
-            <%= image_tag "number-three-in-a-circle.svg" %>
-            Adicione extras e reveja a encomenda
-          </div>
-          <div class = "step-wrapper">
-            <%= image_tag "number-four-in-circular-button.svg" %>
-            Faça o pagamento
-          </div>
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %>
+      <div class="col-md-3 card">
+        <div class="card-image-wrapper flexbox">
+        <%= image_tag "whisk.svg" %>
         </div>
+        <p class = "text-center card-title">Massa e recheio</p>
+        <p class = "card-text">Cada massa de bolo tem vários recheios possíveis. Escolha a combinação que mais gostar!</p>
       </div>
-      <div class="col-md-6 card-cake-wrapper">
-        <%= image_tag "cookiecake.jpg" %>
+      <div class="col-md-3 card">
+      <div class="card-image-wrapper flexbox">
+        <%= image_tag "food-scale.svg" %>
+      </div>
+      <p class = "text-center card-title">Peso e decoração</p>
+        <p class = "card-text">Para finalizar o seu bolo escolha o peso e a decoração. Temos muitas opções.</p>
+      </div>
+      <div class="col-md-3 card">
+      <div class="card-image-wrapper flexbox">
+        <%= image_tag "cupcake.svg" %>
+        </div>
+        <p class = "text-center card-title">Extras</p>
+        <p class = "card-text">Adicione velas, cupcakes, cartões ou outros extras à sua encomenda.</p>
+      </div>
+      <div class="col-md-3 card">
+      <div class="card-image-wrapper flexbox">
+        <%= image_tag "bakery-shop.svg" %>
+        </div>
+        <p class="text-center card-title">Local para levantar</p>
+        <p class = "card-text">Escolha se quer levantar a sua encomenda na loja, ou recebê-la em sua casa.</p>
       </div>
     </div>
+    <div class="row flexbox" style = "padding-top: 2em;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %></div>
   </div>
 </div>
 

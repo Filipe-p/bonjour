@@ -1,15 +1,14 @@
 .form-wrapper {
   //border: 2px solid $purple;
-  height: 700px;
+  height: 650px;
   position: relative;
-  max-height: 70vh;
-  box-shadow: 2px 2px 2px 2px $lightgray;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   background-color: white;
 }
 
 .form-inner-wrapper {
-  max-height: calc(70vh - 70px - 30px);
-  height: calc(700px - 70px - 30px);
+  height: calc(650px - 70px);
+  max-width: 100%;
   padding-top: 2em;
   padding-left: 2em;
   padding-right: 2em;
@@ -38,7 +37,7 @@
   font-size: 14px;
   letter-spacing: .091em;
   white-space: wrap;
-  background-color: white;
+  background-color: black;
   color: black;
   width: 100%;
   height: 100%;
@@ -48,13 +47,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  //border-top: 2px solid black;
-  box-shadow: 0px -2px 2px 0px $lightgray;
+  //box-shadow: 0 -3px 6px rgba(0,0,0,0.30), 0 -15px 12px rgba(0,0,0,0.22);
 }
 
-.down-nav-btn:hover {
- box-shadow: 1px 1px 1px 1px;
+.down-nav-btn svg:hover {
+  transition: 200ms cubic-bezier(0.175, 0.885, 0.52, 1.775);
+  &:hover{
+    transform: scale(1.1);
+  }
 }
+
+
+.down-nav-btn a:hover {
+  transition: 200ms cubic-bezier(0.175, 0.885, 0.52, 1.775);
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
 
 .down-nav-cart {
   font-weight: 300;
@@ -70,21 +80,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
+  background-color: black;
+  color: white;
 }
 
 #pre-down-nav {
   position: absolute;
   bottom: 70px;
-  height: 30px;
+  height: 40px;
   background-color: transparent;
   width: 100%;
   display: flex;
-  justify-content: stretch;
+  justify-content: center;
   align-items: center;
 }
 
 .pre-down-nav-btn {
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
 }
 
 #cart-total {
@@ -92,21 +110,21 @@
   // border-left: 2px solid black;
   background-color: white;
   box-shadow: -2px -2px 2px 0px $lightgray;
+  z-index: 1;
+  font-weight: 500;
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.30), 0 -15px 12px rgba(0,0,0,0.22);
 }
 
 #down-nav {
   position: absolute;
   bottom: 0px;
   height: 70px;
-  background-color: white;
+  background-color: black;
   width: 100%;
   display: flex;
   justify-content: stretch;
   align-items: center;
-}
-
-#dynamic-content {
-  margin: 0px 0px;
+  z-index: 2;
 }
 
 .row .dough-form {
@@ -141,10 +159,7 @@
 //   right: -10px;
 // }
 
-.card {
-  border: 1px solid $lightgray;
-  margin: 10px 10px;
-}
+
 
 .label-gray {
   background-color: $lightgray;
@@ -152,12 +167,12 @@
 }
 
 .img-decoration-wrapper img {
-    z-index: 0;
-    cursor: zoom-in;
+  z-index: 0;
+  cursor: zoom-in;
 }
 
 .img-decoration-inner-wrapper {
-    position: relative;
+  position: relative;
 }
 
 .decoration-price-tag {
@@ -188,6 +203,22 @@
 .green-btn {
   background-color: green;
 }
+
+
+
+@include media(">=992px") {
+  .col-md-4 {
+    width: calc(33.3333333333% - 20px);
+  }
+  .col-md-6 {
+    width: calc(50% - 20px);
+  }
+
+  .col-md-3 {
+    width: calc(25% - 20px);
+  }
+}
+
 
 // // MEDIA QUERIES
 // /*---------- iphone4 and iphone5 ----------*/
@@ -220,8 +251,8 @@
   -o-appearance: none;
   appearance: none;
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   transition: all 0.15s ease-out 0s;
   background: #cbd1d8;
   border: none;
@@ -244,25 +275,25 @@
   background-color: $green;
 }
 .option-input-checked::before {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: absolute;
   content: '✔';
   display: inline-block;
   font-size: 26.66667px;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 .option-input:checked::before {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: absolute;
   content: '✔';
   display: inline-block;
   font-size: 26.66667px;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 .option-input.radio {
