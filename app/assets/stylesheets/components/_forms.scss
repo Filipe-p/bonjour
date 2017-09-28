@@ -1,15 +1,13 @@
 .form-wrapper {
   //border: 2px solid $purple;
-  height: 700px;
+  height: 650px;
   position: relative;
-  max-height: 70vh;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   background-color: white;
 }
 
 .form-inner-wrapper {
-  max-height: calc(70vh - 70px);
-  height: calc(700px - 70px - 30px);
+  height: calc(650px - 70px);
   max-width: 100%;
   padding-top: 2em;
   padding-left: 2em;
@@ -126,6 +124,7 @@
   display: flex;
   justify-content: stretch;
   align-items: center;
+  z-index: 2;
 }
 
 .row .dough-form {
@@ -210,12 +209,16 @@
 @include media(">=992px") {
   .col-md-4 {
     width: calc(33.3333333333% - 20px);
-  }}
-
-  @include media(">=992px") {
+  }
   .col-md-6 {
     width: calc(50% - 20px);
-  }}
+  }
+
+  .col-md-3 {
+    width: calc(25% - 20px);
+  }
+}
+
 
 // // MEDIA QUERIES
 // /*---------- iphone4 and iphone5 ----------*/
@@ -248,8 +251,8 @@
   -o-appearance: none;
   appearance: none;
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   transition: all 0.15s ease-out 0s;
   background: #cbd1d8;
   border: none;
@@ -272,25 +275,25 @@
   background-color: $green;
 }
 .option-input-checked::before {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: absolute;
   content: '✔';
   display: inline-block;
   font-size: 26.66667px;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 .option-input:checked::before {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   position: absolute;
   content: '✔';
   display: inline-block;
   font-size: 26.66667px;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 .option-input.radio {

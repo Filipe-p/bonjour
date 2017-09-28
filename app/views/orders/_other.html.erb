@@ -7,21 +7,25 @@
         <div class="row">
           <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
           <div class="row row-height">
-            <div class="col-md-3" style = "padding: 0 0; display: flex; align-items: center; justify-content: flex-start;">
-             <%= f.input :id, label: false, as: :check_boxes, collection: [other.id], input_html: { class: 'option-input radio' }  %>
-            </div>
-            <div class="col-md-9 flexbox" style = "display: flex; align-items: center;">
+            <div class="col-md-9" style = "display: flex; align-items: center;">
               <%= other.name %>
             </div>
-          </div>
-          <p><span id= "other_price_<%= other.id %>" class = "price"><%= other.price %></span> €</p>
-        </div>
-      </div>
-    </div>
+            <div class="col-md-3" style = "padding: 0 0; display: flex; align-items: center;">
+            <%= f.input :id, as: :check_boxes, collection: [other.id], input_html: { class: 'option-input radio' }, label: false, label_for: false;  %>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12">
+             <p><span id= "other_price_<%= other.id %>" class = "price"><%= other.price %></span> €</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
 
-    <% end %>
-<%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step3"%>
-</div>
+   <% end %>
+   <%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step3"%>
+ </div>
 </div>
 <% end %>
 

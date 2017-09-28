@@ -49,6 +49,23 @@
     //$(".radio-hide").attr('class', 'hidden'); //hide radio buttons
     $("#submit-btn").removeClass("hidden");
     $("#cart").append("<%= @total %>")
+    //In mobile, fix navbar to the bottom of the screen
+    if ($(window).width() <= 400) {
+      $('#down-nav').css({
+        position: "fixed", bottom: "0", right: "0", left: "0"
+      });
+      var bottomOfForm = $(".form-wrapper").offset().top;
+      $(window).scroll(function() {
+        if($(window).scrollTop() > bottomOfForm) { //scrolled past the other div?
+          $('#down-nav').css({
+        position: "absolute"}) //reached the desired point -- show div
+        } else {
+          $('#down-nav').css({
+            position: "fixed", bottom: "0", right: "0", left: "0"
+          })
+        }
+      });
+    };
     $('input').click(function(){
       //Get extras id
       var otherId =  $(this).attr('id');

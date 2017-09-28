@@ -34,7 +34,7 @@
 
 <section class="banner-doughs" style = "padding-bottom: 100px; padding-top: 100px;">
   <div class="container">
-<h1 id = "step-title" style = "font-size: 30px; padding-left: 15px;">Escolha a massa e o recheio do bolo</h1>
+    <h1 id = "step-title" style = "font-size: 30px; padding-left: 15px;">Escolha a massa e o recheio do bolo</h1>
     <div id="progresstracker">
       <ul>
         <li id = "wiz-1" class = "active complete" ><span>1</span></li>
@@ -71,7 +71,7 @@
           </svg>
         </div>
         <div class = "down-nav-cart">
-        <p> Total: <span id = "cart"></span></p>
+          <p> Total: <span id = "cart"></span></p>
         </div>
       </div>
     </div>
@@ -87,6 +87,23 @@
     $('#myModal').modal('toggle');
     $("#step1").attr('class', 'hidden'); //hide submit button
     $(".radio-hide").attr('class', 'hidden'); //hide radio buttons
+    //In mobile, fix navbar to the bottom of the screen
+    if ($(window).width() <= 400) {
+      $('#down-nav').css({
+        position: "fixed", bottom: "0", right: "0", left: "0"
+      });
+      var bottomOfForm = $(".form-wrapper").offset().top;
+      $(window).scroll(function() {
+        if($(window).scrollTop() > bottomOfForm) { //scrolled past the other div?
+          $('#down-nav').css({
+        position: "absolute"}) //reached the desired point -- show div
+        } else {
+          $('#down-nav').css({
+            position: "fixed", bottom: "0", right: "0", left: "0"
+          })
+        }
+      });
+    };
     $('.i-filling').click(function(){
       //Get dough id
       var doughId =  $(this).parent().attr('id');
