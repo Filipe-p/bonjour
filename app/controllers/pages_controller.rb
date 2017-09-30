@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!
 
   def home
     render layout: "brevemente"
@@ -9,13 +9,16 @@ class PagesController < ApplicationController
   end
 
   def contacts
-
   end
 
   def home2
   end
 
   def gallery
+  end
+
+  def design
+    #code
   end
 
   private

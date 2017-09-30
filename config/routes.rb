@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: 'pages#home'
+  root to: 'pages#home2'
 
   get 'about',       to: 'pages#about'
   get 'contacts',     to: 'pages#contacts'
