@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     @user = user
 
-    mail(to: @user.email, subject: 'Benvindo á Pastelaria Bonjour')
+    mail(to: @user.email , subject: 'Benvindo á Pastelaria Bonjour')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
