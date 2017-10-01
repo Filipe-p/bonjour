@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924164250) do
+ActiveRecord::Schema.define(version: 20171001190521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,25 +33,48 @@ ActiveRecord::Schema.define(version: 20170924164250) do
     t.index ["order_id"], name: "index_cakes_on_order_id"
   end
 
-  create_table "custom_cakes", force: :cascade do |t|
-    t.string "email"
-    t.string "name"
-    t.text "content"
-    t.bigint "dough_id"
-    t.bigint "filling_id"
+  create_table "contacts", force: :cascade do |t|
+    t.string "contact_email"
+    t.string "contact_first_name"
+    t.string "contact_last_name"
+    t.integer "contact_telephone"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dough_id"], name: "index_custom_cakes_on_dough_id"
-    t.index ["filling_id"], name: "index_custom_cakes_on_filling_id"
+  end
+
+  create_table "custom_cakes", force: :cascade do |t|
+    t.string "contact_email"
+    t.string "contact_first_name"
+    t.string "contact_last_name"
+    t.integer "contact_telephone"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "decorations", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.float "minimum_size", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.float "minimum_size", default: 0.0, null: false
+  end
+
+  create_table "deliveries", force: :cascade do |t|
+    t.string "address"
+    t.bigint "user_id"
+    t.datetime "delivery_datetime"
+    t.string "contact_name"
+    t.integer "contact_telephone"
+    t.string "contact_email"
+    t.boolean "store_pickup", default: false, null: false
+    t.boolean "done", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cost_cents", default: 0, null: false
+    t.index ["user_id"], name: "index_deliveries_on_user_id"
   end
 
   create_table "dough_fillings", force: :cascade do |t|
@@ -71,6 +94,12 @@ ActiveRecord::Schema.define(version: 20170924164250) do
     t.integer "price_cents", default: 0, null: false
   end
 
+  create_table "featured_cakes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fillings", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -82,25 +111,18 @@ ActiveRecord::Schema.define(version: 20170924164250) do
   create_table "order_others", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "other_id"
+    t.integer "quantity", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity", default: 1, null: false
     t.index ["order_id"], name: "index_order_others_on_order_id"
     t.index ["other_id"], name: "index_order_others_on_other_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "address"
     t.bigint "user_id"
-    t.datetime "delivery_datetime"
-    t.string "contact_name"
-    t.integer "contact_telephone"
-    t.string "contact_email"
-    t.boolean "store_pickup", default: false, null: false
     t.boolean "done", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cost_cents", default: 0, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -143,8 +165,7 @@ ActiveRecord::Schema.define(version: 20170924164250) do
   add_foreign_key "cakes", "doughs"
   add_foreign_key "cakes", "fillings"
   add_foreign_key "cakes", "orders"
-  add_foreign_key "custom_cakes", "doughs"
-  add_foreign_key "custom_cakes", "fillings"
+  add_foreign_key "deliveries", "users"
   add_foreign_key "dough_fillings", "doughs"
   add_foreign_key "dough_fillings", "fillings"
   add_foreign_key "order_others", "orders"

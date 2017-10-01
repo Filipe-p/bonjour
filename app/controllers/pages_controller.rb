@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def contacts
+    @contact = Contact.new
   end
 
   def home2
@@ -18,12 +19,6 @@ class PagesController < ApplicationController
   end
 
   def design
-    #code
-  end
-
-  private
-
-  def contact_param
-    params.require(:contacts).permit(:email, :textarea, :phone_number, :dough, :filling)
+    @custom_cake = CustomCake.new
   end
 end

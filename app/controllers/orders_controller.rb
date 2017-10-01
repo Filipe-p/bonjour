@@ -1,16 +1,19 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :assign_others, :others, :show, :edit, :update, :confirmation]
 
+  # will not be used
   def index
     @orders = Order.where(user: current_user)
   end
 
+  #  show cart
   def show
     @order = Order.find(params[:id])
     @cakes = @order.cakes
     @total = @cakes.map(&:price).reduce(:+) + @order.others.map(&:price).reduce(:+)
   end
 
+  # does not exist
   def new
     @order = Order.new
   end
@@ -32,6 +35,7 @@ class OrdersController < ApplicationController
     redirect_to order_path(@order)
   end
 
+  # does not exist
   def create
   end
 
@@ -39,6 +43,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  # should be in the deliveries controller
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
@@ -52,10 +57,12 @@ class OrdersController < ApplicationController
   def destroy
   end
 
+  # should be in the deliveries
   def confirmation
     @order = Order.find(params[:id])
   end
 
+  #  must change, now only user
   def order_params
     params.require(:order).permit(:address, :user, :delivery_datetime, :contact_name, :contact_telephone, :contact_email)
   end

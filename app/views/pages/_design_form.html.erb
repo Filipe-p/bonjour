@@ -1,0 +1,8 @@
+<%= simple_form_for @custom_cake do |f| %>
+  <%= f.input :contact_first_name, input_html: { placeholder: "João" } %>
+  <%= f.input :contact_last_name, input_html: { placeholder: "Pinto" } %>
+  <%= f.input :contact_email, input_html: { placeholder: "nome@email.pt" } %>
+  <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
+  <%= f.input :message, as: :text ,input_html: { placeholder: "Pesquisa Alguma Coisa Especifica? Por favor especifique" }, label: "Mensagem" %>
+  <%= f.submit class: "btn my-btn" %>
+<% end %>
