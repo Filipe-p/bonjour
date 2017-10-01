@@ -65,7 +65,8 @@ ActiveRecord::Schema.define(version: 20171001190521) do
   create_table "deliveries", force: :cascade do |t|
     t.string "address"
     t.bigint "user_id"
-    t.datetime "delivery_datetime"
+    t.date "delivery_date"
+    t.time "delivery_slot"
     t.string "contact_name"
     t.integer "contact_telephone"
     t.string "contact_email"

@@ -10,13 +10,17 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @cakes = @order.cakes
-    @total = @cakes.map(&:price).reduce(:+) + @order.others.map(&:price).reduce(:+)
+    @total = @cakes.map(&:price).reduce(:+)
+    @total += @order.others.map(&:price).reduce(:+) unless @order.others.blank?
   end
 
   # does not exist
   def new
     @order = Order.new
   end
+
+  # Should be in OrderOthers controller
+#  ============================================
 
   def others
     @order = Order.find(params[:id])
@@ -35,6 +39,8 @@ class OrdersController < ApplicationController
     redirect_to order_path(@order)
   end
 
+  #  ============================================
+
   # does not exist
   def create
   end
@@ -44,6 +50,8 @@ class OrdersController < ApplicationController
   end
 
   # should be in the deliveries controller
+  #  ============================================
+
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
@@ -54,13 +62,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  #  ============================================
+
   def destroy
   end
 
   # should be in the deliveries
+  #  ============================================
+
   def confirmation
     @order = Order.find(params[:id])
   end
+  #  ============================================
+
 
   #  must change, now only user
   def order_params

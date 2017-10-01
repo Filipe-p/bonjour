@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'order_others/index'
+
+  get 'order_others/new'
+
+  get 'order_others/create'
+
+  get 'order_others/edit'
+
+  get 'order_others/update'
+
+  get 'order_others/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
