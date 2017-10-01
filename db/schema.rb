@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170924164250) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.integer "minimum_size", default: 0, null: false
+    t.float "minimum_size", default: 0.0, null: false
   end
 
   create_table "dough_fillings", force: :cascade do |t|
@@ -96,11 +96,11 @@ ActiveRecord::Schema.define(version: 20170924164250) do
     t.string "contact_name"
     t.integer "contact_telephone"
     t.string "contact_email"
-    t.string "state", default: "Awaiting Payment", null: false
+    t.boolean "store_pickup", default: false, null: false
+    t.boolean "done", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cost_cents", default: 0, null: false
-    t.json "payment"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

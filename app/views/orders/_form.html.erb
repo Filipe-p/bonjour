@@ -1,0 +1,15 @@
+    <%= simple_form_for @order do |f| %>
+      <%= f.input :contact_name, input_html: { placeholder: "Nome" }, label: "Nome" %>
+
+      <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
+
+      <%= f.input :contact_email, as: :email, input_html: { placeholder: "...@google.com"}, label: "Email" %>
+
+      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada" %>
+
+      <%= f.input :delivery_datetime, input_html: { placeholder: ""}, minute_step:60, start_hour: 10, end_hour: 20, label: "Entrega" %>
+      
+      <!-- entrega na loja (true/false) -->
+
+      <%= f.submit "Enviar", class: "btn cta-btn cta-btn-red cta-btn-size btn-width-100 btn-slim" %>
+    <% end %>
