@@ -1,5 +1,19 @@
 .banner {
-  height: 100vh;
+  height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%),url("http://res.cloudinary.com/cloudnary-filipe/image/upload/c_scale,w_1162/v1501077930/amy-treasure-69666_rqooli.jpg");
+  background-size: cover;
+}
+
+.sub-banner {
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -8,40 +22,304 @@
 //background-image: linear-gradient(-225deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%);
 //background-size: cover
 }
-
 .banner2 {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-image: linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%), url("http://res.cloudinary.com/cloudnary-filipe/image/upload/v1500754901/20273751_812848598871464_1954170107_o_ktpevw.jpg");
   background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.banner2 h1 {
+  padding-bottom: 20px;
+}
+
+.banner2 h3 {
+  padding-bottom: 20px;
+  color: white;
+  font-weight: 200;
+}
+
+.banner-content {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .banner-content h1{
-  font-size: 80px;
   color: white;
-  font-weight: bold;
+  font-weight: 300;
   text-shadow: 0.5px 0.5px #d1d0cc;
 }
 
 .banner-content h2{
-  font-size: 50px;
   color: white;
-  font-weight: bold;
+  font-weight: 300;
   text-shadow: 0.5px 0.5px #d1d0cc;
 }
 
 .banner-content p {
-  font-size: 40px;
   color: white;
-
+  font-size: 40px;
 }
 
 .banner-section{
-  height: calc(100vh - 100px);
-  background: grey;
+  height: calc(100vh - 70px);
+  background: gray;
   vertical-align: middle;
 }
+
+.parallax {
+  height: 70vh;
+  background: url("https://res.cloudinary.com/cloudnary-filipe/image/upload/c_scale,w_2811/v1504628207/13_jro9bw.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-normal p {
+  font-size: 16px;
+  line-height: 1.85714286em;
+}
+
+.historia h3 {
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.historia p {
+  padding-bottom: 20px;
+
+}
+
+.how-it-works {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $mightylightgray;
+}
+
+.how-it-works h3 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+
+.how-it-works .cake-steps {
+  font-size: 18px;
+  line-height: 1.85714286em;
+}
+
+.how-it-works .cake-steps h4{
+  font-size: 20px;
+  line-height: 1.85714286em;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.step-wrapper {
+  margin-bottom: 20px;
+}
+
+.banner-contacts {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("10473367_1424513991168939_5482884653258251894_n.jpg");
+  background-size: cover;
+  height: calc(70vh - 70px);
+  font-weight: 300;
+}
+
+.banner-contacts .custom-container {
+  padding: 50px 50px;
+  height: 100%
+}
+
+.contacts-wrapper {
+  padding: 100px 100px;
+}
+
+.contact-col {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.banner-design {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://res.cloudinary.com/cloudnary-filipe/image/upload/v1504628755/flour3_rf4cjz.jpg");
+  background-size: cover;
+  height: calc(100vh - 70px);
+  padding: 100px 100px;
+}
+
+.banner-about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.banner-about h1 {
+  padding-bottom: 50px;
+  font-weight: 300;
+}
+
+.banner-about p {
+line-height: 1.85714286em;
+}
+
+.banner-orders {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.banner-doughs {
+  background-color: #FCFCFC;
+}
+
+// MEDIA QUERIES
+/*---------- iphone4 and iphone5 ----------*/
+@include media("<=phoneSmall") {
+  .banner2 {
+    //height: calc(100vh - 100px);
+    background-image: url("https://res.cloudinary.com/cloudnary-filipe/image/upload/v1506006744/jennifer-pallian-173716_psya9j.jpg");
+}
+  .banner-content h1 {
+    font-size: 40px;
+  }
+
+  .banner-content h3 {
+    font-size: 20px;
+  }
+
+  .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/*---------- iphone6 6plus, tablets ----------*/
+@include media(">phoneSmall", "<=tablet") {
+  .banner-content {
+    text-align: right;
+  }
+
+  .banner-content h1 {
+    font-size: 60px;
+  }
+
+  .banner-content h3 {
+    font-size: 30px;
+  }
+
+  .banner2 {
+   // height: calc(100vh - 100px);
+    background-image: url("https://res.cloudinary.com/cloudnary-filipe/image/upload/v1506006744/jennifer-pallian-173716_psya9j.jpg");
+  }
+
+  .banner2 .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .how-it-works .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .historia .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .polaroids-wrapper {
+    padding-bottom: 20px;
+  }
+}
+
+.banner-gallery {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+/*---------- Small desktop screens ----------*/
+@include media(">tablet", "<desktop") {
+  .banner-content h1 {
+    font-size: 80px;
+  }
+  .banner-content h3 {
+    font-size: 50px;
+  }
+  .banner2 {
+   // height: calc(100vh - 100px);
+    background-image: url("https://res.cloudinary.com/cloudnary-filipe/image/upload/v1506006744/jennifer-pallian-173716_psya9j.jpg");
+}
+  .how-it-works .custom-container {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/*---------- Medium desktop screens ----------*/
+@include media(">=desktop", "<1500px") {
+  .banner-content h1 {
+    font-size: 80px;
+  }
+  .banner-content h3 {
+    font-size: 50px;
+  }
+  .banner2 {
+   // height: calc(100vh - 100px);
+    background-image: url("https://res.cloudinary.com/cloudnary-filipe/image/upload/v1506006744/jennifer-pallian-173716_psya9j.jpg");
+  }
+
+  .how-it-works .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .historia .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+/*---------- Big desktop screens ----------*/
+@include media(">=1500px") {
+  .banner-content h1 {
+    font-size: 80px;
+  }
+  .banner-content h3 {
+    font-size: 50px;
+  }
+  .banner2 {
+    //height: calc(80vh - 100px);
+    background-image: linear-gradient(rgba(32,26,22,.3), rgba(32,26,22,.3)), url("https://res.cloudinary.com/cloudnary-filipe/image/upload/v1506006744/jennifer-pallian-173716_psya9j.jpg");
+  }
+
+  .how-it-works .custom-container {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+   .historia .custom-container {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+  .historia {
+    min-height: 60vh;
+  }
+}
+//*************************
 
 

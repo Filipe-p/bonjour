@@ -16,10 +16,30 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'include_media_rails'
+
+gem 'omniauth-facebook'
 
 gem 'cloudinary'
 
+source "https://rails-assets.org" do
+  gem "rails-assets-underscore"
+end
 
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
+
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
+gem "letter_opener", group: :development
+gem 'postmark-rails'
+
+gem 'rails-assets-swipebox', source: 'https://rails-assets.org'
+
+gem 'money-rails'
+gem 'stripe'
 
 group :development, :test do
   gem 'better_errors'

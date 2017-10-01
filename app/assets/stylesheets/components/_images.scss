@@ -1,11 +1,10 @@
-.side img {
-  max-width: 100%;
-  max-height: 540px;
-  border-radius: 20px;
-}
+// .side img {
+//   max-width: 100%;
+//   max-height: 540px;
+// }
 
 .thumb img {
-  max-height: 540px;
+  max-height: 300px;
   max-width: 100%;
   border-radius: 20px;
 }
@@ -13,3 +12,31 @@
 .logo img {
   max-width: 100%;
 }
+
+.gallery-img {
+  width: 100%;
+}
+
+.gallery {
+  padding: 0px 0px;
+}
+
+
+
+// .img-decoration-wrapper img{
+//   z-index: 2;
+//   position: relative;
+// }
+
+// .img-decoration-wrapper img:hover{
+//   -webkit-transform: scale(2);
+//   -moz-transform: scale(2);
+//   z-index: 3;
+//   position: absolute;
+//   box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+// }
+
+// #decoration-wrapper {
+//   z-index: 1;
+//   position: relative;
+// }

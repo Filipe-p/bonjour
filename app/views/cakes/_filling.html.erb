@@ -1,0 +1,14 @@
+<%= simple_form_for :cake, url: decorations_cakes_path(@cake_params), remote: true, method: :get do |f| %>
+  <% @fillings.each do |filling| %>
+  <div class="funkyradio">
+  <div class="funkyradio-default">
+    <%= f.radio_button :filling, filling.id %>
+    <%= label :filling, filling.name %>
+    </div>
+    </div>
+    <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
+  <% end %>
+  <div class="flexbox">
+    <%= f.submit "Próximo passo", class: "btn cta-btn cta-btn-blue cta-btn-small text-center"%>
+  </div>
+<% end %>

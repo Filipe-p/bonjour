@@ -1,0 +1,35 @@
+<div class="banner-orders">
+  <div class="container">
+    <div id="progresstracker">
+      <ul>
+        <li id = "wiz-1" ><span>1</span></li>
+        <li id = "wiz-2" ><span>2</span></li>
+        <li id = "wiz-3" ><span>3</span></li>
+        <li id = "wiz-4"><span>4</span></li>
+      </ul>
+    </div>
+    <div class="form-wrapper">
+    <div class="form-inner-wrapper">
+      <div class="row">
+        <h1>Pagar encomenda <%= @order.id %></h1>
+
+        <%= render 'form' %>
+      </div>
+</div>
+    </div>
+  </div>
+  </div>
+
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    $("#wiz-1").addClass("completed");
+    $("#wiz-2").addClass("completed");
+    $("#wiz-3").addClass("completed");
+    $("#wiz-4").addClass("active");
+  })
+</script>
+<% end %>
+
+

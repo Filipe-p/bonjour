@@ -1,0 +1,13 @@
+      <%= simple_form_for :contact, url: contacts_path, method: :post do |f| %>
+      <%= f.input :email, input_html: { placeholder: "nome@email.pt" } %>
+      <%= f.input :phone_number, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
+
+      <%= f.input :textarea, as: :text ,input_html: { placeholder: "Pesquisa Alguma Coisa Especifica? Por favor especifique" }, label: "Mensagem" %>
+   <!--   <p> Todo</p>
+     <p>Redirect to confirmation of email sent</p>
+     <p>get params and send email</p> -->
+
+
+
+      <%= f.submit class: "btn my-btn" %>
+      <% end %>

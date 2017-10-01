@@ -1,0 +1,82 @@
+<nav class="navbar-ac navbar-ac-fixed">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <%= link_to root_path, class: "navbar-ac-brand" do %>
+      <%= image_tag "circle.png" %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-ac-right hidden-xs hidden-sm">
+
+      <ul class="menu">
+        <li>
+          <%= link_to about_path, class: "navbar-ac-link" do %>
+          Sobre
+          <% end %>
+        </li>
+        <li>
+          <%= link_to design_path, class: "navbar-ac-link" do %>
+          Bolo personalizado
+          <% end %>
+        </li>
+        <li>
+          <%= link_to gallery_path, class: "navbar-ac-link" do %>
+          Galeria
+          <% end %>
+        </li>
+        <li>
+          <%= link_to contacts_path, class: "navbar-ac-link" do %>
+          Contactos
+          <% end %>
+        </li>
+        <li>
+        <%= link_to new_order_path, class: "navbar-ac-link" do %>
+          Carrinho
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_cake_path, class: "navbar-ac-button" do %>
+          Encomendar
+          <% end %>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+            <!-- Dropdown list appearing on mobile only -->
+        <div class="navbar-ac-item hidden-md hidden-lg" style = "padding: 40px 0px;">
+          <div class="dropdown">
+            <i class="fa fa-bars dropdown-toggle header-left" data-toggle="dropdown"></i>
+            <ul class="dropdown-menu dropdown-menu-right navbar-ac-dropdown-menu">
+              <li>
+              <%= link_to about_path do %>
+              Sobre
+            <% end %>
+            </li>
+              <li>
+              <%= link_to new_cake_path do %>
+              Encomendar
+            <% end %>
+            </li>
+              <li>
+              <%= link_to design_path do %>
+              Bolo personalizado
+            <% end %>
+            </li>
+            <li>
+            <%= link_to gallery_path do %>
+              Galeria
+            <% end %>
+            </li>
+            <li>
+            <%= link_to contacts_path do %>
+              Contactos
+            <% end %>
+            </li>
+            </ul>
+          </div>
+        </div>
+</nav>

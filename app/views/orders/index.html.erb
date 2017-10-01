@@ -1,2 +1,18 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<div class="banner-orders">
+  <div class="container">
+    <h3>As suas encomendas</h3>
+    <% @orders.each do |order| %>
+    <hr>
+    <p>Encomenda <%= order.id %></p>
+    <hr>
+    <% order.cakes.each do |cake| %>
+    <div class="row">
+      <div class="col-md-2"><%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %></div>
+      <div class="col-md-4">Bolo de <%= cake.dough.name %> com recheio de <%= cake.filling.name %></div>
+      <div class="col-md-2"><%= cake.size %></div>
+      <div class="col-md-2"> <%= link_to t(".top_call_to_action", default: "Comprar novamente"), "#", class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %></div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

@@ -4,6 +4,9 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+body {
+  font-weight: 300;
+}
 // Paddings
 .padded {
   padding-top: 5em;
@@ -22,4 +25,28 @@
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+
+
+.row-height {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+
+.padding-right-20 {
+  padding-right: 20px;
+}
+
+.padding-top-bottom-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
 }

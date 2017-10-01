@@ -2,10 +2,14 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Raleway", "Helvetica", "sans-serif";
+//@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+//$base-font: "Open Sans", "Helvetica", "sans-serif";
+//$header-font: "Raleway", "Helvetica", "sans-serif";
 
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600,700|Montserrat:300,400');
+$base-font: 'Montserrat', sans-serif;
+$header-font: 'Josefin Sans', sans-serif;
 // Local fonts (uncomment following lines)
 // @font-face {
 //   font-family: "Font Name";
@@ -26,11 +30,15 @@ $base-height: 1.4;
 // Scheme
 $brand-color: #D23333;
 
-$red: #EE5F5B;
+$purple: #33032F;
 $blue: #469AE0;
 $yellow: #FFE953;
 $orange: #E67E22;
-$green: #32B796;
+$green: #72C472;
+$lightgray: #D4D4D4;
 $gray: #000000;
-$purple: #703455;
-$lightpurple: #A66975;
+$mightylightgray: #fcfcfc;
+$lightpurple: #998197;
+$faceblue: #4D75C6;
+
+$breakpoints: (phoneSmall: 320px, phoneBig: 375px, tablet: 768px, desktop: 1024px);

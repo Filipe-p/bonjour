@@ -1,0 +1,12 @@
+<%= simple_form_for :cake, url: cake_dough_fillings_path(@cake, @dough), remote: true, method: :post do |f| %>
+<% @fillings.each do |filling| %>
+<div class="row filling-form">
+  <div class="col-md-4" style = "height: 100px;"><%= image_tag("#{filling.name}.jpg") %></div>
+  <div class="col-md-4 flexbox" style = "height: 100px;"><%= filling.name %></div>
+  <div class="col-md-4 flexbox" style = "height: 100px;"><%= f.radio_button :filling, filling.id %></div>
+</div>
+<% end %>
+<div class="flexbox">
+  <%= f.submit "Próximo passo", class: "btn cta-btn cta-btn-blue cta-btn-small text-center"%>
+</div>
+<% end %>

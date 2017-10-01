@@ -1,0 +1,52 @@
+<%= simple_form_for :cake, url: cakes_path(@cake_params), method: :post do |f| %>
+<div class="form-inner-wrapper container">
+  <div class="form-scroll row row-height">
+    <div class="col-md-9" style = "max-height: 100%;">
+      <div id = "decoration-wrapper" class = "row-height" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
+        <% @decorations.each do |decoration| %>
+
+        <div class="col-md-4 card">
+          <div class= "img-decoration-wrapper" >
+            <%= image_tag("cake_5.jpg") %>
+            <div class="row row-height" style = "margin-bottom: 1.1em;">
+              <div class = "col-md-9" style = "display: flex; align-items: center;">
+                <%= decoration.name %>
+              </div>
+              <div class="col-md-3" style = "padding: 0 0" >
+                <%= f.radio_button :decoration, decoration.id, id: "cake_decoration_#{decoration.id}", class: 'radio-button option-input radio'%>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-9"><p style = "margin-bottom: 1.1em;"> + <span id= "decoration_price_<%= decoration.id %>" class = "price"><%= decoration.price %></span> €/Kg</p></div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p style = "margin-bottom: 1.1em;">A partir de <span id= "decoration_quant_<%= decoration.id %>"><%= decoration.minimum_size %></span> kg</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3">
+
+      <h1 id = "step-title" style = "font-size: 30px;">Peso</h1>
+      <%= f.input :size, collection: Cake::SIZES, label: false %>
+
+      <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
+      <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"}, label: false %>
+    </div>
+  </div>
+  <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
+  <span id = "dough_price" class = "hidden"><%= @dough.price %></span>
+  <%= f.input :filling, as: :hidden, input_html: {value: @filling.id}%>
+  <%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step2"%>
+</div>
+<% end %>
+
+
