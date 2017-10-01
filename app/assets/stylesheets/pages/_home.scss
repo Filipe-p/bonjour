@@ -2,3 +2,108 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.parallax {
+  height: 70vh;
+  background: url("https://res.cloudinary.com/cloudnary-filipe/image/upload/c_scale,w_2811/v1504628207/13_jro9bw.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.how-it-works {
+  background-color: $mightylightgray;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.historia .cta-btn-black {
+  margin-left: 10px;
+}
+
+// MEDIA QUERIES
+/*---------- iphone4 and iphone5 ----------*/
+@include media("<=phoneSmall") {
+  .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/*---------- iphone6 6plus, tablets ----------*/
+@include media(">phoneSmall", "<=tablet") {
+  .banner2 .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .how-it-works .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .historia .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .polaroids-wrapper {
+    padding-bottom: 20px;
+  }
+}
+
+/*---------- Small desktop screens ----------*/
+@include media(">tablet", "<desktop") {
+  .how-it-works .custom-container {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+/*---------- Medium desktop screens ----------*/
+@include media(">=desktop", "<1500px") {
+
+  .how-it-works .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .historia .custom-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+/*---------- Big desktop screens ----------*/
+@include media(">=1500px") {
+
+
+  .how-it-works .custom-container {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+  .banner2 .custom-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+   .historia .custom-container {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+  .historia {
+    min-height: 60vh;
+  }
+}
+//*************************
