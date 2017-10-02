@@ -34,7 +34,7 @@
 .down-nav-btn {
   font-weight: 300;
   white-space: normal;
-  font-size: 14px;
+  font-size: 0.875em;
   letter-spacing: .091em;
   white-space: wrap;
   background-color: black;
@@ -69,7 +69,7 @@
 .down-nav-cart {
   font-weight: 300;
   white-space: normal;
-  font-size: 14px;
+  font-size: 0.875em;
   letter-spacing: .091em;
   white-space: wrap;
   color: black;
@@ -219,25 +219,3 @@
   }
 }
 
-
-// // MEDIA QUERIES
-// /*---------- iphone4 and iphone5 ----------*/
-// @include media("<=phoneSmall") {
-//   #submit-btn {
-//     width: 100%;
-//   }
-// }
-
-// /*---------- iphone6 6plus, tablets ----------*/
-// @include media(">phoneSmall", "<=tablet") {
-//   #submit-btn {
-//     width: 100%;
-//   }
-// }
-
-// /*---------- > tablets ----------*/
-// @include media(">tablet") {
-//   #submit-btn {
-//     width: 150px;
-//   }
-// }

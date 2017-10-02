@@ -1,0 +1,20 @@
+.banner-contacts {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("10473367_1424513991168939_5482884653258251894_n.jpg");
+  background-size: cover;
+  height: calc(70vh - 70px);
+  font-weight: 300;
+}
+
+.banner-contacts .custom-container {
+  padding: 50px 50px;
+  height: 100%
+}
+
+.contacts-wrapper {
+  padding: 100px 100px;
+}
+
+.contact-col {
+  padding-right: 30px;
+  padding-left: 30px;
+}
