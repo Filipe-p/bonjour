@@ -1,4 +1,4 @@
-<%= simple_form_for @delivery do |f| %>
+<%= simple_form_for @delivery, url: order_deliveries_path(@order) do |f| %>
   <%= f.input :contact_first_name, input_html: { placeholder: "Nome" }, label: "Nome" %>
   <%= f.input :contact_last_name, input_html: { placeholder: "Nome" }, label: "Nome" %>
   <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>

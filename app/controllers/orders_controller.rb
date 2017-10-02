@@ -10,6 +10,10 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @cakes = @order.cakes
+
+    @others = @order.others
+    @order_others = @order.order_others
+
     @total = @cakes.map(&:price).reduce(:+)
     @total += @order.others.map(&:price).reduce(:+) unless @order.others.blank?
   end

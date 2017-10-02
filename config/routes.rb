@@ -1,16 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'order_others/index'
-
-  get 'order_others/new'
-
-  get 'order_others/create'
-
-  get 'order_others/edit'
-
-  get 'order_others/update'
-
-  get 'order_others/destroy'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
@@ -37,6 +26,7 @@ Rails.application.routes.draw do
 
   resources :orders do
     resources :deliveries, only: [:new, :create, :confirmation]
+    resources :order_others
     member do
       get 'others'
       post 'assign_others'
