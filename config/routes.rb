@@ -26,10 +26,16 @@ Rails.application.routes.draw do
 
   resources :orders do
     resources :deliveries, only: [:new, :create, :confirmation]
+    get 'confirmation', to: 'deliveries#confirmation'
+
+    # ========================
+    # tira tudo dos other e assign others para o index e o new/create do order_others
     resources :order_others
     member do
       get 'others'
       post 'assign_others'
     end
+
+
   end
 end

@@ -25,13 +25,13 @@ class OrdersController < ApplicationController
 
   # Should be in OrderOthers controller
 #  ============================================
-
+  # index
   def others
     @order = Order.find(params[:id])
     @others = Other.all
     @total = @order.cakes.map(&:price).reduce(:+)
   end
-
+  # create
   def assign_others
     @order = Order.find(params[:id])
     @others = params[:other][:id]

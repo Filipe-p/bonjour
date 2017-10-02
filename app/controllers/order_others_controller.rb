@@ -24,6 +24,10 @@ class OrderOthersController < ApplicationController
   end
 
   def edit
+    # aqui vais editar a quantidade dos order_others
+    # e poder adicionar ou diminuir a quantidade
+    # com um form no front end em que com o mais metes mais um numero (com js)
+    # e com um menos tiras (até ser zero)
   end
 
   def update
