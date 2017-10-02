@@ -1,6 +1,6 @@
-class CreateCustomCakes < ActiveRecord::Migration[5.1]
+class CreateContacts < ActiveRecord::Migration[5.1]
   def change
-    create_table :custom_cakes do |t|
+    create_table :contacts do |t|
       t.string :contact_email
       t.string :contact_first_name
       t.string :contact_last_name
