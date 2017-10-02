@@ -36,9 +36,12 @@ class CakesController < ApplicationController
   end
 
   def create
-# Get all the params, create or find the order and create the cake
-  # Possible bug here
-    session[:order_id].blank? ? @order = Order.new : @order = Order.find(session[:order_id])
+    if session[:order_id].present? && Order.exists?(session[:order_id])
+      @order = Order.find(session[:order_id])
+    else
+      session.delete(:order_id)
+      @order = Order.new
+    end
 
     @order.user = current_user unless current_user.blank?
 
@@ -56,7 +59,6 @@ class CakesController < ApplicationController
         if @cake.save
           respond_to do |format|
             format.html { redirect_to others_order_path(@order)}
- # <-- will render `app/views/cakes/create.js.erb`
           end
         else
           respond_to do |format|

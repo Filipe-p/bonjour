@@ -36,7 +36,7 @@
     <div class="col-md-3">
 
       <h1 id = "step-title" style = "font-size: 30px;">Peso</h1>
-      <%= f.input :size, collection: Cake::SIZES, label: false %>
+      <%= f.input :size, collection: Cake::SIZES, label: false, prompt: "Kg" %>
 
       <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
       <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"}, label: false %>
@@ -48,5 +48,3 @@
   <%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step2"%>
 </div>
 <% end %>
-
-

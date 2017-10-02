@@ -14,7 +14,9 @@ class OthersController < ApplicationController
     # redirect to order show
   end
 
-    def destroy
+  # Should be in the OrderOthers controller
+  #  =========================================
+  def destroy
     @order = current_order
     @other.destroy
     respond_to do |format|
@@ -22,6 +24,8 @@ class OthersController < ApplicationController
       format.js
     end
   end
+
+  #  =========================================
 
   private
 

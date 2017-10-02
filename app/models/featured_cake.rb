@@ -1,0 +1,2 @@
+class FeaturedCake < ApplicationRecord
+end
