@@ -49,12 +49,16 @@
                   <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
                 </div>
                 <div class="col-md-8">
-                  <p id = "other_<%=order_other.other.id%>"><%= order_other.other.name %></p>
+                  <p id = "other_<%=order_other.other.id%>"><%= order_other.quantity %> <%= order_other.other.name %></p>
                   <p><%= order_other.other.price %></p>
                 </div>
                 <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=order_other.other.id%>"><%= link_to "", order_order_other_path(@order, order_other), class: "circle fromMiddle", method: :delete, remote: :true %></div>
               </div>
               <% end %>
+
+              <%= link_to 'Encomendar outro extra', new_order_order_other_path(@order) %>
+              <% else %>
+              <%= link_to 'Encomendar extra', new_order_order_other_path(@order) %>
               <% end %>
             </div>
           </div>
