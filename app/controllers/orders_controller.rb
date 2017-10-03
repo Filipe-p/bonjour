@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @cakes = @order.cakes
+    @order_others = OrderOther.where(order_id: params[:id])
     @total = @cakes.map(&:price).reduce(:+)
     @total += @order.others.map(&:price).reduce(:+) unless @order.others.blank?
   end

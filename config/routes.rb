@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'order_others/index'
-
-  get 'order_others/new'
-
-  get 'order_others/create'
-
-  get 'order_others/edit'
-
-  get 'order_others/update'
-
-  get 'order_others/destroy'
+ resources :order_others
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,

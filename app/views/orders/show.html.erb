@@ -12,22 +12,21 @@
     <div class="form-wrapper" style = "overflow: scroll;">
       <div class="form-inner-wrapper">
         <div class="form-scroll">
-          <div class="row">
-            <div class="col-md-6"> Form was here</div>
-            <div class="col-md-6 card">
-              <h1>Encomenda</h1>
+              <h3>Encomenda</h3>
               <% unless @order.cakes.blank? %>
 
 
               <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
               <div id = "cake_<%=cake.id%>">
                 <hr>
-                <div class="row">
+                <div class="row card">
                   <div class="col-md-4">
                     <%= image_tag("cake_5.jpg") %>
                   </div>
                   <div class="col-md-8">
-                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
+                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %></p>
+                    <p> <%= cake.size %>Kg</p>
+                    <p> <%= cake.price %>€</p>
                   </div>
                   <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=cake.id%>"><%= link_to "", cake_path(cake), class: "circle fromMiddle", method: :delete, remote: :true %></div>
                 </div>
@@ -39,20 +38,20 @@
               <% else %>
               <%= link_to 'Encomendar bolo', new_cake_path %>
               <% end %>
-              <% unless @order.others.blank? %>
-              <% @order.others.each do |other| %>
-              <div class="row">
+              <% unless @order_others.blank? %>
+              <% @order_others.each do |other| %>
+              <div class="row card">
                 <div class="col-md-4">
                   <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
                 </div>
                 <div class="col-md-8">
-                  <p id = "other_<%=other.id%>"><%= other.name %></p>
+                  <p id = "other_<%=other.id%>"><%= other.quantity %></p>
+
                 </div>
+                <%= link_to "APAGAR", order_other_path(other.id), class: "", method: :delete %>
               </div>
               <% end %>
               <% end %>
-            </div>
-          </div>
         </div>
       </div>
       <div id = "down-nav">
@@ -84,7 +83,6 @@
     </div>
   </div>
 </div>
-<%= @total %>
 
 <% content_for(:after_js) do %>
 <script>
@@ -106,7 +104,7 @@
         }
       });
     };
-
+    //Delete cake
     $("*[id*=delete_btn_]").click(function(){
      var btnId = $(this).attr("id");
      var split = btnId.split("delete_btn_");
@@ -116,6 +114,17 @@
      $(this).remove();
 
    })
+    //Delete Other
+     $("*[id*=delete_btn_]").click(function(){
+     var btnId = $(this).attr("id");
+     var split = btnId.split("delete_btn_");
+     var cakeId = "#cake_" + split[1];
+     console.log(cakeId);
+     $(cakeId).remove();
+     $(this).remove();
+
+   })
+
     $('.circle').on('click',function(){
       var animClass = $(this).data('animation');
       var removeTime = $(this).data('remove');
