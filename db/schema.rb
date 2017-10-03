@@ -67,9 +67,11 @@ ActiveRecord::Schema.define(version: 20171001190521) do
   create_table "deliveries", force: :cascade do |t|
     t.string "address"
     t.bigint "user_id"
+    t.bigint "order_id"
     t.date "delivery_date"
     t.time "delivery_slot"
-    t.string "contact_name"
+    t.string "contact_first_name"
+    t.string "contact_last_name"
     t.integer "contact_telephone"
     t.string "contact_email"
     t.boolean "store_pickup", default: false, null: false
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 20171001190521) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cost_cents", default: 0, null: false
+    t.index ["order_id"], name: "index_deliveries_on_order_id"
     t.index ["user_id"], name: "index_deliveries_on_user_id"
   end
 
@@ -177,6 +180,7 @@ ActiveRecord::Schema.define(version: 20171001190521) do
   add_foreign_key "cakes", "orders"
   add_foreign_key "custom_cakes", "doughs"
   add_foreign_key "custom_cakes", "fillings"
+  add_foreign_key "deliveries", "orders"
   add_foreign_key "deliveries", "users"
   add_foreign_key "dough_fillings", "doughs"
   add_foreign_key "dough_fillings", "fillings"

@@ -11,6 +11,10 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @cakes = @order.cakes
     @order_others = OrderOther.where(order_id: params[:id])
+
+    @others = @order.others
+    @order_others = @order.order_others
+
     @total = @cakes.map(&:price).reduce(:+)
     @total += @order.others.map(&:price).reduce(:+) unless @order.others.blank?
   end
@@ -22,13 +26,13 @@ class OrdersController < ApplicationController
 
   # Should be in OrderOthers controller
 #  ============================================
-
+  # index
   def others
     @order = Order.find(params[:id])
     @others = Other.all
     @total = @order.cakes.map(&:price).reduce(:+)
   end
-
+  # create
   def assign_others
     @order = Order.find(params[:id])
     @others = params[:other][:id]

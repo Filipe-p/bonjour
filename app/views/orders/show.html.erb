@@ -12,7 +12,12 @@
     <div class="form-wrapper" style = "overflow: scroll;">
       <div class="form-inner-wrapper">
         <div class="form-scroll">
-              <h3>Encomenda</h3>
+          <div class="row">
+            <div class="col-md-6"> Form was here
+                <%= link_to 'delivery', new_order_delivery_path(@order), class: "btn btn-primary" %>
+            </div>
+            <div class="col-md-6 card">
+              <h1>Encomenda</h1>
               <% unless @order.cakes.blank? %>
 
 
@@ -24,9 +29,8 @@
                     <%= image_tag("cake_5.jpg") %>
                   </div>
                   <div class="col-md-8">
-                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %></p>
-                    <p> <%= cake.size %>Kg</p>
-                    <p> <%= cake.price %>€</p>
+                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
+                    <p><%= cake.price %></p>
                   </div>
                   <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=cake.id%>"><%= link_to "", cake_path(cake), class: "circle fromMiddle", method: :delete, remote: :true %></div>
                 </div>
@@ -38,19 +42,26 @@
               <% else %>
               <%= link_to 'Encomendar bolo', new_cake_path %>
               <% end %>
-              <% unless @order_others.blank? %>
-              <% @order_others.each do |other| %>
-              <div class="row card">
+
+              <% unless @order.others.blank? %>
+              <% @order.order_others.each do |order_other| %>
+              <div class="row">
                 <div class="col-md-4">
                   <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
                 </div>
                 <div class="col-md-8">
-                  <p id = "other_<%=other.id%>"><%= other.quantity %></p>
 
+                  <p id = "other_<%=order_other.other.id%>"><%= order_other.quantity %> <%= order_other.other.name %></p>
+                  <p><%= order_other.other.price %></p>
                 </div>
-                <%= link_to "APAGAR", order_other_path(other.id), class: "", method: :delete %>
+                <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=order_other.other.id%>"><%= link_to "", order_order_other_path(@order, order_other), class: "circle fromMiddle", method: :delete, remote: :true %></div>
+
               </div>
               <% end %>
+
+              <%= link_to 'Encomendar outro extra', new_order_order_other_path(@order) %>
+              <% else %>
+              <%= link_to 'Encomendar extra', new_order_order_other_path(@order) %>
               <% end %>
         </div>
       </div>

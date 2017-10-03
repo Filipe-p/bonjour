@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
- resources :order_others
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -27,9 +25,16 @@ Rails.application.routes.draw do
 
   resources :orders do
     resources :deliveries, only: [:new, :create, :confirmation]
+    get 'confirmation', to: 'deliveries#confirmation'
+
+    # ========================
+    # tira tudo dos other e assign others para o index e o new/create do order_others
+    resources :order_others
     member do
       get 'others'
       post 'assign_others'
     end
+
+
   end
 end
