@@ -15,8 +15,8 @@ class OrdersController < ApplicationController
     @others = @order.others
     @order_others = @order.order_others
 
-    @total = @cakes.map(&:price).reduce(:+)
-    @total += @order.others.map(&:price).reduce(:+) unless @order.others.blank?
+    @total = @cakes.map(&:price).reduce(:+).to_f
+    @total += @order.others.map(&:price).reduce(:+).to_f unless @order.others.blank?
   end
 
   # does not exist
@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   def others
     @order = Order.find(params[:id])
     @others = Other.all
-    @total = @order.cakes.map(&:price).reduce(:+)
+    @total = @order.cakes.map(&:price).reduce(:+).to_f
   end
   #  ============================================
 

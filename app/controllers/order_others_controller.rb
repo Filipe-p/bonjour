@@ -16,12 +16,10 @@ class OrderOthersController < ApplicationController
     @order = Order.find(params[:order_id])
 
     # in each slice
-    @quantities = order_others_params[:quantity]
-    @others = order_others_params[:other_id]
+    @quantities = order_others_params[:quantity].select{|id| !id.blank? }
+    @others = order_others_params[:other_id].select{|id| !id.blank? }
 
-    raise
-
-    @others.zip(@quantities).select{|id| !id[0].blank? && !id[1].blank? }.map do |id|
+    @others.zip(@quantities).map do |id|
       other = Other.find(id[0])
       quantity = id[1]
       OrderOther.create(order: @order, other: other, quantity: quantity )

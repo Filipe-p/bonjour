@@ -87,6 +87,8 @@
         $("#cart").html((cartPrice - otherPrice * otherQuantity).toFixed(2));
         //Reset quantity
         $("#other_quantity_" + otherIdNum).html("0")
+        //Reset quantity in hidden input
+       $("#quantity_other_" + otherIdNum).val("");
       } else {
         //Select other
         $(this).addClass("option-input-checked option-input-checked::before");
@@ -95,7 +97,9 @@
         // Add other's price
         $("#cart").html((cartPrice + otherPrice).toFixed(2));
         //Add 1 unit
-        $("#other_quantity_" + otherIdNum).html("1")
+        $("#other_quantity_" + otherIdNum).html("1");
+        //Add 1 unit in hidden input
+       $("#quantity_other_" + otherIdNum).val(1);
         }
     });
 
@@ -148,7 +152,7 @@
       //Decrease quantity in visible input
       $("#other_quantity_" + otherIdNum).html(otherQuantity - 1);
         //Decrease quantity in hidden input
-       $("#quantity_other_" + otherIdNum).val(inputQuantity - 1);
+       $("#quantity_other_" + otherIdNum).val("");
       //Unselect radio
       $("#i_" + otherIdNum).removeClass("option-input-checked option-input-checked::before");
       //Unselect corresponding checkbox

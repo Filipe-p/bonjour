@@ -2,20 +2,21 @@
 <div class="form-inner-wrapper container">
   <div class="form-scroll row">
     <div class="col-md-6">
-  <%= f.input :contact_name, input_html: { placeholder: "Nome" }, label: "Nome" %>
-  <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
-  <%= f.input :contact_email, as: :email, input_html: { placeholder: "...@google.com"}, label: "Email" %>
+      <%= f.input :contact_first_name, input_html: { placeholder: "Primeiro Nome" }, label: "Primeiro Nome" %>
+      <%= f.input :contact_last_name, input_html: { placeholder: "Ultimo Nome" }, label: "Ultimo Nome" %>
+      <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
+      <%= f.input :contact_email, as: :email, input_html: { placeholder: "...@google.com"}, label: "Email" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :delivery_date, input_html: { placeholder: ""}, label: "Dia da entrega" %>
+      <%= f.input :delivery_slot, minute_step: 60, start_hour: 10, end_hour: 20, input_html: { placeholder: ""}, label: "Hora da entrega" %>
+      <%= f.input :store_pickup, input_html: { placeholder: ""}, label: "Levantamento na loja" %>
+      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada", wrapper_html: {class: "hidden"} %>
+
+
+      <%= f.submit "Confirmar Pedido", class: "btn cta-btn cta-btn-red cta-btn-size btn-width-100 btn-slim" %>
+    </div>
   </div>
-     <div class="col-md-6">
-  <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada" %>
-  <%= f.input :delivery_date, input_html: { placeholder: ""}, label: "Dia da entrega" %>
-  <%= f.input :delivery_slot, input_html: { placeholder: ""}, label: "Hora da entrega" %>
-  <%= f.input :store_pickup, input_html: { placeholder: ""}, label: "Hora da entrega" %>
-
-
-  <%= f.submit "Confirmar Pedido", class: "btn cta-btn cta-btn-red cta-btn-size btn-width-100 btn-slim" %>
-</div>
-</div>
 </div>
 
 <% end %>

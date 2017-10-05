@@ -1,6 +1,6 @@
 class CakesController < ApplicationController
   include ApplicationHelper
-  skip_before_action :authenticate_user!, only: [:new, :doughs, :decorations, :create]
+  skip_before_action :authenticate_user!
   before_action :set_cake, only: [:edit, :update, :destroy]
 
   def index
