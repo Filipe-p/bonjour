@@ -19,6 +19,7 @@ class OrderOthersController < ApplicationController
     @quantities = order_others_params[:quantity]
     @others = order_others_params[:other_id]
 
+    raise
 
     @others.zip(@quantities).select{|id| !id[0].blank? && !id[1].blank? }.map do |id|
       other = Other.find(id[0])
