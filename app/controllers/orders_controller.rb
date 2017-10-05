@@ -32,18 +32,6 @@ class OrdersController < ApplicationController
     @others = Other.all
     @total = @order.cakes.map(&:price).reduce(:+)
   end
-  # create
-  def assign_others
-    @order = Order.find(params[:id])
-    @others = params[:other][:id]
-    @others.select{|id| !id.blank? }.map do |other_id|
-      other = Other.find(other_id)
-      OrderOther.create(order: @order, other: other)
-    end
-    # redirect to order show if all ok, if not, render others again
-    redirect_to order_path(@order)
-  end
-
   #  ============================================
 
   # does not exist

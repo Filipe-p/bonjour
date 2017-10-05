@@ -14,10 +14,10 @@
               <div class="radio option-input i-other" id = "i_<%= other.id %>"></div>
             </div>
             <div class="radio-hid">
-             <%= f.input :id, as: :check_boxes, collection: [other.id], label: false %>
+             <%= f.input :other_id, as: :check_boxes, collection: [other.id], label: false, include_hidden: false %>
 
            </div>
-           <%= f.input :quantity, as: :integer, label: false %>
+           <%= f.input :quantity, as: :integer, collection: [other.id], input_html: {id: "quantity_other_#{other.id}"} %>
          </div>
          <hr>
          <div class="row">

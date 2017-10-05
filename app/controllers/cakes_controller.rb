@@ -58,7 +58,7 @@ class CakesController < ApplicationController
         @cake.order = @order
         if @cake.save
           respond_to do |format|
-            format.html { redirect_to others_order_path(@order)}
+            format.html { redirect_to order_order_others_path(@order)}
           end
         else
           respond_to do |format|
