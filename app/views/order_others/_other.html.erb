@@ -17,7 +17,7 @@
              <%= f.input :other_id, as: :check_boxes, collection: [other.id], label: false, include_hidden: false %>
 
            </div>
-           <%= f.input :quantity, as: :integer, collection: [other.id], input_html: {id: "quantity_other_#{other.id}"} %>
+           <%= f.input :quantity, as: :integer, collection: [other.id], input_html: {id: "quantity_other_#{other.id}", name: 'order_others[quantity][]'} %>
          </div>
          <hr>
          <div class="row">

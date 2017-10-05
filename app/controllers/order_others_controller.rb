@@ -14,13 +14,17 @@ class OrderOthersController < ApplicationController
 
   def create
     @order = Order.find(params[:order_id])
-    @quantity = order_others_params[:quantity]
+
+    # in each slice
+    @quantities = order_others_params[:quantity]
     @others = order_others_params[:other_id]
-    @others.select{|id| !id.blank? }.map do |other_id|
-      other = Other.find(other_id)
-      OrderOther.create(order: @order, other: other, quantity: @quantity )
+
+
+    @others.zip(@quantities).select{|id| !id[0].blank? && !id[1].blank? }.map do |id|
+      other = Other.find(id[0])
+      quantity = id[1]
+      OrderOther.create(order: @order, other: other, quantity: quantity )
     end
-    raise
     # redirect to order show if all ok, if not, render others again
     redirect_to order_path(@order)
   end
