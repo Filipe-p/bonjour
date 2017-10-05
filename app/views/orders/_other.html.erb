@@ -1,25 +1,52 @@
 <%= simple_form_for :other, url: assign_others_order_path(@order), method: :post do |f| %>
-<div class="row dough-form" style = "max-height: 100%;">
-    <h1 id = "step-title" style = "font-size: 30px;">Adicione extras</h1>
-    <div id = "decoration-wrapper" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
-      <% @others.each do |other| %>
+<div class="form-inner-wrapper container">
+  <div class="form-scroll row row-height">
+    <% @others.each do |other| %>
+    <div class="col-md-4 card">
+      <div class = "img-decoration-wrapper" >
+        <div class="row">
+          <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
+          <div class="row row-height">
+            <div class="col-md-9" style = "display: flex; align-items: center;">
+              <%= other.name %>
+            </div>
+            <div class="col-md-3" id = "other_<%= other.id %>">
+              <div class="radio option-input i-other" id = "i_<%= other.id %>"></div>
+            </div>
+            <div class="radio-hide">
+             <%= f.input :id, as: :check_boxes, collection: [other.id], label: false %>
+           </div>
+         </div>
+         <hr>
+         <div class="row">
+           <div class="col-md-12">
+             <p><span id= "other_price_<%= other.id %>" class = "price"><%= other.price %></span> €/un</p>
+           </div>
+         </div>
+         <div class="row">
+          <div class="col-md-12 quantity-btn" id = "math_<%= other.id %>">
+            <div>
+              <span id = "other_quantity_<%= other.id %>">0</span>
+              <span>un</span></div>
+              <div>
+               <span class = "plus" id = "plus_<%= other.id %>">
+                 <%= image_tag("circle-bold-add.svg") %>
+               </span>
+               <span class = "minus" id = "minus_<%= other.id %>">
+                 <%= image_tag("circle-bold-delete.svg") %>
+               </span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
 
-      <div class="col-md-4">
-        <div class = "img-decoration-wrapper" >
-          <div class="row">
-            <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
-          </div>
-          <div class="row dough-label" id = "other_i_<%= other.id %>"><p>Seleccionar</p></div>
-        </div>
-        <div class="radio-hide">
-          <%= f.input :id, as: :check_boxes, collection: [other.id] %>
-        </div>
-      </div>
-
-      <% end %>
-    </div>
+   <% end %>
+   <%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step3"%>
+ </div>
 </div>
-<%= f.submit "Proximo passo", class: "btn btn-lg btn-default", id: "step3"%>
 <% end %>
+
 
 

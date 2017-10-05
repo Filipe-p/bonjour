@@ -4,6 +4,11 @@
       <%= image_tag "circle.png" %>
       <% end %>
 
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-ac-right hidden-xs hidden-sm">
@@ -30,7 +35,7 @@
           <% end %>
         </li>
         <li>
-        <%= link_to new_order_path, class: "navbar-ac-link" do %>
+        <%= link_to current_order_path, class: "navbar-ac-link" do %>
           Carrinho
           <% end %>
         </li>

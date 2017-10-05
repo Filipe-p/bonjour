@@ -1,4 +1,5 @@
 class OthersController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_order
 
   def new
@@ -12,6 +13,19 @@ class OthersController < ApplicationController
     # assign other to the current order
     # redirect to order show
   end
+
+  # Should be in the OrderOthers controller
+  #  =========================================
+  def destroy
+    @order = current_order
+    @other.destroy
+    respond_to do |format|
+      format.html {redirect_to order_path(@order)}
+      format.js
+    end
+  end
+
+  #  =========================================
 
   private
 

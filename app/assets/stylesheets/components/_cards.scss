@@ -1,28 +1,12 @@
 .card {
-  border: 2px solid black;
+  margin: 10px 10px;
+  padding: 1.5em 1.5em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-
-.card-cake {
-  position: relative;
-  display: inline-block;
-}
-
-.card-cake img{
-  position: relative;
-  display: inline-block;
-}
-
-.card-cake:before {
-  display: block;
-  content: '';
-  border: 3px solid #333333;
-  position: absolute;
-  z-index: 0;
-  top: 40px;
-  right: -30px;
-  bottom: -40px;
-  left: 30px;
+.card img {
+  max-width: 100%;
+  margin-bottom: 1.1em;
 }
 
 .card-cake-wrapper {
@@ -30,164 +14,29 @@
   padding-right: 0px;
 }
 
-.cake-steps {
-  padding-left: 0px;
-  padding-right: 0px;
+.card-image-wrapper img{
+  max-width: 100px;
 }
 
-.step-wrapper img{
-max-width:30px;
+.card-title {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 1.1em;
 }
 
-.dough-card {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  min-height: 100px;
-  font-size: 0;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.dough-card-img {
-  min-width: 100%;
-  min-height: 100%;
-  transition: transform 1.2s ease,opacity .4s ease;
-  z-index: 0;
+.card-text {
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.8;
 }
 
-// POLAROID
-
-
-/* By default, we tilt all our images -2 degrees */
-.polaroids img {
-  padding: 10px 10px 20px;
-  display: inline;
-  background: #ffffff;
-  width: 100%;
-}
-
-.polaroids-left img {
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-}
-
-.polaroids-right img {
-  -webkit-transform: rotate(-2deg);
-  -moz-transform: rotate(-2deg);
-}
-
-/* Rotate all even images 2 degrees */
-// ul.polaroids li:nth-child(even) img {
-//   -webkit-transform: rotate(2deg);
-//   -moz-transform: rotate(2deg);
-// }
-
-/* Scale the images on hover, add transitions for smoothing things out, and ensure the hover appears on top */
-.polaroids img:hover {
-  -webkit-transform: scale(1.25);
-  -moz-transform: scale(1.25);
-  position: relative;
-  z-index: 5;
-}
-
-.banner-about .polaroids img:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  position: relative;
-  z-index: 5;
-}
-/* Add drop shadows and smooth out the transition (Safari only) */
-.polaroids img {
-  -webkit-transition: -webkit-transform .15s linear;
-  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
-  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
-}
-
-/* On hover, darken the shadows a bit */
-.polaroids img {
-  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
-  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
-}
-
-.card-contacts {
-  height: 100%;
-  background-color: white;
-  padding: 50px 50px;
+.quantity-btn {
   display: flex;
-  align-items: left;
-  justify-content: space-around;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
-//MEDIA QUERIES
-
-@include media("<phoneBig") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-    width: 230px;
-  }
-
-  .polaroids {
-    width: 200px;
-  }
+.quantity-btn img:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
-
-@include media(">=phoneBig", "<=550px") {
-  .polaroids {
-    width: 300px;
-  }
-}
-
-@include media(">=phoneBig", "<tablet") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-    width: 250px;
-  }
-
-  .polaroids {
-    width: 300px;
-  }
-}
-
-@include media(">=tablet", "<desktop") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    width: 250px;
-  }
-
-  .polaroids {
-    width: 400px;
-  }
-}
-
-@include media(">=desktop", "<1500px") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    width: 320px;
-  }
-
-  .polaroids {
-    width: 300px;
-  }
-}
-
-@include media(">1500px") {
-  .card-cake img{
-    position: relative;
-    display: inline-block;
-    width: 320px;
-  }
-
-  .polaroids {
-    width: 400px;
-  }
-}
-

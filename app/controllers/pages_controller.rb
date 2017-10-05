@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!
 
   def home
     render layout: "brevemente"
@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def contacts
-
+    @contact = Contact.new
   end
 
   def home2
@@ -18,9 +18,7 @@ class PagesController < ApplicationController
   def gallery
   end
 
-  private
-
-  def contact_param
-    params.require(:contacts).permit(:email, :textarea, :phone_number, :dough, :filling)
+  def design
+    @custom_cake = CustomCake.new
   end
 end

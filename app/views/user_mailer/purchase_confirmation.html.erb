@@ -1,0 +1,31 @@
+<h1>Confirmação de Encomenda</h1>
+
+<h2>Olá <%= @order.contact_name %>, </h2>
+<p>Obrigado pela tua encomenda! Por favor confirma se os dados estão correctos</p>
+<p></p>
+<table style="width:60%">
+	<tr>
+		<td><strong>Ponto Contacto</strong></td>
+		<td><%= @order.contact_name %></td>
+	</tr>
+	<tr>
+		<td><strong>Numero Contact</strong></td>
+		<td><%= @order.contact_telephone%></td>
+	</tr>
+	<tr>
+		<td><strong>Morada de Entrega</strong></td>
+		<td><%= @order.address%></td>
+	</tr>
+	<tr>
+		<td><strong>Hora de Entrega</strong></td>
+		<td><%= @order.delivery_datetime%></td>
+	</tr>
+</table>
+<p></p>
+<h3><%= @order.contact_name %> Atenção:</h3> <p>Se os dados tiverem errados por favor entrem em contacto respondendo a este email</p>
+<p></p>
+<p>Por agora da nossa parte está tudo. Vamos por as mãos a massa (literalmente) e estaremos com vocês dia <%= @order.delivery_datetime%></p>
+<p></p>
+
+<p>Desde já obrigado,</p>
+<p>Eqipa Bonjour</p>

@@ -1,177 +1,162 @@
-<div class = "banner2">
+<section class = "banner2">
   <div class="custom-container" style = "height: 100%">
     <div class=" banner-wrapper row" style = "height: 100%;">
-        <div class="col-md-6 col-md-offset-6 col-sm-12" style = "height: 100%">
-          <div class = "banner-content text-center">
-            <h1>Pastelaria Bonjour</h1>
-            <h3>Crie o seu bolo online!</h3>
-            <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-size cta-btn-white" %>
-          </div>
+      <div class="col-md-6 col-md-offset-6 col-sm-12" style = "height: 100%">
+        <div class = "banner-content text-center">
+          <h1>Pastelaria Bonjour</h1>
+          <h2>Crie o seu bolo online!</h2>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_cake_path, class: "cta-btn cta-btn-size cta-btn-white" %>
         </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class = "how-it-works">
+<section class = "how-it-works">
   <div class="custom-container">
-    <div class="row row-height">
-      <div class = "text-left text-normal" style = "margin-bottom: 50px;">
-        <h3 class = "padding-bottom-20"> Como fazer o seu bolo online</h3>
+    <div class="row">
+      <div class = "text-left" style = "margin-bottom: 50px;">
+        <h3> Como fazer o seu bolo online</h3>
         <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
-      <div class="col-md-6 cake-steps">
-        <div class="cake-steps-content padding-bottom-20">
-        <h4>4 simples passos</h4>
-          <div class = "step-wrapper">
-            <%= image_tag "number-one-in-a-circle.svg" %>
-
-            Escolha a massa e recheio
-          </div>
-
-          <div class = "step-wrapper">
-
-            <%= image_tag "number-two-in-a-circle.svg" %>
-
-            Escolha a decoração e o tamanho
-          </div>
-
-          <div class = "step-wrapper">
-            <%= image_tag "number-three-in-a-circle.svg" %>
-            Adicione extras e reveja a encomenda
-          </div>
-          <div class = "step-wrapper">
-            <%= image_tag "number-four-in-circular-button.svg" %>
-            Faça o pagamento
-          </div>
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %>
+    </div>
+    <div class="row row-height">
+      <div class="col-md-3 card">
+        <div class="card-image-wrapper flexbox">
+          <%= image_tag "whisk.svg" %>
         </div>
+        <p class = "text-center card-title">Massa e recheio</p>
+        <p class = "card-text">Cada massa de bolo tem vários recheios possíveis. Escolha a combinação que mais gostar!</p>
       </div>
-      <div class="col-md-6 card-cake-wrapper">
-        <%= image_tag "cookiecake.jpg" %>
+      <div class="col-md-3 card">
+        <div class="card-image-wrapper flexbox">
+          <%= image_tag "food-scale.svg" %>
+        </div>
+        <p class = "text-center card-title">Peso e decoração</p>
+        <p class = "card-text">Para finalizar o seu bolo escolha o peso e a decoração. Temos muitas opções.</p>
+      </div>
+      <div class="col-md-3 card">
+        <div class="card-image-wrapper flexbox">
+          <%= image_tag "cupcake.svg" %>
+        </div>
+        <p class = "text-center card-title">Extras</p>
+        <p class = "card-text">Adicione velas, cupcakes, cartões ou outros extras à sua encomenda.</p>
+      </div>
+      <div class="col-md-3 card">
+        <div class="card-image-wrapper flexbox">
+          <%= image_tag "bakery-shop.svg" %>
+        </div>
+        <p class="text-center card-title">Local para levantar</p>
+        <p class = "card-text">Escolha se quer levantar a sua encomenda na loja, ou recebê-la em sua casa.</p>
       </div>
     </div>
+    <div class="row flexbox" style = "padding-top: 2em;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %></div>
   </div>
-</div>
+</section>
 
-<div class = "parallax">
+<section class = "parallax">
   <div class="parallax-inner">
   </div>
-</div>
+</section>
 
-<div class = "historia padding-top-bottom-100">
+<section class = "historia padding-top-bottom-100">
   <div class="custom-container">
     <div class="row row-height">
       <div class="col-md-6 polaroids-wrapper">
         <div class="polaroids polaroids-right">
           <%= image_tag "pastelaria.jpg" %>
-
         </div>
       </div>
-      <div class="col-md-6 text-left text-normal">
+      <div class="col-md-6 text-left">
         <div class = "flexbox-col">
           <h3 class = "padding-bottom-20">História da Bonjour</h3>
           <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
-
           <span style = "margin-top: 20px;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
             <%= link_to t(".top_call_to_action", default: "Ler mais"), about_path, class: "navbar-ac-item cta-btn cta-btn-black cta-btn-size" %></span>
-
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-<!-- <div class = "parallax2">
-<div class="parallax-inner2">
-</div>
-</div> -->
+  <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
-<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+      <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+      <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+    </ol>
 
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-    <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-    <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-  </ol>
+    <!-- Wrapper For Slides -->
+    <div class="carousel-inner" role="listbox">
 
-  <!-- Wrapper For Slides -->
-  <div class="carousel-inner" role="listbox">
+      <!-- Third Slide -->
+      <div class="item active">
 
-    <!-- Third Slide -->
-    <div class="item active">
+        <!-- Slide Background -->
+        <%= image_tag "toa-heftiba-84799 copy4.jpg" %>
+        <div class="bs-slider-overlay"></div>
 
-      <!-- Slide Background -->
-      <%= image_tag "toa-heftiba-84799 copy4.jpg" %>
-      <div class="bs-slider-overlay"></div>
-
-      <div class="container">
-        <div class="row">
-          <!-- Slide Text Layer -->
-          <div class="slide-text slide_style_left">
-            <h1 data-animation="animated zoomInRight">Veja os nossos bolos</h1>
-            <p data-animation="animated fadeInLeft">Ou faça já o seu online.</p>
-            <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
-            <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+        <div class="container">
+          <div class="row">
+            <!-- Slide Text Layer -->
+            <div class="slide-text slide_style_left">
+              <h1 data-animation="animated zoomInRight">Veja os nossos bolos</h1>
+              <p data-animation="animated fadeInLeft">Ou faça já o seu online.</p>
+              <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
+              <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End of Slide -->
+      <!-- End of Slide -->
 
-    <!-- Second Slide -->
-    <div class="item">
-      <%= image_tag "toa-heftiba-84799 copy.jpg" %>
-      <!-- Slide Background -->
-      <!-- <img src="toa-heftiba-84799.jpg" alt="Bootstrap Touch Slider" class="slide-image"/> -->
-      <div class="bs-slider-overlay"></div>
-      <!-- Slide Text Layer -->
-      <div class="slide-text slide_style_center">
-        <h1 data-animation="animated flipInX">Veja os nossos bolos</h1>
-        <p data-animation="animated lightSpeedIn">Ou faça já o seu online.</p>
-        <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
-        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+      <!-- Second Slide -->
+      <div class="item">
+        <%= image_tag "toa-heftiba-84799 copy.jpg" %>
+        <!-- Slide Background -->
+        <!-- <img src="toa-heftiba-84799.jpg" alt="Bootstrap Touch Slider" class="slide-image"/> -->
+        <div class="bs-slider-overlay"></div>
+        <!-- Slide Text Layer -->
+        <div class="slide-text slide_style_center">
+          <h1 data-animation="animated flipInX">Veja os nossos bolos</h1>
+          <p data-animation="animated lightSpeedIn">Ou faça já o seu online.</p>
+          <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+        </div>
       </div>
-    </div>
-    <!-- End of Slide -->
+      <!-- End of Slide -->
 
-    <!-- Third Slide -->
-    <div class="item">
+      <!-- Third Slide -->
+      <div class="item">
 
-      <!-- Slide Background -->
-      <%= image_tag "rachael-gorjestani-197369.jpg" %>
-      <div class="bs-slider-overlay"></div>
-      <!-- Slide Text Layer -->
-      <div class="slide-text slide_style_right">
-        <h1 data-animation="animated zoomInLeft">Veja os nossos bolos</h1>
-        <p data-animation="animated fadeInRight">Ou faça já o seu online.</p>
-        <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
-        <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+        <!-- Slide Background -->
+        <%= image_tag "rachael-gorjestani-197369.jpg" %>
+        <div class="bs-slider-overlay"></div>
+        <!-- Slide Text Layer -->
+        <div class="slide-text slide_style_right">
+          <h1 data-animation="animated zoomInLeft">Veja os nossos bolos</h1>
+          <p data-animation="animated fadeInRight">Ou faça já o seu online.</p>
+          <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+        </div>
       </div>
-    </div>
-    <!-- End of Slide -->
+      <!-- End of Slide -->
 
 
-  </div><!-- End of Wrapper For Slides -->
+    </div><!-- End of Wrapper For Slides -->
 
-  <!-- Left Control -->
-  <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
-    <span class="fa fa-angle-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
+    <!-- Left Control -->
+    <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+      <span class="fa fa-angle-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
 
-  <!-- Right Control -->
-  <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
-    <span class="fa fa-angle-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <!-- Right Control -->
+    <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+      <span class="fa fa-angle-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
 
-</div> <!-- End  bootstrap-touch-slider Slider -->
-
-
-
-
-
-
-
-
+  </div> <!-- End  bootstrap-touch-slider Slider -->

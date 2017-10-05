@@ -1,3 +1,47 @@
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 5em;
+  padding-bottom: 0.25em;
+}
+
+h2 {
+  font-size: 3em;
+  padding-bottom: 1.25em;
+}
+
+h3 {
+  font-size: 2em;
+  padding-bottom: 1.5em;
+}
+
+p {
+  line-height: 1.85714286em;
+  font-size: 1em;
+}
+
 .list {
   font-size: 20px;
+}
+
+
+@include media("<=phoneSmall") {
+  body {
+    font-size: 10px;
+  }
+}
+
+@include media(">phoneSmall", "<=tablet") {
+  body {
+    font-size: 12px;
+  }
+}
+
+
+@include media(">tablet", "<desktop") {
+  body {
+    font-size: 14px;
+  }
 }
