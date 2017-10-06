@@ -15,24 +15,16 @@ class OrdersController < ApplicationController
     @others = @order.others
     @order_others = @order.order_others
 
-    @total = @cakes.map(&:price).reduce(:+).to_f
-    @total += @order.others.map(&:price).reduce(:+).to_f unless @order.others.blank?
+    @cakes_total = @cakes.map(&:price).reduce(:+).to_f unless @cakes.blank?
+    @others_price = @order.others.map(&:price) unless @order.others.blank?
+    @others_quantity = @order.order_others.map(&:quantity) unless @order.order_others.blank?
+    @total = @cakes_total + @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f
   end
 
   # does not exist
   def new
     @order = Order.new
   end
-
-  # Should be in OrderOthers controller
-#  ============================================
-  # index
-  def others
-    @order = Order.find(params[:id])
-    @others = Other.all
-    @total = @order.cakes.map(&:price).reduce(:+).to_f
-  end
-  #  ============================================
 
   # does not exist
   def create

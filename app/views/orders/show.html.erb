@@ -7,6 +7,7 @@
         <li id = "wiz-2" class = "complete"><span>2</span></li>
         <li id = "wiz-3" class = "complete"><span>3</span></li>
         <li id = "wiz-4" class = "complete active"><span>4</span></li>
+        <li id = "wiz-4"><span>5</span></li>
       </ul>
     </div>
 
@@ -50,6 +51,10 @@
 
                     <p ><%= order_other.quantity %> <%= order_other.other.name %></p>
                     <p><%= order_other.other.price %>€</p>
+                      <hr>
+                <% @subtotal = order_other.quantity * order_other.other.price%>
+
+                <p><%= @subtotal %>€</p>
                   </div>
                   <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=order_other.other.id%>"><%= link_to "", order_order_other_path(@order, order_other), class: "circle fromMiddle", method: :delete, remote: :true %></div>
 
@@ -155,6 +160,9 @@
       }
     }
   });
+
+    //Add price to cart
+    $("#cart").html("<%= @total %>");
   })
 </script>
 <% end %>

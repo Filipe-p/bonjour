@@ -210,8 +210,6 @@
   background-color: green;
 }
 
-
-
 @include media(">=992px") {
   .col-md-4 {
     width: calc(33.3333333333% - 20px);
