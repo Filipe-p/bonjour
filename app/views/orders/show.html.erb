@@ -1,6 +1,6 @@
 <section class="form-page">
   <div class="container" >
-    <h1 class = "step-title" style = "font-size: 30px">Carrinho</h1>
+    <h1 id = "step-title">Carrinho</h1>
     <div id="progresstracker">
       <ul>
         <li id = "wiz-1" class = "complete" ><span>1</span></li>
@@ -15,100 +15,99 @@
       <div class="form-inner-wrapper">
         <div class="form-scroll">
           <div class="row">
-            <div class="col-md-6">
-
+            <div class="col-md-12">
               <% unless @order.cakes.blank? %>
-
-
               <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
               <div id = "cake_<%=cake.id%>">
                 <div class="row card">
-                  <div class="col-md-4">
+                  <div class="col-md-2 flexbox">
                     <%= image_tag("cake_5.jpg") %>
                   </div>
-                  <div class="col-md-8">
-                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> tamanho <%= cake.size %></p>
+                  <div class="col-md-10">
+                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> </p>
+                    <p><%= cake.size %>Kg</p>
+                    <hr>
                     <p><%= cake.price %>€</p>
+                    <%= link_to "Apagar", cake_path(cake), id: "cake_delete_#{cake.id}", method: :delete, remote: :true %>
                   </div>
-                  <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=cake.id%>"><%= link_to "", cake_path(cake), class: "circle fromMiddle", method: :delete, remote: :true %></div>
                 </div>
               </div>
               <% end %>
-
               <%= link_to 'Encomendar outro bolo', new_cake_path %>
               <% else %>
               <%= link_to 'Encomendar bolo', new_cake_path %>
               <% end %>
-
               <% unless @order.others.blank? %>
               <% @order.order_others.each do |order_other| %>
-              <div id = "other_<%=order_other.other.id%>">
+              <div id = "other_<%=order_other.id%>">
                 <div class="row card">
                   <div class="col-md-4">
                     <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
                   </div>
                   <div class="col-md-8">
-
-                    <p ><%= order_other.quantity %> <%= order_other.other.name %></p>
-                    <p><%= order_other.other.price %>€</p>
-                      <hr>
-                <% @subtotal = order_other.quantity * order_other.other.price%>
-
-                <p><%= @subtotal %>€</p>
-                  </div>
-                  <div class="circCont" data-animation="magnify" data-remove="3000" id = "delete_btn_<%=order_other.other.id%>"><%= link_to "", order_order_other_path(@order, order_other), class: "circle fromMiddle", method: :delete, remote: :true %></div>
-
-                </div>
-              </div>
-              <% end %>
-
-              <%= link_to 'Encomendar outro extra', order_order_others_path(@order) %>
-              <% else %>
-              <%= link_to 'Encomendar extra', order_order_others_path(@order) %>
-              <% end %>
-            </div>
-            <div class="col-md-6"> Form was here
-              <%= link_to 'delivery', new_order_delivery_path(@order), class: "btn btn-primary" %>
-            </div>
+                    <p><%= order_other.other.name %></p>
+                    <p><%= order_other.quantity %>un</p>
+                    <hr>
+                    <% @subtotal = order_other.quantity * order_other.other.price%>
+                    <p><%= @subtotal %>€</p>
+                    <span class = "plus" id = "plus_<%= order_other.id %>">
+                     <%= image_tag("circle-bold-add.svg") %>
+                   </span>
+                   <span class = "minus" id = "minus_<%= order_other.id %>">
+                     <%= image_tag("circle-bold-delete.svg") %>
+                   </span>
+                   <%= link_to "Apagar", order_order_other_path(@order, order_other), id: "other_delete_#{order_other.id}", method: :delete, remote: :true %>
+                 </div>
+               </div>
+             </div>
+             <% end %>
+             <%= link_to 'Encomendar outro extra', order_order_others_path(@order) %>
+             <% else %>
+             <%= link_to 'Encomendar extra', order_order_others_path(@order) %>
+             <% end %>
+           </div>
+           <div class="col-md-6">
+            <%= link_to "", new_order_delivery_path(@order), id: "delivery" %>
           </div>
         </div>
       </div>
-      <div id = "down-nav">
-        <div class = "down-nav-btn">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
-            <g class="nc-icon-wrapper">
-              <path id = "path1-l" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
-              </path>
-              <path id = "path2-l" fill="#FFFFFF" d="M23,16c0-0.37598-0.21094-0.72021-0.54639-0.89111c-0.33496-0.16992-0.73682-0.13867-1.04199,0.08252l-11,8 C10.15332,23.37939,10,23.68018,10,24s0.15332,0.62061,0.41162,0.80859l11,8C21.58594,32.93555,21.79248,33,22,33 c0.15479,0,0.31055-0.03613,0.45361-0.10889C22.78906,32.72021,23,32.37598,23,32v-6h13c0.55228,0,1-0.44772,1-1v-2 c0-0.55228-0.44772-1-1-1H23V16z">
-              </path>
-            </g>
-          </svg>
-        </div>
-        <div class = "down-nav-btn" id="submit-btn">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
-            <g class="nc-icon-wrapper">
-              <path id = "path1-r" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
-              </path>
-              <path id = "path2-r" fill="#FFFFFF" d="M37.58838,23.19141l-11-8c-0.30322-0.22119-0.70703-0.25244-1.04199-0.08252 C25.21094,15.27979,25,15.62402,25,16v6H12c-0.55229,0-1,0.44772-1,1v2c0,0.55228,0.44771,1,1,1h13v6 c0,0.37598,0.21094,0.72021,0.54639,0.89111C25.68945,32.96387,25.84521,33,26,33c0.20752,0,0.41406-0.06445,0.58838-0.19141l11-8 C37.84668,24.62061,38,24.31982,38,24S37.84668,23.37939,37.58838,23.19141z">
-              </path>
-            </g>
-          </svg>
-        </div>
-        <div class = "down-nav-cart">
-          Total
-          <p id = "cart"></p>
-        </div>
+    </div>
+    <div id = "down-nav">
+      <div class = "down-nav-btn">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
+          <g class="nc-icon-wrapper">
+            <path id = "path1-l" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
+            </path>
+            <path id = "path2-l" fill="#FFFFFF" d="M23,16c0-0.37598-0.21094-0.72021-0.54639-0.89111c-0.33496-0.16992-0.73682-0.13867-1.04199,0.08252l-11,8 C10.15332,23.37939,10,23.68018,10,24s0.15332,0.62061,0.41162,0.80859l11,8C21.58594,32.93555,21.79248,33,22,33 c0.15479,0,0.31055-0.03613,0.45361-0.10889C22.78906,32.72021,23,32.37598,23,32v-6h13c0.55228,0,1-0.44772,1-1v-2 c0-0.55228-0.44772-1-1-1H23V16z">
+            </path>
+          </g>
+        </svg>
+      </div>
+      <div class = "down-nav-btn" id="submit-btn">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
+          <g class="nc-icon-wrapper">
+            <path id = "path1-r" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
+            </path>
+            <path id = "path2-r" fill="#FFFFFF" d="M37.58838,23.19141l-11-8c-0.30322-0.22119-0.70703-0.25244-1.04199-0.08252 C25.21094,15.27979,25,15.62402,25,16v6H12c-0.55229,0-1,0.44772-1,1v2c0,0.55228,0.44771,1,1,1h13v6 c0,0.37598,0.21094,0.72021,0.54639,0.89111C25.68945,32.96387,25.84521,33,26,33c0.20752,0,0.41406-0.06445,0.58838-0.19141l11-8 C37.84668,24.62061,38,24.31982,38,24S37.84668,23.37939,37.58838,23.19141z">
+            </path>
+          </g>
+        </svg>
+      </div>
+      <div class = "down-nav-cart">
+         <p> Total: <span id = "cart"></span></p>
       </div>
     </div>
-    <%= link_to design_path, class: "navbar-ac-link" do %>
-    Não encontra o que quer?
-    <% end %>
+  </div>
+  <%= link_to design_path, class: "navbar-ac-link" do %>
+  Não encontra o que quer?
+  <% end %>
   </div>
 </section>
 
 <% content_for(:after_js) do %>
 <script>
   $(document).ready(function(){
+    $("#delivery").addClass("hidden");
     //In mobile, fix navbar to the bottom of the screen
     if ($(window).width() <= 400) {
       $('#down-nav').css({
@@ -127,42 +126,29 @@
       });
     };
     //Delete cake
-    $("*[id*=delete_btn_]").click(function(){
+    $("*[id*=cake_delete_]").click(function(){
      var btnId = $(this).attr("id");
-     var split = btnId.split("delete_btn_");
+     var split = btnId.split("cake_delete_");
      var cakeId = "#cake_" + split[1];
      $(cakeId).remove();
      $(this).remove();
 
    })
     //Delete Other
-    $("*[id*=delete_btn_]").click(function(){
+    $("*[id*=other_delete_]").click(function(){
      var btnId = $(this).attr("id");
-     var split = btnId.split("delete_btn_");
+     var split = btnId.split("other_delete_");
      var otherId = "#other_" + split[1];
      $(otherId).remove();
      $(this).remove();
-
    })
 
-    $('.circle').on('click',function(){
-      var animClass = $(this).data('animation');
-      var removeTime = $(this).data('remove');
-      if($(this).hasClass(animClass)){
-       $(this).removeClass(animClass);
-     }else{
-      $(this).addClass(animClass);
-      if(typeof removeTime != 'undefined'){
-        var el = $(this);
-        setTimeout(function(){
-         el.removeClass(animClass);
-       },removeTime);
-      }
-    }
-  });
-
     //Add price to cart
-    $("#cart").html("<%= @total %>");
-  })
+    $("#cart").append("<%= @total %>€");
+//Submit
+$("#submit-btn").click(function(e){
+  $("#delivery")[0].click();
+});
+})
 </script>
 <% end %>

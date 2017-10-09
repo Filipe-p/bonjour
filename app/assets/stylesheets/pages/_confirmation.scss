@@ -1,0 +1,26 @@
+.confirmation-card img {
+  max-width: 100px;
+}
+
+// .confirmation-total {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
+// .confirmation-total-price {
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+// }
+
+#big-total{
+  font-size: 2em;
+}
+
+.confirmation-title-gray {
+  color: $midgray;
+}
+
+.confirmation-title-bold {
+  font-weight: 600;
+}

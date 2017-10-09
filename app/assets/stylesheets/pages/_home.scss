@@ -20,6 +20,11 @@
   margin-left: 10px;
 }
 
+#home-title, #home-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
 // MEDIA QUERIES
 /*---------- iphone4 and iphone5 ----------*/
 @include media("<=phoneSmall") {

@@ -5,12 +5,20 @@
  * ------------------------------------- */
 
 body {
-  font-weight: 300;
+  font-weight: 400;
 }
 // Paddings
 .padded {
   padding-top: 5em;
   padding-bottom: 5em;
+}
+
+.padded-2-bottom {
+  padding-bottom: 2em;
+}
+
+.padded-1-bottom {
+  padding-bottom: 1em;
 }
 
 // Backgrounds
