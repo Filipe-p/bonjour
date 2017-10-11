@@ -24,11 +24,16 @@
                     <%= image_tag("cake_5.jpg") %>
                   </div>
                   <div class="col-md-10">
-                    <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> </p>
-                    <p><%= cake.size %>Kg</p>
-                    <hr>
-                    <p><%= cake.price %>€</p>
-                    <%= link_to "Apagar", cake_path(cake), id: "cake_delete_#{cake.id}", method: :delete, remote: :true %>
+                    <div style = "display: flex; justify-content: space-between;">
+                      <div>
+                        <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> </p>
+                        <p class = "text-09"><%= cake.size %>Kg</p>
+                        <hr>
+                        <%= link_to "Apagar", cake_path(cake), class: "delete-link", id: "cake_delete_#{cake.id}", method: :delete, remote: :true %>
+                      </div>
+                      <p class = "text-09"><%= cake.price %>€</p>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -41,22 +46,26 @@
               <% @order.order_others.each do |order_other| %>
               <div id = "other_<%=order_other.id%>">
                 <div class="row card">
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
                   </div>
-                  <div class="col-md-8">
-                    <p><%= order_other.other.name %></p>
-                    <p><%= order_other.quantity %>un</p>
-                    <hr>
-                    <% @subtotal = order_other.quantity * order_other.other.price%>
-                    <p><%= @subtotal %>€</p>
-                    <span class = "plus" id = "plus_<%= order_other.id %>">
-                     <%= image_tag("circle-bold-add.svg") %>
-                   </span>
-                   <span class = "minus" id = "minus_<%= order_other.id %>">
-                     <%= image_tag("circle-bold-delete.svg") %>
-                   </span>
-                   <%= link_to "Apagar", order_order_other_path(@order, order_other), id: "other_delete_#{order_other.id}", method: :delete, remote: :true %>
+                  <div class="col-md-10">
+                    <div style = "display: flex; justify-content: space-between;">
+                      <div>
+                        <p><%= order_other.other.name %></p>
+                        <hr>
+                        <span class = "plus" id = "plus_<%= order_other.id %>">
+                         <%= image_tag("circle-bold-add.svg") %>
+                       </span>
+                       <span class = "minus" id = "minus_<%= order_other.id %>">
+                         <%= image_tag("circle-bold-delete.svg") %>
+                       </span>
+                     </div>
+                     <p class = "text-09"><%= order_other.quantity %>un</p>
+                     <% @subtotal = order_other.quantity * order_other.other.price%>
+                     <p class = "text-09"><%= @subtotal %>€</p>
+                   </div>
+                   <%= link_to "Apagar", order_order_other_path(@order, order_other), class: "delete-link", id: "other_delete_#{order_other.id}", method: :delete, remote: :true %>
                  </div>
                </div>
              </div>
@@ -94,14 +103,14 @@
         </svg>
       </div>
       <div class = "down-nav-cart">
-         <p> Total: <span id = "cart"></span></p>
-      </div>
-    </div>
-  </div>
-  <%= link_to design_path, class: "navbar-ac-link" do %>
-  Não encontra o que quer?
-  <% end %>
-  </div>
+       <p> Total: <span id = "cart"></span></p>
+     </div>
+   </div>
+ </div>
+ <%= link_to design_path, class: "navbar-ac-link" do %>
+ Não encontra o que quer?
+ <% end %>
+</div>
 </section>
 
 <% content_for(:after_js) do %>

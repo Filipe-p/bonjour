@@ -5,7 +5,7 @@
         <div class = "banner-content text-center">
           <h1 id = "home-title">Pastelaria Bonjour</h1>
           <h2 id = "home-subtitle">Crie o seu bolo online!</h2>
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_cake_path, class: "cta-btn cta-btn-size cta-btn-white" %>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_cake_path, class: "cta-btn cta-big cta-btn-white" %>
         </div>
       </div>
     </div>
@@ -16,7 +16,7 @@
   <div class="custom-container">
     <div class="row">
       <div class = "text-left" style = "margin-bottom: 50px;">
-        <h3> Como fazer o seu bolo online</h3>
+        <h3> Como Fazer o Seu Bolo Online</h3>
         <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <p class = "card-text">Escolha se quer levantar a sua encomenda na loja, ou recebê-la em sua casa.</p>
       </div>
     </div>
-    <div class="row flexbox" style = "padding-top: 2em;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red btn cta-btn-size flex-item-small" %></div>
+    <div class="row flexbox" style = "padding-top: 2em;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-red btn cta-btn-size flex-item-small" %></div>
   </div>
 </section>
 
@@ -59,7 +59,7 @@
   </div>
 </section>
 
-<section class = "historia padding-top-bottom-100">
+<section class = "historia padded">
   <div class="custom-container">
     <div class="row row-height">
       <div class="col-md-6 polaroids-wrapper">
@@ -71,8 +71,8 @@
         <div class = "flexbox-col">
           <h3 class = "padding-bottom-20">História da Bonjour</h3>
           <p class = "padding-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, elit a vulputate molestie, ante turpis mollis augue, vehicula molestie mi nulla sed risus. Cras gravida commodo lorem a ultricies. Donec ornare nibh nec libero consequat sollicitudin.</p>
-          <span style = "margin-top: 20px;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
-            <%= link_to t(".top_call_to_action", default: "Ler mais"), about_path, class: "navbar-ac-item cta-btn cta-btn-black cta-btn-size" %></span>
+          <span style = "margin-top: 20px;"> <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-red" %>
+            <%= link_to t(".top_call_to_action", default: "Ler mais"), about_path, class: "cta-btn cta-btn-black" %></span>
           </div>
         </div>
       </div>
@@ -104,8 +104,8 @@
             <div class="slide-text slide_style_left">
               <h1 data-animation="animated zoomInRight">Veja os nossos bolos</h1>
               <p data-animation="animated fadeInLeft">Ou faça já o seu online.</p>
-              <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
-              <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+              <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "cta-btn cta-btn-white margin-right-20" %>
+              <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "cta-btn cta-btn-red cta-btn-size" %>
             </div>
           </div>
         </div>
@@ -122,8 +122,8 @@
         <div class="slide-text slide_style_center">
           <h1 data-animation="animated flipInX">Veja os nossos bolos</h1>
           <p data-animation="animated lightSpeedIn">Ou faça já o seu online.</p>
-          <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+          <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20" %>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red" %>
         </div>
       </div>
       <!-- End of Slide -->
@@ -138,8 +138,8 @@
         <div class="slide-text slide_style_right">
           <h1 data-animation="animated zoomInLeft">Veja os nossos bolos</h1>
           <p data-animation="animated fadeInRight">Ou faça já o seu online.</p>
-          <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20 cta-btn-size" %>
-          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red cta-btn-size" %>
+          <%= link_to t(".top_call_to_action", default: "Galeria"), gallery_path, class: "navbar-ac-item cta-btn cta-btn-white margin-right-20" %>
+          <%= link_to t(".top_call_to_action", default: "Criar Bolo"), new_order_path, class: "navbar-ac-item cta-btn cta-btn-red" %>
         </div>
       </div>
       <!-- End of Slide -->

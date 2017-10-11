@@ -213,6 +213,10 @@
   font-size: 1.875em;
 }
 
+.delete-link {
+  font-size: 0.8em;
+}
+
 @include media(">=992px") {
   .col-md-4 {
     width: calc(33.3333333333% - 20px);
