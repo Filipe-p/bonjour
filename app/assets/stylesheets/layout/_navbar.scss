@@ -70,8 +70,8 @@
 }
 
 .navbar-ac-link:hover {
-  color: white;
-  text-decoration: none;
+  text-decoration: underline;
+  color: black;
 }
 
 /* Navbar right button */
@@ -96,6 +96,27 @@
   text-decoration: none;
 }
 
+.navbar-ac-button-black {
+  //margin-left: 10px;
+  padding: 1em 1.5em;
+  border-radius: 0px;
+  line-height: 1em;
+  background-color: black;
+  color: white !important;;
+  font-size: 12px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  font-weight: 600;
+  -webkit-transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.navbar-ac-button-black:hover {
+  color: black !important;
+  background-color: white;
+  text-decoration: none;
+}
+
 /* Navbar dropdown menu */
 .navbar-ac-dropdown-menu {
   margin-top: 15px;
@@ -105,11 +126,11 @@
 
 .navbar-ac-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: #999999 !important;
-  font-size: 15px !important;
+  color: black !important;
+  font-size: 12px !important;
   line-height: 1em;
   padding: 10px 20px;
+  font-size: 12px;
 }
 
 .navbar-ac-dropdown-menu li > a:hover {
