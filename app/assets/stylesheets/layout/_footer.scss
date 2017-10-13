@@ -30,7 +30,6 @@ html, body {
 .footer a {
   color: #CCCCCC;
   font-size: 10px;
-  letter-spacing: 5px;
   transition: color 0.5s ease;
   text-decoration: none;
 }
@@ -38,7 +37,6 @@ html, body {
 .footer span {
   color: #CCCCCC;
   font-size: 10px;
-  letter-spacing: 5px;
   transition: color 0.5s ease;
   text-decoration: none;
 }
@@ -62,10 +60,10 @@ html, body {
   .page-wrap {
     min-height: 100%;
     /* equal to footer height */
-    margin-bottom: -100px;
+    margin-bottom: -70px;
   }
   .footer, .page-wrap:after {
     /* .push must be the same height as footer */
-    height: 100px;
+    height: 70px;
   }
 }

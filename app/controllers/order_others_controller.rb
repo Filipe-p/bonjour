@@ -14,10 +14,15 @@ class OrderOthersController < ApplicationController
 
   def create
     @order = Order.find(params[:order_id])
-    @others = params[:other][:id]
-    @others.select{|id| !id.blank? }.map do |other_id|
-      other = Other.find(other_id)
-      OrderOther.create(order: @order, other: other)
+
+    # in each slice
+    @quantities = order_others_params[:quantity].select{|id| !id.blank? }
+    @others = order_others_params[:other_id].select{|id| !id.blank? }
+
+    @others.zip(@quantities).map do |id|
+      other = Other.find(id[0])
+      quantity = id[1]
+      OrderOther.create(order: @order, other: other, quantity: quantity )
     end
     # redirect to order show if all ok, if not, render others again
     redirect_to order_path(@order)
@@ -40,5 +45,11 @@ class OrderOthersController < ApplicationController
     redirect_to order_path(@order)
   end
 
+ private
+
+  def order_others_params
+    params.require(:order_others).permit(:order_id,{ other_id: []}, {quantity: []})
+  end
 
 end
+

@@ -31,6 +31,12 @@
   max-height: 100%;
 }
 
+.form-page {
+  background-color: #FCFCFC;
+  padding-bottom: 6.25em;
+  padding-top: 6.25em;
+}
+
 .down-nav-btn {
   font-weight: 300;
   white-space: normal;
@@ -64,7 +70,6 @@
     transform: scale(1.1);
   }
 }
-
 
 .down-nav-cart {
   font-weight: 300;
@@ -204,7 +209,13 @@
   background-color: green;
 }
 
+#step-title {
+  font-size: 1.875em;
+}
 
+.delete-link {
+  font-size: 0.8em;
+}
 
 @include media(">=992px") {
   .col-md-4 {
