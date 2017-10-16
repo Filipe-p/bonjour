@@ -11,7 +11,7 @@
       <%= f.input :delivery_date, input_html: { placeholder: ""}, label: "Dia da entrega" %>
       <%= f.input :delivery_slot, minute_step: 60, start_hour: 10, end_hour: 20, input_html: { placeholder: ""}, label: "Hora da entrega" %>
       <%= f.input :store_pickup, input_html: { placeholder: ""}, label: "Levantamento na loja" %>
-      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada"%>
+      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada de entrega"%>
 
 
       <%= f.submit "Confirmar Pedido", id: "confirm" %>

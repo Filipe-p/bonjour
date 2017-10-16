@@ -19,8 +19,11 @@ gem 'uglifier'
 gem 'include_media_rails'
 
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
 
 source "https://rails-assets.org" do
   gem "rails-assets-underscore"

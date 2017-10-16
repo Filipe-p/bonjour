@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount Attachinary::Engine => "/attachinary"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
