@@ -1,31 +1,156 @@
-<h1>Confirmação de Encomenda</h1>
+ <span class="preheader" style = " font-family: 'Raleway', sans-serif; background: #f3f3f3; display: none !important; visibility: hidden; mso-hide: all !important; font-size: 1px; color: #f3f3f3; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; "></span>
+ <table style = "border-spacing: 0; border-collapse: collapse; background: #f3f3f3; width: 100%;" class="body">
+   <tr>
+    <td style = "word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; text-align: center;" valign="top">
+      <center data-parsed="">
+        <table style = "border-spacing: 0;
+        border-collapse: collapse; text-align: center; background: #fefefe; width: 580px; margin: 0 auto; Margin: 0 auto; text-align: inherit;" class="container header float-center">
+        <tbody>
+          <tr>
+            <td style = "word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; padding-top: 50px;">
+              <table style = "padding: 0; width: 100%; position: relative; display: table;" class="row">
+                <tbody>
+                  <tr>
+                    <th style =" margin: 0 auto; Margin: 0 auto; padding-left: 16px; padding-bottom: 16px; " class="small-12 large-12 columns first last">
+                      <table style = "border-spacing: 0;
+                      border-collapse: collapse; width: 100%">
+                      <tr style = "width: 100%">
+                        <th style = "width: 100%; font-family: 'Raleway', sans-serif;">
+                          <img src="http://res.cloudinary.com/cloudnary-filipe/image/upload/c_scale,w_64/v1508169093/circle_efivjv.png" alt="">
+                          <h1>Pastelaria Bonjour</h1>
+                          <center data-parsed="">
+                            <table style = "border-spacing: 0;
+                            border-collapse: collapse; text-align: center" class="menu float-center">
+                            <tr>
+                              <td style = "word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important;">
+                                <table style = "border-spacing: 0; border-collapse: collapse; font-family: 'Open Sans', sans-serif; font-weight: 400;">
+                                  <tr>
+                                    <th style = "padding: 10px; padding-right: 10px;" class="menu-item float-center"><a href="#" style = "color: black;">Sobre</a>
+                                    </th>
+                                    <th style = "padding: 10px; padding-right: 10px;" class="menu-item float-center"><a href="#" style = "color: black;">Galeria</a>
+                                    </th>
+                                    <th style = "padding: 10px; padding-right: 10px;" class="menu-item float-center"><a href="#" style = "color: black;">Bolo Personalizado</a>
+                                    </th>
+                                    <th style = "padding: 10px; padding-right: 10px;" class="menu-item float-center"><a href="#" style = "color: black;">Contactos</a>
+                                    </th>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </center>
+                      </th>
+                      <th class="expander"></th>
+                    </tr>
+                  </table>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<h2>Olá <%= @order.contact_name %>, </h2>
-<p>Obrigado pela tua encomenda! Por favor confirma se os dados estão correctos</p>
-<p></p>
-<table style="width:60%">
-	<tr>
-		<td><strong>Ponto Contacto</strong></td>
-		<td><%= @order.contact_name %></td>
-	</tr>
-	<tr>
-		<td><strong>Numero Contact</strong></td>
-		<td><%= @order.contact_telephone%></td>
-	</tr>
-	<tr>
-		<td><strong>Morada de Entrega</strong></td>
-		<td><%= @order.address%></td>
-	</tr>
-	<tr>
-		<td><strong>Hora de Entrega</strong></td>
-		<td><%= @order.delivery_datetime%></td>
-	</tr>
+  <table style = "border-spacing: 0;
+  border-collapse: collapse; text-align: center; background: #fefefe; width: 580px; margin: 0 auto; Margin: 0 auto; text-align: inherit; font-family: 'Open Sans', sans-serif; font-weight: 400;" class="container body-border float-center">
+  <tbody>
+    <tr>
+      <td style = "word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important;">
+        <table style ="  padding: 0; width: 100%; position: relative; display: table;" class="row">
+          <tbody>
+            <tr>
+              <th style =" margin: 0 auto; Margin: 0 auto; padding-left: 50px; padding-right: 50px; padding-bottom: 50px; " class="small-12 large-12 columns first last">
+                <table style = "border-spacing: 0;
+                border-collapse: collapse;">
+                <tr>
+                  <th>
+                    <table style = "border-spacing: 0; border-collapse: collapse;" class="spacer">
+                      <tbody>
+                        <tr>
+                          <td height="16px" style="font-size:16px;line-height:16px;">&#xA0;</td></tr>
+                        </tbody>
+                      </table>
+                      <h2 style = "text-align: left; font-weight: 400;">Olá <%= @delivery.contact_first_name %>, </h2>
+                      <p style = "text-align: left; font-weight: 400;">Obrigado pela tua encomenda!</p>
+                      <p style = "text-align: left; font-weight: 400;">Por favor confirma se os dados estão correctos</p>
+
+                      <table style = "border-spacing: 0; border-collapse: collapse;" class="spacer">
+                        <tbody>
+                          <tr>
+                            <td height="16px" style="font-size:16px;line-height:16px;">&#xA0;</td></tr>
+                          </tbody>
+                        </table>
+
+                        <table style = "text-align: left;">
+                          <tr>
+                            <td style = "font-weight: 600; padding-right: 50px;">Nome</td>
+                            <td style = "font-weight: 400;"><%= @delivery.contact_first_name %></td>
+                          </tr>
+                          <tr>
+                            <td style = "font-weight: 600; padding-right: 50px;">Contacto telefónico</td>
+                            <td style = "font-weight: 400;"><%= @delivery.contact_telephone%></td>
+                          </tr>
+                          <tr>
+                            <td style = "font-weight: 600; padding-right: 50px;">Local de Entrega</td>
+                            <td style = "font-weight: 400;"><%= @address%></td>
+                          </tr>
+                          <tr>
+                            <td style = "font-weight: 600; padding-right: 50px;">Hora de Entrega</td>
+                            <td style = "font-weight: 400;"><%= @delivery.delivery_slot.strftime("%H:%M")%></td>
+                          </tr>
+                        </table>
+                        <table style = "border-spacing: 0; border-collapse: collapse;" class="spacer">
+                          <tbody>
+                            <tr>
+                              <td height="16px" style="font-size:16px;line-height:16px;">&#xA0;</td></tr>
+                            </tbody>
+                          </table>
+                          <p style = "text-align: left; font-weight: 400;">Se os dados não estiverem correctos, por favor entra em contacto connosco o mais cedo possível.</p>
+                          <p style = "text-align: left; font-weight: 400;">Atentamente,</p>
+                          <p style="text-align: left; font-weight: 400;">Equipa Bonjour</p>
+                          <table style = "border-spacing: 0; border-collapse: collapse;" class="spacer">
+                            <tbody>
+                              <tr>
+                                <td style="font-size:50px;line-height:50px;">&#xA0;</td></tr>
+                              </tbody>
+                            </table>
+                            <center data-parsed="">
+                              <table style = "border-spacing: 0;
+                              border-collapse: collapse; text-align: center;" class="menu float-center">
+                              <tr>
+                                <td style = "word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important;">
+                                  <table style = "border-spacing: 0; border-collapse: collapse; width: 100%;">
+                                    <tr>
+                                      <th style = "padding: 10px; padding-right: 10px;" class="menu-item float-center">
+                                        <a href="#" style = "color: gray; text-decoration: none; font-size: 12px;">Facebook</a>
+                                      </th>
+                                      <th style = "padding: 10px; padding-right: 10px;" class="menu-item float-center">
+                                        <a href="#" style = "color: gray; text-decoration: none; font-size: 12px;">Instagram</a>
+                                      </th>
+                                    </tr>
+                                    <tr> <p style ="font-size: 12px; margin-bottom: 0px;">Estrada da Ribeira 32, 2775-290 Cascais</p></tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </center>
+                        </th>
+                        <th class="expander"></th>
+                      </tr>
+                    </table>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </center>
+</td>
+</tr>
 </table>
-<p></p>
-<h3><%= @order.contact_name %> Atenção:</h3> <p>Se os dados tiverem errados por favor entrem em contacto respondendo a este email</p>
-<p></p>
-<p>Por agora da nossa parte está tudo. Vamos por as mãos a massa (literalmente) e estaremos com vocês dia <%= @order.delivery_datetime%></p>
-<p></p>
-
-<p>Desde já obrigado,</p>
-<p>Eqipa Bonjour</p>
+<!-- prevent Gmail on iOS font size manipulation -->
+<div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
