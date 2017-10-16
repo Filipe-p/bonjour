@@ -71,7 +71,6 @@
   }
 }
 
-
 .down-nav-cart {
   font-weight: 300;
   white-space: normal;
@@ -210,7 +209,13 @@
   background-color: green;
 }
 
+#step-title {
+  font-size: 1.875em;
+}
 
+.delete-link {
+  font-size: 0.8em;
+}
 
 @include media(">=992px") {
   .col-md-4 {

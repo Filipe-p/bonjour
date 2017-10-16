@@ -1,18 +1,19 @@
- <div class = "form-login">
+ <section class = "form-login padded">
    <div class="container">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-        <h2>Sign up</h2>
+        <h3 style = "padding-bottom: 0;">Sign up</h3>
         <hr>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
+          <%= f.input :first_name, required: true%>
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
+          <%= f.input :password_confirmation, required: true, label: "Confirmar Password" %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class: "login-btn"%>
         </div>
         <% end %>
         <hr>
@@ -20,4 +21,4 @@
     </div>
   </div>
   <%= render "devise/shared/links" %>
-</div>
+</section>

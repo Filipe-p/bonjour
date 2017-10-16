@@ -7,9 +7,9 @@
 //$header-font: "Raleway", "Helvetica", "sans-serif";
 
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,600,700|Montserrat:300,400');
-$base-font: 'Montserrat', sans-serif;
-$header-font: 'Josefin Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500|Open+Sans:300,400,600');
+$base-font: 'Open Sans', sans-serif;
+$header-font: 'Raleway', sans-serif;
 // Local fonts (uncomment following lines)
 // @font-face {
 //   font-family: "Font Name";
@@ -36,6 +36,7 @@ $yellow: #FFE953;
 $orange: #E67E22;
 $green: #72C472;
 $lightgray: #D4D4D4;
+$midgray: #B2AFAD;
 $gray: #000000;
 $mightylightgray: #fcfcfc;
 $lightpurple: #998197;
