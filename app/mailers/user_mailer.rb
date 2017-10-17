@@ -7,8 +7,8 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = user
-    
-    mail(to: @user.email, subject: 'Benvindo à Pastelaria Bonjour')
+
+    mail(to: @user.email, subject: 'Bem-vindo à Pastelaria Bonjour')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -18,6 +18,13 @@ class UserMailer < ApplicationMailer
   #
   def purchase_confirmation(order)
     @order = order
-    mail(to: @order.contact_email, subject: 'Confirmação de Encomenda - Pastelaria Bonjour')
+    @delivery = @order.delivery
+    if @delivery.address.blank?
+      @address = "Na loja"
+    else
+      @address = @delivery.address
+    end
+
+    mail(to: @delivery.contact_email, subject: 'Confirmação de Encomenda - Pastelaria Bonjour')
   end
 end

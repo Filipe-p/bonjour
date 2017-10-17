@@ -1,0 +1,10 @@
+<%= simple_form_for @subscriber do |f| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <%= f.input :email, placeholder: "Email", label_html: {class: 'hidden'}, input_html: { class: "input-lg"}%>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.submit "Subscribe", class: "btn my-btn btn-lg full" %>
+    </div>
+  </div>
+<% end %>

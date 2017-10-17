@@ -1,26 +1,27 @@
 Confirmação de Encomenda
 
-Olá <%= @order.contact_name %>,
-Obrigado pela tua encomenda! Por favor confirma se os dados estão correctos
+Olá <%= @delivery.contact_first_name %>,
+
+Obrigado pela tua encomenda!
+
+Por favor confirma se os dados estão correctos
 
 
-		Ponto Contacto
-		<%= @order.contact_name %>
+		Nome
+		<%= @delivery.contact_first_name %>
 
-		Numero Contact
-		<%= @order.contact_telephone%>
+		Contacto telefónico
+		<%= @delivery.contact_telephone%>
 
-		Morada de Entrega
-		<%= @order.address%>
+		Local de Entrega
+		<%= @delivery.address%>
 
 		Hora de Entrega
-		<%= @order.delivery_datetime%>
+		<%= @delivery.delivery_slot%>
 
 
-<%= @order.contact_name %> Atenção: Se os dados tiverem errados por favor entrem em contacto respondendo a este email
+Se os dados não estiverem correctos, por favor entra em contacto connosco o mais cedo possível.
 
-Por agora da nossa parte está tudo. Vamos por as mãos a massa (literalmente) e estaremos com vocês dia <%= @order.delivery_datetime%>
+Atentamente,
 
-
-Desde já obrigado,
 Equipa Bonjour

@@ -44,6 +44,8 @@ gem 'rails-assets-swipebox', source: 'https://rails-assets.org'
 gem 'money-rails'
 gem 'stripe'
 
+gem 'gibbon'
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'

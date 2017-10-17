@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+
   after_create :send_welcome_email
+#  after_create :subscribe_to_newsletter ///include only if you want every user who signs up to be part of your news letter
   has_many :orders, dependent: :delete_all
 
   def self.find_for_facebook_oauth(auth)
@@ -53,6 +55,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
