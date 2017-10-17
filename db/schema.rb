@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.bigint "user_id"
     t.bigint "order_id"
     t.date "delivery_date"
-    t.integer "delivery_slot"
+    t.time "delivery_slot"
     t.string "contact_first_name"
     t.string "contact_last_name"
     t.integer "contact_telephone"
@@ -179,7 +179,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.string "last_name", default: "", null: false
     t.string "provider"
     t.string "uid"
-    t.string "picture_url"
+    t.string "facebook_picture_url"
     t.string "token"
     t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
