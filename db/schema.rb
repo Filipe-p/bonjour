@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
   create_table "decorations", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "photo"
     t.float "minimum_size", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,7 +84,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.bigint "user_id"
     t.bigint "order_id"
     t.date "delivery_date"
-    t.time "delivery_slot"
+    t.integer "delivery_slot"
     t.string "contact_first_name"
     t.string "contact_last_name"
     t.integer "contact_telephone"
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
   create_table "doughs", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
@@ -152,6 +154,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
   create_table "others", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "photo"
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -183,7 +186,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.string "last_name", default: "", null: false
     t.string "provider"
     t.string "uid"
-    t.string "facebook_picture_url"
+    t.string "picture_url"
     t.string "token"
     t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
