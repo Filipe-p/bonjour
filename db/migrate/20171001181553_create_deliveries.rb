@@ -12,6 +12,9 @@ class CreateDeliveries < ActiveRecord::Migration[5.1]
       t.string :contact_email
       t.boolean :store_pickup, default: false, null: false
       t.boolean :done, default: false, null: false
+      t.integer :nif
+      t.integer :zipcode
+      t.string :payment
       t.timestamps
     end
     add_monetize :deliveries, :cost, currency: { present: false }

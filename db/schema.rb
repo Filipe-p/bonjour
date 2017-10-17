@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.string "description"
     t.float "size"
     t.string "message"
+    t.integer "age"
     t.bigint "decoration_id"
     t.bigint "dough_id"
     t.bigint "filling_id"
@@ -89,6 +90,9 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.string "contact_email"
     t.boolean "store_pickup", default: false, null: false
     t.boolean "done", default: false, null: false
+    t.integer "nif"
+    t.integer "zipcode"
+    t.string "payment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cost_cents", default: 0, null: false

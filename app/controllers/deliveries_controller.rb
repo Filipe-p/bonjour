@@ -51,6 +51,6 @@ class DeliveriesController < ApplicationController
   end
 
   def delivery_params
-    params.require(:delivery).permit(:contact_first_name, :contact_last_name, :contact_telephone, :contact_email, :address, :delivery_date, :delivery_slot, :store_pickup)
+    params.require(:delivery).permit(:contact_first_name, :contact_last_name, :contact_telephone, :contact_email, :address, :delivery_date, :delivery_slot, :store_pickup, :nif, :zipcode, :card_payment)
   end
 end

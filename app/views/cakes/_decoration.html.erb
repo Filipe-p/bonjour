@@ -40,6 +40,9 @@
 
       <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
       <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"}, label: false %>
+
+      <h1 id = "step-title" style = "font-size: 30px;">Idade</h1>
+      <%= f.input :age, input_html: {placeholder: "Idade para as velas"}, label: false %>
     </div>
   </div>
   <%= f.input :dough, as: :hidden, input_html: {value: @dough.id}%>
