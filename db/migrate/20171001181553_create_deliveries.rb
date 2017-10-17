@@ -5,7 +5,7 @@ class CreateDeliveries < ActiveRecord::Migration[5.1]
       t.references :user, foreign_key: true
       t.references :order, foreign_key: true
       t.date :delivery_date
-      t.time :delivery_slot
+      t.integer :delivery_slot
       t.string :contact_first_name
       t.string :contact_last_name
       t.integer :contact_telephone

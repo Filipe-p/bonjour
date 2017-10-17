@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     @cakes_total = @cakes.map(&:price).reduce(:+).to_f unless @cakes.blank?
     @others_price = @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f unless (@others_price.blank? || @others_quantity.blank?)
 
-    @total = @cakes_total + @others_price
+    @total = @cakes_total.to_f + @others_price.to_f
   end
 
   # does not exist
