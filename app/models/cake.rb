@@ -5,5 +5,5 @@ class Cake < ApplicationRecord
   belongs_to :order
   monetize :price_cents
 
-  SIZES = (1.0..3.0).step(0.25).map{|s| s}
+  SIZES = (1.5..5.0).step(0.5).map{|s| s} + (6.0..7.0).step(1.0).map{|s| s}
 end

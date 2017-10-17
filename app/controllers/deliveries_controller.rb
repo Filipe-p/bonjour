@@ -4,10 +4,14 @@ class DeliveriesController < ApplicationController
     @order = Order.find(params[:order_id])
     @cakes = @order.cakes
     @delivery = Delivery.new
+
     @cakes_total = @cakes.map(&:price).reduce(:+).to_f unless @cakes.blank?
+
     @others_price = @order.others.map(&:price) unless @order.others.blank?
     @others_quantity = @order.order_others.map(&:quantity) unless @order.order_others.blank?
-    @total = @cakes_total + @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f unless @cakes.blank?
+    @others_price = @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f unless (@others_price.blank? || @others_quantity.blank?)
+
+    @total = @cakes_total.to_f + @others_price.to_f
   end
 
   def create
@@ -25,12 +29,17 @@ class DeliveriesController < ApplicationController
     @order = Order.find(params[:order_id])
     @delivery = @order.delivery
     @cakes = @order.cakes
+
     @cakes_total = @cakes.map(&:price).reduce(:+).to_f unless @cakes.blank?
+
     @others_price = @order.others.map(&:price) unless @order.others.blank?
     @others_quantity = @order.order_others.map(&:quantity) unless @order.order_others.blank?
-    @total = @cakes_total + @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f unless @cakes.blank?
 
-    @delivery_time = @delivery.delivery_slot.strftime("%H:%M")
+    @others_price = @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f unless (@others_price.blank? || @others_quantity.blank?)
+
+    @total = @cakes_total.to_f + @others_price.to_f
+
+    @delivery_time = Delivery::SLOTS[@delivery.delivery_slot][0] unless (@delivery.blank? || @delivery.delivery_slot.blank?)
 
     if @delivery.address.blank?
       @address = "Na loja"

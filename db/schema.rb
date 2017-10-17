@@ -15,6 +15,21 @@ ActiveRecord::Schema.define(version: 20171016231732) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+  end
+
   create_table "cakes", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -67,7 +82,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.bigint "user_id"
     t.bigint "order_id"
     t.date "delivery_date"
-    t.time "delivery_slot"
+    t.integer "delivery_slot"
     t.string "contact_first_name"
     t.string "contact_last_name"
     t.integer "contact_telephone"
@@ -164,7 +179,7 @@ ActiveRecord::Schema.define(version: 20171016231732) do
     t.string "last_name", default: "", null: false
     t.string "provider"
     t.string "uid"
-    t.string "facebook_picture_url"
+    t.string "picture_url"
     t.string "token"
     t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
