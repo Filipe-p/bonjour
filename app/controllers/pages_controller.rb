@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def home2
+    @subscriber = Subscriber.new
   end
 
   def gallery

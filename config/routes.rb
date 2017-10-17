@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :custom_cakes
   resources :contacts
+  resources :subscribers, only: :create
 
   resources :cakes do
     collection do
