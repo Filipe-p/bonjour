@@ -12,3 +12,13 @@
   </div>
 </div>
 </div>
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+   $("a").click(function(event){
+    event.preventDefault();
+});
+  })
+</script>
+<% end %>
