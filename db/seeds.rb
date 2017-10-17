@@ -5,6 +5,7 @@ Filling.delete_all
 Decoration.delete_all
 OrderOther.delete_all
 Other.delete_all
+FeaturedCake.delete_all
 
 Order.delete_all
 
@@ -97,3 +98,13 @@ Other.create(name: "Cupcake 6", price: 1, description: "This is an amazing cupca
 Other.create(name: "Cupcake 7", price: 2, description: "This is an amazing cupcake other EX7")
 Other.create(name: "Cupcake 8", price: 1, description: "This is an amazing cupcake other EX8")
 Other.create(name: "Cupcake 9", price: 4, description: "This is an amazing cupcake other EX9")
+
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")

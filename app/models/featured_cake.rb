@@ -1,4 +1,4 @@
 class FeaturedCake < ApplicationRecord
+   validates :name, presence: true
    has_attachment :photo
-   validates: name, presence: true
 end

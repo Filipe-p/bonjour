@@ -2,40 +2,13 @@
 <div class="container">
 <h3>Veja os nossos bolos</h3>
   <div class="row" id='gallery'>
-    <div class="col-md-4 gallery">
-      <a href="http://unsplash.it/1200/900" class="swipebox" title="My Caption">
-       <%= image_tag "cake_1.jpg", class: "gallery-img" %>
-     </a>
-   </div>
-   <div class="col-md-4 gallery">
-    <a href="http://unsplash.it/1200/900" class="swipebox" title="My Caption">
-     <%= image_tag "cake_1.jpg", class: "gallery-img" %>
-   </a>
- </div>
- <div class="col-md-4 gallery">
-  <a href="http://unsplash.it/1200/900" class="swipebox" title="My Caption">
-   <%= image_tag "cake_1.jpg", class: "gallery-img" %>
- </a>
-</div>
- <div class="col-md-4 gallery">
-  <a href="http://unsplash.it/1200/900" class="swipebox" title="My Caption">
-   <%= image_tag "cake_1.jpg", class: "gallery-img" %>
- </a>
-</div>
- <div class="col-md-4 gallery">
-  <a href="http://unsplash.it/1200/900" class="swipebox" title="My Caption">
-   <%= image_tag "cake_1.jpg", class: "gallery-img" %>
- </a>
-</div>
- <div class="col-md-4 gallery">
-  <a href="http://unsplash.it/1200/900" class="swipebox" title="My Caption">
-   <%= image_tag "cake_1.jpg", class: "gallery-img" %>
- </a>
+    <% FeaturedCake.all.each do |featured_cake| %>
+      <div class="col-md-4 gallery">
+        <a href=<%= cloudinary_url(featured_cake.photo.path) %> class="swipebox" title="My Caption">
+         <%= cl_image_tag featured_cake.photo.path, class: "gallery-img" %>
+       </a>
+      </div>
+   <% end %>
+  </div>
 </div>
 </div>
-</div>
-</div>
-
-
-
-

@@ -21,7 +21,7 @@ gem 'include_media_rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-gem 'cloudinary'
+gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 
@@ -41,7 +41,7 @@ gem 'postmark-rails'
 
 gem 'rails-assets-swipebox', source: 'https://rails-assets.org'
 
-gem 'money-rails'
+gem 'money-rails', github: 'RubyMoney/money-rails'
 gem 'stripe'
 
 gem 'gibbon'
