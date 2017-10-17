@@ -97,7 +97,7 @@ class CakesController < ApplicationController
   private
 
   def cake_params
-    params.require(:cake).permit(:dough, :filling, :decoration, :size)
+    params.require(:cake).permit(:dough, :filling, :decoration, :size, :age)
   end
 
   def convert_params(cake_params)
@@ -105,7 +105,9 @@ class CakesController < ApplicationController
     result[:dough] = Dough.find(cake_params[:dough]) unless cake_params[:dough].blank?
     result[:filling] = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
     result[:decoration] = Decoration.find(cake_params[:decoration]) unless cake_params[:decoration].blank?
+    result[:age] = cake_params[:age].to_i unless cake_params[:age].blank?
     result[:size] = cake_params[:size].to_f unless cake_params[:size].blank?
+
     result
   end
 

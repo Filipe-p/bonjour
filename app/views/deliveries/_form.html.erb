@@ -12,6 +12,9 @@
       <%= f.input :delivery_slot, collection: Delivery::SLOTS, label: "Hora da entrega", selected: Delivery.default_delivery_slot %>
       <%= f.input :store_pickup, input_html: { placeholder: ""}, label: "Levantamento na loja" %>
       <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada de entrega"%>
+      <%= f.input :zipcode, input_html: { placeholder: ""}, label: "Código Postal"%>
+      <%= f.input :nif, input_html: { placeholder: ""}, label: "NIF"%>
+      <%= f.input :payment, as: :radio_buttons, collection: ["Cartão", "Numerário"], input_html: { placeholder: ""}, label: "Método de pagamento"%>
 
       <%= f.submit "Confirmar Pedido", id: "confirm" %>
     </div>

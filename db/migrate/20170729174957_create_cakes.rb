@@ -5,6 +5,7 @@ class CreateCakes < ActiveRecord::Migration[5.1]
       t.string :description
       t.float :size
       t.string :message
+      t.integer :age
       t.references :decoration, foreign_key: true
       t.references :dough, foreign_key: true
       t.references :filling, foreign_key: true
