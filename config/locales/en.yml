@@ -31,3 +31,138 @@
 
 en:
   hello: "Hello world"
+  # in rails_admin
+  activerecord:
+      models:
+        user:
+          one: 'Cliente'
+          other: 'Clientes'
+        cake:
+          one: 'Bolo'
+          other: 'Bolos'
+        contact:
+          one: 'Mensagem'
+          other: 'Mensagens'
+        category:
+          one: 'Categoria'
+          other: 'Categorias'
+        custom_cake:
+          one: 'Bolo Personalizado'
+          other: 'Bolos Personalizados'
+        decoration:
+          one: 'Decoração'
+          other: 'Decorações'
+        decoration_category:
+          one: 'Decoração e Categoria'
+          other: 'Decoração e Categorias'
+        delivery:
+          one: 'Entrega'
+          other: 'Entregas'
+        dough:
+          one: 'Massa'
+          other: 'Massas'
+        dough_filling:
+          one: 'Massa e Recheio'
+          other: 'Massas e Recheios'
+        featured_cake:
+          one: 'Bolo da Galeria'
+          other: 'Bolos da Galeria'
+        filling:
+          one: 'Recheio'
+          other: 'Recheios'
+        order:
+          one: 'Pedido'
+          other: 'Pedidos'
+        order_other:
+          one: 'Extra e Pedido'
+          other: 'Extras e Pedidos'
+        other:
+          one: 'Extra'
+          other: 'Extras'
+        subscriber:
+          one: 'Subscritor'
+          other: 'Subscritores'
+
+      attributes:
+        user:
+          admin: "Admin"
+          first_name: "Primeiro Nome"
+          last_name: "Último Nome"
+          email: 'Email'
+          orders: 'Pedidos'
+        cake:
+          name: 'Nome'
+          description: "Descrição"
+          size: 'Tamanho'
+          message: 'Mensagem'
+          age: 'Idade'
+          price_cents: 'Preço em cêntimos'
+          dough: 'Massa'
+          filling: 'Recheio'
+          decoration: 'Decoração'
+          order: 'Pedido'
+        contact:
+          contact_first_name: "Primeiro Nome"
+          contact_last_name: "Último Nome"
+          contact_email: 'Email'
+          contact_telephone: 'Telefone'
+          message: 'Mensagem'
+        category:
+          name: 'Nome'
+          description: "Descrição"
+        custom_cake:
+          contact_first_name: "Primeiro Nome"
+          contact_last_name: "Último Nome"
+          contact_email: 'Email'
+          contact_telephone: 'Telefone'
+          message: 'Mensagem'
+        decoration:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          minimum_size: 'Peso mínimo'
+          price_cents: 'Peso em cêntimos / kg'
+          categories: 'Categorias'
+        delivery:
+          done: 'Entregue'
+          nif: 'NIF'
+          zipcode: 'Código Postal'
+          payment: 'Método de Pagamento'
+          cost_cents: 'Preço em cêntimos'
+          store_pickup: 'Levantamento na Loja'
+          address: 'Morada'
+          delivery_date: 'Data'
+          delivery_slot: 'Horário'
+          contact_first_name: 'Primeiro Nome do Contacto'
+          contact_last_name: 'Ultimo Nome do Contacto'
+          contact_telephone: 'Telefone'
+          contact_email: 'Email do Contacto'
+          user: 'Cliente'
+          order: 'Pedido'
+        dough:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          minimum_size: 'Peso mínimo'
+          price_cents: 'Peso em cêntimos por Quilo'
+        featured_cake:
+          name: 'Nome'
+        filling:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          minimum_size: 'Peso mínimo'
+          price_cents: 'Peso em cêntimos por Quilo'
+        order:
+          done: 'Completado'
+          user: 'Cliente'
+          cakes: 'Bolos'
+          others: 'Extras'
+          delivery: 'Entrega'
+        other:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          price_cents: 'Peso em cêntimos por Quilo'
+        subscriber:
+          email: 'Email'
