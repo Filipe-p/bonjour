@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :assign_others, :others, :show, :edit, :update, :confirmation]
 
-  #  show cart
   def show
     @order = Order.find(params[:id])
     @cakes = @order.cakes
@@ -19,21 +18,16 @@ class OrdersController < ApplicationController
     @total = @cakes_total.to_f + @others_price.to_f
   end
 
-  # does not exist
   def new
     @order = Order.new
   end
 
-  # does not exist
   def create
   end
 
   def edit
     @order = Order.find(params[:id])
   end
-
-  # should be in the deliveries controller
-  #  ============================================
 
   def update
     @order = Order.find(params[:id])
@@ -45,21 +39,13 @@ class OrdersController < ApplicationController
     end
   end
 
-  #  ============================================
-
   def destroy
   end
-
-  # should be in the deliveries
-  #  ============================================
 
   def confirmation
     @order = Order.find(params[:id])
   end
-  #  ============================================
 
-
-  #  must change, now only user
   def order_params
     params.require(:order).permit(:address, :user, :delivery_datetime, :contact_name, :contact_telephone, :contact_email)
   end

@@ -1,12 +1,19 @@
 DoughFilling.delete_all
-Cake.delete_all
 Dough.delete_all
 Filling.delete_all
+
+Cake.delete_all
+
+DecorationCategory.delete_all
 Decoration.delete_all
-OrderOther.delete_all
-Other.delete_all
+Category.delete_all
+
 FeaturedCake.delete_all
 
+Delivery.delete_all
+
+OrderOther.delete_all
+Other.delete_all
 Order.delete_all
 
 User.delete_all
@@ -31,9 +38,9 @@ doce_de_laranja = Filling.create(name: "Doce Laranja", description: "")
 branco = Filling.create(name: "Chocolate Branco e Crocante", description: "")
 queijo = Filling.create(name: "Creme de Queijo", description: "")
 
-Decoration.create(name: "Decoration Ex1", minimum_size: 1, price: 0, description: "This is an amazing Decoration EX1")
-Decoration.create(name: "Decoration Ex2", minimum_size: 2, price: 0, description: "This is an amazing Decoration EX2")
-Decoration.create(name: "Decoration Ex3", minimum_size: 3, price: 0, description: "This is an amazing Decoration EX3")
+decoration_one = Decoration.create(name: "Decoration Ex1", minimum_size: 1, price: 0, description: "This is an amazing Decoration EX1")
+decoration_two = Decoration.create(name: "Decoration Ex2", minimum_size: 2, price: 0, description: "This is an amazing Decoration EX2")
+decoration_three = Decoration.create(name: "Decoration Ex3", minimum_size: 3, price: 0, description: "This is an amazing Decoration EX3")
 Decoration.create(name: "Decoration Ex4", minimum_size: 1.5, price: 2, description: "This is an amazing Decoration EX4")
 Decoration.create(name: "Decoration Ex5", minimum_size: 2.5, price: 3, description: "This is an amazing Decoration EX5")
 Decoration.create(name: "Decoration Ex6", minimum_size: 2.7, price: 5, description: "This is an amazing Decoration EX6")
@@ -108,3 +115,11 @@ FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.c
 FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
 FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
 FeaturedCake.create(name: "Cake one", photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
+
+category_one = Category.create(name: 'Category 1', description: 'Sample category 1')
+category_two = Category.create(name: 'Category 2', description: 'Sample category 2')
+category_three = Category.create(name: 'Category 3', description: 'Sample category 3')
+
+DecorationCategory.create(decoration: decoration_one, category: category_one)
+DecorationCategory.create(decoration: decoration_two, category: category_two)
+DecorationCategory.create(decoration: decoration_three, category: category_three)

@@ -199,5 +199,22 @@
     }
   })
   })
+
+
+  $("#all").click(function(e){
+    $(".all").hide();
+    $(".all").show();
+  });
+
+  const categories = <%= raw @categories.map{ |category| category.name.parameterize.underscore } %>
+
+  categories.forEach(function(category) {
+    $("#" + category).click(function(e){
+      $(".all").hide();
+      $("." + category).show();
+    });
+  });
+
+
 </script>
 <% end %>

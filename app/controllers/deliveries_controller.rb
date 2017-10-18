@@ -47,7 +47,7 @@ class DeliveriesController < ApplicationController
       @address = @delivery.address
     end
 
-    reset_session
+    session.delete(:order_id)
   end
 
   def delivery_params
