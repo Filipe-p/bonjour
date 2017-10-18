@@ -1,6 +1,6 @@
 class Delivery < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :order
+  belongs_to :order, dependent: :delete
 
   SLOTS = (10..18).step(2).map { |s| "#{s}:00 - #{s+2}:00" }.each_with_index.map { |ts, i| [ts, i] }
 

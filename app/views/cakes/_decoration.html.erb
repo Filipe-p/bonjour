@@ -2,10 +2,21 @@
 <div class="form-inner-wrapper container">
   <div class="form-scroll row row-height">
     <div class="col-md-9" style = "max-height: 100%;">
+      <div class="row filters">
+        <div class="col-xs-1">
+          <div class="btn btn-primary" id='all'>All</div>
+        </div>
+        <% @categories.each do |category| %>
+          <div class="col-xs-2">
+            <div class="btn btn-primary" id=<%= category.name.parameterize.underscore%> ><%= category.name %></div>
+          </div>
+        <% end %>
+      </div>
       <div id = "decoration-wrapper" class = "row-height" style = "max-height: 600px; overflow: scroll; padding-top: 20px;">
+
         <% @decorations.each do |decoration| %>
 
-        <div class="col-md-4 card">
+        <div class="col-md-4 card all <%= decoration.categories.map{ |c| c.name.parameterize.underscore }.join(" ") %> ">
           <div class= "img-decoration-wrapper" >
             <%= image_tag("cake_5.jpg") %>
             <div class="row row-height" style = "margin-bottom: 1.1em;">
@@ -31,6 +42,7 @@
         </div>
 
         <% end %>
+
       </div>
     </div>
     <div class="col-md-3">

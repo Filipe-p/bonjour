@@ -29,6 +29,7 @@ class CakesController < ApplicationController
     @filling = Filling.find(cake_params[:filling]) unless cake_params[:filling].blank?
     @sizes = Cake::SIZES
     @decorations = Decoration.all
+    @categories = Category.all
     respond_to do |format|
       format.html
       format.js
