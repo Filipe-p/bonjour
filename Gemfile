@@ -21,9 +21,8 @@ gem 'include_media_rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-gem 'cloudinary', '1.1.7'
-gem 'attachinary', github: 'assembler/attachinary'
-gem 'jquery-fileupload-rails'
+gem 'cloudinary'
+gem 'carrierwave'
 
 source "https://rails-assets.org" do
   gem "rails-assets-underscore"

@@ -14,6 +14,8 @@ class OthersController < ApplicationController
     # redirect to order show
   end
 
+  # IS THIS WORKING?
+
   # Should be in the OrderOthers controller
   #  =========================================
   def destroy

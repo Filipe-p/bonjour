@@ -29,7 +29,7 @@ RailsAdmin.config do |config|
   # Category
   # ===========================
   config.model 'Category' do
-    include_fields :name, :description
+    include_fields :name, :description, :decorations
   end
 
   # CustomCake
@@ -53,19 +53,19 @@ RailsAdmin.config do |config|
   # Dough
   # ===========================
   config.model 'Dough' do
-    include_fields :name, :description, :photo, :price_cents
+    include_fields :name, :description, :photo, :price_cents, :fillings
   end
 
   # FeaturedCake
   # ===========================
   config.model 'FeaturedCake' do
-    include_fields :name
+    include_fields :name, :photo
   end
 
   # Filling
   # ===========================
   config.model 'Filling' do
-    include_fields :name, :description, :price_cents
+    include_fields :name, :description, :price_cents, :doughs
   end
 
   # Order
