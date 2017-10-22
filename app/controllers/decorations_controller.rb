@@ -43,7 +43,7 @@ class DecorationsController < ApplicationController
   end
 
   def decoration_params
-    decoration_params = params.require(:cake).permit(:decoration, :size, :shape)
+    decoration_params = params.require(:cake).permit(:decoration, :size, :shape, :photo, :photo_cache)
     decoration_params[:decoration] = Decoration.find(decoration_params[:decoration])
     decoration_params
   end
