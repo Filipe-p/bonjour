@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def gallery
+    @featured_cakes = FeaturedCake.all
   end
 
   def design

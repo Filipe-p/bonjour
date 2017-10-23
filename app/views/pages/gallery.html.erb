@@ -2,10 +2,10 @@
 <div class="container">
 <h3>Veja os nossos bolos</h3>
   <div class="row" id='gallery'>
-    <% FeaturedCake.all.each do |featured_cake| %>
-      <div class="col-md-4 col-sm-6 gallery">
-        <a href=<%= cloudinary_url(featured_cake.photo.path) %> class="swipebox" title="My Caption">
-         <%= cl_image_tag featured_cake.photo.path, class: "gallery-img" %>
+    <% @featured_cakes.each do |featured_cake| %>
+      <div class="col-md-4 gallery">
+        <a href="<%= cl_image_path featured_cake.photo %>" class="swipebox" title="<%= featured_cake.name %>">
+         <%= cl_image_tag featured_cake.photo, class: "gallery-img" %>
        </a>
       </div>
    <% end %>

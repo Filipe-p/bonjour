@@ -31,3 +31,289 @@
 
 en:
   hello: "Hello world"
+  # in rails_admin
+  activerecord:
+      models:
+        user:
+          one: 'Cliente'
+          other: 'Clientes'
+        cake:
+          one: 'Bolo'
+          other: 'Bolos'
+        contact:
+          one: 'Mensagem'
+          other: 'Mensagens'
+        category:
+          one: 'Categoria'
+          other: 'Categorias'
+        custom_cake:
+          one: 'Bolo Personalizado'
+          other: 'Bolos Personalizados'
+        decoration:
+          one: 'Decoração'
+          other: 'Decorações'
+        decoration_category:
+          one: 'Decoração e Categoria'
+          other: 'Decoração e Categorias'
+        delivery:
+          one: 'Entrega'
+          other: 'Entregas'
+        dough:
+          one: 'Massa'
+          other: 'Massas'
+        dough_filling:
+          one: 'Massa e Recheio'
+          other: 'Massas e Recheios'
+        featured_cake:
+          one: 'Bolo da Galeria'
+          other: 'Bolos da Galeria'
+        filling:
+          one: 'Recheio'
+          other: 'Recheios'
+        order:
+          one: 'Pedido'
+          other: 'Pedidos'
+        order_other:
+          one: 'Extra e Pedido'
+          other: 'Extras e Pedidos'
+        other:
+          one: 'Extra'
+          other: 'Extras'
+        subscriber:
+          one: 'Subscritor'
+          other: 'Subscritores'
+      attributes:
+        user:
+          admin: "Admin"
+          first_name: "Primeiro Nome"
+          last_name: "Último Nome"
+          email: 'Email'
+          orders: 'Pedidos'
+        cake:
+          name: 'Nome'
+          description: "Descrição"
+          size: 'Tamanho'
+          message: 'Mensagem'
+          age: 'Idade'
+          price_cents: 'Preço em cêntimos'
+          dough: 'Massa'
+          filling: 'Recheio'
+          decoration: 'Decoração'
+          order: 'Pedido'
+        contact:
+          contact_first_name: "Primeiro Nome"
+          contact_last_name: "Último Nome"
+          contact_email: 'Email'
+          contact_telephone: 'Telefone'
+          message: 'Mensagem'
+        category:
+          name: 'Nome'
+          description: "Descrição"
+        custom_cake:
+          contact_first_name: "Primeiro Nome"
+          contact_last_name: "Último Nome"
+          contact_email: 'Email'
+          contact_telephone: 'Telefone'
+          message: 'Mensagem'
+        decoration:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          minimum_size: 'Peso mínimo'
+          price_cents: 'Preço em cêntimos / kg'
+          categories: 'Categorias'
+        delivery:
+          done: 'Entregue'
+          nif: 'NIF'
+          zipcode: 'Código Postal'
+          payment: 'Método de Pagamento'
+          cost_cents: 'Preço em cêntimos'
+          store_pickup: 'Levantamento na Loja'
+          address: 'Morada'
+          delivery_date: 'Data'
+          delivery_slot: 'Horário'
+          contact_first_name: 'Primeiro Nome do Contacto'
+          contact_last_name: 'Ultimo Nome do Contacto'
+          contact_telephone: 'Telefone'
+          contact_email: 'Email do Contacto'
+          user: 'Cliente'
+          order: 'Pedido'
+        dough:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          minimum_size: 'Peso mínimo'
+          price_cents: 'Peso em cêntimos por Quilo'
+        featured_cake:
+          name: 'Nome'
+        filling:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          minimum_size: 'Peso mínimo'
+          price_cents: 'Peso em cêntimos por Quilo'
+        order:
+          done: 'Completado'
+          user: 'Cliente'
+          cakes: 'Bolos'
+          others: 'Extras'
+          delivery: 'Entrega'
+        other:
+          name: 'Nome'
+          description: "Descrição"
+          photo: 'Fotografia'
+          price_cents: 'Preço em cêntimos por Quilo'
+        subscriber:
+          email: 'Email'
+  admin:
+    js:
+      true: True
+      false: False
+      is_present: Is present
+      is_blank: Is blank
+      date: Date ...
+      between_and_: Between ... and ...
+      today: Today
+      yesterday: Yesterday
+      this_week: This week
+      last_week: Last week
+      number: Number ...
+      contains: Contains
+      is_exactly: Is exactly
+      starts_with: Starts with
+      ends_with: Ends with
+      too_many_objects: "Too many objects, use search box above"
+      no_objects: "No objects found"
+    loading: "Loading..."
+    toggle_navigation: Toggle navigation
+    home:
+      name: "Home"
+    pagination:
+      previous: "&laquo; Anterior"
+      next: "Próximo &raquo;"
+      truncate: "…"
+    misc:
+      search: "Procurar"
+      filter: "Filtrar"
+      refresh: "Refresh"
+      show_all: "Mostrar tudo"
+      add_filter: "Novo Filtro..."
+      bulk_menu_title: "Itens selecionados..."
+      remove: "Remover"
+      add_new: "Criar Novo"
+      chosen: "%{name} escolhido"
+      chose_all: "Escolher tudo"
+      clear_all: "Limpar tudo"
+      up: "Cima"
+      down: "Baixo"
+      navigation: "Navigação"
+      log_out: "Terminar Sessão"
+      ago: "atrás"
+      navigation_static_label: "Links"
+      log_out: "Log out"
+      more: "Mais %{count} %{models_name}"
+    flash:
+      successful: "%{name} %{action} com sucesso"
+      error: "%{name} %{action} sem sucesso"
+      noaction: "Nenhuma acção executada"
+      model_not_found: "Modelo '%{model}' não encontrado "
+      object_not_found: "%{model} com identificador '%{id}' não encontrado"
+    table_headers:
+      model_name: "Nome do modelo"
+      last_used: "Ultima vez usado em"
+      records: "Registos"
+      username: "Utilizador"
+      changes: "Alterações"
+      created_at: "Data/Hora"
+      item: "Item"
+      message: "Messagem"
+    actions:
+      dashboard:
+        title: "Administração do Site"
+        menu: "Dashboard"
+        breadcrumb: "Dashboard"
+      index:
+        title: "Lista de %{model_label_plural}"
+        menu: "Lista"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "Detalhes para %{model_label} '%{object_label}'"
+        menu: "Mostrar"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Mostrar na applicação"
+      new:
+        title: "Novo %{model_label}"
+        menu: "Criar novo"
+        breadcrumb: "Novo"
+        link: "Criar um novo %{model_label}"
+        done: "criado"
+      edit:
+        title: "Editar %{model_label} '%{object_label}'"
+        menu: "Editar"
+        breadcrumb: "Editar"
+        link: "Editar este %{model_label}"
+        done: "actualizado"
+      delete:
+        title: "Apagar %{model_label} '%{object_label}'"
+        menu: "Apagar"
+        breadcrumb: "Apagar"
+        link: "Apagar '%{object_label}'"
+        done: "apagado"
+      bulk_delete:
+        title: "Apagar %{model_label_plural}"
+        menu: "Apagar vários"
+        breadcrumb: "Apagar vários"
+        bulk_link: "Apagar selecionados %{model_label_plural}"
+      export:
+        title: "Exportar %{model_label}"
+        menu: "Exportar"
+        breadcrumb: "Exportar"
+        link: "Exportar %{model_label_plural} encontrados"
+        bulk_link: "Exportar %{model_label_plural} selecionados"
+        done: "exportados"
+      history_index:
+        title: "History for %{model_label_plural}"
+        menu: "History"
+        breadcrumb: "History"
+      history_show:
+        title: "Historico para %{model_label} '%{object_label}'"
+        menu: "Historico"
+        breadcrumb: "Historico"
+    form:
+      cancel: "Cancelar"
+      basic_info: "Informação Básica"
+      required: "Obrigatórios"
+      optional: "Opcional"
+      one_char: "character"
+      char_length_up_to: "comprimento até"
+      char_length_of: "comprimento de"
+      save: "Gravar"
+      save_and_add_another: "Gravar e criar outro"
+      save_and_edit: "Gravar e editar"
+      all_of_the_following_related_items_will_be_deleted: "? Os seguintes item serão apagados ou deixados orfãos:"
+      are_you_sure_you_want_to_delete_the_object: "Tem a certeza que quer apagar este %{model_name}"
+      confirmation: "Sim, tenho a certeza"
+      delete_confirmation: "Confirmar apagar"
+      bulk_delete: "Os seguintes objectos serão apagados, o que pode apagar ou deixar orfãos as dependências relacionadas"
+      new_model: "%{name} (novo)"
+    export:
+      confirmation: "Exportar para %{name}"
+      select: "Selecionar campos para exportar"
+      fields_from: "Campos de %{name}"
+      fields_from_associated: "Campos associados com %{name}"
+      display: "Mostrar %{name}: %{type}"
+      options_for: "Opções para %{name}"
+      empty_value_for_associated_objects: "<vazio>"
+      click_to_reverse_selection: 'Click para inverter selecção'
+      select_all_fields: "Selecionar todos os campos "
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Codificar para"
+        encoding_to_help: "Escolha a codificação. Deixe em branco para manter a codificação original: (%{name})"
+        skip_header: "Sem cabeçalho"
+        skip_header_help: "Não gerar cabeçalhos para (Campos sem cabeçalho)"
+        default_col_sep: ","
+        col_sep: "Separador de colunas"
+        col_sep_help: "Deixar em branco para usar omissão ('%{value}')" # value is default_col_sep

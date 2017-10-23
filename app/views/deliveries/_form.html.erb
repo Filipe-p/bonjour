@@ -8,10 +8,10 @@
       <%= f.input :contact_email, as: :email, input_html: { placeholder: "...@google.com"}, label: "Email" %>
     </div>
     <div class="col-md-6">
-      <%= f.input :delivery_date, input_html: { placeholder: ""}, label: "Dia da entrega" %>
-      <%= f.input :delivery_slot, collection: Delivery::SLOTS, label: "Hora da entrega", selected: Delivery.default_delivery_slot %>
+      <%= f.input :delivery_date, input_html: { placeholder: ""}, label: "Dia da entrega", default: Date.current + 2.days %>
+      <%= f.input :delivery_slot, collection: Delivery::SLOTS, label: "Hora da entrega", default: false  %>
       <%= f.input :store_pickup, input_html: { placeholder: ""}, label: "Levantamento na loja" %>
-      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada de entrega"%>
+      <%= f.input :address, as: :text, input_html: { placeholder: ""}, label: "Morada de entrega" %>
       <%= f.input :zipcode, input_html: { placeholder: ""}, label: "Código Postal"%>
       <%= f.input :nif, input_html: { placeholder: ""}, label: "NIF"%>
       <%= f.input :payment, as: :radio_buttons, collection: ["Cartão Multibanco", "Numerário"], input_html: { placeholder: ""}, label: "Método de pagamento"%>
