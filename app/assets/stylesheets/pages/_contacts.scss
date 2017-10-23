@@ -1,8 +1,9 @@
 .banner-contacts {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("10473367_1424513991168939_5482884653258251894_n.jpg");
   background-size: cover;
-  height: calc(70vh - 70px);
   font-weight: 300;
+  padding-top: 70px;
+
 }
 
 .banner-contacts .custom-container {
@@ -17,4 +18,11 @@
 .contact-col {
   padding-right: 30px;
   padding-left: 30px;
+}
+
+.contact-card {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=750&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 750w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=1050&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 1050w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=1350&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 1350w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=1500&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 1500w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=1650&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 1650w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=1950&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 1950w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=2100&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 2100w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=2250&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 2250w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=2550&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 2550w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=2700&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 2700w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=2850&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 2850w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=3150&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 3150w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=3300&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 3300w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=3450&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 3450w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=3750&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 3750w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=3900&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 3900w, https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=4000&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D 4000w");
+  background-size: cover;
+  color: white;
+  padding: 4rem 4rem;
 }

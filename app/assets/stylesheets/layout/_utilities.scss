@@ -31,7 +31,6 @@ body {
 
 .row-height {
   display: flex;
-  display: -webkit-flex;
   flex-wrap: wrap;
 }
 
@@ -49,4 +48,8 @@ body {
 
 .text-09 {
   font-size: 0.9em;
+}
+
+.margin-input {
+  margin-bottom: 1.3em;
 }

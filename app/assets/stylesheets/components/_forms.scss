@@ -218,6 +218,14 @@
   color: black;
 }
 
+.active-category {
+  text-decoration: underline;
+}
+
+.category-title {
+  cursor: pointer;
+}
+
 @include media("<=phoneBig") {
   .form-wrapper {
     height: 650px;

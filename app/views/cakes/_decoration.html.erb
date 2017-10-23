@@ -2,13 +2,14 @@
 <div class="form-inner-wrapper container">
   <div class="form-scroll row row-height">
     <div class="col-md-9" style = "max-height: 100%;">
-      <div class="row filters">
-        <div class="col-xs-1">
-          <div class="btn btn-primary" id='all'>All</div>
+      <div class="row filters padded-1-bottom">
+        <div class="col-sm-1 col-xs-6">
+          <div class="navbar-ac-link category-title" id='all'>Tudo</div>
         </div>
         <% @categories.each do |category| %>
-          <div class="col-xs-2">
-            <div class="btn btn-primary" id=<%= category.name.parameterize.underscore%> ><%= category.name %></div>
+          <div class="col-sm-2 col-xs-6">
+            <div class="navbar-ac-link category-title" id=<%= category.name.parameterize.underscore%> ><%= category.name %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -43,13 +44,13 @@
     </div>
     <div class="col-md-3">
 
-      <h4>Peso</h4>
+      <p class = "navbar-ac-link">Peso</p>
       <%= f.input :size, collection: Cake::SIZES, label: false, prompt: "Kg" %>
 
-      <h4>Mensagem</h4>
+      <p class = "navbar-ac-link">Mensagem</p>
       <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"}, label: false %>
 
-      <h4>Idade</h4>
+      <p class = "navbar-ac-link">Idade</p>
       <%= f.input :age, input_html: {placeholder: "Idade para as velas"}, label: false %>
     </div>
   </div>
