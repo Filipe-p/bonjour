@@ -19,7 +19,7 @@
 
         <div class="col-md-4 card all <%= decoration.categories.map{ |c| c.name.parameterize.underscore }.join(" ") %> ">
           <div class= "img-decoration-wrapper" >
-            <%= image_tag("cake_5.jpg") %>
+            <%= cl_image_tag decoration.photo %>
             <div class="flexbox-between" style = "margin-bottom: 1.1em;">
                 <%= decoration.name %>
                 <%= f.radio_button :decoration, decoration.id, id: "cake_decoration_#{decoration.id}", class: 'radio-button option-input radio'%>

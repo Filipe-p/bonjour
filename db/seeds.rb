@@ -1,31 +1,36 @@
-DoughFilling.delete_all
-Dough.delete_all
-Filling.delete_all
+DoughFilling.destroy_all
+Dough.destroy_all
+Filling.destroy_all
 
-Cake.delete_all
+Cake.destroy_all
 
-DecorationCategory.delete_all
-Decoration.delete_all
-Category.delete_all
+DecorationCategory.destroy_all
+Decoration.destroy_all
+Category.destroy_all
 
-FeaturedCake.delete_all
+FeaturedCake.destroy_all
 
-Delivery.delete_all
+Delivery.destroy_all
 
-OrderOther.delete_all
-Other.delete_all
-Order.delete_all
+OrderOther.destroy_all
+Other.destroy_all
+Order.destroy_all
 
-User.delete_all
+User.destroy_all
 User.create(email: "admin@admin.pt", admin: true, password: "123456")
 
 
 
-pao_de_lo = Dough.create(name: "Pão de Lô", price: 15 , description: "Pão de Lô é uma base amarela, fofa e húmida.")
-chocolate = Dough.create(name: "Chocolate", price: 15 , description: "A base bolo é de Chocolate")
-cenoura = Dough.create(name: "Cenoura", price: 15 , description: "A base bolo é de Cenoura")
-red_velvet = Dough.create(name: "Redvelvet", price: 15 , description: "A base bolo é de Red Velvet")
-noz = Dough.create(name: "Noz", price: 15 , description: "A base bolo é de Noz")
+pao_de_lo = Dough.create(name: "Pão de Lô", price: 15 , description: "Pão de Lô é uma base amarela, fofa e húmida.", remote_photo_url: 'http://img.taste.com.au/BcemwIdD/taste/2016/11/chocolate-celebration-cake-85607-1.jpeg'
+)
+chocolate = Dough.create(name: "Chocolate", price: 15 , description: "A base bolo é de Chocolate", remote_photo_url: 'http://img.taste.com.au/BcemwIdD/taste/2016/11/chocolate-celebration-cake-85607-1.jpeg'
+)
+cenoura = Dough.create(name: "Cenoura", price: 15 , description: "A base bolo é de Cenoura", remote_photo_url: 'http://img.taste.com.au/BcemwIdD/taste/2016/11/chocolate-celebration-cake-85607-1.jpeg'
+)
+red_velvet = Dough.create(name: "Redvelvet", price: 15 , description: "A base bolo é de Red Velvet", remote_photo_url: 'http://img.taste.com.au/BcemwIdD/taste/2016/11/chocolate-celebration-cake-85607-1.jpeg'
+)
+noz = Dough.create(name: "Noz", price: 15 , description: "A base bolo é de Noz", remote_photo_url: 'http://img.taste.com.au/BcemwIdD/taste/2016/11/chocolate-celebration-cake-85607-1.jpeg'
+)
 
 doce_de_ovo = Filling.create(name: "Doce de ôvo", description: "")
 chantili = Filling.create(name: "Chantili e Frutos Silvestre", description: "")
@@ -38,15 +43,15 @@ doce_de_laranja = Filling.create(name: "Doce Laranja", description: "")
 branco = Filling.create(name: "Chocolate Branco e Crocante", description: "")
 queijo = Filling.create(name: "Creme de Queijo", description: "")
 
-decoration_one = Decoration.create(name: "Decoration Ex1", minimum_size: 1, price: 0, description: "This is an amazing Decoration EX1")
-decoration_two = Decoration.create(name: "Decoration Ex2", minimum_size: 2, price: 0, description: "This is an amazing Decoration EX2")
-decoration_three = Decoration.create(name: "Decoration Ex3", minimum_size: 3, price: 0, description: "This is an amazing Decoration EX3")
-Decoration.create(name: "Decoration Ex4", minimum_size: 1.5, price: 2, description: "This is an amazing Decoration EX4")
-Decoration.create(name: "Decoration Ex5", minimum_size: 2.5, price: 3, description: "This is an amazing Decoration EX5")
-Decoration.create(name: "Decoration Ex6", minimum_size: 2.7, price: 5, description: "This is an amazing Decoration EX6")
-Decoration.create(name: "Decoration Ex7", minimum_size: 2, price: 1, description: "This is an amazing Decoration EX7")
-Decoration.create(name: "Decoration Ex8", minimum_size: 2, price: 6, description: "This is an amazing Decoration EX8")
-Decoration.create(name: "Decoration Ex9", minimum_size: 2, price: 4, description: "This is an amazing Decoration EX9")
+decoration_one = Decoration.create(name: "Decoration Ex1", minimum_size: 1, price: 0, description: "This is an amazing Decoration EX1", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+decoration_two = Decoration.create(name: "Decoration Ex2", minimum_size: 2, price: 0, description: "This is an amazing Decoration EX2", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+decoration_three = Decoration.create(name: "Decoration Ex3", minimum_size: 3, price: 0, description: "This is an amazing Decoration EX3", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+Decoration.create(name: "Decoration Ex4", minimum_size: 1.5, price: 2, description: "This is an amazing Decoration EX4", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+Decoration.create(name: "Decoration Ex5", minimum_size: 2.5, price: 3, description: "This is an amazing Decoration EX5", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+Decoration.create(name: "Decoration Ex6", minimum_size: 2.7, price: 5, description: "This is an amazing Decoration EX6", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+Decoration.create(name: "Decoration Ex7", minimum_size: 2, price: 1, description: "This is an amazing Decoration EX7", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+Decoration.create(name: "Decoration Ex8", minimum_size: 2, price: 6, description: "This is an amazing Decoration EX8", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
+Decoration.create(name: "Decoration Ex9", minimum_size: 2, price: 4, description: "This is an amazing Decoration EX9", remote_photo_url: "https://www.cheesecake.com.au/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/_/2/_2226_20Web_568_Torte_LetsCelebrateBlueTorte.png")
 
 doughs = {}
 doughs[:pao_de_lo] = pao_de_lo
