@@ -19,9 +19,9 @@
 				afterOpen: null,
 				afterClose: null,
 				afterMedia: null,
-				nextSlide: true,
-				prevSlide: true,
-				loopAtEnd: true,
+				nextSlide: null,
+				prevSlide: null,
+				loopAtEnd: false,
 				autoplayVideos: false,
 				queryStringData: {},
 				toggleClassOnLoad: ''
