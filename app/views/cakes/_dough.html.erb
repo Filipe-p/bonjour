@@ -5,7 +5,7 @@
    <div class="col-md-4 doughs card" id = "div_<%= dough.id %>">
     <div class = "img-dough-wrapper" >
       <div class="row flexbox">
-        <%= image_tag("hummingbird-bakery-UK-566EDF.jpg") %>
+        <%= cl_image_tag dough.photo %>
       </div>
       <div class="row dough-label" id = "dough_i_<%= dough.id %>" style = "max-width: 100%">
         <p><%= dough.name %></p>
