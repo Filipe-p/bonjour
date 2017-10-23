@@ -214,7 +214,7 @@
     $("#" + category).click(function(e){
       $(this).addClass("active-category");
       $("*[id*=category_]").not(this).removeClass("active-category");
-      $("#all").Class("active-category");
+      $("#all").removeClass("active-category");
       $(".all").hide();
       $("." + category).show();
     });

@@ -2,29 +2,37 @@
   <div class="container">
     <div class="row row-height">
       <div class="col-sm-3 col-xs-6 flexbox-col">
-        <%= link_to 'PASTELARIA BONJOUR', root_path, class: "navbar-ac-link" %>
+        <%= link_to 'PASTELARIA BONJOUR', root_path %>
       </div>
       <div class="col-sm-2 col-xs-6">
         <h5>Início</h5>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><%= link_to 'Home', root_path %></li>
           <li><a href="#">Sign up</a></li>
-          <li><a href="#">Log in</a></li>
+          <li> <%= link_to "Log in", new_user_session_path %></li>
         </ul>
       </div>
       <div class="col-sm-2 col-xs-6">
         <h5>Sobre nós</h5>
         <ul>
-          <li><a href="#">A Bonjour</a></li>
-          <li><a href="#">Contactos</a></li>
+          <li> <%= link_to 'A Bonjour', about_path %>
+          </li>
+          <li>
+            <%= link_to 'Contactos', contacts_path %>
+          </li>
+          <li> <%= link_to 'Galeria', gallery_path %>
+          </li>
         </ul>
       </div>
       <div class="col-sm-2 col-xs-6">
-        <h5>Support</h5>
+        <h5>Encomendas</h5>
         <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Help desk</a></li>
-          <li><a href="#">Forums</a></li>
+          <li> <%= link_to 'Encomendar', new_cake_path %>
+          </li>
+          <li>  <%= link_to 'Bolo personalizado', design_path %>
+          </li>
+          <li> <%= link_to 'Carrinho', current_order_path %>
+          </li>
         </ul>
       </div>
       <div class="col-sm-3 col-xs-6 flexbox-col">
