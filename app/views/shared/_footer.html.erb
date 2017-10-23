@@ -1,41 +1,59 @@
-<footer class = "footer">
+<footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-4 text-left">
-        <ul class="list-inline">
-          <li>
-            <a href="https://www.instagram.com/pastelaria.bonjour/"><i class="fa fa-instagram fa-2x">
-            </i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/Pastelaria-Bonjour-Cascais-1424510534502618/"><i class="fa fa-facebook fa-2x"></i></a></li>
-          <li>
-           <i class="fa fa-copyright" aria-hidden="true"></i><span>    2017 Pastelaria Bonjour</span>
-
-         </li>
-       </ul>
-     </div>
-     <div class="col-xs-8 text-right">
-      <ul class="list-inline">
-        <li><a href="">Condições</a></li>
-        <li>
-          <%= link_to about_path do %>
-          Sobre
+    <div class="row row-height">
+      <div class="col-sm-3 col-xs-6 flexbox-col">
+        <%= link_to 'PASTELARIA BONJOUR', root_path, class: "navbar-ac-link" %>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <h5>Início</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Log in</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <h5>Sobre nós</h5>
+        <ul>
+          <li><a href="#">A Bonjour</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help desk</a></li>
+          <li><a href="#">Forums</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 col-xs-6 flexbox-col">
+        <div class="social-networks">
+          <a href="https://www.facebook.com/Pastelaria-Bonjour-Cascais-1424510534502618/"><i class="fa fa-facebook fa-2x"></i></a>
+          <a href="https://www.instagram.com/pastelaria.bonjour/"><i class="fa fa-instagram fa-2x"></i></a>
+          <a href="#" class="google"><i class="fa fa-google-plus fa-2x"></i></a>
+        </div>
+        <div class="flexbox-between">
+          <%= simple_form_for @subscriber, html: { class: "form-inline"} do |f| %>
+          <%= f.input :email, placeholder: "Email", label_html: {class: 'hidden'}, input_html: { class: ""}%>
+          <%= f.submit "Subscrever", class: "cta-btn cta-btn-white" %>
           <% end %>
-        </li>
-        <li>
-          <%= link_to contacts_path do %>
-          Contactos
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "http://www.ahoy-code.com/" do %>
-          By ahoy-code
-          <% end %>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</footer>
+  <div class="footer-copyright text-center">
+    <p> <i class="fa fa-copyright" aria-hidden="true"></i> <span>2017 Pastelaria Bonjour. Todos os direitos reservados</span> | <%= link_to "http://www.ahoy-code.com/" do %>
+      Created by AhoyCode
+      <% end %></p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+

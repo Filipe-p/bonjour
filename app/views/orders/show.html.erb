@@ -24,7 +24,7 @@
                     <%= image_tag("cake_5.jpg") %>
                   </div>
                   <div class="col-md-10">
-                    <div style = "display: flex; justify-content: space-between;">
+                    <div class = "flexbox-between">
                       <div>
                         <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %> </p>
                         <p class = "text-09"><%= cake.size %>Kg</p>
@@ -38,9 +38,6 @@
                 </div>
               </div>
               <% end %>
-              <%= link_to 'Encomendar outro bolo', new_cake_path %>
-              <% else %>
-              <%= link_to 'Encomendar bolo', new_cake_path %>
               <% end %>
               <% unless @order.others.blank? %>
               <% @order.order_others.each do |order_other| %>
@@ -70,9 +67,6 @@
                </div>
              </div>
              <% end %>
-             <%= link_to 'Encomendar outro extra', order_order_others_path(@order) %>
-             <% else %>
-             <%= link_to 'Encomendar extra', order_order_others_path(@order) %>
              <% end %>
            </div>
            <div class="col-md-6">
@@ -106,6 +100,18 @@
        <p> Total: <span id = "cart"></span></p>
      </div>
    </div>
+
+<div id = "btn1" class = "button">
+  <%= image_tag "cake-13.svg" %>
+  <%= link_to 'Adicionar bolo', new_cake_path %>
+  </div>
+<div id = "btn2" class = "button">
+  <%= image_tag "muffin.svg" %>
+  <%= link_to 'Adicionar extras', order_order_others_path(@order) %>
+
+  </div>
+
+
  </div>
  <%= link_to design_path, class: "navbar-ac-link" do %>
  Não encontra o que quer?

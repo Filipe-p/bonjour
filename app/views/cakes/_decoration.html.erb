@@ -19,13 +19,9 @@
         <div class="col-md-4 card all <%= decoration.categories.map{ |c| c.name.parameterize.underscore }.join(" ") %> ">
           <div class= "img-decoration-wrapper" >
             <%= image_tag("cake_5.jpg") %>
-            <div class="row row-height" style = "margin-bottom: 1.1em;">
-              <div class = "col-md-9" style = "display: flex; align-items: center;">
+            <div class="flexbox-between" style = "margin-bottom: 1.1em;">
                 <%= decoration.name %>
-              </div>
-              <div class="col-md-3" style = "padding: 0 0" >
                 <%= f.radio_button :decoration, decoration.id, id: "cake_decoration_#{decoration.id}", class: 'radio-button option-input radio'%>
-              </div>
             </div>
             <hr>
             <div class="row">
@@ -47,13 +43,13 @@
     </div>
     <div class="col-md-3">
 
-      <h1 id = "step-title" style = "font-size: 30px;">Peso</h1>
+      <h4>Peso</h4>
       <%= f.input :size, collection: Cake::SIZES, label: false, prompt: "Kg" %>
 
-      <h1 id = "step-title" style = "font-size: 30px;">Mensagem</h1>
+      <h4>Mensagem</h4>
       <%= f.input :message, as: :text, input_html: {placeholder: "Texto para bolo"}, label: false %>
 
-      <h1 id = "step-title" style = "font-size: 30px;">Idade</h1>
+      <h4>Idade</h4>
       <%= f.input :age, input_html: {placeholder: "Idade para as velas"}, label: false %>
     </div>
   </div>

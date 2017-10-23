@@ -4,6 +4,13 @@
   justify-content: space-around;
 }
 
+.flexbox-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 .flex-center {
   display: flex;
   align-items: center;

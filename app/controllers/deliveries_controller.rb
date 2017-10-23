@@ -16,8 +16,15 @@ class DeliveriesController < ApplicationController
 
   def create
     @order = Order.find(params[:order_id])
+    @cakes = @order.cakes
     @delivery = Delivery.new(delivery_params)
     @delivery.order = @order
+    @cakes_total = @cakes.map(&:price).reduce(:+).to_f unless @cakes.blank?
+    @others_price = @order.others.map(&:price) unless @order.others.blank?
+    @others_quantity = @order.order_others.map(&:quantity) unless @order.order_others.blank?
+    @others_price = @others_price.zip(@others_quantity).map{|x, y| x * y}.reduce(:+).to_f unless (@others_price.blank? || @others_quantity.blank?)
+
+    @total = @cakes_total.to_f + @others_price.to_f
     if @delivery.save
       redirect_to order_confirmation_path(@order)
     else
