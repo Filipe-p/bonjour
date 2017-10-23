@@ -12,16 +12,16 @@
 				initialIndexOnArray : 0,
 				removeBarsOnMobile : true,
 				hideCloseButtonOnMobile : false,
-				hideBarsDelay : 3000,
+				hideBarsDelay : false,
 				videoMaxWidth : 1140,
 				vimeoColor : 'cccccc',
 				beforeOpen: null,
 				afterOpen: null,
 				afterClose: null,
 				afterMedia: null,
-				nextSlide: null,
-				prevSlide: null,
-				loopAtEnd: false,
+				nextSlide: true,
+				prevSlide: true,
+				loopAtEnd: true,
 				autoplayVideos: false,
 				queryStringData: {},
 				toggleClassOnLoad: ''
@@ -756,7 +756,7 @@
 				if ( a.search ) {
 					qs = JSON.parse( '{"' + a.search.toLowerCase().replace('?','').replace(/&/g,'","').replace(/=/g,'":"') + '"}' );
 				}
-				
+
 				// Extend with custom data
 				if ( $.isPlainObject( customData ) ) {
 					qs = $.extend( qs, customData, plugin.settings.queryStringData ); // The dev has always the final word

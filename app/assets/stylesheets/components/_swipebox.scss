@@ -141,10 +141,13 @@ html.swipebox-html.swipebox-touch {
   text-align: center;
 }
 
+#swipebox-close {
+  background-image: url("circle-bold-remove.svg");
+}
+
 #swipebox-prev,
 #swipebox-next,
 #swipebox-close {
-  background-image: url("circle-bold-remove.svg");
   background-repeat: no-repeat;
   border: none!important;
   text-decoration: none!important;
@@ -165,11 +168,13 @@ html.swipebox-html.swipebox-touch {
 #swipebox-prev{
   background-position: -32px 13px;
   float: left;
+  background-image: url("bold-right.svg");
 }
 
 #swipebox-next{
   background-position: -78px 13px;
   float: right;
+  background-image: url("bold-left.svg");
 }
 
 #swipebox-close{
@@ -269,7 +274,7 @@ html.swipebox-html.swipebox-touch {
   }
 }
 
-@media screen and (min-width: 800px) {
+@include media(">=800px") {
 
   #swipebox-close{
     right: 10px;

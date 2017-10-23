@@ -41,7 +41,6 @@
     </div>
   </section>
 
-
   <% content_for(:after_js) do %>
   <script>
     $(document).ready(function(){
@@ -67,9 +66,13 @@
       if ($(this).is(":checked") == true) {
         $("label[for=delivery_address]").hide();
         $("#delivery_address").hide();
+        $("label[for=delivery_zipcode]").hide();
+        $("#delivery_zipcode").hide();
       } else {
         $("label[for=delivery_address]").show();
         $("#delivery_address").show();
+        $("label[for=delivery_zipcode]").show();
+        $("#delivery_zipcode").show();
       };
     })
        //Add price to cart
