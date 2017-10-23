@@ -200,8 +200,10 @@
   })
   })
 
-
+  //Categories
   $("#all").click(function(e){
+    $(this).addClass("active-category");
+    $("*[id*=category_]").removeClass("active-category");
     $(".all").hide();
     $(".all").show();
   });
@@ -210,6 +212,9 @@
 
   categories.forEach(function(category) {
     $("#" + category).click(function(e){
+      $(this).addClass("active-category");
+      $("*[id*=category_]").not(this).removeClass("active-category");
+      $("#all").Class("active-category");
       $(".all").hide();
       $("." + category).show();
     });

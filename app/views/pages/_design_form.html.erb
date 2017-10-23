@@ -1,8 +1,8 @@
 <%= simple_form_for @custom_cake do |f| %>
-  <%= f.input :contact_first_name, input_html: { placeholder: "João" }, label: "Nome" %>
-   <%= f.input :contact_last_name, input_html: { placeholder: "Silva" }, label: "Apelido" %>
-  <%= f.input :contact_email, input_html: { placeholder: "nome@email.pt" }, label: "Email" %>
-  <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "9126....."}, label: "Contacto" %>
-  <%= f.input :message, as: :text ,input_html: { placeholder: "Bolos para casamentos ou algo que nao encontra? Envie uma mensagem! Obrigado" }, label: "Mensagem" %>
+  <%= f.input :contact_first_name, input_html: { placeholder: "Primeiro nome", class: "margin-input" }, label: false %>
+   <%= f.input :contact_last_name, input_html: { placeholder: "Último nome", class: "margin-input" }, label: false %>
+  <%= f.input :contact_email, input_html: { placeholder: "Email", class: "margin-input" }, label: false %>
+  <%= f.input :contact_telephone, as: :integer, input_html: { placeholder: "Telemóvel", class: "margin-input"}, label: false %>
+  <%= f.input :message, as: :text ,input_html: { placeholder: "Bolos para casamentos ou algo que nao encontra? Envie uma mensagem! Obrigado", class: "margin-input" }, label: false %>
   <%= f.submit "Pedir Orçamento", class: "btn cta-btn cta-btn-white" %>
 <% end %>
