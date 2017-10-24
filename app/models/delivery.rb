@@ -4,6 +4,11 @@ class Delivery < ApplicationRecord
 
   SLOTS = (10..18).step(2).map { |s| "#{s}:00 - #{s+2}:00" }.each_with_index.map { |ts, i| [ts, i] }
 
+  validates :contact_first_name, presence: true
+  validates :contact_last_name, presence: true
+  validates :contact_telephone, presence: true
+  validates :contact_email, presence: true
+
   validate do |delivery|
     unless delivery.order.cakes.size >= 1
       errors.add(:base, "Encomende um bolo")
