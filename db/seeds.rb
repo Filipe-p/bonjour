@@ -101,15 +101,15 @@ fillings[:noz] = [doce_de_ovo, chantili, leite_creme]
         end
     end
 
-Other.create(name: "Cupcake 1", price: 2, description: "This is an amazing cupcake other EX1")
-Other.create(name: "Cupcake 2", price: 1, description: "This is an amazing cupcake other EX2")
-Other.create(name: "Cupcake 3", price: 2, description: "This is an amazing cupcake other EX3")
-Other.create(name: "Cupcake 4", price: 1, description: "This is an amazing cupcake other EX4")
-Other.create(name: "Cupcake 5", price: 2, description: "This is an amazing cupcake other EX5")
-Other.create(name: "Cupcake 6", price: 1, description: "This is an amazing cupcake other EX6")
-Other.create(name: "Cupcake 7", price: 2, description: "This is an amazing cupcake other EX7")
-Other.create(name: "Cupcake 8", price: 1, description: "This is an amazing cupcake other EX8")
-Other.create(name: "Cupcake 9", price: 4, description: "This is an amazing cupcake other EX9")
+Other.create(name: "Cupcake 1", price: 2, description: "This is an amazing cupcake other EX1", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 2", price: 1, description: "This is an amazing cupcake other EX2", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 3", price: 2, description: "This is an amazing cupcake other EX3", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 4", price: 1, description: "This is an amazing cupcake other EX4", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 5", price: 2, description: "This is an amazing cupcake other EX5", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 6", price: 1, description: "This is an amazing cupcake other EX6", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 7", price: 2, description: "This is an amazing cupcake other EX7", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 8", price: 1, description: "This is an amazing cupcake other EX8", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
+Other.create(name: "Cupcake 9", price: 4, description: "This is an amazing cupcake other EX9", remote_photo_url: 'https://www.howtocookthat.net/public_html/wp-content/uploads/2012/06/IMG_6728-1024x764.jpg?x19907')
 
 FeaturedCake.create(name: "Cake one", remote_photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
 FeaturedCake.create(name: "Cake one", remote_photo_url: "http://kitchenfunwithmy3sons.com/wp-content/uploads/2016/04/The-Most-Awesome-Cake-Ideas-Birthday-Party-Wedding-Baby-Shower-Anniversary-Kids-Adults-45.jpg")
