@@ -44,7 +44,7 @@
           <% @order.cakes.select{|cake| !cake.filling.blank? && !cake.dough.blank?}.each do |cake| %>
             <div class="row confirmation-card padded-1-bottom row-height" id = "cake_<%=cake.id%>">
               <div class="col-xs-3">
-                <%= image_tag("cake_5.jpg") %>
+                <%= cl_image_tag cake.dough.photo %>
               </div>
               <div class="col-xs-3 flex-center">
                 <p>Bolo de <%= cake.dough.name %> com <%= cake.filling.name %></p>
@@ -57,7 +57,7 @@
           <% @order.order_others.each do |order_other| %>
             <div class="row confirmation-card row-height" id = "other_<%=order_other.other.id%>">
               <div class="col-xs-3">
-                <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
+                <%= cl_image_tag order_other.other.photo %>
               </div>
               <div class="col-xs-3 flex-center">
                 <p ><%= order_other.other.name %></p>

@@ -5,7 +5,7 @@
     <div class="col-md-4 card">
       <div class = "img-decoration-wrapper" >
         <div class="row">
-          <%= image_tag("Coffeebreak Muffins in a box.jpg") %>
+          <%= cl_image_tag other.photo %>
           <div class="row row-height">
             <div class="col-md-9" style = "display: flex; align-items: center;">
               <%= other.name %>
@@ -23,21 +23,6 @@
          <div class="row">
            <div class="col-md-12">
              <p><span id= "other_price_<%= other.id %>" class = "price"><%= other.price %></span> €/un</p>
-           </div>
-         </div>
-         <div class="row">
-          <div class="col-md-12 quantity-btn" id = "math_<%= other.id %>">
-            <div>
-              <span id = "other_quantity_<%= other.id %>">0</span>
-              <span>un</span></div>
-              <div>
-               <span class = "plus" id = "plus_<%= other.id %>">
-                 <%= image_tag("circle-bold-add.svg") %>
-               </span>
-               <span class = "minus" id = "minus_<%= other.id %>">
-                 <%= image_tag("circle-bold-delete.svg") %>
-               </span>
-             </div>
            </div>
          </div>
        </div>
