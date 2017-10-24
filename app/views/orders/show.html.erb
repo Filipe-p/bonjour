@@ -44,19 +44,13 @@
               <div id = "other_<%=order_other.id%>">
                 <div class="row card">
                   <div class="col-md-2">
-                    <%= cl_image_tag order_other.photo %>
+                    <%= cl_image_tag order_other.other.photo %>
                   </div>
                   <div class="col-md-10">
                     <div style = "display: flex; justify-content: space-between;">
                       <div>
                         <p><%= order_other.other.name %></p>
                         <hr>
-                        <span class = "plus" id = "plus_<%= order_other.id %>">
-                         <%= image_tag("circle-bold-add.svg") %>
-                       </span>
-                       <span class = "minus" id = "minus_<%= order_other.id %>">
-                         <%= image_tag("circle-bold-delete.svg") %>
-                       </span>
                      </div>
                      <p class = "text-09"><%= order_other.quantity %>un</p>
                      <% @subtotal = order_other.quantity * order_other.other.price%>
