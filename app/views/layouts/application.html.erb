@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="google-site-verification" content="Gvu0L8OYKozLEfvUSwojPrUuYW6rklIpowF5W6NMBlQ" />
-    <title>Bonjour Pastelaria</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= favicon_link_tag 'circle.png' %>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108508651-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  </head>
-  <body>
+    gtag('config', 'UA-108508651-1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-site-verification" content="Gvu0L8OYKozLEfvUSwojPrUuYW6rklIpowF5W6NMBlQ" />
+  <title>Bonjour Pastelaria</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= favicon_link_tag 'circle.png' %>
 
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/nav' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+</head>
+<body>
 
-    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_BROWSER_API_KEY']}" %>
+  <%= render 'shared/flashes' %>
+  <%= render 'shared/nav' %>
+  <%= yield %>
+  <%= render 'shared/footer' %>
+
+  <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_BROWSER_API_KEY']}" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
   <%= javascript_include_tag 'application' %>
-    <%= yield(:after_js) %>
-  </body>
+  <%= yield(:after_js) %>
+</body>
 </html>
