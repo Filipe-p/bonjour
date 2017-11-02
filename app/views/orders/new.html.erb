@@ -32,21 +32,33 @@
 
       </div>
     </div>
-    <div id = "down-nav">
-      <div class = "down-nav-btn" id="submit-btn">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
-          <g class="nc-icon-wrapper">
-            <path id = "path1-r" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
-            </path>
-            <path id = "path2-r" fill="#FFFFFF" d="M37.58838,23.19141l-11-8c-0.30322-0.22119-0.70703-0.25244-1.04199-0.08252 C25.21094,15.27979,25,15.62402,25,16v6H12c-0.55229,0-1,0.44772-1,1v2c0,0.55228,0.44771,1,1,1h13v6 c0,0.37598,0.21094,0.72021,0.54639,0.89111C25.68945,32.96387,25.84521,33,26,33c0.20752,0,0.41406-0.06445,0.58838-0.19141l11-8 C37.84668,24.62061,38,24.31982,38,24S37.84668,23.37939,37.58838,23.19141z">
-            </path>
-          </g>
-        </svg>
+      <div id = "down-nav">
+        <div class = "down-nav-btn">
+          <%= link_to session[:back_link], class: "navbar-ac-link" do %>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
+            <g class="nc-icon-wrapper">
+              <path id = "path1-l" fill="#72C472" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
+              </path>
+              <path id = "path2-l" fill="#FFFFFF" d="M23,16c0-0.37598-0.21094-0.72021-0.54639-0.89111c-0.33496-0.16992-0.73682-0.13867-1.04199,0.08252l-11,8 C10.15332,23.37939,10,23.68018,10,24s0.15332,0.62061,0.41162,0.80859l11,8C21.58594,32.93555,21.79248,33,22,33 c0.15479,0,0.31055-0.03613,0.45361-0.10889C22.78906,32.72021,23,32.37598,23,32v-6h13c0.55228,0,1-0.44772,1-1v-2 c0-0.55228-0.44772-1-1-1H23V16z">
+              </path>
+            </g>
+          </svg>
+          <% end %>
+        </div>
+        <div class = "down-nav-btn" id="submit-btn">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" xml:space="preserve" width="48" height="48">
+            <g class="nc-icon-wrapper">
+              <path id = "path1-r" fill="#D4D4D4" d="M24,1C11.31787,1,1,11.31787,1,24s10.31787,23,23,23s23-10.31787,23-23S36.68213,1,24,1z">
+              </path>
+              <path id = "path2-r" fill="#FFFFFF" d="M37.58838,23.19141l-11-8c-0.30322-0.22119-0.70703-0.25244-1.04199-0.08252 C25.21094,15.27979,25,15.62402,25,16v6H12c-0.55229,0-1,0.44772-1,1v2c0,0.55228,0.44771,1,1,1h13v6 c0,0.37598,0.21094,0.72021,0.54639,0.89111C25.68945,32.96387,25.84521,33,26,33c0.20752,0,0.41406-0.06445,0.58838-0.19141l11-8 C37.84668,24.62061,38,24.31982,38,24S37.84668,23.37939,37.58838,23.19141z">
+              </path>
+            </g>
+          </svg>
+        </div>
+        <div class = "down-nav-cart">
+          <p> Total: <span id = "cart"></span></p>
+        </div>
       </div>
-      <div class = "down-nav-cart">
-       <p> Total: <span id = "cart"></span></p>
-     </div>
-   </div>
    <div id = "btn1" class = "button">
   <%= image_tag "cake-13.svg" %>
   <%= link_to 'Adicionar bolo', new_cake_path %>
