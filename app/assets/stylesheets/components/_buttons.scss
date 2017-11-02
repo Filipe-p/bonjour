@@ -53,6 +53,12 @@
   color: white;
 }
 
+.cta-btn-gray {
+  background-color: transparent;
+  color: #D4D4D4;
+  cursor: not-allowed;
+}
+
 .cta-btn-white-purple {
   background-color: white;
   border: 2px solid $purple;
