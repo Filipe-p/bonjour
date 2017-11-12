@@ -63,7 +63,7 @@
         </li>
         <li>
           <%= link_to design_path do %>
-          Bolo personalizado
+          Pedir Orçamento
           <% end %>
         </li>
         <li>
@@ -76,6 +76,14 @@
           Contactos
           <% end %>
         </li>
+              <li>
+        <% if user_signed_in? %>
+
+        <%= link_to "Sign out", destroy_user_session_path%>
+        <% else %>
+        <%= link_to "Log in", new_user_session_path %>
+        <% end %>
+      </li>
       </ul>
     </div>
   </div>
