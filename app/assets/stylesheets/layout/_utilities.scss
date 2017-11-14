@@ -11,28 +11,34 @@ body {
   height: 100%;
 }
 
+.row-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .content {
   flex: 1 0 auto;
 }
+
+
 // Paddings
 .padded {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .padded-2-bottom {
   padding-bottom: 2em;
 }
 
+.padded-2-top {
+  padding-top: 2em;
+}
+
 .padded-1-bottom {
   padding-bottom: 1em;
 }
 
-
-.row-height {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .padding-bottom-20 {
   padding-bottom: 20px;
